@@ -1,0 +1,34 @@
+@radius: 2px;
+@box: border-box;
+
+.border-radius(@radius: 2px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+.box-sizing(@box: border-box) {
+    -webkit-box-sizing: @box;
+    -moz-box-sizing: @box;
+    box-sizing: @box;
+}
+
+.user-select(@select: none) {
+    -webkit-user-select: @select;
+    -moz-user-select: @select;
+    -ms-user-select: @select;
+    user-select: @select;
+}
+
+.text-size-adjust(@percentage: 100%) {
+    -ms-text-size-adjust: @percentage;
+    -webkit-text-size-adjust: @percentage;
+    -moz-text-size-adjust: @percentage;
+    text-size-adjust: @percentage;
+}
+
+/* include border --- [ OK ] */
+@state: OK;
+///******************************************/
+///*  	FIN
+///******************************************/

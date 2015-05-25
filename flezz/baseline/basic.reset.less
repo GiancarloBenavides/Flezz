@@ -24,7 +24,8 @@
 ///* 10. Remove text-shadow in selection highlight.
 ///* 11. Reset style special text.
 ///******************************************/
-/* include reset */
+///* Dependencies */
+@import '../global/variables.config.less';
 ///* local variables */
 ///* 1 */
 * {
@@ -32,22 +33,18 @@
     padding: 0;
     border: 0;
     outline: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    .user-select();
 }
 ///* 2 */
 *,
 *:before,
 *:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    .box-sizing();
 }
+
 ///* 3 */
 .home::-webkit-scrollbar {
-    width: 50 !important;
+    width: 50px !important;
     height: 50px;
 }
 
@@ -57,10 +54,7 @@ html {
     font-size: 14px;
     line-height: 1.4em;
     color: #333;
-    -ms-text-size-adjust: 100%; ///* 4 */
-    -webkit-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
-    text-size-adjust: 100%;
+    .text-size-adjust(); ///* 4 */
 }
 
 body {
@@ -120,9 +114,7 @@ td, th {
 }
 ///* 8 */
 hr {
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box;
-    box-sizing: content-box;
+    .box-sizing(content-box);
     display: block;
     height: 1px;
     margin: 1em 0;
