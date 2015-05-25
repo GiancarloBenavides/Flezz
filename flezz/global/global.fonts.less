@@ -1,0 +1,196 @@
+﻿///******************************************/
+///*          flezz framework 1.0           */
+///******************************************/
+///*  Name: font
+///*  Version: 1.2
+///*  Description: Theme fonts.
+///*  Author: Giancarlo Ortiz.
+///*  URI: http://www.zerez.org
+///*  License: GNU General Public License v2 or later
+///*  License URI: http://www.gnu.org/licenses/gpl-2.0.html
+///*  Tags: font, css.
+///******************************************/
+///*  	Content
+///*
+///*  1. Declarations.
+///*  2. Font Sans Serif (Helvetica, Verdana).
+///*  3. Font Serif (Georgia, Garamond, Courier).
+///******************************************/
+///* local variables */
+@font-path: "../assets/fonts";
+//
+@OpenSans: false;
+@Roboto: false;
+@RobotoCondensed: false;
+@SegoeUI: false;
+@RobotoSlab: false;
+@Rokkitt: false;
+///* 1 */
+// local statements
+@family-style: "normal";
+// font families
+@OpenSansRegular: "OpenSansRegular","RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+@OpenSansLight: "OpenSansLight","RobotoLight", "Segoe UI Light", "Helvetica Neue", sans-serif;
+@OpenSansBold: "OpenSansBold","RobotoBold", "Segoe WP", "Helvetica", sans-serif;
+//
+@RobotoRegular: "RobotoRegular", "OpenSansRegular", "Segoe UI", "Helvetica", sans-serif;
+@RobotoLight: "RobotoLight", "OpenSansLight", "Segoe UI Light", "Helvetica Neue", sans-serif;
+@RobotoBold: "RobotoBold", "OpenSansBold", "Segoe WP", "Helvetica", sans-serif;
+//
+@RobotoCondensedRegular: "RobotoCondensedRegular", "RobotoRegular", "Segoe UI", sans-serif;
+@RobotoCondensedLight: "RobotoCondensedLight", "RobotoLight", "Segoe UI Light", sans-serif;
+@RobotoCondensedBold: "RobotoCondensedBold", "RobotoBold", "Segoe WP", sans-serif;
+//
+@SegoeUILight: "SegoeUILight","Segoe UI Light", "OpenSansLight", "RobotoLight", sans-serif;
+@SegoeUIBold: "Segoe UI", "Segoe WP", "OpenSansBold", "RobotoBold", sans-serif;
+//
+@RobotoSlabRegular: "RobotoSlabRegular", "Georgia", "Garamond", "Courier", serif;
+@RobotoSlabLight: "RobotoSlabLight", "Garamond", "Georgia", "Courier", serif;
+@RobotoSlabBold: "RobotoSlabBold", "Georgia", "Garamond", "Courier", serif;
+//
+@RokkittRegular: "RokkittRegular", "RobotoSlabRegular", "Georgia", "Garamond", serif;
+@RokkittBold: "RokkittBold", "RobotoSlabBold", "Garamond", "Georgia", serif;
+///* 2 */
+.font-family (@family-style) when (@OpenSans = true) {
+    @font-face {
+        font-family: "OpenSansRegular";
+        src: url("@{font-path}/OpenSans-Regular.eot?");
+        src: url("@{font-path}/OpenSans-Regular.eot?#iefix") format("embedded-opentype"), url("@{font-path}/OpenSans-Regular.woff2") format("woff2"), url("@{font-path}/OpenSans-Regular.woff") format("woff"), url("@{font-path}/OpenSans-Regular.ttf") format("truetype"), url("@{font-path}/OpenSans-Regular.svg#OpenSansRegular") format("svg");
+        font-weight: @family-style;
+        font-style: @family-style;
+    }
+
+    @font-face {
+        font-family: "OpenSansLight";
+        src: url("@{font-path}/OpenSans-Light.eot");
+        src: url("@{font-path}/OpenSans-Light.eot?#iefix") format("embedded-opentype"), url("@{font-path}/OpenSans-Light.woff2") format("woff2"),url("@{font-path}/OpenSans-Light.woff") format("woff"), url("@{font-path}/OpenSans-Light.ttf") format("truetype"), url("@{font-path}/OpenSans-Light.svg#OpenSansLight") format("svg");
+        font-weight: @family-style;
+        font-style: @family-style;
+    }
+
+    @font-face {
+        font-family: "OpenSansBold";
+        src: url("@{font-path}/OpenSans-Bold.eot");
+        src: url("@{font-path}/OpenSans-Bold.eot?#iefix") format("embedded-opentype"), url("@{font-path}/OpenSans-Bold.woff2") format("woff2"),url("@{font-path}/OpenSans-Bold.woff") format("woff"), url("@{font-path}/OpenSans-Bold.ttf") format("truetype"), url("@{font-path}/OpenSans-Bold.svg#OpenSansBold") format("svg");
+        font-weight: @family-style;
+        font-style: @family-style;
+    }
+}
+
+.font-family (@family-style) when (@Roboto = true) {
+    @font-face {
+        font-family: "RobotoRegular";
+        src: url("@{font-path}/Roboto-Regular.eot");
+        src: url("@{font-path}/Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("@{font-path}/Roboto-Regular.woff2") format("woff2"), url("@{font-path}/Roboto-Regular.woff") format("woff"), url("@{font-path}/Roboto-Regular.ttf") format("truetype"), url("@{font-path}/Roboto-Regular.svg#robotoregular") format("svg");
+        font-weight: @family-style;
+        font-style: @family-style;
+    }
+
+    @font-face {
+        font-family: "RobotoLight";
+        src: url("@{font-path}/Roboto-Light.eot");
+        src: url("@{font-path}/Roboto-Light.eot?#iefix") format("embedded-opentype"), url("@{font-path}/Roboto-Light.woff2") format("woff2"), url("@{font-path}/Roboto-Light.woff") format("woff"), url("@{font-path}/Roboto-Light.ttf") format("truetype"), url("@{font-path}/Roboto-Light.svg#robotolight") format("svg");
+        font-weight: @family-style;
+        font-style: @family-style;
+    }
+
+    @font-face {
+        font-family: "RobotoBold";
+        src: url("@{font-path}/Roboto-Bold.eot");
+        src: url("@{font-path}/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("@{font-path}/Roboto-Bold.woff2") format("woff2"), url("@{font-path}/Roboto-Bold.woff") format("woff"), url("@{font-path}/Roboto-Bold.ttf") format("truetype"), url("@{font-path}/Roboto-Bold.svg#robotobold") format("svg");
+        font-weight: @family-style;
+        font-style: @family-style;
+    }
+}
+
+.font-family (@family-style) when (@RobotoCondensed = true) {
+    @font-face {
+        font-family: "RobotoCondensedRegular";
+        src: url("@{font-path}/RobotoCondensed-Regular.eot");
+        src: url("@{font-path}/RobotoCondensed-Regular.eot?#iefix") format("embedded-opentype"), url("@{font-path}/RobotoCondensed-Regular.woff2") format("woff2"), url("@{font-path}/RobotoCondensed-Regular.woff") format("woff"), url("@{font-path}/RobotoCondensed-Regular.ttf") format("truetype"), url("@{font-path}/RobotoCondensed-Regular.svg#roboto_condensedregular") format("svg");
+        font-weight: @family-style;
+        font-style: @family-style;
+    }
+
+    @font-face {
+        font-family: "RobotoCondensedLight";
+        src: url("@{font-path}/RobotoCondensed-Light.eot");
+        src: url("@{font-path}/RobotoCondensed-Light.eot?#iefix") format("embedded-opentype"), url("@{font-path}/RobotoCondensed-Light.woff2") format("woff2"), url("@{font-path}/RobotoCondensed-Light.woff") format("woff"), url("@{font-path}/RobotoCondensed-Light.ttf") format("truetype"), url("@{font-path}/RobotoCondensed-Light.svg#roboto_condensedlight") format("svg");
+        font-weight: @family-style;
+        font-style: @family-style;
+    }
+
+    @font-face {
+        font-family: "RobotoCondensedBold";
+        src: url("@{font-path}/RobotoCondensed-Bold.eot");
+        src: url("@{font-path}/RobotoCondensed-Bold.eot?#iefix") format("embedded-opentype"), url("@{font-path}/RobotoCondensed-Bold.woff2") format("woff2"), url("@{font-path}/RobotoCondensed-Bold.woff") format("woff"), url("@{font-path}/RobotoCondensed-Bold.ttf") format("truetype"), url("@{font-path}/RobotoCondensed-Bold.svg#roboto_condensedbold") format("svg");
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+.font-family (@family-style) when (@SegoeUI = true) {
+    @font-face {
+        font-family: "SegoeUIBold";
+        src: url("@{font-path}/SegoeUi-Bold.eot");
+        src: url("@{font-path}/SegoeUi-Bold.eot?#iefix") format("embedded-opentype"), url("@{font-path}/SegoeUi-Bold.woff2") format("woff2"), url("@{font-path}/SegoeUi-Bold.woff") format("woff"), url("@{font-path}/SegoeUi-Bold.ttf") format("truetype"), url("@{font-path}/SegoeUi-Bold.svg#SegoeUIBlack") format("svg");
+        font-weight: @family-style;
+        font-style: @family-style;
+    }
+
+    @font-face {
+        font-family: "SegoeUILight";
+        src: url("@{font-path}/SegoeUi-Light.eot");
+        src: url("@{font-path}/SegoeUi-Light.eot?#iefix") format("embedded-opentype"), url("@{font-path}/SegoeUi-Light.woff2") format("woff2"), url("@{font-path}/SegoeUi-Light.woff") format("woff"), url("@{font-path}/SegoeUi-Light.ttf") format("truetype"), url("@{font-path}/SegoeUi-Light.svg#SegoeUI-Light") format("svg");
+        font-weight: @family-style;
+        font-style: @family-style;
+    }
+}
+///* 3 */
+.font-family (@family-style) when (@RobotoSlab = true) {
+    @font-face {
+        font-family: "RobotoSlabRegular";
+        src: url("@{font-path}/RobotoSlab-Regular.eot");
+        src: url("@{font-path}/RobotoSlab-Regular.eot?#iefix") format("embedded-opentype"), url("@{font-path}/RobotoSlab-Regular.woff2") format("woff2"), url("@{font-path}/RobotoSlab-Regular.woff") format("woff"), url("@{font-path}/RobotoSlab-Regular.ttf") format("truetype"), url('RobotoSlab-Regular.svg#roboto_slabregular') format('svg');
+        font-weight: @family-style;
+        font-style: @family-style;
+    }
+
+    @font-face {
+        font-family: "RobotoSlabLight";
+        src: url("@{font-path}/RobotoSlab-Light.eot");
+        src: url("@{font-path}/RobotoSlab-Light.eot?#iefix") format("embedded-opentype"), url("@{font-path}/RobotoSlab-Light.woff2") format("woff2"), url("@{font-path}/RobotoSlab-Light.woff"), format("woff") url("@{font-path}/RobotoSlab-Light.ttf") format("truetype"), url("@{font-path}/RobotoSlab-Light.svg#roboto_slablight") format("svg");
+        font-weight: @family-style;
+        font-style: @family-style;
+    }
+
+    @font-face {
+        font-family: "RobotoSlabBold";
+        src: url("@{font-path}/RobotoSlab-Bold.eot");
+        src: url("@{font-path}/RobotoSlab-Bold.eot?#iefix") format("embedded-opentype"), url("@{font-path}/RobotoSlab-Bold.woff2") format("woff2"), url("@{font-path}/RobotoSlab-Bold.woff") format("woff"), url("@{font-path}/RobotoSlab-Bold.ttf") format("truetype"), url('RobotoSlab-Bold.svg#roboto_slabbold') format('svg');
+        font-weight: @family-style;
+        font-style: @family-style;
+    }
+}
+
+.font-family (@family-style) when (@Rokkitt = true) {
+    @font-face {
+        font-family: "RokkittRegular";
+        src: url("@{font-path}/Rokkitt-Regular.eot");
+        src: url("@{font-path}/Rokkitt-Regular.eot?#iefix") format("embedded-opentype"), url("@{font-path}/Rokkitt-Regular.woff2") format("woff2"), url("@{font-path}/Rokkitt-Regular.woff") format("woff"), url("@{font-path}/Rokkitt-Regular.ttf") format("truetype"), url("@{font-path}/Rokkitt-Regular.svg#Rokkitt") format("svg");
+        font-weight: @family-style;
+        font-style: @family-style;
+    }
+
+    @font-face {
+        font-family: "RokkittBold";
+        src: url("@{font-path}/Rokkitt-Bold.eot");
+        src: url("@{font-path}/Rokkitt-Bold.eot?#iefix") format("embedded-opentype"), url("@{font-path}/Rokkitt-Bold.woff2") format("woff2"), url("@{font-path}/Rokkitt-Bold.woff") format("woff"), url("@{font-path}/Rokkitt-Bold.ttf") format("truetype"), url("@{font-path}/Rokkitt-Bold.svg#Rokkitt-Bold") format("svg");
+        font-weight: @family-style;
+        font-style: @family-style;
+    }
+}
+/* include font ----- [ OK ] */ @state: OK;
+///******************************************/
+///*  	FIN
+///******************************************/

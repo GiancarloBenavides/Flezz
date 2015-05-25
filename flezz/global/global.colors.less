@@ -1,0 +1,152 @@
+﻿///******************************************/
+///*          flezz framework 1.0           */
+///******************************************/
+///*  Name: color
+///*  Version: 2.2
+///*  Description: Theme colors .
+///*  Author: Giancarlo Ortiz.
+///*  URI: http://www.zerez.org
+///*  License: GNU General Public License v2 or later
+///*  License URI: http://www.gnu.org/licenses/gpl-2.0.html
+///*  Tags: Color, tiles, css.
+///******************************************/
+///*  	Content
+///*
+///*  1. Gray scale.
+///*  2. Tiles color.
+///*  3. Font color.
+///*  4. Background color.
+///******************************************/
+///* local variables */
+@font-darken: 10%;
+///* 1 */
+@white: rgb(250,250,250);
+@gray10: rgb(230,230,232);
+@gray20: rgb(204,204,208);
+@gray30: rgb(179,179,184);
+@gray60: rgb(102,102,112);
+@gray80: rgb(51,51,64);
+@gray90: rgb(25,25,40);
+@black: rgb(10,10,15);
+///* 2 */
+@tile-blue: rgb(27, 161, 226);
+@tile-brown: rgb(160, 80, 0);
+@tile-green: rgb(51, 153, 51);
+@tile-lime: rgb(140, 191, 38);
+@tile-magenta: rgb(255, 0, 151);
+@tile-orange: rgb(240, 150, 9);
+@tile-pink: rgb(230, 113, 184);
+@tile-purple: rgb(162, 0, 255);
+@tile-red: rgb(229, 20, 0);
+@tile-teal: rgb(0, 171, 169);
+///* 3 */
+///* Default font Color*/
+.font-color() {
+    color: @gray80;
+}
+///* Default emphasis color */
+.accent () {
+    color: @tile-blue;
+}
+//
+///* More font Color*/
+.white () {
+    color: darken(@white,@font-darken);
+}
+
+.black () {
+    color: darken(@black,@font-darken);
+}
+
+.blue () {
+    color: darken(@tile-blue,@font-darken);
+}
+
+.brown () {
+    color: darken(@tile-brown,@font-darken);
+}
+
+.green () {
+    color: darken(@tile-green,@font-darken);
+}
+
+.lime () {
+    color: darken(@tile-lime,@font-darken);
+}
+
+.magenta () {
+    color: darken(@tile-magenta,@font-darken);
+}
+
+.orange () {
+    color: darken(@tile-orange,@font-darken);
+}
+
+.pink () {
+    color: darken(@tile-pink,@font-darken);
+}
+
+.purple () {
+    color: darken(@tile-purple,@font-darken);
+}
+
+.red () {
+    color: darken(@tile-red,@font-darken);
+}
+
+.teal () {
+    color: darken(@tile-teal,@font-darken);
+}
+///* colores de fondo */
+.whitebg () {
+    background-color: @white;
+}
+
+.blackbg () {
+    background-color: @black;
+}
+
+.bluebg () {
+    background-color: @tile-blue;
+}
+
+.brownbg () {
+    background-color: @tile-brown;
+}
+
+.greenbg () {
+    background-color: @tile-green;
+}
+
+.limebg () {
+    background-color: @tile-lime;
+}
+
+.magentabg () {
+    background-color: @tile-magenta;
+}
+
+.orangebg () {
+    background-color: @tile-orange;
+}
+
+.pinkbg () {
+    background-color: @tile-pink;
+}
+
+.purplebg () {
+    background-color: @tile-purple;
+}
+
+.redbg () {
+    background-color: @tile-red;
+}
+
+.tealbg () {
+    background-color: @tile-teal;
+}
+/* include color ---- [ OK ] */ @state: OK;
+///******************************************/
+///*  	FIN
+///******************************************/
+

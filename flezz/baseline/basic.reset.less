@@ -1,0 +1,172 @@
+///******************************************/
+///*          flezz framework 1.0           */
+///******************************************/
+///*  Name: reset
+///*  Version: 3.2
+///*  Description: normalizing properties CSS.
+///*  Author: Giancarlo Ortiz.
+///*  URI: http://www.zerez.org
+///*  License: GNU General Public License v2 or later
+///*  License URI: http://www.gnu.org/licenses/gpl-2.0.html
+///*  Tags: reset, normalize, css
+///******************************************/
+///*  	Content
+///*
+///*  1. Remove default options (margin, padding, outline, border and text selection).
+///*  2. Model box (the width and height properties includes content, padding and border, but not the margin).
+///*  3. Remove Scrollbar.
+///*  4. Prevent iOS and IE text size adjust after device orientation change.
+///*  5. Correct block and inline-block display
+///*  6. Prevent `sub` and `sup` affecting `line-height` in all browsers.
+///*  7. Remove most spacing between table cells.
+///*  8. Remove style horizontal rule.
+///*  9. Remove style of link and `ul` list.
+///* 10. Remove text-shadow in selection highlight.
+///* 11. Reset style special text.
+///******************************************/
+/* include reset */
+///* local variables */
+///* 1 */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+///* 2 */
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+///* 3 */
+.home::-webkit-scrollbar {
+    width: 50 !important;
+    height: 50px;
+}
+
+html {
+    height: 100%;
+    font-family: "OpenSansLigth", sans-serif;
+    font-size: 14px;
+    line-height: 1.4em;
+    color: #333;
+    -ms-text-size-adjust: 100%; ///* 4 */
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    z-index: 1;
+}
+///* 5 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+///* 6 */
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+///* 7 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td, th {
+    padding: 0;
+}
+///* 8 */
+hr {
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    display: block;
+    height: 1px;
+    margin: 1em 0;
+    padding: 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+///* 9 */
+a {
+    background-color: transparent;
+}
+
+a:hover {
+    outline: 0;
+    text-decoration: none;
+    color: #0099CC;
+}
+
+ul {
+    list-style: none;
+}
+///* 10 */
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+///* 11 */
+b, strong {
+    font-weight: bold;
+}
+
+dfn {
+    font-style: italic;
+}
+///* Others */
+img {
+    border: 0;
+}
+
+textarea {
+    resize: vertical;
+}
