@@ -1,8 +1,8 @@
-﻿///******************************************/
+///******************************************/
 ///*          flezz framework 1.0           */
 ///******************************************/
 ///*  Name: color
-///*  Version: 2.2
+///*  Version: 2.3
 ///*  Description: Theme colors .
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org
@@ -13,9 +13,12 @@
 ///*  	Content
 ///*
 ///*  1. Gray scale.
-///*  2. Tiles color.
-///*  3. Font color.
-///*  4. Background color.
+///*  2. Default palette
+///*  2. Social color.
+///*  3. Metro desing (Windows)
+///*  4. Material desing (Android)
+///*  5. Ios desing (Apple)
+///*  6. Zerez desing
 ///******************************************/
 ///* local variables */
 @font-darken: 10%;
@@ -29,122 +32,63 @@
 @gray90: rgb(25,25,40);
 @black: rgb(10,10,15);
 ///* 2 */
-@tile-blue: rgb(27, 161, 226);
-@tile-brown: rgb(160, 80, 0);
-@tile-green: rgb(51, 153, 51);
-@tile-lime: rgb(140, 191, 38);
-@tile-magenta: rgb(255, 0, 151);
-@tile-orange: rgb(240, 150, 9);
-@tile-pink: rgb(230, 113, 184);
-@tile-purple: rgb(162, 0, 255);
-@tile-red: rgb(229, 20, 0);
-@tile-teal: rgb(0, 171, 169);
+@prymary: rgb(40, 96, 144);
+@success: rgb(68,157,68);
+@info: rgb(49,176,213);
+@warning: rgb(236,151,31);
+@danger: rgb(217,83,79);    
 ///* 3 */
-///* Default font Color*/
-.font-color() {
-    color: @gray80;
-}
-///* Default emphasis color */
-.accent () {
-    color: @tile-blue;
-}
+@facebook-blue: rgb(59,89,152);
+@facebook-blue-light:rgb(139,157,195);
+@facebook-gray:rgb(223,227,238);
+@facebook-gray-light: rgb(247,247,247);
 //
-///* More font Color*/
-.white () {
-    color: darken(@white,@font-darken);
-}
-
-.black () {
-    color: darken(@black,@font-darken);
-}
-
-.blue () {
-    color: darken(@tile-blue,@font-darken);
-}
-
-.brown () {
-    color: darken(@tile-brown,@font-darken);
-}
-
-.green () {
-    color: darken(@tile-green,@font-darken);
-}
-
-.lime () {
-    color: darken(@tile-lime,@font-darken);
-}
-
-.magenta () {
-    color: darken(@tile-magenta,@font-darken);
-}
-
-.orange () {
-    color: darken(@tile-orange,@font-darken);
-}
-
-.pink () {
-    color: darken(@tile-pink,@font-darken);
-}
-
-.purple () {
-    color: darken(@tile-purple,@font-darken);
-}
-
-.red () {
-    color: darken(@tile-red,@font-darken);
-}
-
-.teal () {
-    color: darken(@tile-teal,@font-darken);
-}
-///* colores de fondo */
-.whitebg () {
-    background-color: @white;
-}
-
-.blackbg () {
-    background-color: @black;
-}
-
-.bluebg () {
-    background-color: @tile-blue;
-}
-
-.brownbg () {
-    background-color: @tile-brown;
-}
-
-.greenbg () {
-    background-color: @tile-green;
-}
-
-.limebg () {
-    background-color: @tile-lime;
-}
-
-.magentabg () {
-    background-color: @tile-magenta;
-}
-
-.orangebg () {
-    background-color: @tile-orange;
-}
-
-.pinkbg () {
-    background-color: @tile-pink;
-}
-
-.purplebg () {
-    background-color: @tile-purple;
-}
-
-.redbg () {
-    background-color: @tile-red;
-}
-
-.tealbg () {
-    background-color: @tile-teal;
-}
+@twitter-blue: rgb(51,204,255);
+@twitter-LinK: rgb(0,132,180);
+@facebook-gray:rgb(141,192,219);
+@facebook-gray-light: rgb(221,238,246);
+//
+@google-red: rgb(211,72,54);
+@google-gray:rgb(210,210,210);
+@google-gray-light: rgb(241,241,241);
+///* 4 */
+@material-blue: rgb(51, 181, 229);
+@material-blue-dark:rgb(0, 153, 204);
+@material-purple: rgb(170, 102, 204);
+@material-purple-dar:rgb(153, 51, 204);
+@material-green: rgb(153, 204, 0);
+@material-green-dark:rgb(102, 153, 0);
+@material-orange: rgb(255, 187, 51);
+@material-orange-dark:rgb(255, 136, 0);
+@material-red: rgb(255, 68, 68);
+@material-red-dark:rgb(204, 0, 0);
+///* 5 */
+@tile-blue: rgb(27,161,226);
+@tile-brown: rgb(160,80,0);
+@tile-green: rgb(51,153,51);
+@tile-lime: rgb(140,191,38);
+@tile-magenta: rgb(255,0,151);
+@tile-orange: rgb(240,150,9);
+@tile-pink: rgb(230,113,184);
+@tile-purple: rgb(162,0,255);
+@tile-red: rgb(229,20,0);
+@tile-teal: rgb(0,171,169);
+///* 6 */
+@ios-blue: rgb(90, 200, 250);
+@ios-blue-dark:rgb(0, 122, 255);
+@ios-purple: rgb(255, 45, 85);
+@ios-purple-dar:rgb(255, 59, 48);
+@ios-green: rgb(76, 217, 100);
+@ios-green-dark:rgb(142, 142, 147);
+@ios-orange: rgb(255, 204, 0);
+@ios-orange-dark:rgb(255, 149, 0);
+///* 7 */
+@font-color: @gray80;
+@font-tile: @white;
+@h1-color: darken(@font-color,2*@font-darken);
+@h2-color: darken(@font-color,@font-darken);
+@menu-background: rgb(0, 171, 169);
+//
 /* include color ---- [ OK ] */ @state: OK;
 ///******************************************/
 ///*  	FIN
