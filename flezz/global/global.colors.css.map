@@ -1,1 +1,1 @@
-﻿{"version":3,"sources":[],"names":[],"mappings":"","file":"global.colors.css"}
+﻿{"version":3,"sources":["global.colors.less"],"names":[],"mappings":"AAmJA;EACI,yBAAA;EACA,cAAA;EACA,mBAAA;EACA,oBAAA;EACA,qBAAA;;AAGJ;EACI,yBAAA;EACA,cAAA;EACA,kBAAA;EACA,oBAAA;EACA,qBAAA;;AAGJ;EACI,yBAAA;EACA,cAAA;EACA,kBAAA;EACA,oBAAA;EACA,qBAAA","file":"global.colors.css"}
