@@ -1,5 +1,23 @@
-@radius: 2px;
-@box: border-box;
+///******************************************/
+///*          flezz framework 1.0           */
+///******************************************/
+///*  Name: Border
+///*  Version: 1.3
+///*  Description: Equalize Border Mixin.
+///*  Author: Giancarlo Ortiz.
+///*  URI: http://www.zerez.org
+///*  License: GNU General Public License v2 or later
+///*  License URI: http://www.gnu.org/licenses/gpl-2.0.html
+///*  Tags: font, css.
+///******************************************/
+///*  	Content
+///******************************************/
+
+.background-clip(@argument: padding-box) {
+    -moz-background-clip: @argument;
+    -webkit-background-clip: @argument;
+    background-clip: @argument;
+}
 
 .border-radius(@radius: 2px) {
     -webkit-border-radius: @radius;
@@ -7,27 +25,42 @@
     border-radius: @radius;
 }
 
-.box-sizing(@box: border-box) {
-    -webkit-box-sizing: @box;
-    -moz-box-sizing: @box;
-    box-sizing: @box;
+.border-radius-top(@radius: 2px) {
+    -webkit-border-top-left-radius: @radius;
+    -webkit-border-top-right-radius: @radius;
+    -moz-border-radius-topright: @radius;
+    -moz-border-radius-topleft: @radius;
+    border-top-left-radius: @radius;
+    border-top-right-radius: @radius;
 }
 
-.user-select(@select: none) {
-    -webkit-user-select: @select;
-    -moz-user-select: @select;
-    -ms-user-select: @select;
-    user-select: @select;
+.border-radius-bottom(@radius: 2px) {
+    -webkit-border-bottom-left-radius: @radius;
+    -webkit-border-bottom-right-radius: @radius;
+    -moz-border-radius-bottomright: @radius;
+    -moz-border-radius-bottomleft: @radius;
+    border-bottom-left-radius: @radius;
+    border-bottom-right-radius: @radius;
 }
 
-.text-size-adjust(@percentage: 100%) {
-    -ms-text-size-adjust: @percentage;
-    -webkit-text-size-adjust: @percentage;
-    -moz-text-size-adjust: @percentage;
-    text-size-adjust: @percentage;
+.border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+    -webkit-border-bottom-right-radius: @bottomright;
+    -webkit-border-bottom-left-radius: @bottomleft;
+    -moz-border-radius-bottomright: @bottomright;
+    -moz-border-radius-bottomleft: @bottomleft;
+    border-bottom-right-radius: @bottomright;
+    border-bottom-left-radius: @bottomleft;
+    .background-clip(padding-box);
 }
 
-/* include border --- [ OK ] */
+.border-color(@top-color: #EEE, @right-color: #EEE, @bottom-color: #EEE, @left-color: #EEE) {
+    border-top: solid 1px @top-color;
+    border-left: solid 1px @left-color;
+    border-right: solid 1px @right-color;
+    border-bottom: solid 1px @bottom-color;
+}
+
+/* include Border --- [ OK ] */
 @state: OK;
 ///******************************************/
 ///*  	FIN

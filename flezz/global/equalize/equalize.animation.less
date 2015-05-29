@@ -1,0 +1,48 @@
+///******************************************/
+///*          flezz framework 1.0           */
+///******************************************/
+///*  Name: animation
+///*  Version: 1.3
+///*  Description: Equalize Animation Mixin.
+///*  Author: Giancarlo Ortiz.
+///*  URI: http://www.zerez.org
+///*  License: GNU General Public License v2 or later
+///*  License URI: http://www.gnu.org/licenses/gpl-2.0.html
+///*  Tags: font, css.
+///******************************************/
+///*  	Content
+///******************************************/
+
+.transform(...) {
+    -webkit-transform: @arguments;
+    -moz-transform: @arguments;
+    -o-transform: @arguments;
+    -ms-transform: @arguments;
+    transform: @arguments;
+}
+
+.transition(@duration: 0.2s, @ease: ease-out) {
+    -webkit-transition: all @duration @ease;
+    -moz-transition: all @duration @ease;
+    -o-transition: all @duration @ease;
+    transition: all @duration @ease;
+}
+
+.transition-duration(@duration: 0.2s) {
+    -moz-transition-duration: @duration;
+    -webkit-transition-duration: @duration;
+    -o-transition-duration: @duration;
+    transition-duration: @duration;
+}
+
+.translate(@x: 0, @y: 0) {
+    .transform(translate(@x, @y));
+}
+
+.rotation(@deg: 5deg) {
+    .transform(rotate(@deg));
+}
+
+.scale(@ratio: 1.5) {
+    .transform(scale(@ratio));
+}
