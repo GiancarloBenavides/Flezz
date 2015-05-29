@@ -19,6 +19,12 @@
     box-sizing: @box;
 }
 
+.box-shadow(@arguments) {
+  -webkit-box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  box-shadow: @arguments;
+}
+
 .user-select(@select: none) {
     -webkit-user-select: @select;
     -moz-user-select: @select;
@@ -42,3 +48,8 @@
   -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
   filter: ~"alpha(opacity=@{opperc})";
 }
+
+/* include other ---- [ OK ] */@state: OK;
+///******************************************/
+///*  	FIN
+///******************************************/
