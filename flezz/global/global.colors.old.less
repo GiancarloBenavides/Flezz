@@ -2,7 +2,7 @@
 ///*          flezz framework 1.0           */
 ///******************************************/
 ///*  Name: color
-///*  Version: 2.5
+///*  Version: 2.3
 ///*  Description: Theme colors .
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org
@@ -32,15 +32,17 @@
 @secondary-body-background: @zerez-light;
 @footer-background: @zerez-dark;
 @color-secundary: @zeres-blue;
-@color-secundary-weight: 1%;
+@color-secundary-weight: 10%;
+//fade(color,%)
 @theme-opacity: true;
-@box-opacity: 0%;
-//
+@box-opacity: 10%;
+
 @theme-darken: true;
 ///* local statements */
 .fontPrimaryColor();
 .fontSecondaryColor();
 .fontFooterColor();
+.opacityPanel(@box-opacity);
 ///* 1 */
 @white: rgb(250,250,250);
 @gray10: rgb(230,230,232);
@@ -113,25 +115,19 @@
 ///* 8 */
 .fontPrimaryColor() when (luma(@primary-header-background) >= @brightness-cutoff) {
     @a: mix(@color-secundary,@primary-header-background,@color-secundary-weight);
-    @c: @box-opacity;
     @p1: darken(@a,@font-contrast);
     @p2: darken(@p1,2*@font-title-icrement);
     @p3: darken(@p1,@font-title-icrement);
-    @primary-header-title-color: mix(@primary-body-background,@p1,@c);
-    @primary-header-subtitle-color: mix(@primary-body-background,@p2,@c);
-    @primary-header-font-color: mix(@primary-body-background,@p3,@c);
+    @K: `pk=1`;
 }
 
 .fontPrimaryColor() when (luma(@primary-header-background) < @brightness-cutoff) {
     @a: mix(@color-secundary,@primary-header-background, @color-secundary-weight);
     @b: @font-contrast/4;
-    @c: @box-opacity;
     @p1: lighten(@a,@b);
     @p2: lighten(@p1,2*@font-title-icrement);
     @p3: lighten(@p1,@font-title-icrement);
-    @primary-header-title-color: mix(@primary-body-background,@p1,@c);
-    @primary-header-subtitle-color: mix(@primary-body-background,@p2,@c);
-    @primary-header-font-color: mix(@primary-body-background,@p3,@c);
+    @K: `pk=1`;
 }
 //
 .fontPrimaryColor() when (luma(@primary-body-background) >= @brightness-cutoff) {
@@ -151,49 +147,34 @@
 //
 .fontSecondaryColor() when (luma(@secondary-header-background) >= @brightness-cutoff) {
     @a: mix(@color-secundary,@secondary-header-background,@color-secundary-weight*1.5);
-    @c: @box-opacity;
     @s1: darken(@a,@font-contrast);
     @s2: darken(@s1,2*@font-title-icrement);
     @s3: darken(@s1,@font-title-icrement);
-    @secondary-header-title-color: mix(@primary-body-background,@s1,@c);
-    @secondary-header-subtitle-color: mix(@primary-body-background,@s2,@c);
-    @secondary-header-font-color: mix(@primary-body-background,@s3,@c);
-
+    @K: `sk=1`;
 }
 
 .fontSecondaryColor() when (luma(@secondary-header-background) < @brightness-cutoff) {
     @a: mix(@color-secundary,@secondary-header-background,@color-secundary-weight*1.5);
     @b: @font-contrast/4;
-    @c: @box-opacity;
     @s1: lighten( @a,@b);
     @s2: lighten(@s1,(2*@font-title-icrement));
     @s3: lighten(@s1,@font-title-icrement);
-    @secondary-header-title-color: mix(@primary-body-background,@s1,@c);
-    @secondary-header-subtitle-color: mix(@primary-body-background,@s2,@c);
-    @secondary-header-font-color: mix(@primary-body-background,@s3,@c);
+    @K: `sk=1`;
 }
 //
 .fontSecondaryColor() when (luma(@secondary-body-background) >= @brightness-cutoff) {
     @a: mix(@color-secundary,@secondary-body-background,@color-secundary-weight*1.5);
-    @c: @box-opacity;
     @s4: darken(@a,@font-contrast);
     @s5: darken(@s4,2*@font-title-icrement);
     @s6: darken(@s4,@font-title-icrement);
-    @secondary-body-title-color: mix(@primary-body-background,@s4,@c);
-    @secondary-body-subtitle-color: mix(@primary-body-background,@s5,@c);
-    @secondary-body-font-color: mix(@primary-body-background,@s6,@c);
 }
 
 .fontSecondaryColor() when (luma(@secondary-body-background) < @brightness-cutoff) {
     @a: mix(@color-secundary,@secondary-body-background,@color-secundary-weight*1.5);
     @b: @font-contrast*1.6;
-    @c: @box-opacity;
     @s4: lighten(@a,@b);
     @s5: lighten(@s4,(2*@font-title-icrement));
     @s6: lighten(@s4,@font-title-icrement);
-    @secondary-body-title-color: mix(@primary-body-background,@s4,@c);
-    @secondary-body-subtitle-color: mix(@primary-body-background,@s5,@c);
-    @secondary-body-font-color: mix(@primary-body-background,@s6,@c);
 }
 //
 .fontFooterColor() when (luma(@footer-background) >= @brightness-cutoff) {
@@ -210,9 +191,87 @@
     @footer-title-color: lighten(@footer-font-color,(2*@font-title-icrement));
     @footer-subtitle-color: lighten(@footer-font-color,@font-title-icrement);
 }
+//
+.opacityPanel (@b) when (@theme-opacity = true) and ( ~"`typeof(pk)`" = number) {
+    @a: @primary-body-background;
+    @primary-header-title-color: mix(@a,@p1,@b);
+    @primary-header-subtitle-color: mix(@a,@p2,@b);
+    @primary-header-font-color: mix(@a,@p3,@b);
+}
+
+.opacityPanel (@b) when (@theme-opacity = true) and (~"`typeof(sk)`" = number) {
+    @secondary-header-title-color: mix(@a,@s1,@b);
+    @secondary-header-subtitle-color: mix(@a,@s2,@b);
+    @secondary-header-font-color: mix(@a,@s3,@b);
+    @secondary-body-title-color: mix(@a,@s4,@b);
+    @secondary-body-subtitle-color: mix(@a,@s5,@b);
+    @secondary-body-font-color: mix(@a,@s6,@b);
+}
+//
+.opacityPanel (@b) when (@theme-opacity = false) and ( ~"`typeof(pk)`" = number) {
+    @primary-header-title-color: @p1;
+    @primary-header-subtitle-color: @p2;
+    @primary-header-font-color: @p3;
+}
+
+.opacityPanel (@b) when (@theme-opacity = false) and (~"`typeof(sk)`" = number) {
+    @secondary-header-title-color: @s1;
+    @secondary-header-subtitle-color: @s2;
+    @secondary-header-font-color: @s3;
+    @secondary-body-title-color: @s4;
+    @secondary-body-subtitle-color: @s5;
+    @secondary-body-font-color: @s6;
+}
+//
+.header {
+    background-color: @primary-header-background;
+    line-height: @primary-header-title-color;
+    border-color: @primary-header-subtitle-color;
+    color: @primary-header-font-color;
+    width: luma(@primary-header-background);
+}
+
+.body {
+    background-color: @primary-body-background;
+    line-height: @primary-body-title-color;
+    border-color: @primary-body-subtitle-color;
+    color: @primary-body-font-color;
+    width: luma(@primary-body-background);
+}
+
+.header2 {
+    background-color: @secondary-header-background;
+    line-height: @secondary-header-title-color;
+    border-color: @secondary-header-subtitle-color;
+    color: @secondary-header-font-color;
+    width: luma(@secondary-header-background);
+}
+
+.body2 {
+    background-color: @secondary-body-background;
+    line-height: @secondary-body-title-color;
+    border-color: @secondary-body-subtitle-color;
+    color: @secondary-body-font-color;
+    width: luma(@secondary-body-background);
+}
+/**/
+.footer {
+    background-color: @footer-background;
+    line-height: @footer-title-color;
+    border-color: @footer-subtitle-color;
+    color: @footer-font-color;
+    width: luma(@footer-background);
+    border-left-color: mix(@color-secundary,@footer-background, @color-secundary-weight);
+    border-bottom: ~"`typeof(k)`";
+    border-right-color: ~"`k`";
+    border-left: ~"`k=2`";
+    border-top: ~"`(k)`";
+    
+}
 
 //
-/* include color ---- [ OK ] */@state: OK;
+/* include color ---- [ OK ] */
+@state: OK;
 ///******************************************/
 ///*  	FIN
 ///******************************************/

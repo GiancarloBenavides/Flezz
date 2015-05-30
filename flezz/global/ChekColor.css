@@ -1,0 +1,39 @@
+﻿/* include color ---- [ OK ] */
+/* color check */
+.header {
+  background-color: #140028;
+  border-left-color: #2b045b;
+  border-right-color: #6c0ae4;
+  color: #4b079f;
+  width: 0.30192368%;
+}
+.body {
+  background-color: #f7f5fa;
+  border-left-color: #323064;
+  border-right-color: #4a4794;
+  color: #6d6ab8;
+  width: 91.98110004%;
+}
+.header2 {
+  background-color: #280050;
+  border-left-color: #3f0484;
+  border-right-color: #831ff8;
+  color: #6006c9;
+  width: 1.03030326%;
+}
+.body2 {
+  background-color: #f7f5fa;
+  border-left-color: #666ebb;
+  border-right-color: #2d3266;
+  color: #434b97;
+  width: 91.98110004%;
+}
+.footer {
+  background-color: #140028;
+  border-left-color: #6c0ae4;
+  border-right-color: #4b079f;
+  color: #2b045b;
+  width: 0.30192368%;
+}
+/* color check   ---- [ OK ] */
+/*# sourceMappingURL=ChekColor.css.map */
