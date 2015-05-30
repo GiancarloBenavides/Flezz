@@ -16,13 +16,21 @@
 ///*  2. Custom icons (Zicon).
 ///*  3. Others icons.
 ///******************************************/
+@variables-path: "../global";
 ///* Dependencies */
-@import 'equalize/mixins.equalize.config.less';
-@import 'desing/mixins.desing.config.less';
-@import 'component/mixins.component.config.less';
+@import '@{variables-path}/variables.config.less';
 ///* local variables */
+@freeze-header: 80px;
 
-/* include mixin ---- [ OK ] */ @state: OK;
+header {
+    background-color: @primary-header-background;
+    width: 100%;
+    height: @freeze-header;
+    overflow: hidden;
+}
+
+
+/* include skeleton - [ OK ] */@state: OK;
 ///******************************************/
 ///*  	FIN
 ///******************************************/
