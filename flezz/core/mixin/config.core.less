@@ -1,18 +1,20 @@
 ///******************************************/
 ///*          flezz framework 1.0           */
 ///******************************************/
-///*  Name: variables Config
-///*  Version: 3.2
-///*  Description: global variables config
+///*  Name: config core
+///*  Version: 3.2.1
+///*  Description: core config
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org
 ///*  License: GNU General Public License v2 or later
 ///*  License URI: http://www.gnu.org/licenses/gpl-2.0.html
-///*  Tags: flezz, normalize, css.
+///*  Tags: flezz, normalize, less, mixin, css.
 ///******************************************/
 ///*  	Content
 ///*
-///*  1. font settings.
+///*  1. color settings.
+///*  2. font settings.
+///*  3. icon settings.
 ///******************************************/
 ///* Dependencies */
 @import 'global.colors.less';
@@ -20,20 +22,40 @@
 @import 'global.icons.less';
 @import 'global.mixins.less';
 @import 'global.pictures.less';
+//
 ///* local variables */
-
+//
 ///* 1 */
-@family-style: normal;
+@primary-header-background: @zerez-dark;
+@primary-body-background: @zerez-light;
+@secondary-header-background: @zerez-middle;
+@secondary-body-background: @zerez-light;
+@footer-background: @zerez-dark;
+@color-secundary: @zeres-blue;
+@color-secundary-weight: 1%;
+@theme-opacity: true;
+@box-opacity: 0%;
+//
+///* 2 */
 @OpenSans: true;
 @Roboto: false;
 @RobotoCondensed: false;
 @SegoeUI: false;
 @RobotoSlab: false;
 @Rokkitt: true;
+//
+@family-style: normal;
 @Font-Embedded: true;
-@Zicon: false;
 .font-family (@family-style);
-.icon-family (@family-style);
+//
+///* 3 */
+@Zicon: true;
+//
+@icon-style: normal;
+@icon-Embedded: true;
+.icon-family (@icon-style);
+//
+///* 4 */
 /* variables config - [ OK ] */ @state: OK;
 ///******************************************/
 ///*  	FIN

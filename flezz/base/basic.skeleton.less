@@ -1,7 +1,7 @@
 ///******************************************/
 ///*          flezz framework 1.0           */
 ///******************************************/
-///*  Name: mixin
+///*  Name: skeleton
 ///*  Version: 1.0
 ///*  Description: Global Mixin.
 ///*  Author: Giancarlo Ortiz.
@@ -13,15 +13,21 @@
 ///*  	Content
 ///*
 ///*  1. Declarations.
-///*  2. Custom icons (Zicon).
-///*  3. Others icons.
 ///******************************************/
-@variables-path: "../global";
 ///* Dependencies */
-@import '@{variables-path}/variables.config.less';
+@import '../core/flezz.core.less';
 ///* local variables */
+@freeze-header: 80px;
+//
+///* 1 */
+header {
+    background-color: @primary-header-background;
+    width: 100%;
+    height: @freeze-header;
+    overflow: hidden;
+}
 
-/* include tiles ---- [ OK ] */ @state: OK;
+/* include skeleton - [ OK ] */@state: OK;
 ///******************************************/
 ///*  	FIN
 ///******************************************/

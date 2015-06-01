@@ -2,7 +2,7 @@
 ///*          flezz framework 1.0           */
 ///******************************************/
 ///*  Name: reset
-///*  Version: 3.2
+///*  Version: 3.2.1
 ///*  Description: normalizing properties CSS.
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org
@@ -25,8 +25,9 @@
 ///* 11. Reset style special text.
 ///******************************************/
 ///* Dependencies */
-@import '../global/variables.config.less';
+@import '../core/flezz.core.less';
 ///* local variables */
+//
 ///* 1 */
 * {
     margin: 0;
@@ -35,15 +36,16 @@
     outline: none;
     .user-select();
 }
+//
 ///* 2 */
 *,
 *:before,
 *:after {
     .box-sizing();
 }
-
+//
 ///* 3 */
-//webkit 
+//webkit
 ::-webkit-scrollbar {
     width: 4px;
     height: 100%;
@@ -64,14 +66,13 @@
     background: rgba(182,182,182,0.2);
 }
 
-
+//
 ///* 4 */
 html {
     height: 100%;
     font-family: "OpenSansLigth", sans-serif;
     font-size: 62.5%;
-    
-    .text-size-adjust(); 
+    .text-size-adjust();
 }
 
 body {
@@ -86,6 +87,7 @@ body {
     overflow-x: hidden;
     z-index: 1;
 }
+//
 ///* 5 */
 article,
 aside,
@@ -110,6 +112,7 @@ video {
     display: inline-block;
     vertical-align: baseline;
 }
+//
 ///* 6 */
 sub, sup {
     font-size: 75%;
@@ -125,6 +128,7 @@ sup {
 sub {
     bottom: -0.25em;
 }
+//
 ///* 7 */
 table {
     border-collapse: collapse;
@@ -134,6 +138,7 @@ table {
 td, th {
     padding: 0;
 }
+//
 ///* 8 */
 hr {
     .box-sizing(content-box);
@@ -144,6 +149,7 @@ hr {
     border: 0;
     border-top: 1px solid #ccc;
 }
+//
 ///* 9 */
 a {
     background-color: transparent;
@@ -159,6 +165,7 @@ a:hover {
 ul {
     list-style: none;
 }
+//
 ///* 10 */
 ::-moz-selection {
     background: #b3d4fc;
@@ -169,6 +176,7 @@ ul {
     background: #b3d4fc;
     text-shadow: none;
 }
+//
 ///* 11 */
 b, strong {
     font-weight: bold;
@@ -177,6 +185,7 @@ b, strong {
 dfn {
     font-style: italic;
 }
+//
 ///* Others */
 img {
     border: 0;
@@ -186,7 +195,7 @@ textarea {
     resize: vertical;
 }
 
-/* include reset ---- [ OK ] */ @state: OK;
+/* include reset ---- [ OK ] */@state: OK;
 ///******************************************/
 ///*  	FIN
 ///******************************************/

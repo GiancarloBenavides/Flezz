@@ -2,8 +2,8 @@
 ///*          flezz framework 1.0           */
 ///******************************************/
 ///*  Name: icon
-///*  Version: 1.2
-///*  Description: Theme icon.
+///*  Version: 1.2.1
+///*  Description: core icon.
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org
 ///*  License: GNU General Public License v2 or later
@@ -12,23 +12,25 @@
 ///******************************************/
 ///*  	Content
 ///*
-///*  1. Declarations.
+///*  1. Icon families.
 ///*  2. Custom icons (Zicon).
 ///*  3. Others icons.
 ///******************************************/
 ///* local variables */
-@icon-path: "../assets/icons";
+@icon-path: "../../assets/icons";
 //
-@Zicon: false;
+///* setting options */
+@Zicon: true;
+@icon-style: "normal";
+//
+///* local statements */
+//.icon-family (@family-style); // mixin to include icon families
 //
 ///* 1 */
-///* local statements */
-@family-style: "normal";
-// icon families
 @ZiconRegular: "zicon", "Glyphicons Halflings", "foundation-icons", san-serif;
 //
 ///* 2 */
-.icon-family (@family-style) when (@Zicon = true) {
+.icon-family (@icon-style) when (@Zicon = true) {
     @font-face {
         font-family: "zicon";
         src: url("@{icon-path}/zerezIcon-icons.eot");
@@ -1257,6 +1259,9 @@
         content: "\f21a";
     }
 }
+//
+///* 3 */
+//
 /* include icon ----- [ OK ] */ @state: OK;
 ///******************************************/
 ///*  	FIN
