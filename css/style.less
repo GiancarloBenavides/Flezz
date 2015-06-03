@@ -18,8 +18,76 @@
 ///* Dependencies */
 @import '@{baseline-path}/flezz.less';
 ///* local variables */
+@bar-icon-num: 4;
+@header-height: 50px;
+@bar-offset: @bar-icon-num*@header-height;
 
-/* include flezz ---- [ OK ] */ @state: OK;
+header {
+    display: table;
+    height: @header-height;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    a {
+        display: inline-block;
+        width: 100%;
+        height: @header-height;
+        font-size: 14px;
+        text-align: center;
+        vertical-align: middle;
+        box-sizing: border-box;
+        line-height: @header-height;
+        color: @primary-header-font-color;
+    }
+        img {
+    height: @header-height;
+}
+}
+
+.link-bar {
+
+    &:hover {
+        border-bottom: 5px solid blue;
+        box-sizing: border-box;
+        color: @primary-header-title-color;
+    }
+}
+
+.bar {
+    display: table-row;
+    height: 100%;
+    float: right;
+    width: calc(~"100% - @{header-height}");
+    box-sizing: border-box;
+
+    div {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+.brand {
+    margin-left: @header-height;
+    width: calc(~"100% - @{bar-offset}");
+}
+
+.button-bar {
+    float: right;
+    width: @header-height;
+    .box-sizing();
+}
+
+#logo {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+
+
+/* include flezz ---- [ OK ] */
+@state: OK;
 ///******************************************/
 ///*  	FIN
 ///******************************************/

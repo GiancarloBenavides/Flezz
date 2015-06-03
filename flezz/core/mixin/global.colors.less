@@ -2,7 +2,7 @@
 ///*          flezz framework 1.0           */
 ///******************************************/
 ///*  Name: color
-///*  Version: 2.6
+///*  Version: 2.7
 ///*  Description: Theme colors .
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org
@@ -38,9 +38,9 @@
 //
 @theme-darken: true;
 ///* local statements */
-.fontPrimaryColor();
-.fontSecondaryColor();
-.fontFooterColor();
+//.fontPrimaryColor();
+//.fontSecondaryColor();
+//.fontFooterColor();
 ///* 1 */
 @white: rgb(250,250,250);
 @gray10: rgb(230,230,232);
@@ -113,102 +113,103 @@
 ///* 8 */
 .fontPrimaryColor() when (luma(@primary-header-background) >= @brightness-cutoff) {
     @a: mix(@color-secundary,@primary-header-background,@color-secundary-weight);
-    @c: @box-opacity;
+    @c: (100% - @box-opacity);
     @p1: darken(@a,@font-contrast);
-    @p2: darken(@p1,2*@font-title-icrement);
-    @p3: darken(@p1,@font-title-icrement);
-    @primary-header-title-color: mix(@primary-body-background,@p1,@c);
+    @p2: darken(@p1,@font-title-icrement);
+    @p3: darken(@p1,2*@font-title-icrement);
+    @primary-header-font-color: mix(@primary-body-background,@p1,@c);
     @primary-header-subtitle-color: mix(@primary-body-background,@p2,@c);
-    @primary-header-font-color: mix(@primary-body-background,@p3,@c);
+    @primary-header-title-color: mix(@primary-body-background,@p3,@c);
 }
 
 .fontPrimaryColor() when (luma(@primary-header-background) < @brightness-cutoff) {
     @a: mix(@color-secundary,@primary-header-background, @color-secundary-weight);
     @b: @font-contrast/4;
-    @c: @box-opacity;
+    @c: (100% - @box-opacity);
     @p1: lighten(@a,@b);
-    @p2: lighten(@p1,2*@font-title-icrement);
-    @p3: lighten(@p1,@font-title-icrement);
-    @primary-header-title-color: mix(@primary-body-background,@p1,@c);
+    @p2: lighten(@p1,@font-title-icrement);
+    @p3: lighten(@p1,2*@font-title-icrement);
+    @primary-header-font-color: mix(@primary-body-background,@p1,@c);
     @primary-header-subtitle-color: mix(@primary-body-background,@p2,@c);
-    @primary-header-font-color: mix(@primary-body-background,@p3,@c);
+    @primary-header-title-color: mix(@primary-body-background,@p3,@c);
 }
 //
 .fontPrimaryColor() when (luma(@primary-body-background) >= @brightness-cutoff) {
     @a: mix(@color-secundary,@primary-body-background,@color-secundary-weight);
-    @primary-body-font-color: darken(@a,@font-contrast);
+    @b: @font-contrast*1.4;
+    @primary-body-font-color: darken(@a,@b);
+    @primary-body-subtitle-color: darken(@primary-body-font-color,@font-title-icrement);    
     @primary-body-title-color: darken(@primary-body-font-color,2*@font-title-icrement);
-    @primary-body-subtitle-color: darken(@primary-body-font-color,@font-title-icrement);
 }
 
 .fontPrimaryColor() when (luma(@primary-body-background) < @brightness-cutoff) {
     @a: mix(@color-secundary,@primary-body-background,@color-secundary-weight);
     @b: @font-contrast*1.6;
     @primary-body-font-color: lighten(@a,@b);
+    @primary-body-subtitle-color: lighten(@primary-body-font-color,@font-title-icrement);   
     @primary-body-title-color: lighten(@primary-body-font-color,2*@font-title-icrement);
-    @primary-body-subtitle-color: lighten(@primary-body-font-color,@font-title-icrement);
 }
 //
 .fontSecondaryColor() when (luma(@secondary-header-background) >= @brightness-cutoff) {
     @a: mix(@color-secundary,@secondary-header-background,@color-secundary-weight*1.5);
-    @c: @box-opacity;
+    @c: (100% - @box-opacity);
     @s1: darken(@a,@font-contrast);
-    @s2: darken(@s1,2*@font-title-icrement);
-    @s3: darken(@s1,@font-title-icrement);
-    @secondary-header-title-color: mix(@primary-body-background,@s1,@c);
+    @s2: darken(@s1,@font-title-icrement);    
+    @s3: darken(@s1,2*@font-title-icrement);
+    @secondary-header-font-color: mix(@primary-body-background,@s1,@c);   
     @secondary-header-subtitle-color: mix(@primary-body-background,@s2,@c);
-    @secondary-header-font-color: mix(@primary-body-background,@s3,@c);
-
+    @secondary-header-title-color: mix(@primary-body-background,@s3,@c);
 }
 
 .fontSecondaryColor() when (luma(@secondary-header-background) < @brightness-cutoff) {
     @a: mix(@color-secundary,@secondary-header-background,@color-secundary-weight*1.5);
     @b: @font-contrast/4;
-    @c: @box-opacity;
-    @s1: lighten( @a,@b);
-    @s2: lighten(@s1,(2*@font-title-icrement));
-    @s3: lighten(@s1,@font-title-icrement);
-    @secondary-header-title-color: mix(@primary-body-background,@s1,@c);
+    @c: (100% - @box-opacity);
+    @s1: lighten(@a,@b);
+    @s2: lighten(@s1,@font-title-icrement);
+    @s3: lighten(@s1,(2*@font-title-icrement));
+    @secondary-header-font-color: mix(@primary-body-background,@s1,@c);   
     @secondary-header-subtitle-color: mix(@primary-body-background,@s2,@c);
-    @secondary-header-font-color: mix(@primary-body-background,@s3,@c);
+    @secondary-header-title-color: mix(@primary-body-background,@s3,@c);
 }
 //
 .fontSecondaryColor() when (luma(@secondary-body-background) >= @brightness-cutoff) {
     @a: mix(@color-secundary,@secondary-body-background,@color-secundary-weight*1.5);
-    @c: @box-opacity;
-    @s4: darken(@a,@font-contrast);
-    @s5: darken(@s4,2*@font-title-icrement);
-    @s6: darken(@s4,@font-title-icrement);
-    @secondary-body-title-color: mix(@primary-body-background,@s4,@c);
+    @b: @font-contrast*1.4;
+    @c: (100% - @box-opacity);
+    @s4: darken(@a,@b);
+    @s5: darken(@s4,@font-title-icrement);
+    @s6: darken(@s4,2*@font-title-icrement);
+    @secondary-body-font-color: mix(@primary-body-background,@s4,@c);
     @secondary-body-subtitle-color: mix(@primary-body-background,@s5,@c);
-    @secondary-body-font-color: mix(@primary-body-background,@s6,@c);
+    @secondary-body-title-color: mix(@primary-body-background,@s6,@c);  
 }
 
 .fontSecondaryColor() when (luma(@secondary-body-background) < @brightness-cutoff) {
     @a: mix(@color-secundary,@secondary-body-background,@color-secundary-weight*1.5);
     @b: @font-contrast*1.6;
-    @c: @box-opacity;
+    @c: (100% - @box-opacity);
     @s4: lighten(@a,@b);
-    @s5: lighten(@s4,(2*@font-title-icrement));
-    @s6: lighten(@s4,@font-title-icrement);
-    @secondary-body-title-color: mix(@primary-body-background,@s4,@c);
+    @s5: lighten(@s4,@font-title-icrement);   
+    @s6: lighten(@s4,(2*@font-title-icrement));
+    @secondary-body-font-color: mix(@primary-body-background,@s4,@c);
     @secondary-body-subtitle-color: mix(@primary-body-background,@s5,@c);
-    @secondary-body-font-color: mix(@primary-body-background,@s6,@c);
+    @secondary-body-title-color: mix(@primary-body-background,@s6,@c);  
 }
 //
 .fontFooterColor() when (luma(@footer-background) >= @brightness-cutoff) {
     @a: mix(@color-secundary,@footer-background,@color-secundary-weight);
     @footer-font-color: darken(@a,@font-contrast);
-    @footer-title-color: darken(@footer-font-color,2*@font-title-icrement);
-    @footer-subtitle-color: darken(@footer-font-color,@font-title-icrement);
+    @footer-subtitle-color: darken(@footer-font-color,@font-title-icrement);   
+    @footer-title-color: darken(@footer-font-color,(2*@font-title-icrement));
 }
 
 .fontFooterColor() when (luma(@footer-background) < @brightness-cutoff) {
     @a: mix(@color-secundary,@footer-background,@color-secundary-weight);
     @b: @font-contrast/4;
     @footer-font-color: lighten(@a,@b);
+    @footer-subtitle-color: lighten(@footer-font-color,@font-title-icrement);   
     @footer-title-color: lighten(@footer-font-color,(2*@font-title-icrement));
-    @footer-subtitle-color: lighten(@footer-font-color,@font-title-icrement);
 }
 
 //

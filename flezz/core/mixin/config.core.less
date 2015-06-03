@@ -15,6 +15,7 @@
 ///*  1. color settings.
 ///*  2. font settings.
 ///*  3. icon settings.
+///*  4. mixin settings.
 ///******************************************/
 ///* Dependencies */
 @import 'global.colors.less';
@@ -32,9 +33,12 @@
 @secondary-body-background: @zerez-light;
 @footer-background: @zerez-dark;
 @color-secundary: @zeres-blue;
-@color-secundary-weight: 1%;
+@color-secundary-weight: 5%;
 @theme-opacity: true;
-@box-opacity: 0%;
+@box-opacity: 90%;
+.fontPrimaryColor();
+.fontSecondaryColor();
+.fontFooterColor();
 //
 ///* 2 */
 @OpenSans: true;
@@ -42,20 +46,29 @@
 @RobotoCondensed: false;
 @SegoeUI: false;
 @RobotoSlab: false;
-@Rokkitt: true;
+@Rokkitt: false;
 //
 @family-style: normal;
 @Font-Embedded: true;
 .font-family (@family-style);
 //
 ///* 3 */
-@Zicon: true;
+@Zicon: false;
 //
 @icon-style: normal;
 @icon-Embedded: true;
 .icon-family (@icon-style);
 //
 ///* 4 */
+@overflow-vertical: true;
+@font-size-init: 14px;
+@link-bar-decoration: true;
+@header-fixed: true;
+@header-height: 50px;
+.desing();
+//.component();
+
+
 /* variables config - [ OK ] */ @state: OK;
 ///******************************************/
 ///*  	FIN

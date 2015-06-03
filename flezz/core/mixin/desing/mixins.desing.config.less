@@ -1,4 +1,4 @@
-﻿///******************************************/
+///******************************************/
 ///*          flezz framework 1.0           */
 ///******************************************/
 ///*  Name: mixin desing
@@ -17,6 +17,31 @@
 ///*  3. Others icons.
 ///******************************************/
 ///* local variables */
+@overflow-vertical: true;
+@font-size-init: 14px;
+@link-bar-decoration: true;
+@header-fixed: true;
+@header-height: 50px;
+//
+///*  1 */
+.desing() when (@overflow-vertical = true){
+    @overflow-y: scroll;
+}
+.desing() when not(@overflow-vertical = true){
+    @overflow-y: hidden;
+}
+.desing() when (@header-fixed = true){
+    .header-f() {
+       position: fixed;
+       top: 0;
+       left: 0;
+    }
+    
+    .body-f() {
+        padding-top: @header-height;
+    }
+}
+
 
 
 /* include dsn ------ [ OK ] */ @state: OK;

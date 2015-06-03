@@ -1,44 +1,45 @@
 ///* Dependencies */
-@import '../core/global.colors.less';
+// @import '../core/mixin/global.colors.less';
+@import '../core/flezz.core.less';
 /* color check */
 
 .header {
     background-color: @primary-header-background;
-    border-left-color: @primary-header-title-color;
-    border-right-color: @primary-header-subtitle-color;
     color: @primary-header-font-color;
+    border-right-color: @primary-header-subtitle-color;
+    border-left-color: @primary-header-title-color;
     width: luma(@primary-header-background);
 }
 
 .body {
     background-color: @primary-body-background;
-    border-left-color: @primary-body-title-color;
-    border-right-color: @primary-body-subtitle-color;
     color: @primary-body-font-color;
+    border-right-color: @primary-body-subtitle-color;
+    border-left-color: @primary-body-title-color;
     width: luma(@primary-body-background);
 }
 
 .header2 {
     background-color: @secondary-header-background;
-    border-left-color: @secondary-header-title-color;
-    border-right-color: @secondary-header-subtitle-color;
     color: @secondary-header-font-color;
+    border-right-color: @secondary-header-subtitle-color;
+    border-left-color: @secondary-header-title-color;
     width: luma(@secondary-header-background);
 }
 
 .body2 {
     background-color: @secondary-body-background;
-    border-left-color: @secondary-body-title-color;
+    color: @secondary-body-font-color;   
     border-right-color: @secondary-body-subtitle-color;
-    color: @secondary-body-font-color;
+    border-left-color: @secondary-body-title-color;
     width: luma(@secondary-body-background);
 }
 
 .footer {
     background-color: @footer-background;
-    border-left-color: @footer-title-color;
+    color: @footer-font-color;  
     border-right-color: @footer-subtitle-color;
-    color: @footer-font-color;
+    border-left-color: @footer-title-color;
     width: luma(@footer-background);
 }
 //

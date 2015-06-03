@@ -17,16 +17,30 @@
 ///* Dependencies */
 @import '../core/flezz.core.less';
 ///* local variables */
-@freeze-header: 80px;
 //
 ///* 1 */
 header {
-    background-color: @primary-header-background;
+    background-color: fade(@primary-header-background, @box-opacity);
+    color: @primary-header-font-color;
     width: 100%;
-    height: @freeze-header;
+    height: @header-height;
     overflow: hidden;
 }
+.desing() when (@header-fixed = true){
+   header{
+       position: fixed;
+       top: 0;
+       left: 0;
+   }
+    body{
+        padding-top: @header-height;   
+    }
+}
 
+
+.content-wrap{
+    padding: 1rem;
+}
 /* include skeleton - [ OK ] */@state: OK;
 ///******************************************/
 ///*  	FIN
