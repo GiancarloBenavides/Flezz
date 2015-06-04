@@ -20,6 +20,7 @@
 ///* local variables */
 @bar-icon-num: 4;
 @header-height: 50px;
+@banner-height: 50px;
 @bar-offset: @bar-icon-num*@header-height;
 
 header {
@@ -39,30 +40,17 @@ header {
         line-height: @header-height;
         color: @primary-header-font-color;
     }
-        img {
-    height: @header-height;
-}
+    img {
+        height: @header-height;
+    }
 }
 
 .link-bar {
 
     &:hover {
-        border-bottom: 5px solid blue;
+        border-bottom: 5px solid @primary-header-title-color;
         box-sizing: border-box;
         color: @primary-header-title-color;
-    }
-}
-
-.bar {
-    display: table-row;
-    height: 100%;
-    float: right;
-    width: calc(~"100% - @{header-height}");
-    box-sizing: border-box;
-
-    div {
-        display: table-cell;
-        vertical-align: middle;
     }
 }
 
@@ -84,10 +72,226 @@ header {
     left: 0;
 }
 
+.vertical-nav{
+    background-color: @primary-body-background;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    -moz-transition: all .6s ease-in-out;
+    -o-transition: all .6s ease-in-out;
+    -webkit-transition: all .6s ease-in-out;
+    transition: all .6s ease-in-out;
+    overflow-y: scroll;
+}
+
+#vertical-nav-rigth {
+    left: -101%;
+}
+
+#vertical-nav-rigth:target {
+    left: 0;
+}
+
+body{
+    overflow-y: hidden;
+}
 
 
-/* include flezz ---- [ OK ] */
-@state: OK;
+/*
+.bar {
+background-color: red;
+display: table-row;
+height: 100%;
+float: right;
+width: calc(~"100% - @{header-height}");
+box-sizing: border-box;
+
+div {
+display: table-cell;
+vertical-align: middle;
+}
+}
+*/
+
+.header-sidebar{
+
+}
+
+@a: @banner-height/2;
+.menu-wrap{
+    background-color: @sidebar-background;
+    height: (@a*3);
+}
+.banner {
+    background: white;
+    height: @banner-height;
+    .avatar{
+        position: absolute;
+        top: @a;
+        left: calc(~"50% - @{a}");
+        height: @banner-height;
+        width: @banner-height;
+        border-radius: 50px;
+        border: 2px solid @sidebar-background;
+        overflow: hidden;
+        img{
+            height: @banner-height;
+        }
+    }
+}
+
+.bar-menu{
+    position: relative;
+    top: (@a);
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 2rem ;
+
+}
+
+
+/**/
+@uno: rgb(45,29,110);
+@dos: rgb(196,190,102);
+@tres: rgb(142,132,184);
+@cuatro: rgb(144,84,110);
+@cinco: rgb(231,120,67);
+@seis: rgb(249,196,2);
+@unop: rgb(74,173,116);
+@dosp: rgb(249,196,2);
+@tresp: rgb(218,37,28);
+@cuatrop: rgb(249,196,2);
+@cincop: rgb(74,173,116);
+@seisp: rgb(218,37,28);
+
+
+
+#vertical-nav-rigth {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    overflow: auto;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+
+    ul {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    li {
+        margin-bottom: 20px;
+
+        &:hover {
+            padding-left: 1rem;
+        }
+    }
+}
+
+span.num {
+    background-color: @primary-header-title-color;
+    color: white;
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    text-align: right;
+    padding-right: 5px;
+    font-size: 40px;
+    line-height: 45px;
+}
+
+span.item {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    background-color: red;
+    vertical-align: top;
+}
+
+span.text {
+    color: @primary-header-font-color;
+    vertical-align: top;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    font-size: 28px;
+    font-size: 2.8rem;
+
+    &:hover {
+        color: @primary-header-title-color;
+    }
+}
+
+li:nth-child(1) {
+    padding-top: 40px;
+
+    .text {
+        font-size: 28px;
+    }
+
+    .num {
+        background-color: @uno;
+    }
+
+    .item {
+        background-color: @unop;
+    }
+}
+
+li:nth-child(2) {
+    .num {
+        background-color: @dos;
+    }
+
+    .item {
+        background-color: @dosp;
+    }
+}
+
+li:nth-child(3) {
+    .num {
+        background-color: @tres;
+    }
+
+    .item {
+        background-color: @tresp;
+    }
+}
+
+li:nth-child(4) {
+    .num {
+        background-color: @cuatro;
+    }
+
+    .item {
+        background-color: @cuatrop;
+    }
+}
+
+li:nth-child(5) {
+    .num {
+        background-color: @cinco;
+    }
+
+    .item {
+        background-color: @cincop;
+    }
+}
+
+li:nth-child(6) {
+    .num {
+        background-color: @seis;
+    }
+
+    .item {
+        background-color: @seisp;
+    }
+}
+
+/* include flezz ---- [ OK ] */@state: OK;
 ///******************************************/
 ///*  	FIN
 ///******************************************/

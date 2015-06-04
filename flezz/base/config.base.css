@@ -31,6 +31,14 @@
   font-weight: normal;
   font-style: normal;
 }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+body {
+  padding-top: 50px;
+}
 /* variables config - [ OK ] */
 /* include core ----- [ OK ] */
 * {
@@ -70,15 +78,11 @@ html {
   height: 100%;
   font-family: "OpenSansLigth", sans-serif;
   font-size: 10px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  text-size-adjust: 100%;
 }
 body {
-  background-color: white;
-  color: #ba1015;
-  font-size: 1.4rem;
+  background-color: #f7f5fa;
+  color: #2b5f9c;
+  font-size: 14px;
   line-height: 1.4em;
   height: 100%;
   width: 100%;
@@ -176,10 +180,10 @@ textarea {
 /* include init ----- [ OK ] */
 /* include menu ----- [ OK ] */
 header {
-  background-color: rgba(245, 134, 52, 0.9);
-  color: #f8a674;
+  background-color: rgba(20, 0, 40, 0.9);
+  color: #39276d;
   width: 100%;
-  height: 80px;
+  height: 50px;
   overflow: hidden;
 }
 .content-wrap {

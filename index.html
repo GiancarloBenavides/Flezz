@@ -1,53 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <title>Zerez Template</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="description" content="Sitio Web del candidato Jhon Rojas a la Gobernación de Nariño">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <meta name="author" content="Giancarlo Ortiz">
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <![CDATA[
-    /*
-    Name: Zerez Template
-    Version: 1.0
-    Developer : Giancarlo Ortiz Benavides
-    Url: www.zerez.org
-    Date: 7 mayo 2015
-    */]]>
-</head>
-<body>
-    <div class="body-conteiner">
-        <header>
-            <div class="bar-header">
-                <div id="logo" class="button-bar"><a href="#"><img src="img/logo.w.t.png" alt="_logo"></a></div>
-                <div class="button-bar"><a class="link-bar" href="#">menu</a></div>
-                <div class="button-bar"><a class="link-bar" href="#">icon</a></div>
-                <div class="button-bar"><a class="link-bar" href="#">icon2</a></div>
-                <div class="brand"><a href="#"><img src="img/brand.w.t.png" alt="_brand" /></a></div>
-            </div>
-        </header>
-        
-        
-        <div class="content-wrap">
-            <section class="content-media">
-                <div class="galery"></div>
-            </section>
-            <section class="content-news">
-                <article class="curriculum">
-                    <h1 id="jhon" class="content-title">Todo sobre Jhon Rojas</h1>
-                    <p>Vivamus eget sagittis erat. Aenean lacinia, lorem non vulputate venenatis, quam est vestibulum lectus, et aliquet orci nisi eget odio. Etiam ullamcorper elit quis tellus tempor, et feugiat ligula lobortis. Vestibulum diam ipsum, tincidunt vitae elementum a, tempus quis felis. Nunc convallis justo sagittis, consectetur sapien nec, egestas elit. Curabitur eu massa eu mi tristique semper. Donec efficitur tortor ac felis finibus ornare. Sed mi mi, porttitor vel lacinia eget, tempus fermentum dui. Aliquam ante ipsum, sollicitudin id luctus eget, volutpat sodales mi. Suspendisse potenti. Maecenas a ipsum nec arcu vehicula ullamcorper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus, urna et ornare tincidunt, elit est eleifend odio, non vehicula lorem leo in erat.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse finibus lectus a metus placerat malesuada. Cras lacus est, rhoncus sit amet eleifend id, molestie sit amet est. Sed ut euismod justo, id gravida augue. Nullam euismod dictum metus, non bibendum nunc euismod eget. Nam pellentesque, erat et volutpat gravida, ante velit efficitur risus, semper scelerisque metus libero ut sem. Sed semper tellus felis, vel ullamcorper lectus luctus vitae. Pellentesque risus enim, tristique id nulla a, iaculis vestibulum enim. Maecenas aliquet semper consectetur. Morbi bibendum sollicitudin iaculis. Etiam convallis, ipsum ut convallis tristique, lorem felis tempor mauris, non vulputate dui eros ut magna. Vestibulum fringilla est a ultricies blandit. Sed maximus faucibus sapien iaculis pulvinar. Sed tincidunt accumsan justo, id tincidunt mi vestibulum eget.</p>
-                    <p>Mauris a maximus odio. Phasellus pulvinar velit sit amet enim ornare iaculis. Curabitur et leo vitae eros luctus fermentum at quis orci. Nunc faucibus et magna ut fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut at semper elit. Etiam porta metus magna.</p>
-                    <p>Vestibulum mauris velit, efficitur in porta sollicitudin, laoreet id nunc. Proin ac nibh diam. Curabitur blandit molestie massa a pharetra. Ut ut arcu vestibulum, laoreet tellus sit amet, semper mauris. Sed justo quam, volutpat ut arcu vitae, dictum varius nulla. In non efficitur nisi. Morbi pharetra elementum mi nec cursus. Etiam dictum aliquet vehicula. Sed vitae tempus neque. Nunc ac orci efficitur, hendrerit elit nec, aliquet leo.</p>
-                    <p>Proin non consequat urna. Nullam ut elementum augue. Nulla volutpat sit amet turpis et suscipit. Nunc vel sapien malesuada, mollis nisl sed, auctor augue. Etiam ante nisi, lacinia non porttitor eget, lobortis ac purus. Phasellus in sem enim. Curabitur porttitor ipsum arcu, eget consectetur lorem iaculis eu.</p>
-                </article>
-            </section>
-        </div>      
-        <aside class="menu-wrap">
-                <nav id="navigation-right" class="navigation-right">
+    <head>
+        <title>Zerez Template</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="description" content="Sitio Web del candidato Jhon Rojas a la Gobernación de Nariño">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <meta name="author" content="Giancarlo Ortiz">
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <![CDATA[
+/*
+Name: Zerez Template
+Version: 1.0
+Developer : Giancarlo Ortiz Benavides
+Url: www.zerez.org
+Date: 7 mayo 2015
+*/]]>
+        <script src="js/angular.min.js"></script>
+    </head>
+    <body>
+        <div class="body-conteiner">
+            <header id="header-main">
+                <div class="bar-header">
+                    <div id="logo" class="button-bar"><a href="#"><img src="img/logo.w.t.png" alt="_logo"></a></div>
+                    <div id="btn-sidebar" class="button-bar"><a class="link-bar" href="#vertical-nav-rigth">menu</a></div>
+                    <div id="btn-secondary-bar"class="button-bar"><a class="link-bar" href="#">icon</a></div>
+                    <div id="btn-move-up"class="button-bar"><a class="link-bar" href="#">icon2</a></div>
+                    <div class="brand"><a href="#"><img src="img/brand.w.t.png" alt="_brand" /></a></div>
+                </div>
+            </header>
+            <div class="content-wrap">
+                <section class="content-media">
+                    <div class="galery"></div>
+                </section>
+                <section class="content-news">
+                    <article class="curriculum">
+                        <h1 id="jhon" class="content-title">Todo sobre Jhon Rojas</h1>
+                        <p>Vivamus eget sagittis erat. Aenean lacinia, lorem non vulputate venenatis, quam est vestibulum lectus, et aliquet orci nisi eget odio. Etiam ullamcorper elit quis tellus tempor, et feugiat ligula lobortis. Vestibulum diam ipsum, tincidunt vitae elementum a, tempus quis felis. Nunc convallis justo sagittis, consectetur sapien nec, egestas elit. Curabitur eu massa eu mi tristique semper. Donec efficitur tortor ac felis finibus ornare. Sed mi mi, porttitor vel lacinia eget, tempus fermentum dui. Aliquam ante ipsum, sollicitudin id luctus eget, volutpat sodales mi. Suspendisse potenti. Maecenas a ipsum nec arcu vehicula ullamcorper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus, urna et ornare tincidunt, elit est eleifend odio, non vehicula lorem leo in erat.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse finibus lectus a metus placerat malesuada. Cras lacus est, rhoncus sit amet eleifend id, molestie sit amet est. Sed ut euismod justo, id gravida augue. Nullam euismod dictum metus, non bibendum nunc euismod eget. Nam pellentesque, erat et volutpat gravida, ante velit efficitur risus, semper scelerisque metus libero ut sem. Sed semper tellus felis, vel ullamcorper lectus luctus vitae. Pellentesque risus enim, tristique id nulla a, iaculis vestibulum enim. Maecenas aliquet semper consectetur. Morbi bibendum sollicitudin iaculis. Etiam convallis, ipsum ut convallis tristique, lorem felis tempor mauris, non vulputate dui eros ut magna. Vestibulum fringilla est a ultricies blandit. Sed maximus faucibus sapien iaculis pulvinar. Sed tincidunt accumsan justo, id tincidunt mi vestibulum eget.</p>
+                        <p>Mauris a maximus odio. Phasellus pulvinar velit sit amet enim ornare iaculis. Curabitur et leo vitae eros luctus fermentum at quis orci. Nunc faucibus et magna ut fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut at semper elit. Etiam porta metus magna.</p>
+                        <p>Vestibulum mauris velit, efficitur in porta sollicitudin, laoreet id nunc. Proin ac nibh diam. Curabitur blandit molestie massa a pharetra. Ut ut arcu vestibulum, laoreet tellus sit amet, semper mauris. Sed justo quam, volutpat ut arcu vitae, dictum varius nulla. In non efficitur nisi. Morbi pharetra elementum mi nec cursus. Etiam dictum aliquet vehicula. Sed vitae tempus neque. Nunc ac orci efficitur, hendrerit elit nec, aliquet leo.</p>
+                        <p>Proin non consequat urna. Nullam ut elementum augue. Nulla volutpat sit amet turpis et suscipit. Nunc vel sapien malesuada, mollis nisl sed, auctor augue. Etiam ante nisi, lacinia non porttitor eget, lobortis ac purus. Phasellus in sem enim. Curabitur porttitor ipsum arcu, eget consectetur lorem iaculis eu.</p>
+                    </article>
+                </section>
+            </div>      
+            <aside>
+                <nav id="vertical-nav-rigth" class="vertical-nav">
+                    <div class="header-sidebar">
+                        <div class="banner">
+                            <div class="avatar"><img src="img/photo.jpg" alt="">shot</div>   
+                            <div id="button-close" class="button-bar"><a href="#first-header">close</a></div>
+                        </div>
+                        <div class="menu-wrap">
+                            <div class="bar-menu">Giancarlo</div>
+                        </div>
+                    </div>
                     <ul>
                         <li>
                             <a href="#jhon">
@@ -93,11 +101,12 @@
                         </li>
                     </ul>
 
-            </nav>
-        </aside>
-        <footer>
+                </nav>
+            </aside>
+            <footer>
 
-        </footer>
-    </div>
-</body>
+            </footer>
+        </div>
+        <script src="js/main.js"></script>
+    </body>
 </html>
