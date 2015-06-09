@@ -194,6 +194,16 @@ header {
 /* include tiles ---- [ OK ] */
 /* include basic ---- [ OK ] */
 /* include flezz ---- [ OK ] */
+#header-main:after {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+  content: "";
+  height: 5px;
+  left: 0;
+  top: 45px;
+  position: fixed;
+  width: 104%;
+  z-index: -10;
+}
 header {
   display: table;
   height: 50px;
@@ -253,9 +263,6 @@ header img {
 }
 #vertical-nav-rigth:target {
   left: 0;
-}
-body {
-  overflow-y: hidden;
 }
 /*
 .bar {

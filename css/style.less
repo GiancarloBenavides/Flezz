@@ -23,6 +23,20 @@
 @banner-height: 50px;
 @bar-offset: @bar-icon-num*@header-height;
 
+
+#header-main:after {
+    box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+    content: "";
+    height: 5px;
+    left: 0;
+    top: 45px;
+    position: fixed;
+    width: 104%;
+    z-index: -10;
+  //will-change: top,left;
+}
+
+
 header {
     display: table;
     height: @header-height;
@@ -94,7 +108,7 @@ header {
 }
 
 body{
-    overflow-y: hidden;
+    //overflow-y: hidden;
 }
 
 
