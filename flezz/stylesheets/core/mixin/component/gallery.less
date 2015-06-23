@@ -1,0 +1,158 @@
+///******************************************/
+///*          flezz framework 1.0           */
+///******************************************/
+///*  Name: gallery
+///*  Version: 1.0.0
+///*  Description: simple gallery 3 img/Row
+///*  Author: Giancarlo Ortiz.
+///*  URI: http://www.zerez.org
+///*  License: GNU General Public License v2 or later
+///*  License URI: http://www.gnu.org/licenses/gpl-2.0.html
+///*  Tags: gallery, plugin, css.
+///******************************************/
+// var galery
+@shot-border-color: transparent;
+@shot-gap: 6px;
+@shot-show-background: #333;
+@shot-show-close-width: 40px;
+//
+@shot-gap-mid: (@shot-gap / 2);
+@shot-show-padding: (@shot-gap + @shot-show-close-width)*2;
+@shot-width: ~"calc(25% + @{shot-gap-mid})";
+@shot-width-double: ~"calc(50% - @{shot-gap})";
+@irc-25l: (@shot-gap*2 + 4px);
+@irc-25r: (@shot-gap*0 + 4px);
+@irc-50l: (@shot-gap*3 + 4px);
+@irc-50r: (@shot-gap*1 + 4px);
+@irc-75l: (@shot-gap*2 + 4px);
+@irc-75r: (@shot-gap*0 + 4px);
+
+//@shot-width-patron: (@shot-width + @shot-gap);
+
+//
+///* larger image in the center */
+.gallery {
+    box-sizing: border-box;
+    &>.gallery-conteiner {
+        border: (@shot-gap) solid @shot-border-color;
+    }
+}
+//
+///* larger image in the center */
+.big-center .gallery-item:nth-child(1) {
+  width: @shot-width;
+}
+.big-center .gallery-item:nth-child(2) {
+  width: @shot-width-double;
+}
+.big-center .gallery-item:nth-child(3) {
+  width: @shot-width;
+}
+//
+///* larger image on the left */
+.big-left .gallery-item:nth-child(1) {
+    width: @shot-width-double;
+}
+.big-left .gallery-item:nth-child(2) {
+    width: @shot-width;
+}
+.big-left .gallery-item:nth-child(3) {
+    width: @shot-width;
+}
+//
+///* larger image on the right */
+.big-right .gallery-item:nth-child(1) {
+    width: @shot-width;
+}
+.big-right .gallery-item:nth-child(2) {
+    width: @shot-width;
+}
+.big-right .gallery-item:nth-child(3) {
+    width:  @shot-width-double;
+}
+//
+///* larger image */
+.big-one .gallery-item:nth-child(1) {
+    width: 100%;
+}
+//
+///* superbox galery */
+.superbox-img {
+    max-width: 100%;
+    width: 100%;
+    cursor: pointer;
+    border: (@shot-gap) solid @shot-border-color;
+    box-sizing: border-box;
+    
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.gallery-item {
+    position: static;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+    overflow: hidden;
+}
+
+.superbox-img {
+	max-width:100%;
+	width:100%;
+	cursor:pointer;
+}
+
+.superbox-show {
+	text-align: center;
+	position: relative;
+	background: @shot-show-background;
+    width: ~"calc(100% - @{shot-show-padding})";
+    float: right;
+	padding: @shot-show-close-width;
+    margin: @shot-gap;
+	display: none;
+}
+
+.superbox-current-img {
+	max-width: 100%;
+	box-shadow: 0 0 50px 10px darken(@shot-show-background,12%);
+	border:1px solid #222;
+}
+.superbox-img:hover {
+	opacity:0.8;
+}
+.superbox-float {
+	float:left;
+}
+.superbox-close {
+	opacity:0.7;
+	cursor:pointer;
+	position:absolute;
+	top: 5px;
+	right: 5px;
+	background: url("../img/close.png") no-repeat center center;
+    background-size: 15px 15px;
+	width: @shot-show-close-width - 5px;
+	height: @shot-show-close-width - 5px;
+    border-radius: 50%;
+}
+.superbox-close:hover {
+    opacity: 1;
+}
+
+.superbox-close:active {
+    opacity: 1;
+    background-color: darken(@shot-show-background,10%);
+}
+//
+///* arrow show selected */
+#irc_pc {
+    border-bottom: 10px solid #222;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    height: 0;
+    position: absolute;
+    top: -10px;
+    width: 0;
+}
