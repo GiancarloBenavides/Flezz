@@ -10,15 +10,24 @@
 ///*  License URI: http://www.gnu.org/licenses/gpl-2.0.html
 ///*  Tags: gallery, plugin, js.
 ///******************************************/
+///*    Content
+///*
+///*  1. Config variables.
+///*  2. Road map.
+///*  3. Funtion.
+///*  4. Plugin.
+///******************************************/
 //"use strict";
-///* CONFIG VARIABLES */
+///* 1 *//* CONFIG VARIABLES */
+//
+///* global variables */
 var interval = 400;
-
-///* GLOBAL VARIABLES */
+//
+///* local variables */
 var galeryShow  = $('<div class="superbox-show"><img src="" class="superbox-current-img" style="opacity:0"><div class="superbox-close"></div></div>'),
     galeryArrow = $('<div id="irc_pc"></div>');
-
-///* FUNCTIONS */
+//
+///* 2 *//* FUNCTIONS */
 function arrowPosition(typeRow, place, shotGap) {
     "use strict";
     var left, ir1, ir2, ir3;
@@ -99,7 +108,8 @@ function changueImgSrc(galleryRow, source, duration) {
     });
     //console.log('changue img!');
 }
-
+//
+///* 3 *//* PLUGIN */
 $(document).ready(function () {
     "use strict";
     //console.log('galery flezz ready!');}

@@ -10,12 +10,24 @@
 ///*  License URI: http://www.gnu.org/licenses/gpl-2.0.html
 ///*  Tags: gallery, plugin, css.
 ///******************************************/
-// var galery
+///*  	Content
+///*
+///*  1. Config Component variables.
+///*  2. Road map.
+///*  3. Base class.
+///*  4. Config mixin.
+///******************************************/
+//
+///* 1 *//* CONFIG COMPONENT VARIABLES */
+//
+///* global variables */
+///* general option gallery */
 @shot-border-color: transparent;
 @shot-gap: 6px;
 @shot-show-background: #333;
 @shot-show-close-width: 40px;
 //
+///* local variables */
 @shot-gap-mid: (@shot-gap / 2);
 @shot-show-padding: (@shot-gap + @shot-show-close-width)*2;
 @shot-width: ~"calc(25% + @{shot-gap-mid})";
@@ -26,11 +38,14 @@
 @irc-50r: (@shot-gap*1 + 4px);
 @irc-75l: (@shot-gap*2 + 4px);
 @irc-75r: (@shot-gap*0 + 4px);
-
-//@shot-width-patron: (@shot-width + @shot-gap);
-
 //
-///* larger image in the center */
+///* 2 *//* ROAD MAP */
+// --------------------------------------------------
+//@shot-width-patron: (@shot-width + @shot-gap);
+//
+// --------------------------------------------------
+//
+///* 3 *//* BASE CLASS */
 .gallery {
     box-sizing: border-box;
     &>.gallery-conteiner {
