@@ -23,24 +23,25 @@
 ///* global variables */
 ///* general option tabs */
 @tabs-header: false;
+@tabs-shadow: true;
 ///* size tabs */
 @tabs-radius-width: 4px;
 @tabs-content-radius-width: 4px;
 @tabs-border-width: 1px;
 @tabs-gap: 2px;
 @tabs-link-padding: 10px 15px;
-///* active tabs */
-@tabs-color-active: white;
-@tabs-font-color-active: black;
-@tabs-border-color-active: darken(@tabs-color-active,20%);
-///* inactive tabs */
-@tabs-color-inactive: darken(@tabs-color-active,10%);
-@tabs-font-color-inactive: rgb(35, 114, 71);
-@tabs-border-color-inactive: transparent;
-@tabs-color-hover: darken(@tabs-color-active,5%);
-@tabs-border-color-hover: darken(@tabs-color-active,15%);
+///* selected tabs */
+@tabs-color-selected: white;
+@tabs-font-color-selected: black;
+@tabs-border-color-selected: darken(@tabs-color-selected,20%);
+///* unselected tabs */
+@tabs-color-unselected: darken(@tabs-color-selected,10%);
+@tabs-font-color-unselected: rgb(35, 114, 71);
+@tabs-border-color-unselected: transparent;
+@tabs-color-hover: darken(@tabs-color-selected,5%);
+@tabs-border-color-hover: darken(@tabs-color-selected,15%);
 ///* disable tabs */
-@tabs-font-color-disable: darken(@tabs-color-active,20%);
+@tabs-font-color-disable: darken(@tabs-color-selected,20%);
 //** Disabled cursor for form controls and buttons.
 @cursor-disabled: not-allowed;
 //
@@ -59,7 +60,7 @@
 @tabs-underline: true;
 @tabs-radius: true;
 @tabs-border: true;
-@tabs-shadow: true;
+
 @tabs-group: true;
 @tabs-icon: true;
 // --------------------------------------------------
@@ -68,12 +69,11 @@
 .tabs {
     width: 100%;
 
-    &>ul {
+    & > ul {
         margin-bottom: 0;
         padding-left: 0; // Override default ul/ol
         list-style: none;
         display: inline-block;
-
         &:extend(.clearfix all);
 
         > li {
@@ -90,9 +90,9 @@
                 &:focus {
                     text-decoration: none;
                     background-color: @tabs-color-hover; //@nav-link-hover-bg;
+                    outline: none;
                 }
             }
-
             // Disabled state sets text to gray and nukes hover/tab effects
             &.disabled > a {
                 color: @tabs-font-color-disable;
@@ -104,7 +104,6 @@
                 }
             }
         }
-
         // Open dropdowns
         .open > a {
             &,
@@ -114,16 +113,12 @@
                 border-color: @link-color;
             }
         }
-
     }
-
     // Tabs
     // -------------------------
-
     // Give the tabs something to sit on
     .horizontal {
-
-        border-bottom: @tabs-border-width solid @tabs-border-color-active;
+        border-bottom: @tabs-border-width solid @tabs-border-color-selected;
         margin-left: 0;
         margin-right: 0;
         width: 100%;
@@ -131,55 +126,52 @@
         > li {
             float: left;
             // Make the list-items overlay the bottom border
-
             // Actual tabs (as links)
             > a {
-                background-color: @tabs-color-inactive;
-                color: @tabs-font-color-inactive;
+                background-color: @tabs-color-unselected;
+                color: @tabs-font-color-unselected;
                 margin-right: @tabs-gap;
                 line-height: @line-height-base;
                 border: none;
                 border-radius: @tabs-radius-width @tabs-radius-width 0 0;
                 margin-bottom: -1*@tabs-border-width;
             }
-
-            // Active state, and its :hover to override normal :hover
-            &.active > a {
+            // selected state, and its :hover to override normal :hover
+            &.selected > a {
                 &,
                 &:hover,
                 &:focus {
-                    color: @tabs-font-color-active;
-                    background-color: @tabs-color-active;
-                    border: @tabs-border-width solid @tabs-border-color-active;
+                    color: @tabs-font-color-selected;
+                    background-color: @tabs-color-selected;
+                    border: @tabs-border-width solid @tabs-border-color-selected;
                     border-bottom: none;
                     cursor: default;
+                    outline: none;
+                    .shadow-up();
                 }
             }
         }
     }
-
     // Tabbable tabs
     // -------------------------
     .tabs-content {
-        background-color: @tabs-color-active;
+        background-color: @tabs-color-selected;
         padding: 15px;
-        border: @tabs-border-width solid @tabs-border-color-active;
+        border: @tabs-border-width solid @tabs-border-color-selected;
         border-top: none;
         border-radius: 0 0 @tabs-content-radius-width @tabs-content-radius-width;
+        .shadow-down();
     }
-
     // Hide tabbable panes to start, show them when .tabs-content[data-state="active"]
-    &>div[data-state="active"] {
+    & > div[data-state="active"] {
         display: block;
     }
-    &>div[data-state="inactive"] {
+
+    & > div[data-state="inactive"] {
         display: none;
     }
-
-
     // Dropdowns
     // -------------------------
-
     // Specific dropdowns
     .nav-tabs .dropdown-menu {
         // make dropdown border overlap tab border
@@ -187,17 +179,31 @@
         // Remove the top rounded corners here since there is a hard edge above the menu
         //.border-top-radius(0);
     }
+
     .header();
 }
 //
 ///* 4 *//* CONFIG MIXIN */
 .header() when (@tabs-header = true) {
     @tabs-radius-width: 0px;
+
     .horizontal {
         border-bottom: none;
-        background-color: @tabs-border-color-active;
+        background-color: @tabs-border-color-selected;
     }
+
     .tabs-content {
-        border-top: @tabs-border-width solid @tabs-border-color-active;
+        border-top: @tabs-border-width solid @tabs-border-color-selected;
     }
+}
+
+.shadow-up() when (@tabs-shadow = true) {
+    -webkit-box-shadow: 3px -1px 3px -3px rgba(100,100,100,0.39);
+    -moz-box-shadow: 3px -1px 3px -3px rgba(100,100,100,0.39);
+    box-shadow: 3px -1px 3px -3px rgba(100,100,100,0.39);
+}
+.shadow-down() when (@tabs-shadow = true) {
+    -webkit-box-shadow: 4px 6px 8px -2px rgba(100,100,100,0.39);
+    -moz-box-shadow: 4px 6px 8px -2px rgba(100,100,100,0.39);
+    box-shadow: 4px 6px 8px -2px rgba(100,100,100,0.39);
 }

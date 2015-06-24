@@ -47,30 +47,37 @@
 //
 ///* 3 *//* BASE CLASS */
 .gallery {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    &>.gallery-conteiner {
+
+    & > .gallery-conteiner {
         border: (@shot-gap) solid @shot-border-color;
     }
 }
 //
 ///* larger image in the center */
 .big-center .gallery-item:nth-child(1) {
-  width: @shot-width;
+    width: @shot-width;
 }
+
 .big-center .gallery-item:nth-child(2) {
-  width: @shot-width-double;
+    width: @shot-width-double;
 }
+
 .big-center .gallery-item:nth-child(3) {
-  width: @shot-width;
+    width: @shot-width;
 }
 //
 ///* larger image on the left */
 .big-left .gallery-item:nth-child(1) {
     width: @shot-width-double;
 }
+
 .big-left .gallery-item:nth-child(2) {
     width: @shot-width;
 }
+
 .big-left .gallery-item:nth-child(3) {
     width: @shot-width;
 }
@@ -79,11 +86,13 @@
 .big-right .gallery-item:nth-child(1) {
     width: @shot-width;
 }
+
 .big-right .gallery-item:nth-child(2) {
     width: @shot-width;
 }
+
 .big-right .gallery-item:nth-child(3) {
-    width:  @shot-width-double;
+    width: @shot-width-double;
 }
 //
 ///* larger image */
@@ -97,8 +106,10 @@
     width: 100%;
     cursor: pointer;
     border: (@shot-gap) solid @shot-border-color;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    
+
     &:hover {
         opacity: 0.8;
     }
@@ -106,52 +117,51 @@
 
 .gallery-item {
     position: static;
-	display: inline-block;
-	*display: inline;
-	zoom: 1;
+    display: inline-block;
+    *display: inline;
+    -ms-zoom: 1;
+    zoom: 1;
     overflow: hidden;
 }
 
-.superbox-img {
-	max-width:100%;
-	width:100%;
-	cursor:pointer;
-}
-
 .superbox-show {
-	text-align: center;
-	position: relative;
-	background: @shot-show-background;
+    text-align: center;
+    position: relative;
+    background: @shot-show-background;
     width: ~"calc(100% - @{shot-show-padding})";
     float: right;
-	padding: @shot-show-close-width;
+    padding: @shot-show-close-width;
     margin: @shot-gap;
-	display: none;
+    display: none;
 }
 
 .superbox-current-img {
-	max-width: 100%;
-	box-shadow: 0 0 50px 10px darken(@shot-show-background,12%);
-	border:1px solid #222;
+    max-width: 100%;
+    box-shadow: 0 0 50px 10px darken(@shot-show-background,12%);
+    border: 1px solid #222;
 }
+
 .superbox-img:hover {
-	opacity:0.8;
+    opacity: 0.8;
 }
+
 .superbox-float {
-	float:left;
+    float: left;
 }
+
 .superbox-close {
-	opacity:0.7;
-	cursor:pointer;
-	position:absolute;
-	top: 5px;
-	right: 5px;
-	background: url("img/icon/close.png") no-repeat center center;
+    opacity: 0.7;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: url("img/icon/close.png") no-repeat center center;
     background-size: 15px 15px;
-	width: @shot-show-close-width - 5px;
-	height: @shot-show-close-width - 5px;
+    width: @shot-show-close-width - 5px;
+    height: @shot-show-close-width - 5px;
     border-radius: 50%;
 }
+
 .superbox-close:hover {
     opacity: 1;
 }
