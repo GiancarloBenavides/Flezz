@@ -58,7 +58,7 @@ var tabs = (function () {
             var target, item;
             target = $(this);
             item = target.parent();
-            if (!item.hasClass('selected')) {
+            if (!item.hasClass('selected') && !item.hasClass('disabled')) {
                 //console.log('click');
                 changueTabPanel(e, target);
             }
@@ -77,12 +77,12 @@ var tabs = (function () {
         var brother, pane, item;
         item = target.parent();
         ///* changue tab *///        
-        item.parent().find('li.selected').attr('class', '').attr({'aria-selected' : 'false',  tabindex : -1});
+        item.parent().find('li.selected').attr('class', '').attr('aria-selected', 'false');
         ///* changue panel *///
         pane = target.attr('data-tab');
         $("#" + pane).attr('data-state', 'active').attr('aria-hidden', 'false');
         $("#" + pane).siblings().attr('data-state', 'inactive').attr('aria-hidden', 'true');
-        item.addClass('selected').attr({'aria-selected' : 'true',  tabindex : 0});
+        item.addClass('selected').attr('aria-selected', 'true');
         //console.log('changue panel');
     };
 
@@ -95,6 +95,6 @@ var tabs = (function () {
         ///* public variables, and public methods -- Accessing "Private" Methods *///
         init: initialize
     };
-})();
+}());
 
 tabs.init();
