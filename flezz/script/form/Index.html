@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>Flezz</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Demo Flezz">
+    <meta name="author" content="Giancarlo Ortiz">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="../code/codemirror.cssc">
+    <link rel="stylesheet" href="../code/theme/twilight.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="form.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <![CDATA[
+    /*
+    Name: WEB JHON ROJAS
+    Version: 1.0
+    Developer : Giancarlo Ortiz Benavides
+    licenced: Jhon Rojas
+    Url: www.zerez.org
+    Date: 7 mayo 2015
+    */]]>
+    <style>body{font-family: 'Segoe UI','Verdana';color:gray; margin-left:10%;margin-right:10%;}.component{background-color:#fafaee;border: 2px dashed #c7c7c7; padding:30px;}p{padding-left:20px;}</style>
+    <script src="../code/codemirror.js"></script>
+</head>
+<body>
+    <section>
+       <div class="tabs">
+         <ul class="horizontal" data-tab role="tablist">
+            <li role="presentational" class="selected" aria-selected="true"><a tabindex="0" data-tab="panel-one"><span class="view"></span>View</a></li>
+            <li role="presentational" aria-selected="false"><a tabindex="0" data-tab="panel-two"><span class="html"></span>HTML</a></li>
+            <li role="presentational" aria-selected="false"><a tabindex="0" data-tab="panel-three"><span class="css"></span>CSS</a></li>
+            <li role="presentational" aria-selected="false"><a tabindex="0" data-tab="panel-four"><span class="js"></span>JS</a></li>
+        </ul>
+        <div id="panel-one" class="tabs-content" role="tabpanel" aria-hidden="false" data-state="active">
+
+        </div>
+        <div id="panel-two" class="tabs-content" role="tabpanel" aria-hidden="true" data-state="inactive">
+            <div id="codemirror-html">
+                
+            </div>        
+        </div>
+        <div id="panel-three" class="tabs-content" role="tabpanel" aria-hidden="true" data-state="inactive">
+            <div id="codemirror-css">
+                
+            </div>     
+        </div>
+        <div id="panel-four" class="tabs-content" role="tabpanel" aria-hidden="true" data-state="inactive">
+            <div id="codemirror-js">
+
+            </div>     
+        </div>                 
+       </div>
+    </section>
+    <script src="../vendor/jquery-2.1.0.js"></script>
+    <script src="../tabs/tabs.js"></script>
+    <script src="form.js"></script>
+    <script src="code.js"></script>
+</body>
