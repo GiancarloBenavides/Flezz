@@ -32,12 +32,6 @@
   background-color: transparent;
   cursor: not-allowed;
 }
-.tabs > ul .open > a,
-.tabs > ul .open > a:hover,
-.tabs > ul .open > a:focus {
-  background-color: red;
-  border-color: blue;
-}
 .tabs .horizontal {
   border-bottom: 1px solid #cccccc;
   margin-left: 0;
@@ -69,6 +63,29 @@
   -moz-box-shadow: 3px -1px 3px -3px rgba(100, 100, 100, 0.39);
   box-shadow: 3px -1px 3px -3px rgba(100, 100, 100, 0.39);
 }
+.tabs .horizontal li[role="dropdown"] > ul {
+  display: none;
+}
+.tabs .horizontal li[role="dropdown"] .open > a,
+.tabs .horizontal li[role="dropdown"] .open > a:hover,
+.tabs .horizontal li[role="dropdown"] .open > a:focus {
+  background-color: red;
+  border-color: blue;
+}
+.tabs .horizontal li[role="dropdown"] .nav-tabs .dropdown-menu {
+  margin-top: -1px;
+}
+.tabs .horizontal li[role="dropdown"] .caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-top: 4px solid\9;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
 .tabs .tabs-content {
   background-color: white;
   padding: 15px;
@@ -84,7 +101,4 @@
 }
 .tabs > div[data-state="inactive"] {
   display: none;
-}
-.tabs .nav-tabs .dropdown-menu {
-  margin-top: -1px;
 }

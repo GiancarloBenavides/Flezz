@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description" content="Demo Flezz">
     <meta name="author" content="Giancarlo Ortiz">
-<!--    <link rel="icon" href="favicon.ico" type="image/x-icon"/>-->
+    <!--<link rel="icon" href="favicon.ico" type="image/x-icon"/>-->
     <link rel="stylesheet" type="text/css" href="tabs.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <![CDATA[
@@ -23,10 +23,16 @@
     <section>
        <div class="tabs">
          <ul class="horizontal" data-tab role="tablist">
-            <li role="presentational" class="selected" aria-selected="true"><a tabindex="1" data-tab="panel-one">tab 1</a></li>
-            <li role="presentational" aria-selected="false"><a tabindex="2" data-tab="panel-two">tab 2</a></li>
-            <li role="presentational" aria-selected="false"><a tabindex="3" data-tab="panel-three">tab 3</a></li>
-            <li role="presentational" class="disabled" aria-selected="false"><a tabindex="3" data-tab="panel-four">tab 4</a></li>
+            <li role="presentational" class="selected" aria-selected="true"><a tabindex="0" data-tab="panel-one">tab 1</a></li>
+            <li role="presentational" aria-selected="false"><a tabindex="0" data-tab="panel-two">tab 2</a></li>
+            <li role="presentational" aria-selected="false"><a tabindex="0" data-tab="panel-three">tab 3</a></li>
+            <li role="presentational" class="disabled" aria-selected="false"><a tabindex="0" data-tab="panel-four">tab 4</a></li>
+            <li role="dropdown" aria-expanded="false"><a>Dropdown<i class="caret"></i></a>
+                <ul>
+                  <li><a data-tab="panel-five">tab 5</a></li>
+                  <li><a data-tab="panel-six">tab 6</a></li>
+                </ul>
+            </li>
         </ul>
         <div id="panel-one" class="tabs-content" role="tabpanel" aria-hidden="false" data-state="active">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, rem.</p>
@@ -48,7 +54,19 @@
             <p>Quae rerum, at rem voluptate quo, nisi cum minima eius.</p>
             <p>Architecto necessitatibus dicta odit tempora exercitationem iure aspernatur ex quis.</p>
             <p>Omnis tenetur voluptatum dolore, nihil placeat minima pariatur est at!</p>
-        </div>             
+        </div>
+        <div id="panel-four" class="tabs-content" role="tabpanel" aria-hidden="true" data-state="inactive">
+            <p>Quae ipsum dolor sit amet, consectetur adipisicing elit. A, rem.</p>
+        </div>
+        <div id="panel-five" class="tabs-content" role="tabpanel" aria-hidden="true" data-state="inactive">
+            <p>Quae ipsum dolor sit amet, consectetur adipisicing elit. A, rem.</p>
+            <p>Omnis tenetur voluptatum dolore, nihil placeat minima pariatur est at!</p>
+        </div>
+        <div id="panel-six" class="tabs-content" role="tabpanel" aria-hidden="true" data-state="inactive">
+            <p>Quae rerum, at rem voluptate quo, nisi cum minima eius.</p>
+            <p>Architecto necessitatibus dicta odit tempora exercitationem iure aspernatur ex quis.</p>
+            <p>Omnis tenetur voluptatum dolore, nihil placeat minima pariatur est at!</p>
+        </div>                  
        </div>
     </section>
     <script src="../vendor/jquery-2.1.0.js"></script>

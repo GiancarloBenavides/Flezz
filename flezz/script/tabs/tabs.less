@@ -103,15 +103,6 @@
                 }
             }
         }
-        // Open dropdowns
-        .open > a {
-            &,
-            &:hover,
-            &:focus {
-                background-color: @nav-link-hover-bg;
-                border-color: @link-color;
-            }
-        }
     }
     // Tabs
     // -------------------------
@@ -150,6 +141,41 @@
                 }
             }
         }
+        li[role="dropdown"] {
+            & > ul {
+                display: none;
+            }
+            // Open dropdowns
+            .open > a {
+                &,
+                &:hover,
+                &:focus {
+                    background-color: @nav-link-hover-bg;
+                    border-color: @link-color;
+                }
+            }
+            // Dropdowns
+            // -------------------------
+            // Specific dropdowns
+            .nav-tabs .dropdown-menu {
+                // make dropdown border overlap tab border
+                margin-top: -1*@tabs-border-width;
+                // Remove the top rounded corners here since there is a hard edge above the menu
+                //.border-top-radius(0);
+            }
+
+            .caret {
+                display: inline-block;
+                width: 0;
+                height: 0;
+                margin-left: 2px;
+                vertical-align: middle;
+                border-top: 4px dashed;
+                border-top: 4px solid\9;
+                border-right: 4px solid transparent;
+                border-left: 4px solid transparent;
+            }   
+        }
     }
     // Tabbable tabs
     // -------------------------
@@ -169,16 +195,6 @@
     & > div[data-state="inactive"] {
         display: none;
     }
-    // Dropdowns
-    // -------------------------
-    // Specific dropdowns
-    .nav-tabs .dropdown-menu {
-        // make dropdown border overlap tab border
-        margin-top: -1*@tabs-border-width;
-        // Remove the top rounded corners here since there is a hard edge above the menu
-        //.border-top-radius(0);
-    }
-
     .header();
 }
 //
