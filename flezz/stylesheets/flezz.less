@@ -19,12 +19,12 @@
 ///* Path */
 @baseline-path: "base";
 @theme-path: "themes";
+@theme-theme: "_default";
 //
 ///* Dependencies */
 @import '@{baseline-path}/_config.base.less';
-//
 ///* Theme */
-@import '@{theme-path}/_default.less';
+@import '@{theme-path}/@{theme-theme}.less';
 //
 /* include flezz ---- [ OK ] */ @state: OK;
 ///******************************************/

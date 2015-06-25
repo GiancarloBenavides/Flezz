@@ -1,124 +1,152 @@
-<!doctype html>
-
-<title>CodeMirror: Theme Demo</title>
-<meta charset="utf-8"/>
-<link rel=stylesheet href="docs.css">
-
-<link rel="stylesheet" href="codemirror.css">
-<link rel="stylesheet" href="theme/3024-day.css">
-<link rel="stylesheet" href="theme/3024-night.css">
-<link rel="stylesheet" href="theme/ambiance.css">
-<link rel="stylesheet" href="theme/base16-dark.css">
-<link rel="stylesheet" href="theme/base16-light.css">
-<link rel="stylesheet" href="theme/blackboard.css">
-<link rel="stylesheet" href="theme/cobalt.css">
-<link rel="stylesheet" href="theme/colorforth.css">
-<link rel="stylesheet" href="theme/eclipse.css">
-<link rel="stylesheet" href="theme/elegant.css">
-<link rel="stylesheet" href="theme/erlang-dark.css">
-<link rel="stylesheet" href="theme/lesser-dark.css">
-<link rel="stylesheet" href="theme/liquibyte.css">
-<link rel="stylesheet" href="theme/mbo.css">
-<link rel="stylesheet" href="theme/mdn-like.css">
-<link rel="stylesheet" href="theme/midnight.css">
-<link rel="stylesheet" href="theme/monokai.css">
-<link rel="stylesheet" href="theme/neat.css">
-<link rel="stylesheet" href="theme/neo.css">
-<link rel="stylesheet" href="theme/night.css">
-<link rel="stylesheet" href="theme/paraiso-dark.css">
-<link rel="stylesheet" href="theme/paraiso-light.css">
-<link rel="stylesheet" href="theme/pastel-on-dark.css">
-<link rel="stylesheet" href="theme/rubyblue.css">
-<link rel="stylesheet" href="theme/solarized.css">
-<link rel="stylesheet" href="theme/the-matrix.css">
-<link rel="stylesheet" href="theme/tomorrow-night-bright.css">
-<link rel="stylesheet" href="theme/tomorrow-night-eighties.css">
-<link rel="stylesheet" href="theme/ttcn.css">
-<link rel="stylesheet" href="theme/twilight.css">
-<link rel="stylesheet" href="theme/vibrant-ink.css">
-<link rel="stylesheet" href="theme/xq-dark.css">
-<link rel="stylesheet" href="theme/xq-light.css">
-<link rel="stylesheet" href="theme/zenburn.css">
-<script src="codemirror.js"></script>
-<script src="mode/javascript/javascript.js"></script>
-<script src="addon/selection/active-line.js"></script>
-<script src="addon/edit/matchbrackets.js"></script>
-<style type="text/css">
-      .CodeMirror {border: 1px solid black; font-size:13px}
-    </style>
-<article>
-<h2>Theme Demo</h2>
-<form><textarea id="code" name="code">
-function findSequence(goal) {
-  function find(start, history) {
-    if (start == goal)
-      return history;
-    else if (start > goal)
-      return null;
-    else
-      return find(start + 5, "(" + history + " + 5)") ||
-             find(start * 3, "(" + history + " * 3)");
-  }
-  return find(1, "1");
-}</textarea></form>
-
-<p>Select a theme: <select onchange="selectTheme()" id=select>
-    <option selected>default</option>
-    <option>3024-day</option>
-    <option>3024-night</option>
-    <option>ambiance</option>
-    <option>base16-dark</option>
-    <option>base16-light</option>
-    <option>blackboard</option>
-    <option>cobalt</option>
-    <option>colorforth</option>
-    <option>eclipse</option>
-    <option>elegant</option>
-    <option>erlang-dark</option>
-    <option>lesser-dark</option>
-    <option>liquibyte</option>
-    <option>mbo</option>
-    <option>mdn-like</option>
-    <option>midnight</option>
-    <option>monokai</option>
-    <option>neat</option>
-    <option>neo</option>
-    <option>night</option>
-    <option>paraiso-dark</option>
-    <option>paraiso-light</option>
-    <option>pastel-on-dark</option>
-    <option>rubyblue</option>
-    <option>solarized dark</option>
-    <option>solarized light</option>
-    <option>the-matrix</option>
-    <option>tomorrow-night-bright</option>
-    <option>tomorrow-night-eighties</option>
-    <option>ttcn</option>
-    <option>twilight</option>
-    <option>vibrant-ink</option>
-    <option>xq-dark</option>
-    <option>xq-light</option>
-    <option>zenburn</option>
-	<option>vstudio2013dark</option>
-</select>
-</p>
-
-<script>
-  var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-    lineNumbers: true,
-    styleActiveLine: true,
-    matchBrackets: true
-  });
-  var input = document.getElementById("select");
-  function selectTheme() {
-    var theme = input.options[input.selectedIndex].innerHTML;
-    editor.setOption("theme", theme);
-  }
-  var choice = document.location.search &&
-               decodeURIComponent(document.location.search.slice(1));
-  if (choice) {
-    input.value = choice;
-    editor.setOption("theme", choice);
-  }
-</script>
-  </article>
+<html>
+<head>
+    <title>Flezz</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Demo Flezz">
+    <meta name="author" content="Giancarlo Ortiz">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="code.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <![CDATA[
+    /*
+    Name: Flezz Docs
+    Version: 1.0
+    Developer : Giancarlo Ortiz Benavides
+    licenced: Carlos Rojas
+    Url: www.zerez.org
+    Date: 25 junio 2015
+    */]]>
+    <style>body{font-family: 'Segoe UI','Verdana';color:gray;}section {background-color:#fafaee;border: 2px dashed #c7c7c7; padding:30px; margin-left:20%;margin-right:10%;}p{padding-left:20px;}</style>
+</head>
+<body>
+    <section>
+        <form class="code" style="max-width:800px; overflow:scroll;">
+            <textarea id="code" name="code" style="display: none;">function findSequence(goal) {
+                function find(start, history) {
+                if (start == goal)
+                return history;
+                else if (start &gt; goal)
+                return null;
+                else
+                return find(start + 5, "(" + history + " + 5)") ||
+                find(start * 3, "(" + history + " * 3)");
+                }
+                return find(1, "1");
+                }</textarea>
+            <div class="CodeMirror cm-s-monokai">
+                <div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 119px; left: 91px;">
+                    <textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0">    
+                    </textarea>
+                </div>
+                <div class="CodeMirror-vscrollbar" cm-not-content="true">
+                    <div style="min-width: 1px; height: 0px;"></div>
+                </div>
+                <div class="CodeMirror-hscrollbar" cm-not-content="true">
+                    <div style="height: 100%; min-height: 1px; width: 0px;"></div>
+                </div>
+                <div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div>
+                <div class="CodeMirror-gutter-filler" cm-not-content="true"></div>
+                <div class="CodeMirror-scroll" tabindex="-1">
+                    <div class="CodeMirror-sizer" style="margin-left: 29px; margin-bottom: -17px; border-right-width: 13px; min-width: 407px; min-height: 236px; padding-right: 0px; padding-bottom: 0px;">
+                        <div style="position: relative; top: 0px;">
+                            <div class="CodeMirror-lines">
+                                <div style="position: relative; outline: none;">
+                                    <div class="CodeMirror-measure">
+                                        <pre>x</pre>
+                                    </div>
+                                    <div class="CodeMirror-measure"></div>
+                                    <div style="position: relative; z-index: 1;"></div>
+                                    <div class="CodeMirror-cursors" style="visibility: hidden;">
+                                        <div class="CodeMirror-cursor" style="left: 61px; top: 114px; height: 19px;">&nbsp;</div>
+                                    </div>
+                                    <div class="CodeMirror-code">
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt">1</div>
+                                            </div>
+                                            <pre><span style="padding-right: 0.1px;"><span class="cm-keyword">function</span><span class="cm-variable">findSequence</span>(<span class="cm-def">goal</span>) {</span></pre>
+                                        </div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt">2</div>
+                                            </div>
+                                            <pre class=""><span style="padding-right: 0.1px;">  <span class="cm-keyword">function</span> <span class="cm-def">find</span>(<span class="cm-def">start</span>, <span class="cm-def">history</span>) {</span></pre>
+                                        </div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt">3</div>
+                                            </div>
+                                            <pre class=""><span style="padding-right: 0.1px;">    <span class="cm-keyword">if</span> (<span class="cm-variable-2">start</span> <span class="cm-operator">==</span> <span class="cm-variable-2">goal</span>)</span></pre>
+                                        </div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt">4</div>
+                                            </div>
+                                            <pre class=""><span style="padding-right: 0.1px;">      <span class="cm-keyword">return</span> <span class="cm-variable-2">history</span>;</span></pre>
+                                        </div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt">5</div>
+                                            </div>
+                                            <pre class=""><span style="padding-right: 0.1px;">    <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable-2">start</span> <span class="cm-operator">&gt;</span> <span class="cm-variable-2">goal</span>)</span></pre>
+                                        </div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt">6</div>
+                                            </div>
+                                            <pre class=""><span style="padding-right: 0.1px;">      <span class="cm-keyword">return</span> <span class="cm-atom">null</span>;</span></pre>
+                                        </div>
+                                        <div class="CodeMirror-activeline" style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt">7</div>
+                                            </div>
+                                            <pre class=""><span style="padding-right: 0.1px;">    <span class="cm-keyword">else</span></span></pre>
+                                        </div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt">8</div>
+                                            </div>
+                                            <pre class=""><span style="padding-right: 0.1px;">      <span class="cm-keyword">return</span> <span class="cm-variable-2">find</span>(<span class="cm-variable-2">start</span> <span class="cm-operator">+</span> <span class="cm-number">5</span>, <span class="cm-string">"("</span> <span class="cm-operator">+</span> <span class="cm-variable-2">history</span> <span class="cm-operator">+</span> <span class="cm-string">" + 5)"</span>) <span class="cm-operator">||</span></span></pre>
+                                        </div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt">9</div>
+                                            </div>
+                                            <pre class=""><span style="padding-right: 0.1px;">             <span class="cm-variable-2">find</span>(<span class="cm-variable-2">start</span> <span class="cm-operator">*</span> <span class="cm-number">3</span>, <span class="cm-string">"("</span> <span class="cm-operator">+</span> <span class="cm-variable-2">history</span> <span class="cm-operator">+</span> <span class="cm-string">" * 3)"</span>);</span></pre>
+                                        </div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt">10</div>
+                                            </div>
+                                            <pre class=""><span style="padding-right: 0.1px;">  }</span></pre>
+                                        </div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt">11</div>
+                                            </div>
+                                            <pre class=""><span style="padding-right: 0.1px;">  <span class="cm-keyword">return</span> <span class="cm-variable-2">find</span>(<span class="cm-number">1</span>, <span class="cm-string">"1"</span>);</span></pre>
+                                        </div>
+                                        <div class="" style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt">12</div>
+                                            </div>
+                                            <pre><span style="padding-right: 0.1px;">}</span></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="position: absolute; height: 13px; width: 1px; top: 236px;"></div>
+                    <div class="CodeMirror-gutters" style="height: 313px; left: 0px;">
+                        <div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div>
+                    </div>
+                </div>
+            </div>
+        </form> 
+    </section>
+    <script src="../vendor/jquery-2.1.0.js"></script>
+    <script src="code.js"></script>
+</body>
+</html>
