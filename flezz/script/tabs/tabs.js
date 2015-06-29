@@ -1,100 +1,97 @@
 ///******************************************/
 ///*          flezz framework 1.0           */
 ///******************************************/
-///*  Name: name_component
+///*  Name: tabs
 ///*  Version: 1.0.0
-///*  Description: description name_component
+///*  Description: description tabs
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org
 ///*  License: GNU General Public License v2 or later
 ///*  License URI: http://www.gnu.org/licenses/gpl-2.0.html
-///*  Tags: name_component, plugin, js.
+///*  Tags: tabs, plugin, js.
 ///******************************************/
 ///*    Content
 ///*
-///*  1. Config variables.
-///*  2. Road map.
-///*  3. Funtion.
-///*  4. Plugin.
+///*  1. Road map.
+///*  2. Plugin start.
+///*  3. Config variables.
+///*  4. Subcription of Events.
+///*  5. Logic of record event.
+///*  6. Private function.
+///*  7. Public function.
+///*  8. Revealing function.
 ///******************************************/
 //"use strict";
-///* 1 *//* CONFIG VARIABLES */
-//
-///* global variables */
+///* 1 *//* ROAD MAP */
 
 //
-///* local variables */
-
-//
-///* 2 *//* FUNCTIONS */
-
-//
-///* 3 *//* PLUGIN */
+///* 2 *//* PLUGIN - MODULE */
 ///* Use Revealing Module Pattern */
 var tabs = (function () {
     "use strict";
+    //
+    ///* 3 *//* CONFIG VARIABLES */
     ///* private variables, and private methods *///
     var settings, dom, catchDom, suscribeEvents, events, changueTabPanel, initialize;
     ///* config selector *///
     settings = {
         tabs: '.horizontal',
         tabs_item: 'li',
-        tabs_item_target: 'a'
+        tabs_item_trigger: 'a'
     };
-
     dom = {};
-
     catchDom = function () {
-        dom.tabs_item_target = $(settings.tabs_item_target, settings.tabs);
+        dom.tabs_item_trigger = $(settings.tabs).find(settings.tabs_item_trigger);
     };
-
+    ///* 4 *//* EVENT RECORD */
     suscribeEvents = function () {
-        dom.tabs_item_target.on('click', events.eSelectedTab);
-        dom.tabs_item_target.on('keypress', events.eKeypressTab);
+        dom.tabs_item_trigger.on('click', events.eSelectedTab);
+        dom.tabs_item_trigger.on('keypress', events.eKeypressTab);
     };
-    
+    ///* 5 *//* EVENT LOGIC */
     events = {
         eSelectedTab: function (e) {
-            var target, item;
-            target = $(this);
-            item = target.parent();
+            var trigger, item;
+            trigger = $(this);
+            item = trigger.parent();
             if (!item.hasClass('selected') && !item.hasClass('disabled')) {
                 //console.log('click');
-                changueTabPanel(e, target);
+                changueTabPanel(e, trigger);
             }
         },
         eKeypressTab: function (e) {
-            var target;
-            target = $(this);
+            var trigger;
+            trigger = $(this);
             if (e.which === 13) {
                 //console.log('enter is presed');
-                changueTabPanel(e, target);
+                changueTabPanel(e, trigger);
             }
         }
     };
-    
-    changueTabPanel = function (e, target) {
+    ///* 6 *//* PRIVATE FUNTIONS */
+    changueTabPanel = function (e, trigger) {
         var brother, pane, item;
-        item = target.parent();
+        item = trigger.parent();
         ///* changue tab *///        
         item.parent().find('li.selected').attr('class', '').attr('aria-selected', 'false');
         ///* changue panel *///
-        pane = target.attr('data-tab');
+        pane = trigger.attr('data-tab');
         $("#" + pane).attr('data-state', 'active').attr('aria-hidden', 'false');
         $("#" + pane).siblings().attr('data-state', 'inactive').attr('aria-hidden', 'true');
         item.addClass('selected').attr('aria-selected', 'true');
         //console.log('changue panel');
     };
-
+    ///* 7 *//* PUBLIC FUNTIONS - METHODS */
     initialize = function () {
         catchDom();
         suscribeEvents();
     };
-
     return {
+        ///* 8 *//* REVEALING METHODS */
         ///* public variables, and public methods -- Accessing "Private" Methods *///
         init: initialize
     };
 }());
-
+//
+///* initialize plugin *///
 tabs.init();

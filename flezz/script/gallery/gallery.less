@@ -160,20 +160,18 @@
     width: @shot-show-close-width - 5px;
     height: @shot-show-close-width - 5px;
     border-radius: 50%;
-}
-
-.superbox-close:hover {
-    opacity: 1;
-}
-
-.superbox-close:active {
-    opacity: 1;
-    background-color: darken(@shot-show-background,10%);
+    &:hover {
+        opacity: 1;
+    }
+    &:active {
+        opacity: 1;
+        background-color: darken(@shot-show-background,10%);
+    }
 }
 //
 ///* arrow show selected */
 #irc_pc {
-    border-bottom: 10px solid #222;
+    border-bottom: 10px solid @shot-show-background;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     height: 0;
