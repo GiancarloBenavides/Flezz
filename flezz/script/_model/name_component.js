@@ -40,10 +40,13 @@ var name_component = (function () {
     // Objeto literal en el cual establecemos valores que vamos a usar mas adelante en este ámbito
     // los objetos literales pueden contener propiedades y métodos
     settings = {
-        selector_main: '#contexto-del-plugin',
-        selector_item: 'li',
-        selector_trigger: 'a',
-        selector_target: 'div.class'
+        selector_main:      '#contexto-del-plugin',
+        selector_item:      'li',
+        selector_trigger:   'a',
+        selector_stop:      '.close',
+        selector_target:    'div.class',
+        // other options
+        interval: 400
         //....
     };
     ///* cache DOM *///
@@ -89,7 +92,10 @@ var name_component = (function () {
     //
     ///* 8 *//* PUBLIC FUNTIONS - METHODS */
     initialize = function () {
+        ///* init dom cache *///
         catcheDom();
+        //...
+        ///* init listeners *///
         suscribeEvents();
     };
      // Retorna un objeto literal con el método init haciendo referencia a la función initialize.

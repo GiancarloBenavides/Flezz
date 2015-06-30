@@ -2,7 +2,7 @@
 ///*          flezz framework 1.0           */
 ///******************************************/
 ///*  Name: gallery
-///*  Version: 0.1.0
+///*  Version: 0.2.0
 ///*  Description: description gallery
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org
@@ -35,14 +35,15 @@ var gallery = (function () {
     //
     ///* 3 *//* CONFIG VARIABLES */
     ///* private variables, and private methods *///
-    var settings, dom, catcheDom, suscribeEvents, events, privateFuntion, initialize;
+    var settings, dom, catcheDom, suscribeEvents, events, getGapImg, getArrowPosition, closeImgBox, openImgBox, changueImgSrc, initialize;
     ///* config selector *///
     // Objeto literal en el cual establecemos valores que vamos a usar mas adelante en este ámbito
     // los objetos literales pueden contener propiedades y métodos
     settings = {
         selector_main: '.gallery-conteiner',
-        selector_item: '.gallery-item',
-        selector_trigger: '.superbox-img',
+        selector_item: '.gallery-img',
+        selector_trigger: '.gallery-item',
+        selector_stop: '.superbox-close',
         selector_target: '.superbox-show',
         interval: 400,
         gap: 0
@@ -58,6 +59,7 @@ var gallery = (function () {
         dom.context = $(settings.selector_main);
         dom.trigger = dom.context.find(settings.selector_trigger);
         dom.target = dom.context.find(settings.selector_target);
+        dom.close = dom.context.find(settings.selector_stop);
         dom.galeryShow  = $('<div class="superbox-show"><img src="" class="superbox-current-img" style="opacity:0"><div class="superbox-close"></div></div>');
         dom.galeryArrow = $('<div id="irc_pc"></div>');
     };
@@ -65,33 +67,54 @@ var gallery = (function () {
     ///* 5 *//* EVENT RECORD */
     // Función donde establecemos los eventos que tendrán cada uno de los elementos del objeto DOM.
     suscribeEvents = function () {
-        dom.trigger.on('click', events.callbackClick);
-        dom.trigger.on('keypress', events.callbackTab);
+        dom.context.on('click', settings.selector_trigger, events.callbackClick);
+        dom.context.on('click', settings.selector_stop, events.callbackStop);
     };
     //
     ///* 6 *//* EVENT LOGIC */
     // Objeto que guarda métodos que se van a usar en cada evento definido en la función suscribeEvents
     events = {
         callbackClick: function (e) {
-            //....
-            privateFuntion(e);
-            //....
+            var conteiner, clicRow, classRow, activeRow, clicPlace, imgClick, arrowLeft;
+            clicPlace = $(this).attr('data-place');
+            clicRow = $(this).parent();
+            classRow = clicRow.attr('class');
+            conteiner = clicRow.parent();
+            imgClick = $(this).find('.superbox-img').data('img');
+            arrowLeft = getArrowPosition(classRow, clicPlace, settings.gap);
+            if (conteiner.attr('data-state') === 'close') {
+                conteiner.attr('data-state', 'open');
+                openImgBox(clicRow, imgClick, settings.interval);
+            } else {
+                if (clicRow.attr('data-state') === 'active') {
+                    changueImgSrc(clicRow, imgClick, settings.interval);
+                } else {
+                    activeRow = conteiner.find('div.superbox-show').parent();
+                    closeImgBox(activeRow, 0);
+                    openImgBox(clicRow, imgClick, settings.interval);
+                }
+            }
+            $('#irc_pc').css('left', arrowLeft);
+            //console.log(arrowLeft);  
         },
-        callbackTab: function (e) {
-            //....
-            privateFuntion(e);
-            //....
+        callbackStop: function (e) {
+            var conteiner, activeRow;
+            activeRow = $(this).parent().parent();
+            activeRow.attr('data-state', 'inactive');
+            conteiner = activeRow.parent();
+            conteiner.attr('data-state', 'close');
+            closeImgBox(activeRow, settings.interval);
         }
     };
     //
     ///* 7 *//* PRIVATE FUNTIONS */
-    function getGapImg() {
+    getGapImg = function () {
         var borderWidth, gap;
         borderWidth = dom.context.css("borderTopWidth");
         settings.gap = borderWidth.substring(0, 1);
-    }
+    };
     
-    function getArrowPosition(typeRow, place, shotGap) {
+    getArrowPosition = function (typeRow, place, shotGap) {
         var left, ir1, ir2, ir3;
         function padd(num) { return 4 + (shotGap * num); }
         switch (typeRow) {
@@ -127,51 +150,54 @@ var gallery = (function () {
             return '50%';
         }
         return left;
-    }
+    };
     
-    function closeImgBox(galleryRow, duration) {
+    closeImgBox = function (galleryRow, duration) {
         var box, imgBox, lapse;
         galleryRow.attr('data-state', 'inactive');
         lapse = duration / 2;
         box = galleryRow.find(settings.selector_target);
-        imgBox = galleryRow.find('img');
+        imgBox = dom.galeryShow.find('img');
         imgBox.animate({opacity: 0}, lapse, function () {
             box.slideUp(lapse, function () {
                 box.remove();
             });
         });
         //console.log('click close!');
-    }
+    };
 
-    function openImgBox(galleryRow, source, duration) {
+    openImgBox = function (galleryRow, source, duration) {
         var box, imgBox;
         galleryRow.attr('data-state', 'active');
         dom.galeryShow.append(dom.galeryArrow);
         dom.galeryShow.appendTo(galleryRow);
         box = galleryRow.find(settings.selector_target);
-        imgBox = galleryRow.find('img');
+        imgBox = dom.galeryShow.find('img');
         imgBox.attr('src', source);
         box.css('display', 'block');
         imgBox.animate({opacity: 1}, duration);
         //console.log('click open!');
-    }
+    };
 
-    function changueImgSrc(galleryRow, source, duration) {
+    changueImgSrc = function (galleryRow, source, duration) {
         var box, imgBox, lapse;
         lapse = duration / 2;
         box = galleryRow.find(settings.selector_target);
-        imgBox = galleryRow.find('img');
+        imgBox = dom.galeryShow.find('img');
         imgBox.animate({opacity: 0}, lapse, function () {
             imgBox.attr('src', source);
             imgBox.animate({opacity: 1}, lapse);
         });
         //console.log('changue img!');
-    }
+    };
     //
     ///* 8 *//* PUBLIC FUNTIONS - METHODS */
     initialize = function () {
-        getGapImg();
+        ///* init dom cache *///
         catcheDom();
+        //...
+        getGapImg();
+        ///* init listeners *///
         suscribeEvents();
     };
      // Retorna un objeto literal con el método init haciendo referencia a la función initialize.
