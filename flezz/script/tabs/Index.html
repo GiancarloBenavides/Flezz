@@ -1,11 +1,11 @@
-<html>
+﻿<html>
 <head>
     <title>Flezz</title>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description" content="Demo Flezz">
     <meta name="author" content="Giancarlo Ortiz">
-    <!--<link rel="icon" href="favicon.ico" type="image/x-icon"/>-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="tabs.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <![CDATA[
@@ -22,18 +22,19 @@
 <body>
     <section>
        <div class="tabs">
-         <ul class="horizontal" data-tab role="tablist">
-            <li role="presentational" class="selected" aria-selected="true"><a tabindex="0" data-tab="panel-one">tab 1</a></li>
-            <li role="presentational" aria-selected="false"><a tabindex="0" data-tab="panel-two">tab 2</a></li>
-            <li role="presentational" aria-selected="false"><a tabindex="0" data-tab="panel-three">tab 3</a></li>
-            <li role="presentational" class="disabled" aria-selected="false"><a tabindex="0" data-tab="panel-four">tab 4</a></li>
-            <li role="dropdown" aria-expanded="false"><a>Dropdown<i class="caret"></i></a>
-                <ul>
-                  <li><a data-tab="panel-five">tab 5</a></li>
-                  <li><a data-tab="panel-six">tab 6</a></li>
-                </ul>
-            </li>
-        </ul>
+           <ul role="tablist" class="horizontal" data-tab>
+               <li role="presentation" class="selected" aria-selected="true"><a tabindex="0" data-tab="panel-one">tab 1</a></li>
+               <li role="presentation" aria-selected="false"><a tabindex="0" data-tab="panel-two">tab 2</a></li>
+               <li role="presentation" aria-selected="false"><a tabindex="0" data-tab="panel-three">tab 3</a></li>
+               <li role="presentation" class="disabled" aria-selected="false"><a tabindex="0" data-tab="panel-four">tab 4</a></li>
+               <li role="listbox" aria-expanded="false">
+                   <a>Dropdown<i class="caret"></i></a>
+                   <ul>
+                       <li><a data-tab="panel-five">tab 5</a></li>
+                       <li><a data-tab="panel-six">tab 6</a></li>
+                   </ul>
+               </li>
+           </ul>
         <div id="panel-one" class="tabs-content" role="tabpanel" aria-hidden="false" data-state="active">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, rem.</p>
             <p>Eveniet optio incidunt modi quas atque eaque accusantium reprehenderit itaque.</p>

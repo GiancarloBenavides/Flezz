@@ -141,7 +141,8 @@
                 }
             }
         }
-        li[role="dropdown"] {
+
+        li[role="listbox"] {
             & > ul {
                 display: none;
             }
@@ -174,7 +175,7 @@
                 border-top: 4px solid\9;
                 border-right: 4px solid transparent;
                 border-left: 4px solid transparent;
-            }   
+            }
         }
     }
     // Tabbable tabs
@@ -195,6 +196,7 @@
     & > div[data-state="inactive"] {
         display: none;
     }
+
     .header();
 }
 //
@@ -217,6 +219,7 @@
     -moz-box-shadow: 3px -1px 3px -3px rgba(100,100,100,0.39);
     box-shadow: 3px -1px 3px -3px rgba(100,100,100,0.39);
 }
+
 .shadow-down() when (@tabs-shadow = true) {
     -webkit-box-shadow: 4px 6px 8px -2px rgba(100,100,100,0.39);
     -moz-box-shadow: 4px 6px 8px -2px rgba(100,100,100,0.39);

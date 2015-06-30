@@ -2,7 +2,7 @@
 ///*          flezz framework 1.0           */
 ///******************************************/
 ///*  Name: gallery
-///*  Version: 0.2.0
+///*  Version: 0.3.0
 ///*  Description: description gallery
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org
@@ -43,8 +43,8 @@ var gallery = (function () {
         selector_main: '.gallery-conteiner',
         selector_item: '.gallery-img',
         selector_trigger: '.gallery-item',
-        selector_stop: '.superbox-close',
-        selector_target: '.superbox-show',
+        selector_stop: '.button-close',
+        selector_target: '.box-show',
         interval: 400,
         gap: 0
         //....
@@ -60,7 +60,7 @@ var gallery = (function () {
         dom.trigger = dom.context.find(settings.selector_trigger);
         dom.target = dom.context.find(settings.selector_target);
         dom.close = dom.context.find(settings.selector_stop);
-        dom.galeryShow  = $('<div class="superbox-show"><img src="" class="superbox-current-img" style="opacity:0"><div class="superbox-close"></div></div>');
+        dom.galeryShow  = $('<div class="box-show"><img src="" class="superbox-current-img" style="opacity:0"><div class="button-close"></div></div>');
         dom.galeryArrow = $('<div id="irc_pc"></div>');
     };
     //
@@ -89,7 +89,7 @@ var gallery = (function () {
                 if (clicRow.attr('data-state') === 'active') {
                     changueImgSrc(clicRow, imgClick, settings.interval);
                 } else {
-                    activeRow = conteiner.find('div.superbox-show').parent();
+                    activeRow = conteiner.find('div.box-show').parent();
                     closeImgBox(activeRow, 0);
                     openImgBox(clicRow, imgClick, settings.interval);
                 }

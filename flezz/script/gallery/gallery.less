@@ -22,27 +22,43 @@
 //
 ///* global variables */
 ///* general option gallery */
+@shot-border-collapsed: true;
 @shot-border-color: transparent;
-@shot-gap: 6px;
+@shot-current-border-color: #222;
+@shot-gap: 6px; // RANGE [0-9] px
 @shot-show-background: #333;
 @shot-show-close-width: 40px;
+@shot-image-quantity: 4;
 //
 ///* local variables */
-@shot-gap-mid: (@shot-gap / 2);
-@shot-show-padding: (@shot-gap + @shot-show-close-width)*2;
-@shot-width: ~"calc(25% + @{shot-gap-mid})";
-@shot-width-double: ~"calc(50% - @{shot-gap})";
-@irc-25l: (@shot-gap*2 + 4px);
-@irc-25r: (@shot-gap*0 + 4px);
-@irc-50l: (@shot-gap*3 + 4px);
-@irc-50r: (@shot-gap*1 + 4px);
-@irc-75l: (@shot-gap*2 + 4px);
-@irc-75r: (@shot-gap*0 + 4px);
+@gap-mid: (@shot-gap / 2);
+@arrow-border: @shot-gap + 4px;
+//
+@show-padding-base: @shot-show-close-width*2;
+@show-padding: (@shot-gap + @shot-show-close-width)*2;
+//
+@img-current-shadow-spread: @shot-show-close-width/10;
+@img-current-shadow-blur: @shot-show-close-width/2;
+//
+@img-width-base: percentage(1 / @shot-image-quantity);
+@img-width: ~"calc(@{img-width-base} + @{gap-mid})";
+//
+@img-width-double-base: @img-width-base * 2;
+@img-width-double: ~"calc(@{img-width-double-base} - @{shot-gap})";
+//
+@img-width-show-base: 100%;
+@img-width-show: ~"calc(100% - @{show-padding})";
 //
 ///* 2 *//* ROAD MAP */
 // --------------------------------------------------
-//@shot-width-patron: (@shot-width + @shot-gap);
+//@img-width-patron: (@img-width + @shot-gap);
 //
+//@irc-25l: (@shot-gap*2 + 4px);
+//@irc-25r: (@shot-gap*0 + 4px);
+//@irc-50l: (@shot-gap*3 + 4px);
+//@irc-50r: (@shot-gap*1 + 4px);
+//@irc-75l: (@shot-gap*2 + 4px);
+//@irc-75r: (@shot-gap*0 + 4px);
 // --------------------------------------------------
 //
 ///* 3 *//* BASE CLASS */
@@ -52,130 +68,143 @@
     box-sizing: border-box;
 
     & > .gallery-conteiner {
-        border: (@shot-gap) solid @shot-border-color;
+        .border-collapsed();
+    }
+
+    & .gallery-item {
+        position: static;
+        display: inline-block;
+        *display: inline;
+        -ms-zoom: 1;
+        zoom: 1;
+        overflow: hidden;
+
+        & > img {
+            max-width: 100%;
+            width: 100%;
+            cursor: pointer;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            .border-collapsed();
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+    ///* larger image */
+    .big-center .gallery-item:nth-child(1),
+    .big-center .gallery-item:nth-child(3),
+    .big-left .gallery-item:nth-child(2),
+    .big-left .gallery-item:nth-child(3),
+    .big-right .gallery-item:nth-child(1),
+    .big-right .gallery-item:nth-child(2) {
+        .width-collapsed();
+    }
+    ///* larger image double */
+    .big-center .gallery-item:nth-child(2),
+    .big-left .gallery-item:nth-child(1),
+    .big-right .gallery-item:nth-child(3) {
+        .width-collapsed-double();
+    }
+    ///* larger image total */
+    .big-one .gallery-item:nth-child(1) {
+        width: 100%;
+    }
+    ///* show imagen galery */
+    & .box-show {
+        text-align: center;
+        position: relative;
+        background: @shot-show-background;
+        float: right;
+        display: none;
+        .width-collapsed-show();
+        .box-collapsed();
+
+        & img {
+            max-width: 100%;
+            .img-collapsed();
+        }
+        ///* arrow show selected */
+        .button-close {
+            opacity: 0.7;
+            cursor: pointer;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: url("img/icon/close.png") no-repeat center center;
+            background-size: 15px 15px;
+            width: @shot-show-close-width - 5px;
+            height: @shot-show-close-width - 5px;
+            border-radius: 50%;
+            .close-collapsed();
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &:active {
+                opacity: 1;
+                background-color: darken(@shot-show-background,10%);
+            }
+        }
+        ///* arrow show selected */
+        #irc_pc {
+            .arrow-collapsed();
+        }
     }
 }
 //
-///* larger image in the center */
-.big-center .gallery-item:nth-child(1) {
-    width: @shot-width;
+///* 4 *//* CONFIG MIXIN */
+.close-collapsed() when (@shot-border-collapsed = true) {
+    background-color: rgba(0,0,0,0.4);
 }
 
-.big-center .gallery-item:nth-child(2) {
-    width: @shot-width-double;
-}
-
-.big-center .gallery-item:nth-child(3) {
-    width: @shot-width;
-}
-//
-///* larger image on the left */
-.big-left .gallery-item:nth-child(1) {
-    width: @shot-width-double;
-}
-
-.big-left .gallery-item:nth-child(2) {
-    width: @shot-width;
-}
-
-.big-left .gallery-item:nth-child(3) {
-    width: @shot-width;
-}
-//
-///* larger image on the right */
-.big-right .gallery-item:nth-child(1) {
-    width: @shot-width;
-}
-
-.big-right .gallery-item:nth-child(2) {
-    width: @shot-width;
-}
-
-.big-right .gallery-item:nth-child(3) {
-    width: @shot-width-double;
-}
-//
-///* larger image */
-.big-one .gallery-item:nth-child(1) {
-    width: 100%;
-}
-//
-///* superbox galery */
-.superbox-img {
-    max-width: 100%;
-    width: 100%;
-    cursor: pointer;
-    border: (@shot-gap) solid @shot-border-color;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-
-    &:hover {
-        opacity: 0.8;
-    }
-}
-
-.gallery-item {
-    position: static;
-    display: inline-block;
-    *display: inline;
-    -ms-zoom: 1;
-    zoom: 1;
-    overflow: hidden;
-}
-
-.superbox-show {
-    text-align: center;
-    position: relative;
-    background: @shot-show-background;
-    width: ~"calc(100% - @{shot-show-padding})";
-    float: right;
-    padding: @shot-show-close-width;
-    margin: @shot-gap;
-    display: none;
-}
-
-.superbox-current-img {
-    max-width: 100%;
-    box-shadow: 0 0 50px 10px darken(@shot-show-background,12%);
-    border: 1px solid #222;
-}
-
-.superbox-img:hover {
-    opacity: 0.8;
-}
-
-.superbox-float {
-    float: left;
-}
-
-.superbox-close {
-    opacity: 0.7;
-    cursor: pointer;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    background: url("img/icon/close.png") no-repeat center center;
-    background-size: 15px 15px;
-    width: @shot-show-close-width - 5px;
-    height: @shot-show-close-width - 5px;
-    border-radius: 50%;
-    &:hover {
-        opacity: 1;
-    }
-    &:active {
-        opacity: 1;
-        background-color: darken(@shot-show-background,10%);
-    }
-}
-//
-///* arrow show selected */
-#irc_pc {
-    border-bottom: 10px solid @shot-show-background;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
+.arrow-collapsed() when (@shot-border-collapsed = false) {
+    border-bottom: @arrow-border solid @shot-show-background;
+    border-left: @arrow-border solid transparent;
+    border-right: @arrow-border solid transparent;
     height: 0;
     position: absolute;
-    top: -10px;
+    top: -1*@arrow-border;
     width: 0;
+}
+
+.border-collapsed() when (@shot-border-collapsed = false) {
+    border: (@shot-gap) solid @shot-border-color;
+}
+
+.img-collapsed() when (@shot-border-collapsed = false) {
+    box-shadow: 0 0 @img-current-shadow-blur @img-current-shadow-spread darken(@shot-show-background,12%);
+    border: 1px solid @shot-current-border-color;
+}
+
+.box-collapsed() when (@shot-border-collapsed = false) {
+    margin: @shot-gap;
+    padding: @shot-show-close-width;
+}
+
+.width-collapsed() when (@shot-border-collapsed = false) {
+    width: @img-width;
+}
+
+.width-collapsed() when (@shot-border-collapsed = true) {
+    width: @img-width-base;
+}
+
+.width-collapsed-double() when (@shot-border-collapsed = false) {
+    width: @img-width-double;
+}
+
+.width-collapsed-double() when (@shot-border-collapsed = true) {
+    width: @img-width-double-base;
+}
+
+.width-collapsed-show() when (@shot-border-collapsed = false) {
+    width: @img-width-show;
+}
+
+.width-collapsed-show() when (@shot-border-collapsed = true) {
+    width: @img-width-show-base;
 }

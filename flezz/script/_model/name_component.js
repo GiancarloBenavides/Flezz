@@ -66,6 +66,7 @@ var name_component = (function () {
     suscribeEvents = function () {
         dom.trigger.on('click', events.callbackClick);
         dom.trigger.on('keypress', events.callbackTab);
+        dom.context.on('click', settings.selector_stop, events.callbackStop);
     };
     //
     ///* 6 *//* EVENT LOGIC */
@@ -79,6 +80,11 @@ var name_component = (function () {
             //....
         },
         callbackTab: function (e) {
+            //....
+            privateFuntion(e);
+            //....
+        },
+        callbackStop: function (e) {
             //....
             privateFuntion(e);
             //....

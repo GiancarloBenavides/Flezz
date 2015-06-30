@@ -1,0 +1,236 @@
+///******************************************/
+///*          flezz framework 1.0           */
+///******************************************/
+///*  Name: gallery
+///*  Version: 1.0.0
+///*  Description: simple gallery 3 img/Row
+///*  Author: Giancarlo Ortiz.
+///*  URI: http://www.zerez.org
+///*  License: GNU General Public License v2 or later
+///*  License URI: http://www.gnu.org/licenses/gpl-2.0.html
+///*  Tags: gallery, plugin, css.
+///******************************************/
+///*  	Content
+///*
+///*  1. Config Component variables.
+///*  2. Road map.
+///*  3. Base class.
+///*  4. Config mixin.
+///******************************************/
+//
+///* 1 *//* CONFIG COMPONENT VARIABLES */
+//
+///* global variables */
+///* general option gallery */
+@shot-border-collapsed: true;
+@shot-border-color: transparent;
+@shot-current-border-color: #222;
+@shot-gap: 6px;  // RANGE [0-9] px
+@shot-show-background: #333;
+@shot-show-close-width: 40px;
+@shot-image-quantity: 4;
+//
+///* local variables */
+@gap-mid: (@shot-gap / 2);
+@arrow-border: @shot-gap + 4px;
+@show-padding-base: @shot-show-close-width*2;
+@show-padding: (@shot-gap + @shot-show-close-width)*2;
+@img-current-shadow-spread: @shot-show-close-width/10;
+@img-current-shadow-blur: @shot-show-close-width/2;
+//
+@img-width-base: percentage(1 / @shot-image-quantity);
+@img-width: ~"calc(@{img-width-base} + @{gap-mid})";
+//
+@img-width-double-base: @img-width-base * 2;
+@img-width-double: ~"calc(@{img-width-double-base} - @{shot-gap})";
+//
+@img-width-show-base: ~"calc(100% - @{show-padding-base})";
+@img-width-show: ~"calc(100% - @{show-padding})";
+//
+///* 2 *//* ROAD MAP */
+// --------------------------------------------------
+//@img-width-patron: (@img-width + @shot-gap);
+//
+//@irc-25l: (@shot-gap*2 + 4px);
+//@irc-25r: (@shot-gap*0 + 4px);
+//@irc-50l: (@shot-gap*3 + 4px);
+//@irc-50r: (@shot-gap*1 + 4px);
+//@irc-75l: (@shot-gap*2 + 4px);
+//@irc-75r: (@shot-gap*0 + 4px);
+// --------------------------------------------------
+//
+///* 3 *//* BASE CLASS */
+.gallery-init(@_;) {
+    .gallery {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+
+        & > .gallery-conteiner {
+            border: (@shot-gap) solid @shot-border-color;
+        }
+
+        & .gallery-item {
+            position: static;
+            display: inline-block;
+            *display: inline;
+            -ms-zoom: 1;
+            zoom: 1;
+            overflow: hidden;
+
+            & > img {
+                max-width: 100%;
+                width: 100%;
+                cursor: pointer;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                border: (@shot-gap) solid @shot-border-color;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+        ///* larger image */
+        .big-center .gallery-item:nth-child(1),
+        .big-center .gallery-item:nth-child(3),
+        .big-left .gallery-item:nth-child(2),
+        .big-left .gallery-item:nth-child(3),
+        .big-right .gallery-item:nth-child(1),
+        .big-right .gallery-item:nth-child(2) {
+            width: @img-width;
+        }
+        ///* larger image double */
+        .big-center .gallery-item:nth-child(2),
+        .big-left .gallery-item:nth-child(1),
+        .big-right .gallery-item:nth-child(3) {
+            width: @img-width-double;
+        }
+        ///* larger image total */
+        .big-one .gallery-item:nth-child(1) {
+            width: 100%;
+        }
+        ///* show imagen galery */
+        & .box-show {
+            text-align: center;
+            position: relative;
+            background: @shot-show-background;
+            width: @img-width-show;
+            float: right;
+            padding: @shot-show-close-width;
+            display: none;
+            margin: @shot-gap;
+
+            & img {
+                max-width: 100%;
+                box-shadow: 0 0 @img-current-shadow-blur @img-current-shadow-spread darken(@shot-show-background,12%);
+                border: 1px solid @shot-current-border-color;
+            }
+            ///* arrow show selected */
+            .button-close {
+                opacity: 0.7;
+                cursor: pointer;
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                background: url("img/icon/close.png") no-repeat center center;
+                background-size: 15px 15px;
+                width: @shot-show-close-width - 5px;
+                height: @shot-show-close-width - 5px;
+                border-radius: 50%;
+                &:hover {
+                    opacity: 1;
+                }
+                &:active {
+                    opacity: 1;
+                    background-color: darken(@shot-show-background,10%);
+                }
+            }
+            ///* arrow show selected */
+            #irc_pc {
+                border-bottom: @arrow-border solid @shot-show-background;
+                border-left: @arrow-border solid transparent;
+                border-right: @arrow-border solid transparent;
+                height: 0;
+                position: absolute;
+                top: -@arrow-border;
+                width: 0;
+            }
+        }
+    }
+}
+//
+///* 4 *//* CONFIG MIXIN */
+.gallery-init(true;) {
+    .gallery {
+                    height: 0;
+        & > .gallery-conteiner {
+            border: none;
+        }
+
+        & .gallery-item {
+
+            & > img {
+                border: none;
+            }
+        }
+        ///* larger image */
+        .big-center .gallery-item:nth-child(1),
+        .big-center .gallery-item:nth-child(3),
+        .big-left .gallery-item:nth-child(2),
+        .big-left .gallery-item:nth-child(3),
+        .big-right .gallery-item:nth-child(1),
+        .big-right .gallery-item:nth-child(2) {
+            width: @img-width-base;
+
+        }
+        ///* larger image double */
+        .big-center .gallery-item:nth-child(2),
+        .big-left .gallery-item:nth-child(1),
+        .big-right .gallery-item:nth-child(3) {
+            width: @img-width-double-base;
+        }
+        ///* show imagen galery */
+        & .box-show {
+            width: @img-width-show-base;
+            margin: 0;
+        }
+    }
+}
+//
+.gallery-init(false;) {
+    .gallery {
+        & > .gallery-conteiner {
+            border: none;
+        }
+
+        & .gallery-item {
+
+            & > img {
+                border: none;
+            }
+        }
+        ///* larger image */
+        .big-center .gallery-item:nth-child(1),
+        .big-center .gallery-item:nth-child(3),
+        .big-left .gallery-item:nth-child(2),
+        .big-left .gallery-item:nth-child(3),
+        .big-right .gallery-item:nth-child(1),
+        .big-right .gallery-item:nth-child(2) {
+            width: @img-width-base;
+        }
+        ///* larger image double */
+        .big-center .gallery-item:nth-child(2),
+        .big-left .gallery-item:nth-child(1),
+        .big-right .gallery-item:nth-child(3) {
+            width: @img-width-double-base;
+        }
+        ///* show imagen galery */
+        & .box-show {
+            width: @img-width-show-base;
+            margin: 0;
+        }
+    }
+}
+.gallery-init(@shot-border-collapsed);
