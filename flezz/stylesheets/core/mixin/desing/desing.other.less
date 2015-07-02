@@ -42,6 +42,31 @@
     }
 }
 
+.arrow-selected(@bg-color: #ccc, @border-color: #fff, @height: 8px, @bottom: 0, @border-width: 1px) {
+    a {
+        position: relative;
+        
+        &:after,
+        &:before {
+            border: @height solid transparent;
+            border-style: outset outset solid outset;
+            border-bottom-color: @bg-color;
+            bottom: -1*@bottom;
+            content: "";
+            height: 0;
+            left: 50%;
+            margin-left: -1*@height;
+            overflow: hidden;
+            position: absolute;
+            width: 0;     
+        }
+        &:after {
+            background: transparent;
+            border-bottom-color: @border-color;
+            bottom: -1*(@border-width + @bottom);       
+        }
+    }
+}
 
 
 /* include dsn ------ [ OK ] */ @state: OK;

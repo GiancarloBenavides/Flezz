@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>check</title>
+    <link rel="stylesheet" href="../core/flezz.core.css">
+    <link rel="stylesheet" href="ChekColor.css">
+    <link rel="stylesheet" href="ChekMixin.css">
+    <style>
+		/* font check */
+        .font-ligth,
+        body {
+            font-family: OpenSansLight;
+            background-color: antiquewhite;
+        }
+        .font-regular{
+            font-family: OpenSansRegular;
+        }
+        .font-bold{
+            font-family: OpenSansBold;
+        }
+        li {
+            display: inline-block;
+        }
+        .panel-down{
+            background-color: white;
+            border: 1px solid gray;
+            text-align: center;
+            border-top: 0;
+            width: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="font-ligth">OpenSansLight</h1>
+    <h1 class="font-regular">OpenSansRegular</h1>
+    <h1 class="font-bold">OpenSansBold</h1>
+    <ul>
+        <li><a href="">menu horizontal</a></li>
+        <li><a href="">menu horizontal</a></li>
+        <li class="selected"><a href="">item selected</a></li>
+        <li><a href="">menu horizontal</a></li>
+        <li><a href="">menu horizontal</a></li>
+    </ul>
+    <div class="panel-down"> other items </div>
+</body>
+</html>
