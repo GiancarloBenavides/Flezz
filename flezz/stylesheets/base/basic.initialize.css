@@ -6,10 +6,16 @@
 /* include Border --- [ OK ] */
 /* include other ---- [ OK ] */
 /* include Eql ------ [ OK ] */
+/* include Eql ------ [ OK ] */
 /* include dsn ------ [ OK ] */
+/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+/* include dsn ------ [ OK ] */
+/* include dsn ------ [ OK ] */
+/* include cmp ------ [ OK ] */
 /* include cmp ------ [ OK ] */
 /* include mixin ---- [ OK ] */
 /* include picture -- [ OK ] */
+/* variables config - [ OK ] */
 @font-face {
   font-family: "OpenSansRegular";
   src: url("../../assets/fonts/OpenSans-Regular.eot?");
