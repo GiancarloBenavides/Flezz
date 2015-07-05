@@ -7,14 +7,14 @@ ul {
     margin: 0;
     padding: 0;
     border: 1px solid gray;
-    width: 1000px;
-    
+    width: auto;
+    display: inline-block;
+
     li {
         background-color: beige;
         display: inline-block;
-        
         list-style: none;
-        
+
         a {
             display: block;
             text-decoration: none;
@@ -23,12 +23,25 @@ ul {
         }
         &.selected {
             font-weight: bold;
-            .arrow-selected(); 
+            .arrow-selected(@border-color: gray); 
             a {
                 color: cornflowerblue;
             }
         }
     }
+}
+
+.panel-down {
+    display: inline-block;
+    position: absolute;
+    padding: 15px;
+    top: 103px;
+    left: 626px;
+    background-color: white;
+    border: 1px solid gray;
+    text-align: center;
+    border-top: 0;
+    min-width: 150px;
 }
 //
 /* color check   ---- [ OK ] */@state: OK;

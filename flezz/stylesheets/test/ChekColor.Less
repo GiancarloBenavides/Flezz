@@ -1,33 +1,40 @@
 ///* Dependencies */
-// @import '../core/mixin/global.colors.less';
-@import '../core/flezz.core.less';
+//@import '../core/mixin/flezz.core.less';
+@import '../core/mixin/global.colors.less';
+@import '../core/mixin/global.fonts.less';
+///* Shorthand  Initialize Color *///
+.color-init();
+///* Shorthand  Initialize Font *///
+.font-family (@Family-weight: normal);
 /* color check */
-
 .header {
+    @luma: luma(@primary-header-background);
     background-color: @primary-header-background;
-    color: @primary-header-font-color;
-    border-right-color: @primary-header-subtitle-color;
-    border-left-color: @primary-header-title-color;
-    width: luma(@primary-header-background);
+    p {color: @primary-header-font-color;}
+    h2 {color: @primary-header-subtitle-color;}
+    h1  {color: @primary-header-title-color;}
+    span:before {content: "@{luma}"};
 }
 
 .body {
+    @luma: luma(@primary-body-background);
     background-color: @primary-body-background;
-    color: @primary-body-font-color;
-    border-right-color: @primary-body-subtitle-color;
-    border-left-color: @primary-body-title-color;
-    width: luma(@primary-body-background);
+    p {color: @primary-body-font-color;}
+    h2 {color: @primary-body-subtitle-color;}
+    h1  {color: @primary-body-title-color;}
+    span:before {content: "@{luma}"};
 }
 
 .header2 {
+    @luma: luma(@secondary-header-background);
     background-color: @secondary-header-background;
-    color: @secondary-header-font-color;
-    border-right-color: @secondary-header-subtitle-color;
-    border-left-color: @secondary-header-title-color;
-    width: luma(@secondary-header-background);
+    p {color: @secondary-header-font-color;}
+    h2 {color: @secondary-header-subtitle-color;}
+    h1  {color: @secondary-header-title-color;}
+    span:before {content: "@{luma}"};
 }
 
-.body2 {
+.bodytest2{
     background-color: @secondary-body-background;
     color: @secondary-body-font-color;   
     border-right-color: @secondary-body-subtitle-color;
@@ -35,12 +42,22 @@
     width: luma(@secondary-body-background);
 }
 
+.body2 {
+    @luma: luma(@secondary-body-background);
+    background-color: @secondary-body-background;
+    p {color: @secondary-body-font-color;}
+    h2 {color: @secondary-body-subtitle-color;}
+    h1  {color: @secondary-body-title-color;}
+    span:before {content: "@{luma}"};
+}
+
 .footer {
+    @luma: luma(@footer-background);
     background-color: @footer-background;
-    color: @footer-font-color;  
-    border-right-color: @footer-subtitle-color;
-    border-left-color: @footer-title-color;
-    width: luma(@footer-background);
+    p {color: @footer-font-color;}
+    h2 {color: @footer-subtitle-color;}
+    h1  {color: @footer-title-color;}
+    span:before {content: "@{luma}"};
 }
 //
 /* color check   ---- [ OK ] */@state: OK;

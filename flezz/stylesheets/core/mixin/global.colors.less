@@ -3,7 +3,7 @@
 ///******************************************/
 ///*  Name: color
 ///*  Version: 2.7
-///*  Description: Theme colors .
+///*  Description: Theme colors palette.
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org
 ///*  License: GNU General Public License v2 or later
@@ -113,6 +113,8 @@
 @zerez-middle: rgb(40,0,80);
 @zerez-dark: rgb(20,0,40);
 ///* 8 */
+///* PRYMARY COLORS *///
+///* header luminoso *///
 .fontPrimaryColor() when (luma(@primary-header-background) >= @brightness-cutoff) {
     @a: mix(@color-secundary,@primary-header-background,@color-secundary-weight);
     @c: (100% - @box-opacity);
@@ -123,7 +125,7 @@
     @primary-header-subtitle-color: mix(@primary-body-background,@p2,@c);
     @primary-header-title-color: mix(@primary-body-background,@p3,@c);
 }
-
+///* header oscuro *///
 .fontPrimaryColor() when (luma(@primary-header-background) < @brightness-cutoff) {
     @a: mix(@color-secundary,@primary-header-background, @color-secundary-weight);
     @b: @font-contrast/4;
@@ -135,7 +137,7 @@
     @primary-header-subtitle-color: mix(@primary-body-background,@p2,@c);
     @primary-header-title-color: mix(@primary-body-background,@p3,@c);
 }
-//
+///* body luminoso *///
 .fontPrimaryColor() when (luma(@primary-body-background) >= @brightness-cutoff) {
     @a: mix(@color-secundary,@primary-body-background,@color-secundary-weight);
     @b: @font-contrast*1.4;
@@ -143,7 +145,7 @@
     @primary-body-subtitle-color: darken(@primary-body-font-color,@font-title-icrement);    
     @primary-body-title-color: darken(@primary-body-font-color,2*@font-title-icrement);
 }
-
+///* body oscuro *///
 .fontPrimaryColor() when (luma(@primary-body-background) < @brightness-cutoff) {
     @a: mix(@color-secundary,@primary-body-background,@color-secundary-weight);
     @b: @font-contrast*1.6;
@@ -152,17 +154,19 @@
     @primary-body-title-color: lighten(@primary-body-font-color,2*@font-title-icrement);
 }
 //
+///* SECONDARY COLORS *///
+///* header luminoso *///
 .fontSecondaryColor() when (luma(@secondary-header-background) >= @brightness-cutoff) {
     @a: mix(@color-secundary,@secondary-header-background,@color-secundary-weight*1.5);
     @c: (100% - @box-opacity);
     @s1: darken(@a,@font-contrast);
     @s2: darken(@s1,@font-title-icrement);    
     @s3: darken(@s1,2*@font-title-icrement);
-    @secondary-header-font-color: mix(@primary-body-background,@s1,@c);   
-    @secondary-header-subtitle-color: mix(@primary-body-background,@s2,@c);
-    @secondary-header-title-color: mix(@primary-body-background,@s3,@c);
+    @secondary-header-font-color: mix(@secondary-body-background,@s1,@c);   
+    @secondary-header-subtitle-color: mix(@secondary-body-background,@s2,@c);
+    @secondary-header-title-color: mix(@secondary-body-background,@s3,@c);
 }
-
+///* header oscuro *///
 .fontSecondaryColor() when (luma(@secondary-header-background) < @brightness-cutoff) {
     @a: mix(@color-secundary,@secondary-header-background,@color-secundary-weight*1.5);
     @b: @font-contrast/4;
@@ -170,23 +174,21 @@
     @s1: lighten(@a,@b);
     @s2: lighten(@s1,@font-title-icrement);
     @s3: lighten(@s1,(2*@font-title-icrement));
-    @secondary-header-font-color: mix(@primary-body-background,@s1,@c);   
-    @secondary-header-subtitle-color: mix(@primary-body-background,@s2,@c);
-    @secondary-header-title-color: mix(@primary-body-background,@s3,@c);
+    @secondary-header-font-color: mix(@secondary-body-background,@s1,@c);   
+    @secondary-header-subtitle-color: mix(@secondary-body-background,@s2,@c);
+    @secondary-header-title-color: mix(@secondary-body-background,@s3,@c);
 }
-//
+///* body luminoso *///
 .fontSecondaryColor() when (luma(@secondary-body-background) >= @brightness-cutoff) {
     @a: mix(@color-secundary,@secondary-body-background,@color-secundary-weight*1.5);
     @b: @font-contrast*1.4;
     @c: (100% - @box-opacity);
-    @s4: darken(@a,@b);
-    @s5: darken(@s4,@font-title-icrement);
-    @s6: darken(@s4,2*@font-title-icrement);
-    @secondary-body-font-color: mix(@primary-body-background,@s4,@c);
-    @secondary-body-subtitle-color: mix(@primary-body-background,@s5,@c);
-    @secondary-body-title-color: mix(@primary-body-background,@s6,@c);  
+    @secondary-body-font-color:  darken(@a,@b);;
+    @secondary-body-subtitle-color: darken(@secondary-body-font-color,@font-title-icrement);
+    @secondary-body-title-color: darken(@secondary-body-font-color,2*@font-title-icrement);
+    .flag{width: 1px};
 }
-
+///* body oscuro *///
 .fontSecondaryColor() when (luma(@secondary-body-background) < @brightness-cutoff) {
     @a: mix(@color-secundary,@secondary-body-background,@color-secundary-weight*1.5);
     @b: @font-contrast*1.6;
@@ -194,18 +196,20 @@
     @s4: lighten(@a,@b);
     @s5: lighten(@s4,@font-title-icrement);   
     @s6: lighten(@s4,(2*@font-title-icrement));
-    @secondary-body-font-color: mix(@primary-body-background,@s4,@c);
-    @secondary-body-subtitle-color: mix(@primary-body-background,@s5,@c);
-    @secondary-body-title-color: mix(@primary-body-background,@s6,@c);  
+    @secondary-body-font-color: mix(@secondary-body-background,@s4,@c);
+    @secondary-body-subtitle-color: mix(@secondary-body-background,@s5,@c);
+    @secondary-body-title-color: mix(@secondary-body-background,@s6,@c);  
 }
 //
+///* FOOTER COLORS *///
+///* footer luminoso *///
 .fontFooterColor() when (luma(@footer-background) >= @brightness-cutoff) {
     @a: mix(@color-secundary,@footer-background,@color-secundary-weight);
     @footer-font-color: darken(@a,@font-contrast);
     @footer-subtitle-color: darken(@footer-font-color,@font-title-icrement);   
     @footer-title-color: darken(@footer-font-color,(2*@font-title-icrement));
 }
-
+///* footer oscuro *///
 .fontFooterColor() when (luma(@footer-background) < @brightness-cutoff) {
     @a: mix(@color-secundary,@footer-background,@color-secundary-weight);
     @b: @font-contrast/4;
@@ -213,8 +217,13 @@
     @footer-subtitle-color: lighten(@footer-font-color,@font-title-icrement);   
     @footer-title-color: lighten(@footer-font-color,(2*@font-title-icrement));
 }
-
-//
+///* Shorthand  Initialize Color *///
+.color-init() {
+    .fontPrimaryColor();
+    .fontSecondaryColor();
+    .fontFooterColor();
+}
+    //
 /* include color ---- [ OK ] */@state: OK;
 ///******************************************/
 ///*  	FIN

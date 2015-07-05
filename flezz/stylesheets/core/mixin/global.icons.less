@@ -21,7 +21,6 @@
 //
 ///* setting options */
 @Zicon: true;
-@icon-style: "normal";
 //
 ///* local statements */
 //.icon-family (@family-style); // mixin to include icon families
@@ -30,13 +29,13 @@
 @ZiconRegular: "zicon", "Glyphicons Halflings", "foundation-icons", san-serif;
 //
 ///* 2 */
-.icon-family (@icon-style) when (@Zicon = true) {
+.icon-family () when (@Zicon = true) {
     @font-face {
         font-family: "zicon";
         src: url("@{icon-path}/zerezIcon-icons.eot");
         src: url("@{icon-path}/zerezIcon-icons.eot?#iefix") format("embedded-opentype"), url("@{icon-path}/zerezIcon-icons.woff") format("woff"), url("@{icon-path}/zerezIcon-icons.ttf") format("truetype"), url("@{icon-path}/zerezIcon-icons.svg#fontcustom") format("svg");
-        font-weight: @family-style;
-        font-style: @family-style;
+        font-weight: normal;
+        font-style: normal;
     }
     //
     ///* Estilos globales de zerezIcon */

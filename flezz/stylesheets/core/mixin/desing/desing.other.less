@@ -12,9 +12,8 @@
 ///******************************************/
 ///*  	Content
 ///*
-///*  1. Declarations.
-///*  2. Custom icons (Zicon).
-///*  3. Others icons.
+///*  1. General mixin.
+///*  1. Design mixin.
 ///******************************************/
 ///* local variables */
 @overflow-vertical: true;
@@ -41,16 +40,17 @@
         padding-top: @header-height;
     }
 }
-
-.arrow-selected(@bg-color: #ccc, @border-color: #fff, @height: 8px, @bottom: 0, @border-width: 1px) {
-    a {
+//
+///*  2 */
+.arrow-selected(@bg-color: #fff, @border-color: #ccc, @height: 7px, @bottom: 0, @border-width: 1px) {
+    & > a {
         position: relative;
         
         &:after,
         &:before {
             border: @height solid transparent;
             border-style: outset outset solid outset;
-            border-bottom-color: @bg-color;
+            border-bottom-color: @border-color;
             bottom: -1*@bottom;
             content: "";
             height: 0;
@@ -62,13 +62,25 @@
         }
         &:after {
             background: transparent;
-            border-bottom-color: @border-color;
+            border-bottom-color: @bg-color;
             bottom: -1*(@border-width + @bottom);       
         }
     }
 }
-
-
+//
+.caret() {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 7px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid\9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    transition: transform 3s ease 0;
+}
+//
 /* include dsn ------ [ OK ] */ @state: OK;
 ///******************************************/
 ///*  	FIN

@@ -1,0 +1,90 @@
+///******************************************/
+///*          flezz framework 1.0           */
+///******************************************/
+///*  Name: name_component
+///*  Version: 1.0.0
+///*  Description: description name_component
+///*  Author: Giancarlo Ortiz.
+///*  URI: http://www.zerez.org
+///*  License: GNU General Public License v2 or later
+///*  License URI: http://www.gnu.org/licenses/gpl-2.0.html
+///*  Tags: tab, plugin, css.
+///******************************************/
+///*  	Content
+///*
+///*  1. Config component variables.
+///*  2. Road map.
+///*  3. Base class.
+///*  4. Config mixin.
+///******************************************/
+//
+///* 1 *//* CONFIG COMPONENT VARIABLES */
+//
+///* global variables */
+///* general option */
+@button-text-transform: none;
+@button-font-weight: normal;
+//
+@button-background-image: none;
+@button-hover-background-image: none;
+@button-active-background-image: none;
+@button-selected-background-image: none;
+//
+@button-box-shadow: none;
+@button-hover-box-shadow: none;
+@button-active-box-shadow: none;
+@button-selected-box-shadow: none;
+//
+@button-border-radius: 0.25em;
+//
+@mini: 0.6rem;
+@tiny: 0.7rem;
+@small: 0.85rem;
+@medium: 0.92rem;
+@large: 1rem;
+@big: 1.125rem;
+@huge: 1.25rem;
+@massive: 1.3rem;
+//
+@button-background-color: #EEEEEE;
+@button-background-hover-color: #DDDDDD;
+@button-background-active-color: #DDDDDD;
+@button-background-selected-color: #DDDDDD;
+//
+@button-color: #EEEEEE;
+@button-hover-color: #EEEEEE;
+@button-active-color: #EEEEEE;
+@button-selected-color: #EEEEEE;
+//
+//
+///* local variables */
+
+//
+///* 2 *//* ROAD MAP */
+// --------------------------------------------------
+
+// --------------------------------------------------
+//
+///* 3 *//* BASE CLASS */
+.button-box (@color: white, @back-color: black) {
+    display: inline-block;
+
+    & > a {
+        .button-link (@color, @back-color);
+    }
+}
+
+.button (@color: white, @back-color: black) {
+    padding: 15px;
+    display: block;
+    line-height: 100%;
+    background-color: @back-color;
+    color: @color;
+    border: 1px solid lighten(@back-color, 20%);
+    &:hover {
+        background-color: lighten(@back-color,30%); 
+    }
+
+}
+//
+///* 4 *//* CONFIG MIXIN */
