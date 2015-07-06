@@ -24,9 +24,12 @@
 ///* general option tabs */
 @tabs-header: false;
 @tabs-shadow: true;
+@tabs-width-auto: false;
 ///* size tabs */
+@tabs-width: 140px;
 @tabs-radius-width: 4px;
 @tabs-content-radius-width: 4px;
+@tabs-content-padding: 28px;
 @tabs-border-width: 1px;
 @tabs-gap: 2px;
 @tabs-link-padding: 10px 15px;
@@ -67,10 +70,13 @@
 ///* 3 *//* BASE CLASS */
 .tabs {
     width: 100%;
-
+    // -----
+    // TABS
+    // -----
+    ///* General Tabs *///
     & > ul {
         margin-bottom: 0;
-        padding-left: 0; // Override default ul/ol
+        padding-left: 0;           // Override default ul/ol
         list-style: none;
         display: inline-block;
         &:extend(.clearfix all);
@@ -80,6 +86,9 @@
             display: block;
 
             > a {
+                background-color: @tabs-color-unselected;
+                color: @tabs-font-color-unselected;
+                line-height: @line-height-base;
                 position: relative;
                 display: block;
                 padding: @tabs-link-padding;
@@ -87,8 +96,9 @@
 
                 &:hover,
                 &:focus {
+                    background-color: @tabs-color-hover;
                     text-decoration: none;
-                    background-color: @tabs-color-hover; //@nav-link-hover-bg;
+                    cursor: pointer;
                     outline: none;
                 }
             }
@@ -98,112 +108,168 @@
 
                 &:hover,
                 &:focus {
-                    background-color: transparent;
+                    background-color: @tabs-color-unselected;
                     cursor: @cursor-disabled;
                 }
             }
-        }
-    }
-    // Tabs
-    // -------------------------
-    // Give the tabs something to sit on
-    .horizontal {
-        border-bottom: @tabs-border-width solid @tabs-border-color-selected;
-        margin-left: 0;
-        margin-right: 0;
-        width: 100%;
-
-        > li {
-            float: left;
-            // Make the list-items overlay the bottom border
-            // Actual tabs (as links)
-            > a {
-                background-color: @tabs-color-unselected;
-                color: @tabs-font-color-unselected;
-                margin-right: @tabs-gap;
-                line-height: @line-height-base;
-                border: none;
-                border-radius: @tabs-radius-width @tabs-radius-width 0 0;
-                margin-bottom: -1*@tabs-border-width;
-            }
-            // selected state, and its :hover to override normal :hover
             &.selected > a {
                 &,
                 &:hover,
                 &:focus {
                     color: @tabs-font-color-selected;
                     background-color: @tabs-color-selected;
+                    outline: none;
+                    cursor: default;
+                }
+            }
+        }
+    }
+    ///* Horizontal Tabs *///
+    // Give the tabs something to sit on
+    .horizontal {
+        border-bottom: @tabs-border-width solid @tabs-border-color-selected;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        margin-bottom: -1*@tabs-border-width;
+
+        > li {
+            float: left;
+            // Make the list-items overlay the bottom border
+            // Actual tabs (as links)
+            > a {
+                margin-right: @tabs-gap;            
+                border: none;
+                border-radius: @tabs-radius-width @tabs-radius-width 0 0;
+                
+            }
+            // selected state, and its :hover to override normal :hover
+            &.selected > a {
+                &,
+                &:hover,
+                &:focus {
+                    margin-bottom: -1*@tabs-border-width;
                     border: @tabs-border-width solid @tabs-border-color-selected;
                     border-bottom: none;
-                    cursor: default;
-                    outline: none;
+                    border-right: 2*@tabs-border-width solid @tabs-border-color-selected;
                     .shadow-up();
                 }
             }
         }
+    }
 
-        li[role="listbox"] {
-            & > ul {
-                display: none;
+    .vertical {
+        border-right: @tabs-border-width solid @tabs-border-color-selected;
+        float: left;
+        padding: 0;
+        margin: 0;
+        .tabs-width();
+
+        li {
+            a {
+                padding-left: 30px !important;
+                margin-bottom: @tabs-gap;
+                border-radius: @tabs-radius-width 0 0 @tabs-radius-width;
+                
             }
-            // Open dropdowns
-            .open > a {
+            &.selected > a {
                 &,
                 &:hover,
-                &:focus {
-                    background-color: @nav-link-hover-bg;
-                    border-color: @link-color;
-                }
-            }
-            // Dropdowns
-            // -------------------------
-            // Specific dropdowns
-            .nav-tabs .dropdown-menu {
-                // make dropdown border overlap tab border
-                margin-top: -1*@tabs-border-width;
-                // Remove the top rounded corners here since there is a hard edge above the menu
-                //.border-top-radius(0);
-            }
-
-            .caret {
-                display: inline-block;
-                width: 0;
-                height: 0;
-                margin-left: 2px;
-                vertical-align: middle;
-                border-top: 4px dashed;
-                border-top: 4px solid\9;
-                border-right: 4px solid transparent;
-                border-left: 4px solid transparent;
-                transition: transform 3s ease 0;
-                
-                &:hover {
-                    transform: rotate(180deg);
+                &:focus {  
+                    margin-right: -1*@tabs-border-width;
+                    border: @tabs-border-width solid @tabs-border-color-selected;
+                    border-right: none;
+                    border-bottom: 2*@tabs-border-width solid @tabs-border-color-selected;
                 }
             }
         }
     }
+
+    // --------------
     // Tabbable tabs
-    // -------------------------
+    // --------------
     .tabs-content {
-        background-color: @tabs-color-selected;
-        padding: 15px;
-        border: @tabs-border-width solid @tabs-border-color-selected;
-        border-top: none;
-        border-radius: 0 0 @tabs-content-radius-width @tabs-content-radius-width;
-        .shadow-down();
-    }
-    // Hide tabbable panes to start, show them when .tabs-content[data-state="active"]
-    & > div[data-state="active"] {
-        display: block;
+        //background-color: blue;
+        ///* General Tabable *///
+        & > div {
+            background-color: @tabs-color-selected;
+            padding: 1px+@tabs-content-padding;
+        }
+        // Hide tabbable panes to start, show them when .tabs-content[data-state="active"]
+        & > div[data-state="active"] {
+            display: block;
+        }
+
+        & > div[data-state="inactive"] {
+            display: none;
+        }    
+
+        ///* horizontal Tabable *///
+        .tabs-horizontal {
+            background-color: @tabs-color-selected;
+            border: @tabs-border-width solid @tabs-border-color-selected;
+            //border-top: none;
+            border-radius: 0 0 @tabs-content-radius-width @tabs-content-radius-width;
+            .shadow-down();
+        }
+
+        ///* vertical Tabable *///
+        .tabs-vertical {
+            //background-color: green;
+            //margin-bottom: 1.33333rem;
+            //padding-bottom: 0px !important;
+            //padding-top: 0px !important;
+            margin-left: @tabs-width;
+            border: @tabs-border-width solid @tabs-border-color-selected;
+            //border-left: none;
+            border-radius: 0 @tabs-content-radius-width @tabs-content-radius-width 0;
+            .shadow-down();
+
+            &:after {
+                clear: both;
+            }
+            &:after,
+            &:before {
+                content: " ";
+                display: table;
+            }
+        }
+
     }
 
-    & > div[data-state="inactive"] {
-        display: none;
+    // ----------
+    // Dropdowns
+    // ----------
+    li[role="listbox"] {
+        & > ul {
+            display: none;
+        }
+        // Open dropdowns
+        .open > a {
+            &,
+            &:hover,
+            &:focus {
+                background-color: @nav-link-hover-bg;
+                border-color: @link-color;
+            }
+        }
+        // Specific dropdowns
+        .nav-tabs .dropdown-menu {
+            // make dropdown border overlap tab border
+            margin-top: -1*@tabs-border-width;
+            // Remove the top rounded corners here since there is a hard edge above the menu
+            //.border-top-radius(0);
+        }
+        .caret{
+            .caret();
+        }
     }
-
+    // --------------
+    //  MIXIN
+    // --------------
     .header();
 }
+//
 //
 ///* 4 *//* CONFIG MIXIN */
 .header() when (@tabs-header = true) {
@@ -229,4 +295,25 @@
     -webkit-box-shadow: 4px 6px 8px -2px rgba(100,100,100,0.39);
     -moz-box-shadow: 4px 6px 8px -2px rgba(100,100,100,0.39);
     box-shadow: 4px 6px 8px -2px rgba(100,100,100,0.39);
+}
+
+.tabs-width() when (@tabs-width-auto = false) {
+    width: @tabs-width;
+}
+
+.caret() {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 7px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid\9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    transition: transform 3s ease 0;
+
+    &:hover {
+        transform: rotate(180deg);
+    }
 }
