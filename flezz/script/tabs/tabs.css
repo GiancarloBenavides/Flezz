@@ -66,9 +66,9 @@
   border: 1px solid #cccccc;
   border-bottom: none;
   border-right: 2px solid #cccccc;
-  -webkit-box-shadow: 3px -1px 3px -3px rgba(100, 100, 100, 0.39);
-  -moz-box-shadow: 3px -1px 3px -3px rgba(100, 100, 100, 0.39);
-  box-shadow: 3px -1px 3px -3px rgba(100, 100, 100, 0.39);
+  -webkit-box-shadow: 2px 0px 1px -1px rgba(100, 100, 100, 0.3);
+  -moz-box-shadow: 2px 0px 1px -1px rgba(100, 100, 100, 0.3);
+  box-shadow: 2px 0px 1px -1px rgba(100, 100, 100, 0.3);
 }
 .tabs .vertical {
   border-right: 1px solid #cccccc;
@@ -88,7 +88,9 @@
   margin-right: -1px;
   border: 1px solid #cccccc;
   border-right: none;
-  border-bottom: 2px solid #cccccc;
+  -webkit-box-shadow: 0px 2px 1px -1px rgba(100, 100, 100, 0.3);
+  -moz-box-shadow: 0px 2px 1px -1px rgba(100, 100, 100, 0.3);
+  box-shadow: 0px 2px 1px -1px rgba(100, 100, 100, 0.3);
 }
 .tabs .tabs-content > div {
   background-color: white;

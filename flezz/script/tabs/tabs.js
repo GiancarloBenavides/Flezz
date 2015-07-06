@@ -35,18 +35,22 @@ var tabs = (function () {
     var settings, dom, catchDom, suscribeEvents, events, changueTabPanel, initialize;
     ///* config selector *///
     settings = {
-        tabs: '.horizontal',
+        tabs_h: '.horizontal',
+        tabs_v: '.vertical',
         tabs_item: 'li',
         tabs_item_trigger: 'a'
     };
     dom = {};
     catchDom = function () {
-        dom.tabs_item_trigger = $(settings.tabs).find(settings.tabs_item_trigger);
+        dom.tabs_h_item_trigger = $(settings.tabs_h).find(settings.tabs_item_trigger);
+        dom.tabs_v_item_trigger = $(settings.tabs_v).find(settings.tabs_item_trigger);
     };
     ///* 4 *//* EVENT RECORD */
     suscribeEvents = function () {
-        dom.tabs_item_trigger.on('click', events.eSelectedTab);
-        dom.tabs_item_trigger.on('keypress', events.eKeypressTab);
+        dom.tabs_h_item_trigger.on('click', events.eSelectedTab);
+        dom.tabs_h_item_trigger.on('keypress', events.eKeypressTab);
+        dom.tabs_v_item_trigger.on('click', events.eSelectedTab);
+        dom.tabs_v_item_trigger.on('keypress', events.eKeypressTab);
     };
     ///* 5 *//* EVENT LOGIC */
     events = {
@@ -70,14 +74,16 @@ var tabs = (function () {
     };
     ///* 6 *//* PRIVATE FUNTIONS */
     changueTabPanel = function (e, trigger) {
-        var brother, pane, item;
+        var brother, pane, item, list, tab;
         item = trigger.parent();
+        list = item.parent();
+        tab = list.parent(); 
         ///* changue tab *///        
-        item.parent().find('li.selected').attr('class', '').attr('aria-selected', 'false');
+        list.find('li.selected').attr('class', '').attr('aria-selected', 'false');
         ///* changue panel *///
         pane = trigger.attr('data-tab');
-        $("#" + pane).attr('data-state', 'active').attr('aria-hidden', 'false');
-        $("#" + pane).siblings().attr('data-state', 'inactive').attr('aria-hidden', 'true');
+        tab.find("#" + pane).attr('data-state', 'active').attr('aria-hidden', 'false');
+        tab.find("#" + pane).siblings().attr('data-state', 'inactive').attr('aria-hidden', 'true');
         item.addClass('selected').attr('aria-selected', 'true');
         //console.log('changue panel');
     };
