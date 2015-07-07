@@ -2,7 +2,7 @@
 ///*          flezz framework 1.0           */
 ///******************************************/
 ///*  Name: tabs
-///*  Version: 1.1.0
+///*  Version: 1.2.0
 ///*  Description: tabs component
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org
@@ -25,7 +25,7 @@
 @tabs-header: false;
 @tabs-shadow: true;
 @tabs-width-auto: false;
-@tabs-unselected-gap: true;
+@tabs-depth: true;
 ///* size tabs */
 @tabs-width: 140px;
 @tabs-radius-width: 4px;
@@ -153,23 +153,19 @@
         margin-right: 0;
         width: 100%;
         margin-bottom: -1*@tabs-border-width; //t
-        
-        li:first-child{
-            //margin-left: 40px;
-        }
 
         > li {
             float: left;
             // Make the list-items overlay the bottom border
             // Actual tabs (as links)
             > a {
-                //.unselected-gap();
+                .depth();
                 margin-right: @tabs-gap;
                 //border-bottom:  @tabs-border-width solid @tabs-border-color-selected;                
                 border-radius: @tabs-radius-width @tabs-radius-width 0 0;
                 border: @tabs-border-width solid @tabs-border-color-unselected;
                 border-bottom: none;
-                
+
                 &:hover{
                     border: @tabs-border-width solid @tabs-border-color-hover; 
                     border-bottom: none;
@@ -184,7 +180,8 @@
                     margin-bottom: -2*@tabs-border-width;
                     border: @tabs-border-width solid @tabs-border-color-selected;
                     border-bottom-color: @tabs-bck-color-selected;
-                    border-right: 2*@tabs-border-width solid @tabs-border-color-selected;
+                    border-right: @tabs-border-width solid @tabs-border-color-selected;
+                    .depth-restore();
                     .shadow-tab-horizontal(); 
                 }
             }
@@ -357,7 +354,16 @@
     }
 }
 
-.unselected-gap() when (@tabs-unselected-gap = true) {
-    margin: 2px 0 2px 1px;
+.depth() when (@tabs-depth = true) {
+    margin: 3px @tabs-gap 1px 1px;
     padding: (@tabs-link-padding-topbottom - 4px) (@tabs-link-padding-leftright - 4px);
+}
+
+.depth-restore() when (@tabs-depth = true) {
+    @margin-sum: (4px-@tabs-border-width);
+    margin: 0;
+    margin-bottom: -1*@tabs-border-width;
+    padding: (@tabs-link-padding-topbottom ) (@tabs-link-padding-leftright) (@tabs-link-padding-topbottom - @margin-sum) (@tabs-link-padding-leftright);
+    border-right: 2*@tabs-border-width solid @tabs-border-color-selected;
+    margin-right: @tabs-gap;
 }
