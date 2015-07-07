@@ -2,7 +2,7 @@
 ///*          flezz framework 1.0           */
 ///******************************************/
 ///*  Name: tabs
-///*  Version: 1.0.0
+///*  Version: 1.1.0
 ///*  Description: tabs component
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org
@@ -25,26 +25,31 @@
 @tabs-header: false;
 @tabs-shadow: true;
 @tabs-width-auto: false;
+@tabs-unselected-gap: true;
 ///* size tabs */
 @tabs-width: 140px;
 @tabs-radius-width: 4px;
 @tabs-content-radius-width: 4px;
 @tabs-content-padding: 28px;
 @tabs-border-width: 1px;
-@tabs-gap: 2px;
-@tabs-link-padding: 10px 15px;
+@tabs-gap: @tabs-border-width*2;
+@tabs-link-padding-topbottom: 10px;
+@tabs-link-padding-leftright: 15px;
+///* title tabs */
+@tabs-font-color-title: rgb(32, 80, 129);
 ///* selected tabs */
-@tabs-color-selected: white;
-@tabs-font-color-selected: black;
-@tabs-border-color-selected: darken(@tabs-color-selected,20%);
+@tabs-bck-color-selected: white;
+@tabs-font-color-selected: @tabs-font-color-title;
+@tabs-border-color-selected: darken(@tabs-bck-color-selected,20%);
 ///* unselected tabs */
-@tabs-color-unselected: darken(@tabs-color-selected,10%);
-@tabs-font-color-unselected: rgb(35, 114, 71);
+@tabs-bck-color-unselected: darken(@tabs-bck-color-selected,10%);
+@tabs-font-color-unselected: lighten(@tabs-font-color-selected,10%);
 @tabs-border-color-unselected: transparent;
-@tabs-color-hover: darken(@tabs-color-selected,5%);
-@tabs-border-color-hover: darken(@tabs-color-selected,15%);
+///* unselected tabs - hover */
+@tabs-bck-color-hover: darken(@tabs-bck-color-selected,4%);
+@tabs-border-color-hover: darken(@tabs-bck-color-selected,5%);
 ///* disable tabs */
-@tabs-font-color-disable: darken(@tabs-color-selected,20%);
+@tabs-font-color-disable: darken(@tabs-bck-color-selected,20%);
 //** Disabled cursor for form controls and buttons.
 @cursor-disabled: not-allowed;
 //
@@ -75,8 +80,8 @@
     // -----
     ///* General Tabs *///
     & > ul {
-        margin-bottom: 0;
-        padding-left: 0;           // Override default ul/ol
+        margin: 0;                // Override default ul/ol
+        padding-left: 0;          // Override default ul/ol
         list-style: none;
         display: inline-block;
         &:extend(.clearfix all);
@@ -86,17 +91,18 @@
             display: block;
 
             > a {
-                background-color: @tabs-color-unselected;
+                //box-sizing: border-box;
+                background-color: @tabs-bck-color-unselected;
                 color: @tabs-font-color-unselected;
                 line-height: @line-height-base;
                 position: relative;
                 display: block;
-                padding: @tabs-link-padding;
+                padding: @tabs-link-padding-topbottom @tabs-link-padding-leftright;
                 text-decoration: none;
 
                 &:hover,
                 &:focus {
-                    background-color: @tabs-color-hover;
+                    background-color: @tabs-bck-color-hover;
                     text-decoration: none;
                     cursor: pointer;
                     outline: none;
@@ -108,7 +114,7 @@
 
                 &:hover,
                 &:focus {
-                    background-color: @tabs-color-unselected;
+                    background-color: @tabs-bck-color-unselected;
                     cursor: @cursor-disabled;
                 }
             }
@@ -117,9 +123,24 @@
                 &:hover,
                 &:focus {
                     color: @tabs-font-color-selected;
-                    background-color: @tabs-color-selected;
+                    background-color: @tabs-bck-color-selected;
                     outline: none;
                     cursor: default;
+                }
+            }
+            &.title {
+                div, 
+                div:hover,
+                div:focus {
+                    color: @tabs-font-color-title;
+                    font-weight: bold;
+                    background-color: transparent;
+                    border: @tabs-border-width solid transparent;
+                    border-bottom: none;
+                    cursor: default;
+                    outline: none;
+                    padding: (@tabs-link-padding-topbottom + @tabs-border-width) (@tabs-link-padding-leftright);
+                    line-height: 100%;
                 }
             }
         }
@@ -131,16 +152,28 @@
         margin-left: 0;
         margin-right: 0;
         width: 100%;
-        margin-bottom: -1*@tabs-border-width;
+        margin-bottom: -1*@tabs-border-width; //t
+        
+        li:first-child{
+            //margin-left: 40px;
+        }
 
         > li {
             float: left;
             // Make the list-items overlay the bottom border
             // Actual tabs (as links)
             > a {
-                margin-right: @tabs-gap;            
-                border: none;
+                //.unselected-gap();
+                margin-right: @tabs-gap;
+                //border-bottom:  @tabs-border-width solid @tabs-border-color-selected;                
                 border-radius: @tabs-radius-width @tabs-radius-width 0 0;
+                border: @tabs-border-width solid @tabs-border-color-unselected;
+                border-bottom: none;
+                
+                &:hover{
+                    border: @tabs-border-width solid @tabs-border-color-hover; 
+                    border-bottom: none;
+                }
 
             }
             // selected state, and its :hover to override normal :hover
@@ -148,11 +181,11 @@
                 &,
                 &:hover,
                 &:focus {
-                    margin-bottom: -1*@tabs-border-width;
+                    margin-bottom: -2*@tabs-border-width;
                     border: @tabs-border-width solid @tabs-border-color-selected;
-                    border-bottom: none;
+                    border-bottom-color: @tabs-bck-color-selected;
                     border-right: 2*@tabs-border-width solid @tabs-border-color-selected;
-                    .shadow-tab-horizontal();
+                    .shadow-tab-horizontal(); 
                 }
             }
         }
@@ -192,7 +225,7 @@
         //background-color: blue;
         ///* General Tabable *///
         & > div {
-            background-color: @tabs-color-selected;
+            background-color: @tabs-bck-color-selected;
             padding: 1px+@tabs-content-padding;
         }
         // Hide tabbable panes to start, show them when .tabs-content[data-state="active"]
@@ -206,7 +239,7 @@
 
         ///* horizontal Tabable *///
         .tabs-horizontal {
-            background-color: @tabs-color-selected;
+            background-color: @tabs-bck-color-selected;
             border: @tabs-border-width solid @tabs-border-color-selected;
             //border-top: none;
             border-radius: 0 0 @tabs-content-radius-width @tabs-content-radius-width;
@@ -219,7 +252,7 @@
             //margin-bottom: 1.33333rem;
             //padding-bottom: 0px !important;
             //padding-top: 0px !important;
-            margin-left: @tabs-width;
+            margin-left: @tabs-width; //t
             border: @tabs-border-width solid @tabs-border-color-selected;
             //border-left: none;
             border-radius: 0 @tabs-content-radius-width @tabs-content-radius-width 0;
@@ -322,4 +355,9 @@
     &:hover {
         transform: rotate(180deg);
     }
+}
+
+.unselected-gap() when (@tabs-unselected-gap = true) {
+    margin: 2px 0 2px 1px;
+    padding: (@tabs-link-padding-topbottom - 4px) (@tabs-link-padding-leftright - 4px);
 }

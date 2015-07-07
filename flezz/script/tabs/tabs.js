@@ -2,7 +2,7 @@
 ///*          flezz framework 1.0           */
 ///******************************************/
 ///*  Name: tabs
-///*  Version: 1.0.0
+///*  Version: 1.1.0
 ///*  Description: description tabs
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org

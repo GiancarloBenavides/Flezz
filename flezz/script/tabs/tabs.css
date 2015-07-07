@@ -3,7 +3,7 @@
   width: 100%;
 }
 .tabs > ul {
-  margin-bottom: 0;
+  margin: 0;
   padding-left: 0;
   list-style: none;
   display: inline-block;
@@ -14,7 +14,7 @@
 }
 .tabs > ul > li > a {
   background-color: #e6e6e6;
-  color: #237247;
+  color: #2a69aa;
   line-height: 1.42857143;
   position: relative;
   display: block;
@@ -23,7 +23,7 @@
 }
 .tabs > ul > li > a:hover,
 .tabs > ul > li > a:focus {
-  background-color: #f2f2f2;
+  background-color: #f5f5f5;
   text-decoration: none;
   cursor: pointer;
   outline: none;
@@ -39,10 +39,23 @@
 .tabs > ul > li.selected > a,
 .tabs > ul > li.selected > a:hover,
 .tabs > ul > li.selected > a:focus {
-  color: black;
+  color: #205081;
   background-color: white;
   outline: none;
   cursor: default;
+}
+.tabs > ul > li.title div,
+.tabs > ul > li.title div:hover,
+.tabs > ul > li.title div:focus {
+  color: #205081;
+  font-weight: bold;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-bottom: none;
+  cursor: default;
+  outline: none;
+  padding: 11px 15px;
+  line-height: 100%;
 }
 .tabs .horizontal {
   border-bottom: 1px solid #cccccc;
@@ -56,15 +69,20 @@
 }
 .tabs .horizontal > li > a {
   margin-right: 2px;
-  border: none;
   border-radius: 4px 4px 0 0;
+  border: 1px solid transparent;
+  border-bottom: none;
+}
+.tabs .horizontal > li > a:hover {
+  border: 1px solid #f2f2f2;
+  border-bottom: none;
 }
 .tabs .horizontal > li.selected > a,
 .tabs .horizontal > li.selected > a:hover,
 .tabs .horizontal > li.selected > a:focus {
-  margin-bottom: -1px;
+  margin-bottom: -2px;
   border: 1px solid #cccccc;
-  border-bottom: none;
+  border-bottom-color: white;
   border-right: 2px solid #cccccc;
   -webkit-box-shadow: 2px 0px 1px -1px rgba(100, 100, 100, 0.3);
   -moz-box-shadow: 2px 0px 1px -1px rgba(100, 100, 100, 0.3);

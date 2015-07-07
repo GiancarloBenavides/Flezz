@@ -17,6 +17,7 @@
 ///*  3. Base class.
 ///*  4. Config mixin.
 ///******************************************/
+@import '../../stylesheets/core/mixin/global.mixins.less';
 //
 ///* 1 *//* CONFIG COMPONENT VARIABLES */
 //
@@ -30,9 +31,67 @@
 ///* 2 *//* ROAD MAP */
 // --------------------------------------------------
 
+
 // --------------------------------------------------
 //
 ///* 3 *//* BASE CLASS */
+.dropdown (@color: #205081, @back-color: #eeeeee) {
+    .button(@color, @back-color);
+    .selected{
+    
+    }
+    .caret {
+        .caret();
+    }
+    ul {
+        display: none;
+        margin: 0;
+        padding: 0;
+        border: 1px solid #ccc;//lighten(@back-color,50%); 
+        
+        li {
+            list-style: none;
+            a {
+                padding: 8px;
+                display: block;
+                background-color: @color;
+                color: @back-color;
+                &:hover {
+                    background-color: @back-color;
+                    color: @color;
+                }
+            }
+        }
+    }
+    .open {
+        display: block;
+    }
+}
 
+div.dropdown[data-state="open"] {
+    .arrow-selected(@bottom: 1px);
+}
+div.dropdown[data-state="disabled"] {
+    .btn-disabled();
+}
 //
 ///* 4 *//* CONFIG MIXIN */
+.button (@color: white, @back-color: black) {
+    display: inline-block;
+
+    & > a {
+        padding: 15px;
+        display: block;
+        line-height: 100%;
+        background-color: @back-color;
+        color: @color;
+        border: 1px solid lighten(@back-color, 20%);
+        &:hover {
+            background-color: lighten(@back-color,30%);        
+        }
+    }
+}
+//
+.dropdown {
+    .dropdown(); 
+};
