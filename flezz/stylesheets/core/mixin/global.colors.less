@@ -2,7 +2,7 @@
 ///*          flezz framework 1.0           */
 ///******************************************/
 ///*  Name: color
-///*  Version: 2.7
+///*  Version: 0.2.8
 ///*  Description: Theme colors palette.
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org
@@ -21,27 +21,35 @@
 ///*  7. Zerez desing.
 ///*  8. Flezz color theme.
 ///******************************************/
-///* local variables */
+//
+///* CONFIG COMPONENT VARIABLES *///
+///* global variables */
 @brightness-cutoff: 44%;
 @font-contrast: 40%;
-@font-title-icrement: 14%;
+@font-title-icrement: 10%;
 ///* setting options */
-@primary-header-background: @zerez-dark;
-@primary-body-background: @zerez-light;
-@secondary-header-background: @zerez-middle;
-@secondary-body-background: @zerez-light;
-@footer-background: @zerez-dark;
+@primary-header-background: @zerez-blue-dark;
+@primary-body-background: @zerez-gray-light;
+@secondary-header-background: @zerez-purple;
+@secondary-body-background:  @zerez-gray-light;
+@footer-background: @zerez-gray;
 @sidebar-background: @zerez-gray;
-@color-secundary: @zerez-blue;
-@color-secundary-weight: 1%;
-@theme-opacity: true;
-@box-opacity: 0%;
 //
-@theme-darken: true;
+///* local variables */
+@color-secundary: @zerez-blue;
+@color-secundary-weight: 10%;
+//
+@color-body-weight: 10%;
+//
 ///* local statements */
 //.fontPrimaryColor();
 //.fontSecondaryColor();
 //.fontFooterColor();
+///* ROAD MAP *///
+@theme-darken: true;
+@theme-darken: 0%;
+@theme-opacity: true;
+//
 ///* 1 */
 @white: rgb(250,250,250);
 @gray10: rgb(230,230,232);
@@ -108,16 +116,17 @@
 @zerez-blue: rgb(0,175,239);
 @zerez-green: rgb(0,168,89);
 @zerez-red: rgb(237,50,55);
-@zerez-gray: rgb(35,44,49);
-@zerez-light: rgb(247,245,250);
-@zerez-middle: rgb(40,0,80);
-@zerez-dark: rgb(20,0,40);
+//
+@zerez-gray: rgb(34, 43, 50);
+@zerez-gray-light: rgb(245,245,247);
+@zerez-purple: rgb(40,0,80);
+@zerez-blue-dark: rgb(26,55,80); //203080
 ///* 8 */
 ///* PRYMARY COLORS *///
 ///* header luminoso *///
 .fontPrimaryColor() when (luma(@primary-header-background) >= @brightness-cutoff) {
     @a: mix(@color-secundary,@primary-header-background,@color-secundary-weight);
-    @c: (100% - @box-opacity);
+    @c: (@color-body-weight);
     @p1: darken(@a,@font-contrast);
     @p2: darken(@p1,@font-title-icrement);
     @p3: darken(@p1,2*@font-title-icrement);
@@ -129,7 +138,7 @@
 .fontPrimaryColor() when (luma(@primary-header-background) < @brightness-cutoff) {
     @a: mix(@color-secundary,@primary-header-background, @color-secundary-weight);
     @b: @font-contrast/4;
-    @c: (100% - @box-opacity);
+    @c: (@color-body-weight);
     @p1: lighten(@a,@b);
     @p2: lighten(@p1,@font-title-icrement);
     @p3: lighten(@p1,2*@font-title-icrement);
@@ -154,51 +163,42 @@
     @primary-body-title-color: lighten(@primary-body-font-color,2*@font-title-icrement);
 }
 //
-///* SECONDARY COLORS *///
+///* SECONDARY COLORS */// - // mix [100-0]
 ///* header luminoso *///
 .fontSecondaryColor() when (luma(@secondary-header-background) >= @brightness-cutoff) {
-    @a: mix(@color-secundary,@secondary-header-background,@color-secundary-weight*1.5);
-    @c: (100% - @box-opacity);
-    @s1: darken(@a,@font-contrast);
-    @s2: darken(@s1,@font-title-icrement);    
-    @s3: darken(@s1,2*@font-title-icrement);
-    @secondary-header-font-color: mix(@secondary-body-background,@s1,@c);   
-    @secondary-header-subtitle-color: mix(@secondary-body-background,@s2,@c);
-    @secondary-header-title-color: mix(@secondary-body-background,@s3,@c);
+    @a: mix(@color-secundary,@secondary-header-background,@color-secundary-weight/4);
+    @b: mix(@secondary-body-background,@a,@color-body-weight/4);
+    @c: darken(@b,@font-contrast/1.5);
+    @secondary-header-font-color: @c;
+    @secondary-header-subtitle-color: darken(@c,@font-title-icrement);    
+    @secondary-header-title-color: darken(@c,2*@font-title-icrement);
 }
 ///* header oscuro *///
 .fontSecondaryColor() when (luma(@secondary-header-background) < @brightness-cutoff) {
-    @a: mix(@color-secundary,@secondary-header-background,@color-secundary-weight*1.5);
-    @b: @font-contrast/4;
-    @c: (100% - @box-opacity);
-    @s1: lighten(@a,@b);
-    @s2: lighten(@s1,@font-title-icrement);
-    @s3: lighten(@s1,(2*@font-title-icrement));
-    @secondary-header-font-color: mix(@secondary-body-background,@s1,@c);   
-    @secondary-header-subtitle-color: mix(@secondary-body-background,@s2,@c);
-    @secondary-header-title-color: mix(@secondary-body-background,@s3,@c);
+    @a: mix(@color-secundary,@secondary-header-background,@color-secundary-weight/3);
+    @b: mix(@secondary-body-background,@a,@color-body-weight/3);
+    @c: lighten(@b,@font-contrast*1.9);
+    @secondary-header-font-color: @c;
+    @secondary-header-subtitle-color: lighten(@c,@font-title-icrement);
+    @secondary-header-title-color: lighten(@c,(2*@font-title-icrement));
 }
 ///* body luminoso *///
 .fontSecondaryColor() when (luma(@secondary-body-background) >= @brightness-cutoff) {
-    @a: mix(@color-secundary,@secondary-body-background,@color-secundary-weight*1.5);
-    @b: @font-contrast*1.4;
-    @c: (100% - @box-opacity);
-    @secondary-body-font-color:  darken(@a,@b);;
-    @secondary-body-subtitle-color: darken(@secondary-body-font-color,@font-title-icrement);
-    @secondary-body-title-color: darken(@secondary-body-font-color,2*@font-title-icrement);
-    .flag{width: 1px};
+    @a: mix(@color-secundary,@secondary-body-background,@color-secundary-weight/3);
+    @b: mix(@primary-body-background,@a,@color-body-weight/3);
+    @c: darken(@b,@font-contrast/1.4);
+    @secondary-body-font-color: @c;
+    @secondary-body-subtitle-color: darken(@c,@font-title-icrement);   
+    @secondary-body-title-color: darken(@c,(2*@font-title-icrement)); 
 }
 ///* body oscuro *///
 .fontSecondaryColor() when (luma(@secondary-body-background) < @brightness-cutoff) {
-    @a: mix(@color-secundary,@secondary-body-background,@color-secundary-weight*1.5);
-    @b: @font-contrast*1.6;
-    @c: (100% - @box-opacity);
-    @s4: lighten(@a,@b);
-    @s5: lighten(@s4,@font-title-icrement);   
-    @s6: lighten(@s4,(2*@font-title-icrement));
-    @secondary-body-font-color: mix(@secondary-body-background,@s4,@c);
-    @secondary-body-subtitle-color: mix(@secondary-body-background,@s5,@c);
-    @secondary-body-title-color: mix(@secondary-body-background,@s6,@c);  
+    @a: mix(@color-secundary,@secondary-body-background,@color-secundary-weight/3);
+    @b: mix(@primary-body-background,@a,@color-body-weight/3);
+    @c: darken(@b,@font-contrast/1.4);
+    @secondary-body-font-color: @c;
+    @secondary-body-subtitle-color: lighten(@c,@font-title-icrement);   
+    @secondary-body-title-color: lighten(@c,(2*@font-title-icrement));
 }
 //
 ///* FOOTER COLORS *///
@@ -217,6 +217,7 @@
     @footer-subtitle-color: lighten(@footer-font-color,@font-title-icrement);   
     @footer-title-color: lighten(@footer-font-color,(2*@font-title-icrement));
 }
+//
 ///* Shorthand  Initialize Color *///
 .color-init() {
     .fontPrimaryColor();
