@@ -35,7 +35,7 @@ var name_component = (function () {
     //
     ///* 3 *//* CONFIG VARIABLES */
     ///* private variables, and private methods *///
-    var settings, dom, catcheDom, suscribeEvents, events, privateFuntion, initialize;
+    var settings, dom, catcheDom, suscribeEvents, events, toggle, initialize;
     ///* config selector *///
     // Objeto literal en el cual establecemos valores que vamos a usar mas adelante en este ámbito
     // los objetos literales pueden contener propiedades y métodos
@@ -57,7 +57,8 @@ var name_component = (function () {
     catcheDom = function () {
         // encontrar y almacenar los elementos objetivo del DOM
         dom.context = $(settings.selector_main);
-        dom.trigger = dom.context.find(settings.selector_trigger);
+        dom.trigger = dom.context.children(settings.selector_trigger);
+        console.log(dom.trigger);
         dom.target = dom.context.find(settings.selector_target);
     };
     //
@@ -73,27 +74,26 @@ var name_component = (function () {
     // Objeto que guarda métodos que se van a usar en cada evento definido en la función suscribeEvents
     events = {
         callbackClick: function (e) {
-            var context, item, target;
-            item = dom.context.find(item);
-            //....
-            privateFuntion(e);
-            //....
+            var context, item, state, target, clase;
+            state = dom.context.attr('data-state');
+            clase = dom.trigger.html();
+            console.log("click" + clase);
+            
+            if (state !== 'disabled') {
+                toggle(e, state);
+            }
         },
         callbackTab: function (e) {
-            //....
-            privateFuntion(e);
-            //....
+
         },
         callbackStop: function (e) {
-            //....
-            privateFuntion(e);
-            //....
+
         }
     };
     //
     ///* 7 *//* PRIVATE FUNTIONS */
-    privateFuntion = function (e) {
-        //....
+    toggle = function (e, state) {
+        console.log("click" + state);
     };
     //
     ///* 8 *//* PUBLIC FUNTIONS - METHODS */

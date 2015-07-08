@@ -23,7 +23,7 @@
 }
 .tabs > ul > li > a:hover,
 .tabs > ul > li > a:focus {
-  background-color: #f5f5f5;
+  background-color: #f0f0f0;
   text-decoration: none;
   cursor: pointer;
   outline: none;
@@ -76,7 +76,7 @@
   border-bottom: none;
 }
 .tabs .horizontal > li > a:hover {
-  border: 1px solid #f2f2f2;
+  border: 1px solid #ededed;
   border-bottom: none;
 }
 .tabs .horizontal > li.selected > a,

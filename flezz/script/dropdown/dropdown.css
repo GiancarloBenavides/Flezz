@@ -19,7 +19,7 @@ div.dropdown[data-state="open"] > a:before {
   border: 7px solid transparent;
   border-style: outset outset solid outset;
   border-bottom-color: #cccccc;
-  bottom: -1px;
+  bottom: -11px;
   content: "";
   height: 0;
   left: 50%;
@@ -27,11 +27,15 @@ div.dropdown[data-state="open"] > a:before {
   overflow: hidden;
   position: absolute;
   width: 0;
+  z-index: 1000;
 }
 div.dropdown[data-state="open"] > a:after {
   background: transparent;
   border-bottom-color: #ffffff;
-  bottom: -2px;
+  bottom: -12px;
+}
+div.dropdown[data-state="open"] .caret {
+  transform: rotate(180deg);
 }
 div.dropdown[data-state="disabled"] a {
   border-color: #e6e6e6;
@@ -46,18 +50,56 @@ div.dropdown[data-state="disabled"] a:focus {
   cursor: not-allowed;
 }
 .dropdown {
+  position: relative;
   display: inline-block;
 }
 .dropdown > a {
   padding: 15px;
   display: block;
   line-height: 100%;
-  background-color: #eeeeee;
+  background-color: #e6e6e6;
   color: #205081;
-  border: 1px solid #ffffff;
+  border: 1px solid transparent;
 }
 .dropdown > a:hover {
+  background-color: #f0f0f0;
+  border-color: #eeeeee;
+}
+.dropdown > a:active {
+  border-color: #f8f8f8;
+}
+.dropdown ul {
+  position: absolute;
+  top: calc(100% + 10px);
+  display: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ccc;
   background-color: #ffffff;
+  min-width: 160px;
+  z-index: 900;
+}
+.dropdown ul li {
+  list-style: none;
+}
+.dropdown ul li:first-child {
+  padding-top: 7px;
+}
+.dropdown ul li:last-child {
+  padding-bottom: 7px;
+}
+.dropdown ul li a {
+  padding: 7px 15px;
+  display: block;
+  background-color: #ffffff;
+  color: #205081;
+}
+.dropdown ul li a:hover {
+  background-color: #e6e6e6;
+  color: #205081;
+}
+.dropdown .open {
+  display: block;
 }
 .dropdown .caret {
   display: inline-block;
@@ -70,26 +112,4 @@ div.dropdown[data-state="disabled"] a:focus {
   border-right: 4px solid transparent;
   border-left: 4px solid transparent;
   transition: transform 3s ease 0;
-}
-.dropdown ul {
-  display: none;
-  margin: 0;
-  padding: 0;
-  border: 1px solid #ccc;
-}
-.dropdown ul li {
-  list-style: none;
-}
-.dropdown ul li a {
-  padding: 8px;
-  display: block;
-  background-color: #205081;
-  color: #eeeeee;
-}
-.dropdown ul li a:hover {
-  background-color: #eeeeee;
-  color: #205081;
-}
-.dropdown .open {
-  display: block;
 }

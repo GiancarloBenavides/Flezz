@@ -6,13 +6,12 @@
 ul {
     margin: 0;
     padding: 0;
-    border: 1px solid gray;
+    
     width: auto;
-    display: inline-block;
+    float: left;
 
     li {
         background-color: beige;
-        display: inline-block;
         list-style: none;
 
         a {
@@ -20,10 +19,11 @@ ul {
             text-decoration: none;
             color: black;
             padding: 20px;
+            border: 1px solid #cccccc;
         }
         &.selected {
             font-weight: bold;
-            .arrow-selected(@border-color: gray); 
+            .arrow-selected(); 
             a {
                 color: cornflowerblue;
             }
@@ -35,12 +35,11 @@ ul {
     display: inline-block;
     position: absolute;
     padding: 15px;
-    top: 103px;
+    top: 102px;
     left: 626px;
     background-color: white;
-    border: 1px solid gray;
+    border: 1px solid #cccccc;
     text-align: center;
-    border-top: 0;
     min-width: 150px;
 }
 //
