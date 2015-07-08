@@ -52,21 +52,26 @@ div.dropdown[data-state="disabled"] a:focus {
 .dropdown {
   position: relative;
   display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .dropdown > a {
-  padding: 15px;
+  font-size: 1rem;
+  padding: 0.7rem 1rem;
   display: block;
   line-height: 100%;
   background-color: #e6e6e6;
-  color: #205081;
+  color: #2a69aa;
   border: 1px solid transparent;
 }
 .dropdown > a:hover {
   background-color: #f0f0f0;
-  border-color: #eeeeee;
+  border-color: #ededed;
 }
 .dropdown > a:active {
-  border-color: #f8f8f8;
+  border-color: #f7f7f7;
 }
 .dropdown ul {
   position: absolute;
@@ -74,7 +79,7 @@ div.dropdown[data-state="disabled"] a:focus {
   display: none;
   margin: 0;
   padding: 0;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   background-color: #ffffff;
   min-width: 160px;
   z-index: 900;
@@ -91,12 +96,11 @@ div.dropdown[data-state="disabled"] a:focus {
 .dropdown ul li a {
   padding: 7px 15px;
   display: block;
-  background-color: #ffffff;
   color: #205081;
 }
 .dropdown ul li a:hover {
   background-color: #e6e6e6;
-  color: #205081;
+  color: #2a69aa;
 }
 .dropdown .open {
   display: block;

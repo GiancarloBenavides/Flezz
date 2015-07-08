@@ -58,29 +58,23 @@ var name_component = (function () {
         // encontrar y almacenar los elementos objetivo del DOM
         dom.context = $(settings.selector_main);
         dom.trigger = dom.context.children(settings.selector_trigger);
-        console.log(dom.trigger);
-        dom.target = dom.context.find(settings.selector_target);
     };
     //
     ///* 5 *//* EVENT RECORD */
     // Función donde establecemos los eventos que tendrán cada uno de los elementos del objeto DOM.
     suscribeEvents = function () {
         dom.trigger.on('click', events.callbackClick);
-        dom.trigger.on('keypress', events.callbackTab);
-        dom.context.on('click', settings.selector_stop, events.callbackStop);
     };
     //
     ///* 6 *//* EVENT LOGIC */
     // Objeto que guarda métodos que se van a usar en cada evento definido en la función suscribeEvents
     events = {
         callbackClick: function (e) {
-            var context, item, state, target, clase;
-            state = dom.context.attr('data-state');
-            clase = dom.trigger.html();
-            console.log("click" + clase);
-            
+            var context, item, state, target, clase, trigger;
+            trigger = $(this);
+            state = trigger.parent().attr('data-state');
             if (state !== 'disabled') {
-                toggle(e, state);
+                toggle(e, trigger, state);
             }
         },
         callbackTab: function (e) {
@@ -92,8 +86,18 @@ var name_component = (function () {
     };
     //
     ///* 7 *//* PRIVATE FUNTIONS */
-    toggle = function (e, state) {
-        console.log("click" + state);
+    toggle = function (e, trigger, state) {
+        var context, list;
+        context = trigger.parent();
+        list = context.children('ul');
+        if (state === 'open') {
+            context.attr('data-state', 'close');
+            list.attr('aria-hidden', 'true');
+        } else {
+            context.attr('data-state', 'open');
+            list.attr('aria-hidden', 'true');
+        }
+        list.toggleClass('open');
     };
     //
     ///* 8 *//* PUBLIC FUNTIONS - METHODS */
