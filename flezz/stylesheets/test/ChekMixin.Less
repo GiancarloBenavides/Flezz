@@ -41,7 +41,39 @@ ul {
     border: 1px solid #cccccc;
     text-align: center;
     min-width: 150px;
+    clear: both;
 }
+.clear:after,
+.clear:before {
+    position: static;
+     content: "";
+     clear: both;
+}
+
+.aceptar{
+    .btn-primary(5);
+}
+
+.borrar{
+    .btn-danger(4);
+}
+
+.enviar{
+    .btn-success(3);
+}
+
+.calcular{
+    .btn-warning(2);
+}
+
+.mostrar{
+    .btn-default(2);
+}
+
+.cobrar{
+    .btn-disabled(2);
+}
+
 //
 /* color check   ---- [ OK ] */@state: OK;
 ///******************************************/

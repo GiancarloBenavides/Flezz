@@ -65,6 +65,7 @@ div.dropdown[data-state="disabled"] a:focus {
   background-color: #e6e6e6;
   color: #2a69aa;
   border: 1px solid transparent;
+  border-radius: 0.35rem;
 }
 .dropdown > a:hover {
   background-color: #f0f0f0;
