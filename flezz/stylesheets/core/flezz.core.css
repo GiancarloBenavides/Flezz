@@ -5,16 +5,19 @@
 /* include animation  [ OK ] */
 /* include Border --- [ OK ] */
 /* include other ---- [ OK ] */
-/* include Eql ------ [ OK ] */
-/* include Eql ------ [ OK ] */
+/* settings Eql ----- [ OK ] */
+/* config Eql ------- [ OK ] */
 /* include dsn ------ [ OK ] */
-/* include dsn ------ [ OK ] */
-/* include dsn ------ [ OK ] */
-/* include cmp ------ [ OK ] */
-/* include cmp ------ [ OK ] */
+/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+/* settings dsn ----- [ OK ] */
+/* config dsn ------- [ OK ] */
+/* settings cmp ----- [ OK ] */
+/* config cmp ----- [ OK ] */
 /* include mixin ---- [ OK ] */
 /* include picture -- [ OK ] */
+/* settings core - [ OK ] */
 /* variables config - [ OK ] */
+/* custom settings - [ OK ] */
 @font-face {
   font-family: "OpenSansRegular";
   src: url("../../assets/fonts/OpenSans-Regular.eot?");

@@ -30,11 +30,12 @@
 @button-degraded: true;
 @button-depth: true;
 //
-@button-default-font-color: #444;
-@button-default-background-color: #eee;
+@button-default-font-color: rgb(145, 145, 145);
+@button-default-background-color: rgb(238, 238, 238);
 @button-default-border-color: darken(@button-default-background-color,20%);
 @button-default-border-width: 1px;
 @button-default-size: 4;
+@button-line-height: 1.428571429; // 20/14
 //
 @default: rgb(219, 219, 219);
 @prymary: rgb(40, 96, 144);
@@ -57,7 +58,7 @@
 ///* 3 *//* BASE CLASS */
 .button-box (@color: @button-default-font-color; @back-color: @button-default-background-color; @border-color: @button-default-border-color; @border-width: @button-default-border-width; @size: @button-default-size;) {
     @font-base : 1rem * (@size + 6) / 10;
-    @font-70 : @font-base * (3 + @size)/10;
+    @font-70 : @font-base * (@size)/10;
     @radius: 1rem * (5*@size + 15)/100;
     @padding: @font-70 @font-base;
     display: inline-block;
@@ -83,7 +84,7 @@
         font-size: @font-base;
         padding: @padding;
         display: block;
-        line-height: 100%;
+        line-height: @button-line-height;
         background-color: @back-color;
         color: @color;
         border: @border-width solid @border-color;
@@ -91,7 +92,7 @@
         cursor: not-allowed;
         .button-border-radius(@radius);
         .button-text-transform();
-        .button-text-shadow(@color);
+        //.button-text-shadow(@color);
         .button-degraded();
         .button-depth();
     }
@@ -115,7 +116,7 @@
     font-size: @font-base;
     padding: @padding;
     display: block;
-    line-height: 100%;
+    line-height: @button-line-height;
     background-color: @back-color;
     color: @color;
     border: @border-width solid @border-color;
@@ -128,7 +129,7 @@
     
     &:hover {
         background-color: lighten(@back-color,4%);
-        border-color: lighten(@back-color, 3%);
+        //border-color: lighten(@back-color, 3%);
     }
     &:active {
         border-color: lighten(@back-color, 7%);
@@ -150,7 +151,7 @@
 }
 
 .button-text-shadow(@text-color) when (@button-text-shadow = true) {
-    @shadow-color: contrast(@text-color, fade(black,20%), white);
+    @shadow-color: contrast(@text-color, fade(black,20%), #ddd);
     text-shadow: 0 -1px 0 @shadow-color;
 }
 
