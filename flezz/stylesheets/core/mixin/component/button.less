@@ -2,7 +2,7 @@
 ///*          flezz framework 1.0           */
 ///******************************************/
 ///*  Name: Button
-///*  Version: 1.0.0
+///*  Version: 0.1.1
 ///*  Description: description name_component
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org
@@ -23,52 +23,18 @@
 //
 ///* global variables */
 ///* general option */
-@button-text-transform: none;
-@button-font-weight: normal;
 //
-@button-background-image: none;
-@button-hover-background-image: none;
-@button-active-background-image: none;
-@button-selected-background-image: none;
-//
-@button-box-shadow: none;
-@button-hover-box-shadow: none;
-@button-active-box-shadow: none;
-@button-selected-box-shadow: none;
-//
-@button-border-radius: 0.25em;
-//
-@mini: 0.6rem;
-@tiny: 0.7rem;
-@small: 0.85rem;
-@medium: 0.92rem;
-@large: 1rem;
-@big: 1.125rem;
-@huge: 1.25rem;
-@massive: 1.3rem;
-//
-@button-background-color: #EEEEEE;
-@button-background-hover-color: #DDDDDD;
-@button-background-active-color: #DDDDDD;
-@button-background-selected-color: #DDDDDD;
-//
-@button-color: #EEEEEE;
-@button-hover-color: #EEEEEE;
-@button-active-color: #EEEEEE;
-@button-selected-color: #EEEEEE;
-//
-//
-@button-border-width: 1px;
+@button-text-transform: true;
+@button-border-radius: true;
 @button-text-shadow: true;
 @button-degraded: true;
 @button-depth: true;
-
-///* local variables */
-
 //
-///* 2 *//* ROAD MAP */
-// --------------------------------------------------
-@button-border-radius: true;
+@button-default-font-color: #444;
+@button-default-background-color: #eee;
+@button-default-border-color: darken(@button-default-background-color,20%);
+@button-default-border-width: 1px;
+@button-default-size: 4;
 //
 @default: rgb(219, 219, 219);
 @prymary: rgb(40, 96, 144);
@@ -77,10 +43,19 @@
 @warning: rgb(236,151,31);
 @danger: rgb(217,83,79);
 //
+//
+///* local variables */
+//
+///* 2 *//* ROAD MAP */
+// --------------------------------------------------
+
+
+
+//
 // --------------------------------------------------
 //
 ///* 3 *//* BASE CLASS */
-.button-box (@color: white; @back-color: black; @border-color: transparent; @border-width: 1px; @size: 4) {
+.button-box (@color: @button-default-font-color; @back-color: @button-default-background-color; @border-color: @button-default-border-color; @border-width: @button-default-border-width; @size: @button-default-size;) {
     @font-base : 1rem * (@size + 6) / 10;
     @font-70 : @font-base * (3 + @size)/10;
     @radius: 1rem * (5*@size + 15)/100;
@@ -94,7 +69,49 @@
     }
 }
 
-.button (@color: white; @back-color: black; @border-color: transparent; @border-width: 1px; @padding: 1rem; @radius: 0;) {
+.button-disabled (@color: @button-default-font-color; @back-color: @button-default-background-color; @border-color: @button-default-border-color; @border-width: @button-default-border-width; @size: @button-default-size;) {
+    @font-base : 1rem * (@size + 6) / 10;
+    @font-70 : @font-base * (3 + @size)/10;
+    @radius: 1rem * (5*@size + 15)/100;
+    @padding: @font-70 @font-base;
+    display: inline-block;
+    .user-select();
+    
+    & > a,
+    & > a:hover,
+    & > a:active {
+        font-size: @font-base;
+        padding: @padding;
+        display: block;
+        line-height: 100%;
+        background-color: @back-color;
+        color: @color;
+        border: @border-width solid @border-color;
+        text-decoration: none; 
+        cursor: not-allowed;
+        .button-border-radius(@radius);
+        .button-text-transform();
+        .button-text-shadow(@color);
+        .button-degraded();
+        .button-depth();
+    }
+}
+
+.button-round (@color: @button-default-font-color; @back-color: @button-default-background-color; @border-color: @button-default-border-color; @border-width: @button-default-border-width; @size: @button-default-size;) {
+    @font-base : 1rem * (@size + 6) / 10;
+    @font-70 : @font-base * (3 + @size)/10;
+    @radius: 1rem * (5*@size + 15)/100;
+    @padding: @font-70 @font-base;
+    display: inline-block;
+    .user-select();
+
+    & > a {
+        cursor: default;
+        .button(@color; @back-color; @border-color; @border-width; @padding; 2em;);
+    }
+}
+    
+.button (@color: @button-default-font-color; @back-color: @button-default-background-color; @border-color: @button-default-border-color; @border-width: @button-default-border-width; @padding: 1rem; @radius: 0;) {
     font-size: @font-base;
     padding: @padding;
     display: block;
@@ -102,6 +119,8 @@
     background-color: @back-color;
     color: @color;
     border: @border-width solid @border-color;
+    transition: background-color 200ms ease-out;
+    text-decoration: none; 
     .button-border-radius(@radius); 
     .button-text-shadow(@color);
     .button-degraded();
@@ -116,11 +135,18 @@
         .button-degraded-active();
     }
 }
-
 //
 ///* 4 *//* CONFIG MIXIN */
-.button-border-radius(@radius) when (@button-border-radius = true){
+.button-border-radius(@radius) when (@button-border-radius = true) {
     border-radius: @radius;
+}
+
+.button-border-radius-round() when (@button-border-radius-round = true) {
+    border-radius: 50%;
+}
+
+.button-text-transform() when (@button-text-transform = true){
+    text-transform: capitalize;
 }
 
 .button-text-shadow(@text-color) when (@button-text-shadow = true) {
@@ -133,14 +159,15 @@
 }
 
 .button-degraded() when (@button-degraded = true) {
-    background-image: linear-gradient(rgba(255,255,255,.2) 0%, rgba(0,0,0,.2) 100%);
+    background-image: linear-gradient(rgba(255,255,255,.4) 0%, rgba(0,0,0,.3) 100%);
 }
 
 .button-degraded-active() when (@button-degraded = true) {
-    background-image: linear-gradient(rgba(0,0,0,.2) 0%, rgba(255,255,255,.2) 100%);
+    background-image: linear-gradient(rgba(0,0,0,.2) 0%, rgba(255,255,255,.1) 100%);
 }
 //
 ///* 5 *//* PRECONFIGURED PATTERNS */
+///* boostrap patterns *///
 .btn-default(@btn-size){
     .button-box (@color: black; @back-color: @default; @border-color: darken(@default,7%); @border-width: 1px; @size: @btn-size);
 }
@@ -166,6 +193,9 @@
 }
 
 .btn-disabled(@btn-size){
+    .button-disabled (@color: gray; @back-color: white; @border-color: darken(white,7%); @border-width: 1px; @size: @btn-size);
+}
+///* Fundation patterns *///
+.button-success(@btn-size){
     .button-box (@color: gray; @back-color: white; @border-color: darken(white,7%); @border-width: 1px; @size: @btn-size);
 }
-

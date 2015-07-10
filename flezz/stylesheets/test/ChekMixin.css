@@ -85,16 +85,18 @@ ul li.selected a {
 }
 .aceptar > a {
   cursor: default;
-  font-size: 1.1rem;
-  padding: 0.88rem 1.1rem;
+  font-size: 1.3rem;
+  padding: 1.3rem 1.3rem;
   display: block;
   line-height: 100%;
   background-color: #286090;
   color: white;
   border: 1px solid #204d74;
-  border-radius: 0.4rem;
+  transition: background-color 200ms ease-out;
+  text-decoration: none;
+  border-radius: 0.5rem;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.3) 100%);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 .aceptar > a:hover {
@@ -103,7 +105,7 @@ ul li.selected a {
 }
 .aceptar > a:active {
   border-color: #3073ac;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
 }
 .borrar {
   display: inline-block;
@@ -114,16 +116,18 @@ ul li.selected a {
 }
 .borrar > a {
   cursor: default;
-  font-size: 1rem;
-  padding: 0.7rem 1rem;
+  font-size: 1.1rem;
+  padding: 0.88rem 1.1rem;
   display: block;
   line-height: 100%;
   background-color: #d9534f;
   color: white;
   border: 1px solid #d33632;
-  border-radius: 0.35rem;
+  transition: background-color 200ms ease-out;
+  text-decoration: none;
+  border-radius: 0.4rem;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.3) 100%);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 .borrar > a:hover {
@@ -132,7 +136,7 @@ ul li.selected a {
 }
 .borrar > a:active {
   border-color: #df706c;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
 }
 .enviar {
   display: inline-block;
@@ -150,9 +154,11 @@ ul li.selected a {
   background-color: #449d44;
   color: white;
   border: 1px solid #398439;
+  transition: background-color 200ms ease-out;
+  text-decoration: none;
   border-radius: 0.3rem;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.3) 100%);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 .enviar > a:hover {
@@ -161,7 +167,7 @@ ul li.selected a {
 }
 .enviar > a:active {
   border-color: #51b451;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
 }
 .calcular {
   display: inline-block;
@@ -179,9 +185,11 @@ ul li.selected a {
   background-color: #ec971f;
   color: white;
   border: 1px solid #d58412;
+  transition: background-color 200ms ease-out;
+  text-decoration: none;
   border-radius: 0.25rem;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.3) 100%);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 .calcular > a:hover {
@@ -190,7 +198,7 @@ ul li.selected a {
 }
 .calcular > a:active {
   border-color: #efa640;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
 }
 .mostrar {
   display: inline-block;
@@ -201,16 +209,18 @@ ul li.selected a {
 }
 .mostrar > a {
   cursor: default;
-  font-size: 0.8rem;
-  padding: 0.4rem 0.8rem;
+  font-size: 0.7rem;
+  padding: 0.28rem 0.7rem;
   display: block;
   line-height: 100%;
   background-color: #dbdbdb;
   color: black;
   border: 1px solid #c9c9c9;
-  border-radius: 0.25rem;
+  transition: background-color 200ms ease-out;
+  text-decoration: none;
+  border-radius: 0.2rem;
   text-shadow: 0 -1px 0 white;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.3) 100%);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 .mostrar > a:hover {
@@ -219,7 +229,7 @@ ul li.selected a {
 }
 .mostrar > a:active {
   border-color: #ededed;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
 }
 .cobrar {
   display: inline-block;
@@ -228,38 +238,103 @@ ul li.selected a {
   -ms-user-select: none;
   user-select: none;
 }
-.cobrar a {
-  border-color: #e6e6e6;
-  background-color: #e6e6e6;
-  color: 2;
-}
-.cobrar a:hover,
-.cobrar a:focus {
-  border-color: #e6e6e6;
-  background-color: #e6e6e6;
-  color: 2;
-  cursor: not-allowed;
-}
-.cobrar > a {
-  cursor: default;
-  font-size: 0.8rem;
-  padding: 0.4rem 0.8rem;
+.cobrar > a,
+.cobrar > a:hover,
+.cobrar > a:active {
+  font-size: 0.6rem;
+  padding: 0.18rem 0.6rem;
   display: block;
   line-height: 100%;
   background-color: white;
   color: gray;
   border: 1px solid #ededed;
-  border-radius: 0.25rem;
+  text-decoration: none;
+  cursor: not-allowed;
+  border-radius: 0.15rem;
+  text-transform: capitalize;
   text-shadow: 0 -1px 0 white;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.3) 100%);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
 }
-.cobrar > a:hover {
-  background-color: #ffffff;
-  border-color: #ffffff;
+.negar {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-.cobrar > a:active {
+.negar > a {
+  cursor: default;
+  font-size: 1rem;
+  padding: 0.7rem 1rem;
+  display: block;
+  line-height: 100%;
+  background-color: #eeeeee;
+  color: #444444;
+  border: 1px solid #bbbbbb;
+  transition: background-color 200ms ease-out;
+  text-decoration: none;
+  border-radius: 2em;
+  text-shadow: 0 -1px 0 white;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.negar > a:hover {
+  background-color: #f8f8f8;
+  border-color: #f6f6f6;
+}
+.negar > a:active {
   border-color: #ffffff;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+}
+.bajar {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.bajar > a,
+.bajar > a:hover,
+.bajar > a:active {
+  font-size: 0.6rem;
+  padding: 0.18rem 0.6rem;
+  display: block;
+  line-height: 100%;
+  background-color: white;
+  color: gray;
+  border: 1px solid #ededed;
+  text-decoration: none;
+  cursor: not-allowed;
+  border-radius: 0.15rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 white;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.subir {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.subir > a,
+.subir > a:hover,
+.subir > a:active {
+  font-size: 0.6rem;
+  padding: 0.18rem 0.6rem;
+  display: block;
+  line-height: 100%;
+  background-color: white;
+  color: gray;
+  border: 1px solid #ededed;
+  text-decoration: none;
+  cursor: not-allowed;
+  border-radius: 0.15rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 white;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 /* color check   ---- [ OK ] */
