@@ -17,7 +17,12 @@
 ///*  3. Base class.
 ///*  4. Config mixin.
 ///*  5. preconfigured patterns.
+///*  6. initialized patterns.
 ///******************************************/
+///* PATH */
+//
+///* Dependencies */
+@import '../component/_config.component.less';
 //
 ///* 1 *//* CONFIG BUTTON VARIABLES */
 //
@@ -30,19 +35,26 @@
 @button-degraded: true;
 @button-depth: true;
 //
+@button-default-font: 'openSansRegular';
 @button-default-font-color: rgb(145, 145, 145);
 @button-default-background-color: rgb(238, 238, 238);
 @button-default-border-color: darken(@button-default-background-color,20%);
 @button-default-border-width: 1px;
+@button-default-border-radius: 3px;
 @button-default-size: 4;
+@button-default-light-step: 3;
+@button-default-transition-time: 300ms;
 @button-line-height: 1.428571429; // 20/14
 //
-@default: rgb(219, 219, 219);
+@default: rgb(250, 250, 250);
 @prymary: rgb(40, 96, 144);
+@secundary: #e7e7e7;
 @success: rgb(68,157,68);
 @info: rgb(49,176,213);
+@caution: rgb(246,180,1);
 @warning: rgb(236,151,31);
 @danger: rgb(217,83,79);
+@alert: #cf2a0e;
 //
 //
 ///* local variables */
@@ -56,28 +68,99 @@
 // --------------------------------------------------
 //
 ///* 3 *//* BASE CLASS */
-.button-box (@color: @button-default-font-color; @back-color: @button-default-background-color; @border-color: @button-default-border-color; @border-width: @button-default-border-width; @size: @button-default-size;) {
-    @font-base : 1rem * (@size + 6) / 10;
-    @font-70 : @font-base * (@size)/10;
+.btn-pattern-box (@color: @button-default-font-color; @back-color: @button-default-background-color; @border-color: @button-default-border-color; @border-width: @button-default-border-width; @size: @button-default-size; @shape: false) {
     @radius: 1rem * (5*@size + 15)/100;
-    @padding: @font-70 @font-base;
     display: inline-block;
     .user-select();
 
     & > a {
         cursor: default;
-        .button(@color; @back-color; @border-color; @border-width; @padding; @radius;);
+        .button(@color; @back-color; @border-color; @border-width; @size; @radius; @shape);
     }
 }
 
-.button-disabled (@color: @button-default-font-color; @back-color: @button-default-background-color; @border-color: @button-default-border-color; @border-width: @button-default-border-width; @size: @button-default-size;) {
-    @font-base : 1rem * (@size + 6) / 10;
-    @font-70 : @font-base * (3 + @size)/10;
+.btn-shape (@color: @button-default-font-color; @back-color: @button-default-background-color; @border-color: @button-default-border-color; @border-width: @button-default-border-width; @size: @button-default-size; @radius: 0;) {
+    @font-base: 1rem * (@size + 6) * 1/10;
+    @padSup: @font-base * (@size + 3) * 1/20;
+    @padLat: 1rem * (@size + 1) * 15/100;
+    @padding: @padSup @padLat;
+    font-family:@button-default-font;
+    font-size: @font-base;
+    padding: @padding;
+    display: block;
+    line-height: @button-line-height;
+    background-color: @back-color;
+    color: @color;
+    border: @border-width solid @border-color;
+    text-decoration: none;
+    .btn-background-transition();
+    .btn-border-radius(@radius);
+    .btn-text-shadow(@color);
+    .btn-text-transform();
+    .btn-degraded();
+    .btn-depth();
+
+    &:hover {
+        background-color: lighten(@back-color,@button-default-light-step * 3%); //4
+        //border-color: lighten(@back-color, 3%);
+    }
+
+    &:active {
+        border-color: lighten(@back-color,@button-default-light-step * 1%); //7
+        .btn-degraded-active();
+    }
+}
+
+.btn-plain (@color: @button-default-font-color; @back-color: @button-default-background-color; @border-color: @button-default-border-color; @border-width: @button-default-border-width; @size: @button-default-size; @radius: 0;) {
+    @font-base: 1rem * (@size + 6) * 1/10;
+    @padSup: @font-base * (@size + 3) * 1/20;
+    @padLat: 1rem * (@size + 1) * 15/100;
+    @padding: @padSup @padLat;
+    font-family:@button-default-font;
+    font-size: @font-base;
+    padding: @padding;
+    display: block;
+    line-height: @button-line-height;
+    background-color: @back-color;
+    color: @color;
+    border: @border-width solid @border-color;
+    text-decoration: none;
+    .btn-background-transition();
+    .btn-border-radius(@radius);/*
+    .btn-text-shadow(@color);
+    .btn-text-transform();
+    .btn-degraded();
+    .btn-depth();*/
+
+    &:hover {
+        background-color: lighten(@back-color,@button-default-light-step * -2%); 
+        //border-color: lighten(@back-color, 3%);
+    }
+
+    &:active {
+        border-color: lighten(@back-color,@button-default-light-step * 10%);
+        //.button-degraded-active();
+    }
+}
+
+.btn-pattern-round (@color: @button-default-font-color; @back-color: @button-default-background-color; @border-color: @button-default-border-color; @border-width: @button-default-border-width; @size: @button-default-size; @radius: @button-default-border-radius; @shape: false; @expanded: false) {
+    .btn-expanded(@expanded);
+    .user-select();
+
+    & > a {
+        cursor: default;
+        .button(@color; @back-color; @border-color; @border-width; @size; @radius; @shape);
+    }
+}
+
+.btn-pattern-disabled (@color: @button-default-font-color; @back-color: @button-default-background-color; @border-color: @button-default-border-color; @border-width: @button-default-border-width; @size: @button-default-size;) {
+    @font-base: 1rem * (@size + 6) / 10;
+    @font-70: @font-base * (3 + @size)/10;
     @radius: 1rem * (5*@size + 15)/100;
     @padding: @font-70 @font-base;
     display: inline-block;
     .user-select();
-    
+
     & > a,
     & > a:hover,
     & > a:active {
@@ -88,115 +171,145 @@
         background-color: @back-color;
         color: @color;
         border: @border-width solid @border-color;
-        text-decoration: none; 
+        text-decoration: none;
         cursor: not-allowed;
-        .button-border-radius(@radius);
-        .button-text-transform();
-        //.button-text-shadow(@color);
-        .button-degraded();
-        .button-depth();
+        .btn-border-radius(@radius);
+        .btn-text-transform();
+        .btn-degraded();
+        .btn-depth();
     }
 }
 
-.button-round (@color: @button-default-font-color; @back-color: @button-default-background-color; @border-color: @button-default-border-color; @border-width: @button-default-border-width; @size: @button-default-size;) {
-    @font-base : 1rem * (@size + 6) / 10;
-    @font-70 : @font-base * (3 + @size)/10;
-    @radius: 1rem * (5*@size + 15)/100;
-    @padding: @font-70 @font-base;
-    display: inline-block;
-    .user-select();
-
-    & > a {
-        cursor: default;
-        .button(@color; @back-color; @border-color; @border-width; @padding; 2em;);
-    }
-}
-    
-.button (@color: @button-default-font-color; @back-color: @button-default-background-color; @border-color: @button-default-border-color; @border-width: @button-default-border-width; @padding: 1rem; @radius: 0;) {
-    font-size: @font-base;
-    padding: @padding;
-    display: block;
-    line-height: @button-line-height;
-    background-color: @back-color;
-    color: @color;
-    border: @border-width solid @border-color;
-    transition: background-color 200ms ease-out;
-    text-decoration: none; 
-    .button-border-radius(@radius); 
-    .button-text-shadow(@color);
-    .button-degraded();
-    .button-depth();
-    
-    &:hover {
-        background-color: lighten(@back-color,4%);
-        //border-color: lighten(@back-color, 3%);
-    }
-    &:active {
-        border-color: lighten(@back-color, 7%);
-        .button-degraded-active();
-    }
-}
 //
 ///* 4 *//* CONFIG MIXIN */
-.button-border-radius(@radius) when (@button-border-radius = true) {
+.button(@color; @back-color; @border-color; @border-width; @size; @radius; @shape) when (@shape = true) {
+    .btn-shape (@color; @back-color; @border-color; @border-width; @size; @radius;);
+}
+
+.button(@color; @back-color; @border-color; @border-width; @size; @radius; @shape) when (@shape = false) {
+    .btn-plain (@color; @back-color; @border-color; @border-width; @size; @radius;);
+}
+
+.btn-background-transition(@time: @button-default-transition-time) {
+    -moz-transition: background-color @time ease-out;
+    -o-transition: background-color @time ease-out;
+    -webkit-transition: background-color @time ease-out;
+    transition: background-color @time ease-out;
+}
+
+.btn-border-radius(@radius) when (@button-border-radius = true) {
     border-radius: @radius;
 }
 
-.button-border-radius-round() when (@button-border-radius-round = true) {
-    border-radius: 50%;
-}
-
-.button-text-transform() when (@button-text-transform = true){
+.btn-text-transform() when (@button-text-transform = true) {
     text-transform: capitalize;
 }
 
-.button-text-shadow(@text-color) when (@button-text-shadow = true) {
+.btn-text-shadow(@text-color) when (@button-text-shadow = true) {
     @shadow-color: contrast(@text-color, fade(black,20%), #ddd);
     text-shadow: 0 -1px 0 @shadow-color;
 }
 
-.button-depth() when (@button-depth = true) {
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
+.btn-depth() when (@button-depth = true) {
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
 }
 
-.button-degraded() when (@button-degraded = true) {
-    background-image: linear-gradient(rgba(255,255,255,.4) 0%, rgba(0,0,0,.3) 100%);
+.btn-degraded() when (@button-degraded = true) {
+    background-image: linear-gradient(rgba(255,255,255,.4) 0, rgba(0,0,0,.3) 100%);
 }
 
-.button-degraded-active() when (@button-degraded = true) {
-    background-image: linear-gradient(rgba(0,0,0,.2) 0%, rgba(255,255,255,.1) 100%);
+.btn-degraded-active() when (@button-degraded = true) {
+    //background-image: linear-gradient( rgba(255,255,255,.1) 0, rgba(0,0,0,.2) 50%, rgba(255,255,255,.1) 100%);
+    //background-image: linear-gradient( rgba(0,0,0,.1) 0, rgba(255,255,255,.1) 30%, rgba(255,255,255,.1) 75%, rgba(0,0,0,.1) 100%);
+    background-image: linear-gradient( rgba(255,255,255,.1) 0, rgba(0,0,0,.1) 22%, rgba(0,0,0,.1) 78%, rgba(255,255,255,.1) 100%);
+}
+
+.btn-expanded(@expanded) when (@expanded = false) {
+    display: inline-block;
+}
+
+.btn-expanded(@expanded) when (@expanded = true) {
+    display: block;
 }
 //
 ///* 5 *//* PRECONFIGURED PATTERNS */
 ///* boostrap patterns *///
-.btn-default(@btn-size){
-    .button-box (@color: black; @back-color: @default; @border-color: darken(@default,7%); @border-width: 1px; @size: @btn-size);
+.btn-default(@btn-size) {
+    .btn-pattern-box (@color: black; @back-color: @default; @border-color: darken(@default,40%); @border-width: 1px; @size: @btn-size; @shape: true);
 }
 
-.btn-primary(@btn-size){
-    .button-box (@color: white; @back-color: @prymary; @border-color: darken(@prymary,7%); @border-width: 1px; @size: @btn-size);
+.btn-primary(@btn-size) {
+    .btn-pattern-box (@color: white; @back-color: @prymary; @border-color: darken(@prymary,7%); @border-width: 1px; @size: @btn-size; @shape: true);
 }
 
-.btn-success(@btn-size){
-    .button-box (@color: white; @back-color: @success; @border-color: darken(@success,7%); @border-width: 1px; @size: @btn-size);
+.btn-success(@btn-size) {
+    .btn-pattern-box (@color: white; @back-color: @success; @border-color: darken(@success,7%); @border-width: 1px; @size: @btn-size; @shape: true);
 }
 
-.btn-info(@btn-size){
-    .button-box (@color: white; @back-color: @info; @border-color: darken(@info,7%); @border-width: 1px; @size: @btn-size);
+.btn-info(@btn-size) {
+    .btn-pattern-box (@color: white; @back-color: @info; @border-color: darken(@info,7%); @border-width: 1px; @size: @btn-size; @shape: true);
 }
 
-.btn-warning(@btn-size){
-    .button-box (@color: white; @back-color: @warning; @border-color: darken(@warning,7%); @border-width: 1px; @size: @btn-size);
+.btn-warning(@btn-size) {
+    .btn-pattern-box (@color: white; @back-color: @warning; @border-color: darken(@warning,7%); @border-width: 1px; @size: @btn-size; @shape: true);
 }
 
-.btn-danger(@btn-size){
-    .button-box (@color: white; @back-color: @danger; @border-color: darken(@danger,7%); @border-width: 1px; @size: @btn-size);
+.btn-danger(@btn-size) {
+    .btn-pattern-box (@color: white; @back-color: @danger; @border-color: darken(@danger,7%); @border-width: 1px; @size: @btn-size; @shape: true);
 }
-
-.btn-disabled(@btn-size){
-    .button-disabled (@color: gray; @back-color: white; @border-color: darken(white,7%); @border-width: 1px; @size: @btn-size);
-}
+//
 ///* Fundation patterns *///
-.button-success(@btn-size){
-    .button-box (@color: gray; @back-color: white; @border-color: darken(white,7%); @border-width: 1px; @size: @btn-size);
+.button-secondary(@btn-size) {
+    .btn-pattern-box (@color: black; @back-color: @secundary; @border-color: transparent; @border-width: 1px; @size: @btn-size);
 }
+
+.button-default(@btn-size) {
+    .btn-pattern-box (@color: white; @back-color: @prymary; @border-color: transparent; @border-width: 1px; @size: @btn-size);
+}
+
+.button-success(@btn-size) {
+    .btn-pattern-box (@color: white; @back-color: @success; @border-color: transparent; @border-width: 1px; @size: @btn-size);
+}
+
+.button-info(@btn-size) {
+    .btn-pattern-box (@color: white; @back-color: @info; @border-color: transparent; @border-width: 1px; @size: @btn-size);
+}
+
+.button-caution(@btn-size) {
+    .btn-pattern-box (@color: white; @back-color: @caution; @border-color: transparent; @border-width: 1px; @size: @btn-size);
+}
+
+.button-alert(@btn-size) {
+    .btn-pattern-box (@color: white; @back-color: @alert; @border-color: transparent; @border-width: 1px; @size: @btn-size);
+}
+//
+///* Form patterns *///
+.button-radius(@btn-size; @back-color: @prymary) {
+    .btn-pattern-round(@color: white; @back-color: @back-color; @border-color: transparent; @border-width: 1px; @size: @btn-size; @radius: @button-default-border-radius; @shape: false; @expanded: false);
+}
+
+.button-round(@btn-size; @back-color: @prymary) {
+    .btn-pattern-round(@color: white; @back-color: @back-color; @border-color: transparent; @border-width: 1px; @size: @btn-size; @radius: 2em; @shape: false; @expanded: false);
+}
+
+.button-square(@btn-size; @back-color: @prymary) {
+    .btn-pattern-round(@color: white; @back-color: @back-color; @border-color: transparent; @border-width: 1px; @size: @btn-size; @radius: 0; @shape: false; @expanded: false);
+}
+
+.button-expanded(@btn-size; @back-color: @prymary) {
+    .btn-pattern-round(@color: white; @back-color: @back-color; @border-color: transparent; @border-width: 1px; @size: @btn-size; @radius: 0; @shape: false; @expanded: true);
+}
+//
+///* state patterns *///
+.button-disabled(@btn-size) {
+    .btn-pattern-disabled (@color: gray; @back-color: white; @border-color: darken(white,7%); @border-width: 1px; @size: @btn-size);
+}
+//
+///* 6 *//* PRECONFIGURED PATTERNS */
+
+
+//
+/* btn cmp ---------- [ OK ] */@state: OK;
+///******************************************/
+///*  	FIN
+///******************************************/

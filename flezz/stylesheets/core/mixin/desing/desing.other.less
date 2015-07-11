@@ -2,19 +2,32 @@
 ///*          flezz framework 1.0           */
 ///******************************************/
 ///*  Name: mixin desing
-///*  Version: 1.0
+///*  Version: 0.1.0
 ///*  Description: less and css desing element.
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org
 ///*  License: GNU General Public License v2 or later
 ///*  License URI: http://www.gnu.org/licenses/gpl-2.0.html
-///*  Tags: mixin, css.
+///*  Tags: mixin, plugin, css.
 ///******************************************/
 ///*  	Content
 ///*
-///*  1. General mixin.
-///*  1. Design mixin.
+///*  1. Config modules.
+///*  2. Road map.
+///*  3. Base Modules.
+///*  4. Config mixin.
 ///******************************************/
+///* PATH */
+//
+///* Dependencies */
+@import '../equalize/_config.equalize.less';
+//
+///* 1 *//* CONFIG MODULES VARIABLES *///
+//
+///* global variables */
+///* general option */
+
+//
 ///* local variables */
 @overflow-vertical: true;
 @font-size-init: 14px;
@@ -22,11 +35,17 @@
 @header-fixed: true;
 @header-height: 50px;
 //
-///*  1 */
-.desing() when (@overflow-vertical = true){
+///* 2 *//* ROAD MAP */
+// --------------------------------------------------
+
+// --------------------------------------------------
+//
+///* 3 *//* BASE MODULES */
+///*  general mixin *///
+.desing() when (@overflow-vertical = true) {
     @overflow-y: scroll;
 }
-.desing() when not(@overflow-vertical = true){
+.desing() when not(@overflow-vertical = true) {
     @overflow-y: hidden;
 }
 .desing() when (@header-fixed = true){
@@ -41,7 +60,7 @@
     }
 }
 //
-///*  2 */
+///*  desing mixin *///
 .arrow-selected(@bck-color: #ffffff; @border-color: #cccccc; @height: 7px; @arrow-down: 0; @border-width: 1px;) {
     & > a {
         position: relative;
@@ -82,7 +101,9 @@
     transition: transform 3s ease 0;
 }
 //
-/* include dsn ------ [ OK ] */ @state: OK;
+///* 4 *//* CONFIG MIXIN */
+
+/* dsn others ------- [ OK ] */ @state: OK;
 ///******************************************/
 ///*  	FIN
 ///******************************************/

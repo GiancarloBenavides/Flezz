@@ -1,18 +1,42 @@
 ///******************************************/
 ///*          flezz framework 1.0           */
 ///******************************************/
-///*  Name: animation
-///*  Version: 1.3
+///*  Name: equalize.animation
+///*  Version: 0.1.0
 ///*  Description: Equalize Animation Mixin.
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org
 ///*  License: GNU General Public License v2 or later
 ///*  License URI: http://www.gnu.org/licenses/gpl-2.0.html
-///*  Tags: font, css.
+///*  Tags: mixin, plugin, css.
 ///******************************************/
 ///*  	Content
+///*
+///*  1. Config modules.
+///*  2. Road map.
+///*  3. Base Modules.
+///*  4. Config mixin.
 ///******************************************/
+///* PATH */
+//
+///* Dependencies */
 
+//
+///* 1 *//* CONFIG MODULES VARIABLES *///
+//
+///* global variables */
+///* general option */
+
+//
+///* local variables */
+
+//
+///* 2 *//* ROAD MAP */
+// --------------------------------------------------
+
+// --------------------------------------------------
+//
+///* 3 *//* BASE MODULES */
 .transform(...) {
     -webkit-transform: @arguments;
     -moz-transform: @arguments;
@@ -46,8 +70,10 @@
 .scale(@ratio: 1.5) {
     .transform(scale(@ratio));
 }
+//
+///* 4 *//* CONFIG MIXIN */
 
-/* include animation  [ OK ] */@state: OK;
+/* eql animation ---  [ OK ] */@state: OK;
 ///******************************************/
 ///*  	FIN
 ///******************************************/

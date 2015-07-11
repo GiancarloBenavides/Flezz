@@ -1,6 +1,4 @@
 ///* Dependencies */
-// @import '../core/mixin/global.colors.less';
-@import '../core/mixin/global.mixins.less';
 @import 'docs.style.less';
 /* color check */
 html {
@@ -53,42 +51,36 @@ ul {
      content: "";
      clear: both;
 }
-
-.aceptar{
-    .btn-primary(8);
-}
-
-.borrar{
-    .btn-danger(7);
-}
-
-.enviar{
-    .btn-success(6);
-}
-
-.calcular{
-    .btn-warning(5);
-}
-
-.mostrar{
-    .btn-default(4);
-}
-
-.cobrar{
-    .btn-disabled(3);
-}
-
-.negar{
-    .button-round();
-}
-
-.bajar{
-    .btn-disabled(0);
-}
-
-.subir{
-    .btn-disabled(0);
-}
+//
+.mostrar{.btn-default(7);}
+.aceptar{.btn-primary(7);}
+.enviar{.btn-success(7);}
+.consultar{.btn-info(7);}
+.calcular{.btn-warning(7);}
+.borrar{.btn-danger(7);}
+//
+.mostrar-plain{.button-secondary(7);}
+.aceptar-plain{.button-default(7);}
+.enviar-plain{.button-success(7);}
+.consultar-plain{.button-info(7);}
+.calcular-plain{.button-caution(7);}
+.borrar-plain{.button-alert(7);}
+//
+.nueve{.btn-primary(9);}
+.ocho{.btn-primary(8);}
+.siete{.btn-primary(7);}
+.seis{.btn-primary(6);}
+.cinco{.btn-primary(5);}
+.cuatro{.btn-primary(4);}
+.tres{.btn-primary(3);}
+.dos{.btn-primary(2);}
+.uno{.btn-primary(1);}
+.cero{.btn-primary(0);}
+//
+.radius{.button-radius(8);}
+.round{.button-round(8);}
+.square{.button-square(8);}
+.expanded{margin-top:10px;.button-expanded(8);}
 //
 /* color check   ---- [ OK ] */@state: OK;
 ///******************************************/
