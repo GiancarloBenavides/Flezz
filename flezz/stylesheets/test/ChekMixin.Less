@@ -81,6 +81,48 @@ ul {
 .round{.button-round(8);}
 .square{.button-square(8);}
 .expanded{margin-top:10px;.button-expanded(8);}
+
+//
+input {
+  //font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  margin: 0;
+  outline: 0;
+  -webkit-appearance: none;
+  tap-highlight-color: rgba(255,255,255,0);
+  line-height: 1.2142em;
+  padding: .67861429em 1em;
+  font-size: 1em;
+  background: #fff;
+  border: 1px solid rgba(34,36,38,.15);
+  color: rgba(0,0,0,.87);
+  border-radius: .28571429rem;
+  box-shadow: 0 0 0 0 transparent inset;
+  -webkit-transition: color .1s ease,border-color .1s ease;
+  transition: color .1s ease,border-color .1s ease;
+    &:focus{
+      color: rgba(0,0,0,.95);
+  border-color: rgba(34,36,38,.35);
+  border-radius: .28571429rem;
+  background: #fff;
+  box-shadow: 0 0 0 0 rgba(34,36,38,.35) inset;
+    }    
+}
+label{
+    display: block;
+  margin: 0 0 .28571429rem;
+  color: rgba(0,0,0,.87);
+  font-size: .92857143em;
+  font-weight: 700;
+  text-transform: none;
+}
+.field{
+      clear: both;
+  margin: 0 0 1em;
+}
+.user {
+    .icon-inline();
+}
+
 //
 /* color check   ---- [ OK ] */@state: OK;
 ///******************************************/

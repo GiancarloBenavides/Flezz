@@ -16,6 +16,8 @@
 ///*  2. Road map.
 ///*  3. Base Modules.
 ///*  4. Config mixin.
+///*  5. preconfigured patterns.
+///*  6. initialized patterns.
 ///******************************************/
 ///* PATH */
 //
@@ -45,10 +47,12 @@
 .desing() when (@overflow-vertical = true) {
     @overflow-y: scroll;
 }
-.desing() when not(@overflow-vertical = true) {
+
+.desing() when (@overflow-vertical = false) {
     @overflow-y: hidden;
 }
-.desing() when (@header-fixed = true){
+
+.desing() when (@header-fixed = true) {
     .header-f() {
         position: fixed;
         top: 0;
@@ -80,10 +84,11 @@
             width: 0;
             z-index: 1000;
         }
+
         &:after {
             background: transparent;
             border-bottom-color: @bck-color;
-            bottom: -1*(@border-width + @arrow-down);       
+            bottom: -1*(@border-width + @arrow-down);
         }
     }
 }
@@ -98,12 +103,25 @@
     border-top: 4px solid\9;
     border-right: 4px solid transparent;
     border-left: 4px solid transparent;
+    -moz-transition: transform 3s ease 0;
+    -o-transition: transform 3s ease 0;
+    -webkit-transition: transform 3s ease 0;
     transition: transform 3s ease 0;
 }
 //
 ///* 4 *//* CONFIG MIXIN */
 
-/* dsn others ------- [ OK ] */ @state: OK;
+//
+///* 5 *//* PRECONFIGURED PATTERNS */
+
+//
+///* 6 *//* INITIALIZED PATTERNS */
+.design-init() {
+    .desing();
+}
+//
+/* dsn others ------- [ OK ] */
+@state: OK;
 ///******************************************/
 ///*  	FIN
 ///******************************************/

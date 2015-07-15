@@ -2,25 +2,32 @@
 ///*          flezz framework 1.0           */
 ///******************************************/
 ///*  Name: font
-///*  Version: 1.4.1
-///*  Description: core fonts.
+///*  Version: 0.1.5
+///*  Description: description name_module
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org
 ///*  License: GNU General Public License v2 or later
 ///*  License URI: http://www.gnu.org/licenses/gpl-2.0.html
-///*  Tags: font, css.
+///*  Tags: font, mixin, plugin, css.
 ///******************************************/
 ///*  	Content
 ///*
-///*  1. Font Famiies.
-///*  2. Font Sans Serif (Helvetica, Verdana).
-///*  3. Font Serif (Georgia, Garamond, Courier).
-///*  4. Embedded fonts (OpenSans and/or Rokkitt).
+///*  1. Config modules.
+///*  2. Road map.
+///*  3. Base Modules.
+///*  4. Config mixin.
+///*  5. preconfigured patterns.
+///*  6. initialized patterns.
 ///******************************************/
-///* local variables */
+///* PATH */
 @font-path: "../../assets/fonts";
 //
-///* setting options */
+///* Dependencies */
+//
+///* 1 *//* CONFIG MODULES VARIABLES *///
+//
+///* global variables */
+///* general option */
 @Family-style: normal;
 @Family-weight: normal;
 @Font-Embedded: true;
@@ -32,10 +39,8 @@
 @RobotoSlab: false;
 @Rokkitt: false;
 //
-///* local statements */
-//.font-family (@Family-style); // mixin to include fonts families
-//
-///* 1 */
+///* local variables *///
+///* Font Famiies *///
 @OpenSansRegular: "OpenSansRegular","RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
 @OpenSansLight: "OpenSansLight","RobotoLight", "Segoe UI Light", "Helvetica Neue", sans-serif;
 @OpenSansBold: "OpenSansBold","RobotoBold", "Segoe WP", "Helvetica", sans-serif;
@@ -57,7 +62,15 @@
 //
 @RokkittRegular: "RokkittRegular", "RobotoSlabRegular", "Georgia", "Garamond", serif;
 @RokkittBold: "RokkittBold", "RobotoSlabBold", "Garamond", "Georgia", serif;
-///* 2 */
+//
+///* 2 *//* ROAD MAP */
+// --------------------------------------------------
+
+// --------------------------------------------------
+//
+///* 3 *//* BASE MODULES */
+//
+///*  FONT SANS SERIF (Helvetica, Verdana) *///
 .font-family (@Family-weight) when (@OpenSans = true) and (@Font-Embedded = false) {
     @font-face {
         font-family: "OpenSansRegular";
@@ -83,7 +96,7 @@
         font-style: @Family-style;
     }
 }
-
+//
 .font-family (@Family-weight) when (@Roboto = true) {
     @font-face {
         font-family: "RobotoRegular";
@@ -109,7 +122,7 @@
         font-style: @Family-style;
     }
 }
-
+//
 .font-family (@Family-weight) when (@RobotoCondensed = true) {
     @font-face {
         font-family: "RobotoCondensedRegular";
@@ -135,7 +148,7 @@
         font-style: normal;
     }
 }
-
+//
 .font-family (@Family-weight) when (@SegoeUI = true) {
     @font-face {
         font-family: "SegoeUIBold";
@@ -153,7 +166,8 @@
         font-style: @Family-style;
     }
 }
-///* 3 */
+//
+///*  FONT SERIF (Georgia, Garamond, Courier) *///
 .font-family (@Family-weight) when (@RobotoSlab = true) {
     @font-face {
         font-family: "RobotoSlabRegular";
@@ -179,7 +193,7 @@
         font-style: @Family-style;
     }
 }
-
+//
 .font-family (@Family-weight) when (@Rokkitt = true) and (@Font-Embedded = false) {
     @font-face {
         font-family: "RokkittRegular";
@@ -197,7 +211,7 @@
         font-style: @Family-style;
     }
 }
-///* 4 */
+///* EMBEDDED FONTS (OpenSans and/or Rokkitt) *///
 .font-family (@Family-weight) when (@Font-Embedded = true) and (@Font-Embedded = true) {
     @font-face {
         font-family: "OpenSansRegular";
@@ -241,6 +255,18 @@
         font-style: @Family-style;
     }
 }
+//
+///* 4 *//* CONFIG MIXIN */
+
+//
+///* 5 *//* PRECONFIGURED PATTERNS */
+
+//
+///* 6 *//* INITIALIZED PATTERNS */
+.font-init(){
+    .font-family (@Family-weight);
+}
+//
 /* include font ----- [ OK ] */@state: OK;
 ///******************************************/
 ///*  	FIN
