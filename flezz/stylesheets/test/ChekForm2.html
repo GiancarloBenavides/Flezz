@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>check</title>
+        <link rel="stylesheet" href="Chekform.css">
+    </head>
+    <body>
+        <div class="clear"><br></div>
+        <section>
+            <form action="">  
+                <!-- INPUT TEXT -->
+                <div class="field">
+                    <label for="">name_field_one</label>
+                    <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                </div>
+
+                <!-- INPUT TEXT WIDTH ERROR-->
+                <div class="field">
+                    <label for="">name_field_one</label>
+                    <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                    <small class="error">name_error <span class="arrow"></span></small>
+                </div>
+
+                <!-- INPUT TEXT WIDTH PREFIX [ICON AND TEXT] -->
+                <div class="field">
+                    <label for="">name_field_one</label>
+                    <div class="prefix">
+                        <span><i class="user"></i></span>
+                        <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                    </div>
+                </div>
+
+                <!-- INPUT TEXT WIDTH POSTFIX [ICON AND TEXT] -->
+                <div class="field">
+                    <label for="">name_field_one</label>
+                    <div class="postfix">
+                        <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                        <span>.COM</span>
+                    </div>
+                </div>
+
+                <!-- INPUT TEXT WIDTH PREFIX AND POSTFIX [ICON AND TEXT] -->
+                <div class="field">
+                    <label for="">name_field_one</label>
+                    <div class="afix">
+                        <span>http://</span>   
+                        <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                        <span>.COM</span>
+                    </div>
+                </div>
+
+                <!-- INPUT TEXT WIDTH PREFIX [BUTTON] -->
+                <div class="field">
+                    <label for="">name_field_one</label>
+                    <div class="prefix">
+                        <span class="button"><button>name_button</button></span>
+                        <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                    </div>                
+                </div>
+
+                <!-- INPUT TEXT WIDTH POSTFIX [BUTTON] -->
+                <div class="field">
+                    <label for="">name_field_one</label>
+                    <div class="postfix">
+                        <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                        <span class="button"><button>name_button</button></span>
+                    </div>
+                </div>
+
+                <!--INPUT TEXT GROUP--> 
+                <div class="group">
+                    <div class="field">
+                        <label for="">name_field_one</label>
+                        <input type="text" placeholder="name_field_one" data-tooltip="tip_one"> 
+                    </div>
+                    <div class="field">
+                        <label for="">name_field_two</label>
+                        <input type="text" placeholder="name_field_two" data-tooltip="tip_one"> 
+                    </div>
+                    <div class="field">
+                        <label for="">name_field_three</label>
+                        <input type="text" placeholder="name_field_three" data-tooltip="tip_one"> 
+                    </div>
+                </div>
+
+                <!-- INPUT TEXTAREA -->
+                <div class="field">
+                    <label for="">name_field_one</label>
+                    <textarea name="" id="" cols="" rows=""></textarea>
+                </div>
+
+                <!-- CHECKBOX -->
+                <div class="field">
+                    <input type="checkbox" >
+                    <label for="" data-tooltip="tip_one">name_field_one</label>
+                </div>
+
+                <!-- CHECKBOX GROUP-->
+                <div class="field">
+                    <div class="set">
+                        <div>Name group</div>
+                        <input id="checkbox-one" type="checkbox" >
+                        <label for="checkbox-one" data-tooltip="tip_one">name_field_one</label><br>
+                        <input id="checkbox-one" type="checkbox" >
+                        <label for="checkbox-one" data-tooltip="tip_one">name_field_one</label><br>
+                    </div>
+                </div>
+
+                <!-- FIELDSET -->
+                <fieldset>
+                    <legend>Fieldset Legend</legend>
+                    <label>Input Label
+                        <input type="text" placeholder="Inputs a elements go inside...">
+                    </label>
+                    <label>Input Label
+                        <input type="text" placeholder="Inputs a elements go inside...">
+                    </label>
+                </fieldset>
+
+                <!-- RADIO -->
+                <div class="field">
+                    <div>Choose Your Option</div>
+                    <div class="set">
+                        <label for="one"><input type="radio" name="option" value="one" id="one">name_opcion_one</label>
+                        <label for="two"><input type="radio" name="option" value="two" id="two">name_opcion_two</label>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </body>
+</html>
