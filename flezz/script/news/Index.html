@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Flezz</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="description" content="Demo Flezz">
+        <meta name="author" content="Giancarlo Ortiz">
+        <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+        <link rel="stylesheet" type="text/css" href="effects.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <![CDATA[
+/*
+Name: Flezz Docs
+Version: 1.0
+Developer : Giancarlo Ortiz Benavides
+Url: www.zerez.org
+Date: 16 julio 2015
+*/]]>
+        <style>body{font-family: 'Segoe UI','Verdana';color:gray;}section {background-color:#fafaee;border: 2px dashed #c7c7c7; padding:30px; margin-left:20%;margin-right:10%;}p{padding-left:20px;}</style>
+    </head>
+    <body>
+        <section>
+            <h1 id="galeria" class="content-title">Galeria con Efectos</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacus est, rhoncus sit amet eleifend id, molestie sit amet est.</p>
+            <article id="MM-DD-AAAA" class="effects">
+                <p class="gallery-date"><span>Fecha AAAmmDD</span></p>                            
+                <div role="group" class="gallery-conteiner" data-state="close">
+                    <!-- By default, display:inline-block; creates a gap between elements, which we don't want. 
+                    So to eradicate this, we can do the following with some HTML comments, which is perfectly acceptable-->
+                    <div class="dashboard" data-state="inactive">
+                        <div class="dashboard-sup" data-place="1">
+                            <div>
+                                <div class="front"><img src="img/gallery/05-tmb.jpg" data-img="img/gallery/05-wall.jpg" alt=""></div>
+                                <div class="back-left"> aeropuerto </div>
+                            </div>
+                        </div><!--
+                        --><div class="dashboard-left" data-place="2">
+                        <div>
+                            <div class="front"><img src="img/gallery/07-tmb.jpg" data-img="img/gallery/07-wall.jpg" alt=""></div>
+                            <div class="back-left"> aeropuerto </div>
+                        </div>
+
+                        </div><!--
+                        --><div class="dashboard-right" data-place="3">
+                        <div>
+                            <div class="front"><img src="img/gallery/14-tmb.jpg" data-img="img/gallery/14-wall.jpg" alt=""></div>
+                            <div class="back-left"> aeropuerto </div>
+                        </div>
+                        
+                        </div>
+                        <div class="gallery-float"></div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <script src="../vendor/jquery-2.1.0.js"></script>
+        <script src="effects.js"></script>
+    </body>
+</html>
