@@ -1,0 +1,100 @@
+/* style designed by: Giancarlo Ortiz */
+@vendor-path: 'vendor';
+@theme-path:'../../../stylesheets/themes';
+
+@import '@{theme-path}/theme.udenar.style.less';
+
+@logos-path:'../img/logos';
+@Family-style: normal;
+@theme-color: #205081;
+@theme-bg-color: #bbbbbb;
+@font-dolor-hover: @theme-color;
+
+@bck-logo-big: url("../img/logos/logo_big.png") no-repeat;
+@bck-logo: url("../img/logos/logo.png") no-repeat;
+
+.left_nav {
+    top: 100px;
+    ul>li {
+        display: block;
+    }
+}
+
+.fa {
+    display:inline-block !important;
+    line-height:1 !important;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@import '@{vendor-path}/admin.less';
+
+html {font-family: "OpenSansLight" !important; font-size:20px;}
+.container{max-width:100%;}
+.body { margin:0 20px 20px 20px; color:#666666; font-family:OpenSansLight; font-size:20px;}
+.header {  height:100px; padding:19px 0; background-color:#FFFFFF;}
+.brand { width:225px; height:60px; float:left;}
+.logo { height:60px; background: @bck-logo-big;background-size: cover; margin-left: 31px; width: auto;}
+.logo span {  font-size:1.5rem; text-transform:uppercase;; text-align:center;  margin-left:70px; padding-top:11px; display:none;}
+.logo_sm {  background: @bck-logo; background-size: cover; height:60px; width: auto !important; margin-left: -1px;}
+
+
+
+body,
+.header {
+    font-family: "OpenSansLight" !important;
+    background-color: @theme-color;
+    color: white;
+}
+
+.light_theme .left_nav ul li a:hover,
+.theme_color_text{
+    color: @theme-color !important;
+}
+
+b, strong{font-weight:normal!important;}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "OpenSansLight",Helvetica,Arial,sans-serif;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+
+.theme_color {
+    background-color: @theme-color !important;
+}
+
+.panel-header{
+    font-size: 1.25rem;
+    color: #cacaca;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 5px;
+}
+
+
+.config-head {
+    margin: 0px 0px;
+    clear: both;
+    display: block;
+    height: 58px;
+    padding: 19px 0px;
+    background-color: #474747;
+    border-bottom: 1px solid #3e4143;
+}
+
+div.title {
+    color: white !important;
+    font-size: 1rem !important;
+    text-align: center !important;
+    font-family: "OpenSansLight" !important;
+}
+
+.user_name>a {
+    font-family: "OpenSansLight";
+    color: white !important;
+}

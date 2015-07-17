@@ -1,0 +1,145 @@
+<!DOCTYPE>
+<html style="overflow-x:hidden;">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="description" content="Sitio Web Plataforma de Contratacion de la Universidad Nariño">
+        <meta name="author" content="Giancarlo Ortiz">
+        <title>Contratacion</title>
+        <link href="Content/css/style.css" rel="stylesheet" media="screen">
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <![CDATA[
+            /*
+            Name: Zerez Template Dashboard
+            Version: 1.0
+            Developer : Giancarlo Ortiz Benavides
+            Url: www.zerez.org
+            Date: 7 mayo 2015
+        */]]>
+    </head>
+    <!-- body classes:: fixed_nav right_nav mini_nav max_nav  -->
+    <body class="body light_theme fixed_nav fixed_header">
+        <div class="wrapper">
+            <!-- Header -->
+            <div class="header">
+                <a href="#">
+                    <div class="brand">
+                        <div class="logo"><span class="theme_color_text"></span></div>
+                        <div class="logo_sm"> <!-- <span class="theme_color_text"> S </span> --> </div>
+                    </div>
+                </a>
+                <!-- Top Nav -->
+                <div class="top_nav">
+                    <div class="tab_btn">
+                        <a href="Javascript:;"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <div class="admin_panel">
+                        <div class="dropdown avatar">
+                            <a data-toggle="dropdown" href="javascript:void(0);"><img src="Content/img/avatar/gianca.jpg" /></a>
+                            <ul class="dropdown-menu">
+                                <div class="avatar_top_pointer"></div>
+                                <li><a href="profile.html"><i class="fa fa-user"></i>Profile</a></li>
+                                <li><a href="help.html"><i class="fa fa-question-circle"></i>Help</a></li>
+                                <li><a href="login.html"><i class="fa fa-power-off"></i>Logout</a></li>
+                            </ul>
+                        </div>
+                        <div class="user_name"><a href="#">Giancarlo</a>
+                            <span><i class="fa fa-circle"></i></span>
+                        </div>
+                        <div class="user-login"><a href="">edit</a>|<a href="login.html">Logout</a></div>
+                    </div>
+                    <div class="top_nav_right_notif">
+                        <ul>
+                            <li><a href="#" data-toggle="modal" data-target="#myModal"><span>Add New</span></a></li>
+                            <li><a href="#"><span class="right_panel_setting"><i class="fa fa-gear"></i></span></a></li>
+                            <li class="fullscreen_expand"><a href="#"><span><i class="fa fa-expand"></i></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="search_panel">
+                        <ul>
+                            <i class="fa fa-search"></i>
+                            <li><input type="text" placeholder="Search" class="form_control top_nav_search"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Body Container -->
+            <div class="body_container">
+                <!-- Left Nav -->
+                <div class="left_nav">
+                    <div class="left_nav_hold">
+                        <ul>
+                            <p><i class="fa fa-briefcase"></i><b>Navigation</b></p>
+                            <li><a href="index.html"><i class="fa fa-home"></i><b>Home</b></a></li>
+                            <li>
+                                <a href="#"><i class="fa fa-desktop"></i><b>Menú uno</b><span><i class="fa fa-angle-right"></i></span></a>
+                                <ul>
+                                    <li><a href="#" class="submenu_active"><i class="fa fa-square-o"></i><b>Uno A</b></a></li>
+                                    <li><a href="#"><i class="fa fa-square-o"></i><b>Uno B</b></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-edit"></i><b>Menú Dos</b><span><i class="fa fa-angle-right"></i></span></a>
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-square-o"></i><b>Dos A</b></a></li>
+                                    <li><a href="#"><i class="fa fa-square-o"></i><b>Dos B</b></a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><i class="fa fa-pencil"></i><b>Link Uno</b></a></li>
+                            <li><a href="#"><i class="fa fa-bar-chart-o"></i><b>Link Dos</b></a></li>
+                            <li>
+                                <a href="#"><i class="fa fa-table"></i><b>Menú Tres</b><span><i class="fa fa-angle-right"></i></span></a>
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-square-o"></i><b>Tres A</b></a></li>
+                                    <li><a href="#"><i class="fa fa-square-o"></i><b>Tres B</b></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Left Nav -->
+                <div class="right_container">
+                    <div class="breadcromb">
+                        <div>
+                            <div class="active_title theme_color_text">Home</div>
+                            <div class="slash">/</div>
+                            <div class="title_subtext">Pagina de Inicio</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content noradius">
+                    <div class="modal-header theme_color">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Compose New Task</h4>
+                    </div>
+                    <div class="modal-body">Your content goes here.</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn theme_color" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn theme_color">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal end -->
+        <div class="chat_panel">
+            <div class="chat_heading">
+                <div class="title" style="color: white !important;font-size: 20px !important;text-align: center !important;">Panel Derecho</div>
+            </div>
+            <div class="chatbox_content">
+            </div>
+        </div>
+        <script src="Scripts/js/vendor/jquery.js"></script>
+        <script src="Scripts/js/vendor/bootstrap.js"></script>
+        <script src="Scripts/js/vendor/breakpoints.js"></script>
+        <script src="Scripts/js/vendor/admin.js"></script>
+        <script src="Scripts/js/vendor/jquery-ui-1.10.4.custom.min.js"></script>
+        <script src="Scripts/js/vendor/jquery.slimscroll.js"></script>
+        <script src="Scripts/js/vendor/scrollbar.js"></script>
+        <script src="Scripts/js/vendor/jquery.fullscreen-min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+///*******************************
+///* modulos
+///*******************************
+///*
+///*
+///*******************************
+///*  1. flezz core.
+///*******************************
+Los nombres de los modulos inician con la palabra global seguido del nombre del modulo en plural.
+MODULOS:
+///*
+///* global.colors.less
+///*******************************
+patrones de color.
+///*
+///* global.fonts.less
+///*******************************
+familias de fuentes .
+///*
+///* global.icons.less
+///*******************************
+familias de iconos.
+///*
+///* global.component.less
+///*******************************
+patrones de diseño en componentes.
+///*
+///* global.pictures.less
+///*******************************
+patrones de diseño en fondos generales.
+///*
+///* AL COMPILAR
+///*******************************
+EL core sin configurar _by_default_config no debe generar ninguna clase de CSS
+es un super conjunto con todos los mixin disponibles en flezz core.
+///*
+EL core configurado debe generar 
+//-  un tema de colores
+//-  un grupo de fuentes
+//-  un grupo de iconos
+//-  componentes generales para utilizar en el sitio a construir (botones, pestañas, listas, ...)
+//-  imágenes generales (mascaras de fondo, texturas, ...)
+///*
+EL tema de flezz llama al core sin configurar y usando las variables de configuración, 
+y/o los mixin base, y/o los patrones, y/o los disparadores de patrones para generar un core configurado.
+///*******************************
+///*  FIN
+///*******************************

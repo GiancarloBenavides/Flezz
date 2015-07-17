@@ -1,5 +1,5 @@
 ///* Dependencies */
-@import 'docs.style.less';
+@import '../themes/theme.docs.style.less';
 /* color check */
 //html,
 //body,
@@ -25,8 +25,9 @@ form {
 }
 
 .user {
-    .icon-inline(@icon-color:white);
+    .icon-inline(@opc-color:white);
 }
+
 @form-background: #efefef;
 @input-font-color: #205081;
 @input-afix-color: darken(@input-border-color, 10%); //lighten(@input-font-color, -10%);

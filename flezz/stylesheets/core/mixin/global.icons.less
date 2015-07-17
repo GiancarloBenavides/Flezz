@@ -37,6 +37,7 @@
 @icon-embedded: true;
 @icon-class-reference: true;
 @icon-default-font: awesome;
+@icon-default-prefix: fa;
 //
 @icon-line-height: 1; // normal 1.428571429; // 20/14
 @icon-default-color: rgb(145, 145, 145);
@@ -160,8 +161,6 @@
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
-    font-size: @size*1em;
-    color: @color;
     text-decoration: none;
     width: 1em;
     text-align: center;
@@ -173,18 +172,20 @@
     -o-transform: translate(0, 0);
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0); // ensures no half-pixel rendering in firefox
+    .icn-size(@size);
+    .icn-color(@color);
     .icn-inline(@inline);
     .icn-shape(@bck-color, @border-color, @shape);
     .icn-float(@float);
 }
 //
 ///* 4 *//* CONFIG MIXIN */
-.icn-inline(@icon-inline) when (@icon-inline = true) {
-    display: inline;
+.icn-inline(@opc-inline) when (@opc-inline = true) {
+    display: inline-block;
     .icn-font();
 }
 
-.icn-inline(@icon-inline) when (@icon-inline = false) {
+.icn-inline(@opc-inline) when (@opc-inline = false) {
     display: block;
 }
 
@@ -193,36 +194,45 @@
     top: 1px;
 }
 
-.icn-shape(@bck-color, @border-color, @shape) when (@shape = square) {
+.icn-shape(@opc-bck-color, @opc-border-color, @opc-shape) when (@opc-shape = square) {
     padding: .4em;
-    background-color: @bck-color;
-    border: 0.08em solid @border-color;
+    background-color: @opc-bck-color;
+    border: 0.08em solid @opc-border-color;
     border-radius: 0;
 }
 
-.icn-shape(@bck-color, @border-color, @shape) when (@shape = radius) {
+.icn-shape(@opc-bck-color, @opc-border-color, @opc-shape) when (@opc-shape = radius) {
     padding: .4em;
-    background-color: @bck-color;
-    border: 0.08em solid @border-color;
+    background-color: @opc-bck-color;
+    border: 0.08em solid @opc-border-color;
     border-radius: .2em;
 }
 
-.icn-shape(@bck-color, @border-color, @shape) when (@shape = circle) {
+.icn-shape(@opc-bck-color, @opc-border-color, @opc-shape) when (@opc-shape = circle) {
     padding: .4em;
-    background-color: @bck-color;
-    border: .15em solid @border-color;
+    margin: 5px;
+    background-color: @opc-bck-color;
+    border: .15em solid @opc-border-color;
     border-radius: 2em;
-    box-shadow: 0px 0px 0px 1px #000;
+    box-shadow: 0 0 0 1px #000;
 }
 
-.icn-float(@float) when (@float= left) {
+.icn-float(@opc-float) when (@opc-float= left) {
     float: left;
-    margin-right: .3em;
+    margin: .2em .2em 0 0;
 }
 
-.icn-float(@float) when (@float= right) {
+.icn-float(@opc-float) when (@opc-float= right) {
     float: right;
-    margin-left: .3em;
+    margin: .2em 0 0 .2em;
+}
+
+.icn-size(@opc-size) when not (@opc-size = inerit) {
+    font-size: @opc-size*1em;
+}
+
+.icn-color(@opc-color) when not (@opc-color = inerit) {
+    color: @opc-color;
 }
 
 .icn-class() when (@icon-zicon = true ) and (@icon-class-reference = true) { 
@@ -318,22 +328,41 @@
 }
 //
 ///* 5 *//* PRECONFIGURED PATTERNS */
-.icon-inline(@icon-color: @icon-default-color; @icon-var: @icon-user) {
+.icon-inline(@opc-color: @icon-default-color; @opc-icon-var: @icon-user) {
     @font-size: (4em / 3);
     line-height: (3em / 4);
     vertical-align: -15%;
-    .icn-icon(@color: @icon-color; @bck-color: @dfl-bck; @border-color: @dfl-border; @size: @font-size; @inline: true; @shape: none; @float: none);
+    .icn-icon(@color: @opc-color; @bck-color: @dfl-bck; @border-color: @dfl-border; @size: @font-size; @inline: true; @shape: none; @float: none);
 
     &:before {
-        content: @icon-user;
+        content: @opc-icon-var;
     }
 }
+
+.icon-main(@opc-prefix: @icon-default-prefix; @opc-color: inerit; @font-size: inerit) {
+    .@{opc-prefix} {
+        .icn-icon(@color: @opc-color; @bck-color: @dfl-bck; @border-color: @dfl-border; @size: @font-size; @inline: true; @shape: none; @float: none);
+    }
+}
+
+.icon-largue(@opc-prefix: @icon-default-prefix; @opc-color: inerit) {
+    .@{opc-prefix}-2x{
+        .icn-icon(@color: @opc-color; @bck-color: @dfl-bck; @border-color: @dfl-border; @size: 2; @inline: true; @shape: none; @float: none);
+    }
+    .@{opc-prefix}-3x{
+        .icn-icon(@color: @opc-color; @bck-color: @dfl-bck; @border-color: @dfl-border; @size: 3; @inline: true; @shape: none; @float: none);
+    }
+}
+
 //
 ///* 6 *//* INITIALIZED PATTERNS */
-.icon-init() {
+
+.flezz-icon-init() {
     .icn-var();
     .icn-family();
     .icn-class();
+    .icon-main();
+    .icon-largue();
 }
 //
 /* include icon ----- [ OK ] */@state: OK;

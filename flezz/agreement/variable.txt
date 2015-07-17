@@ -1,0 +1,90 @@
+///*******************************
+///* name spaces
+///*******************************
+///*
+///*
+///*******************************
+///*  1. Config modules.
+///*******************************
+variables de configuración globales serán exportadas a _config.*.less
+inician con el nombre del modulo y representan un parámetro de 
+configuración del modulo.
+las variables locales no serán exportadas a _config.*.less y son nombres 
+cortos o pequeñas adaptaciones de las variables globales, inician 
+con tres letras del nombre del modulo.
+los valores por defecto de los parametros inician con @dfl-*
+
+EJEMPLO (modulo ICON):
+@icon-font-color: white;  
+///*******************************
+///*  2. Road map.
+///*******************************
+Incluye características a desarrollar del modulo
+inician con el nombre del modulo y representan un parámetro de 
+configuración del modulo.
+EJEMPLO (modulo ICON):
+@icon-depth: true;
+///*******************************
+///*  3. Base Modules.
+///*******************************
+incluye los mixin básicos de mayor configuración posible
+inician con tres letras del nombre del modulo.
+los parámetros que se reciben como entrada en un mixin, 
+tienen un nombre corto que de una idea clara de la variable.
+los valores por defecto de los parametros inician con @dfl-*
+EJEMPLO (modulo ICON):
+.icn-icon(@color: @dfl-color){
+ ...
+}
+///*******************************
+///*  4. Config mixin.
+///*******************************
+incluye mixin guard que son llamados desde los mixin base 
+declarados en el #3 
+inician con tres letras del nombre del modulo.
+Cuando se declaran los mixin los parámetros que se reciben 
+como entrada inician con @opc-*
+Cuando estos mixin se llaman en #3 los parámetros que se reciben
+son opciones del mixin base por tanto tienen un nombre corto 
+que de una idea clara de la variable.
+los valores por defecto utilizados en los parámetros inician con @dfl-*
+EJEMPLO (modulo ICON):
+se llama en #3
+.icn-inline(@inline);
+
+se declara en #4
+.icn-inline(@opc-inline) when (@opc-inline = false) {
+    display: block;
+}
+///*******************************
+///*  5. preconfigured patterns.
+///*******************************
+incluye un conjunto de mixin con patrones preconfigurados 
+que llaman a los mixin base.
+inician con el nombre del modulo.
+los parámetros siguen las reglas especificadas en #3 
+EJEMPLO (modulo ICON):
+.icon-largue(){
+	...
+    .icn-icon(...);
+	...
+}
+///*******************************
+///*  6. initialized patterns.
+///*******************************
+incluye uno o varias opciones para inicializar los patrones de diseño
+estos mixin son los únicos que al ser llamados generan clases de CSS...
+no deberían tener parámetros de entrada
+inician con el nombre del modulo y terminan con la palabra init @icon-*-init().
+EJEMPLO (modulo ICON):
+.icon-init() {
+    ...
+	.icn-var(...);
+	.icon-largue();
+	...
+}
+///*******************************
+///*  FIN
+///*******************************
+
+

@@ -1,0 +1,220 @@
+///******************************************/
+///*          flezz framework 1.0           */
+///******************************************/
+///*  Name: mixin desing
+///*  Version: 0.1.0
+///*  Description: less and css desing element.
+///*  Author: Giancarlo Ortiz.
+///*  URI: http://www.zerez.org
+///*  License: GNU General Public License v2 or later
+///*  License URI: http://www.gnu.org/licenses/gpl-2.0.html
+///*  Tags: mixin, plugin, css.
+///******************************************/
+///*  	Content
+///*
+///*  1. Config modules.
+///*  2. Road map.
+///*  3. Base Modules.
+///*  4. Config mixin.
+///*  5. preconfigured patterns.
+///*  6. initialized patterns.
+///******************************************/
+///* PATH */
+@font-path: '';
+//
+///* Dependencies */
+@import '../equalize/_config.equalize.less';
+@import '../../global.colors.less';
+@import '../../global.fonts.less';
+//
+///* 1 *//* CONFIG MODULES VARIABLES *///
+//
+///* global variables */
+///* general option */
+@desing-overflow-vertical: true;
+@desing-font-size-inerit: true; //rem browser = true or rem fixed = false
+@desing-color-inverted: true;
+@desing-scroll-style: flezz;
+@desing-font-size-init: 18; // when @desing-font-size-inerit = false
+@desing-font-body-family: @OpenSansLight;
+@desing-font-header-family: @OpenSansRegular;
+///* nanoScrollerJS */
+@desing-nanoClass: ~'flezz-scroll';
+@desing-paneClass: ~'scroll-pane';
+@desing-sliderClass: ~'scroll-slider';
+@desing-contentClass: ~'scroll-content';
+//
+///* local variables */
+@dfl-size10: @desing-font-size-init*62.5;
+//
+///* 2 *//* ROAD MAP */
+// --------------------------------------------------
+
+// --------------------------------------------------
+//
+///* 3 *//* BASE MODULES */
+.dsn-html-start() {
+    font-family: @desing-font-body-family;
+    height: 100%;
+    .dsn-font();
+}
+
+.dsn-body-start() {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    .dsn-color();
+    .dsn-body-font();
+    .dsn-overflow();
+}
+//
+///* 4 *//* CONFIG MIXIN */
+.dsn-color() when (@desing-color-inverted = true) {
+    .fontPrimaryColor();
+    background-color: @primary-body-font-color;
+    color: @primary-body-background;
+}
+
+.dsn-color() when (@desing-color-inverted = false) {
+    .fontPrimaryColor();
+    background-color: @primary-body-background;
+    color: @primary-body-font-color;
+}
+
+.dsn-font() when not (@desing-font-size-inerit = true) {
+    font-size: 20px;
+}
+
+.dsn-body-font() when not (@desing-font-size-inerit = true) {
+    @size: (@desing-font-size-init/20);
+    font-size: @size*1rem;
+}
+
+.dsn-body-font() when (@desing-font-size-inerit = true) {
+    font-size: 1rem;
+}
+
+.dsn-overflow() when (@desing-overflow-vertical = true) {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.dsn-overflow() when (@desing-overflow-vertical = false) {
+    overflow: hidden;
+}
+
+
+.dsn-scroll() when (@desing-scroll-style = chrome) {
+    ::-webkit-scrollbar {
+        width: 4px;
+        height: 100%;
+    }
+
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+        box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        background: rgba(182,182,182,0.6);
+    }
+
+    ::-webkit-scrollbar-thumb:window-inactive {
+        background: rgba(182,182,182,0.2);
+    }
+}
+
+.dsn-scroll() when (@desing-scroll-style = flezz) {
+    .@{desing-nanoClass} {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        > .@{desing-contentClass} {
+            position: absolute;
+            overflow: scroll;
+            overflow-x: hidden;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            &:focus {
+                outline: thin dotted;
+            }
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        > .@{desing-paneClass} {
+            background: rgba(0,0,0,.25);
+            position: absolute;
+            width: 10px;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            /* Target only IE7 and IE8 with this hack */
+            visibility: hidden\9;
+            opacity: .01;
+            -webkit-transition: .2s;
+            -moz-transition: .2s;
+            -o-transition: .2s;
+            transition: .2s;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+
+            > .@{desing-sliderClass} {
+                background: #444;
+                background: rgba(0,0,0,.5);
+                position: relative;
+                margin: 0 1px;
+                -moz-border-radius: 3px;
+                -webkit-border-radius: 3px;
+                border-radius: 3px;
+            }
+        }
+    }
+
+    .@{desing-nanoClass}:hover > .@{desing-paneClass},
+    .@{desing-paneClass}.active,
+    .@{desing-paneClass}.flashed {
+        /* Target only IE7 and IE8 with this hack */
+        visibility: visible\9;
+        opacity: 0.99;
+    }
+
+    .has-scrollbar > .@{desing-contentClass}::-webkit-scrollbar {
+        display: block;
+    }
+}
+//
+///* 5 *//* PRECONFIGURED PATTERNS */
+.desing-html() {
+    html {
+        .dsn-html-start();
+    }
+}
+
+.desing-body() {
+    body {
+        .dsn-body-start();
+    }
+}
+//
+///* 6 *//* INITIALIZED PATTERNS */
+.desing-start-init() {
+    .desing-html();
+    .desing-body();
+    .dsn-scroll();
+}
+//
+/* dsn others ------- [ OK ] */@state: OK;
+///******************************************/
+///*  	FIN
+///******************************************/
