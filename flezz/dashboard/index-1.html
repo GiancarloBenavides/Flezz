@@ -6,22 +6,22 @@
         <meta name="author" content="Giancarlo Ortiz">
         <title>Contratacion</title>
         <link href="Content/css/style.css" rel="stylesheet" media="screen">
-        <link rel="icon" href="favicon.png" type="image/x-icon" />
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <![CDATA[
-            /*
-            Name: Zerez Template Dashboard
-            Version: 1.0
-            Developer : Giancarlo Ortiz Benavides
-            Url: www.zerez.org
-            Date: 7 mayo 2015
-        */]]>
+/*
+Name: Zerez Template Dashboard
+Version: 1.0
+Developer : Giancarlo Ortiz Benavides
+Url: www.zerez.org
+Date: 7 mayo 2015
+*/]]>
     </head>
     <!-- body classes:: fixed_nav right_nav mini_nav max_nav  -->
     <body class="body light_theme fixed_nav fixed_header">
         <div class="wrapper">
             <!-- Header -->
-            <div class="header">
+            <header id="header-main">
                 <a href="#">
                     <div class="brand">
                         <div class="logo"><span class="theme_color_text"></span></div>
@@ -29,23 +29,24 @@
                     </div>
                 </a>
                 <!-- Top Nav -->
-                <div class="top_nav">
-                    <div class="tab_btn">
-                        <a href="Javascript:;"><i class="fa fa-bars"></i></a>
+                <nav>
+                    <div class="button-tab">
+                        <a><i class="fa fa-bars"></i></a>
                     </div>
                     <div class="admin_panel">
-                        <div role="listbox" class="dropdown avatar" aria-expanded="false" data-state="close">
-                            <a><img src="Content/img/avatar/gianca.jpg"/></a>
-                            <ul aria-hidden="true">
+                        <div class="dropdown avatar">
+                            <a data-toggle="dropdown" href="javascript:void(0);"><img src="Content/img/avatar/gianca.jpg" /></a>
+                            <ul class="dropdown-menu">
+                                <div class="avatar_top_pointer"></div>
                                 <li><a href="profile.html"><i class="fa fa-user"></i>Profile</a></li>
                                 <li><a href="help.html"><i class="fa fa-question-circle"></i>Help</a></li>
                                 <li><a href="login.html"><i class="fa fa-power-off"></i>Logout</a></li>
                             </ul>
                         </div>
-                        <div class="user">
-                            <a href="#">Giancarlo</a>
-                            <div><a href="">Edit </a> | <a href="login.html"> Logout</a></div>
+                        <div class="user_name"><a href="#">Giancarlo</a>
+                            <span><i class="fa fa-circle"></i></span>
                         </div>
+                        <div class="user-login"><a href="">edit</a>|<a href="login.html">Logout</a></div>
                     </div>
                     <div class="top_nav_right_notif">
                         <ul>
@@ -57,11 +58,11 @@
                     <div class="search_panel">
                         <ul>
                             <i class="fa fa-search"></i>
-                            <li><input type="text" placeholder="Buscar" class="form_control"></li>
+                            <li><input type="text" placeholder="Search" class="form_control top_nav_search"></li>
                         </ul>
                     </div>
-                </div>
-            </div>
+                </nav>
+            </header>
             <!-- Body Container -->
             <div class="body_container">
                 <!-- Left Nav -->
@@ -109,7 +110,7 @@
             </div>
         </div>
         <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content noradius">
                     <div class="modal-header theme_color">
@@ -140,6 +141,5 @@
         <script src="Scripts/js/vendor/jquery.slimscroll.js"></script>
         <script src="Scripts/js/vendor/scrollbar.js"></script>
         <script src="Scripts/js/vendor/jquery.fullscreen-min.js"></script>
-        <scrip src="Scripts/js/dropdown.js"></scrip>
     </body>
 </html>

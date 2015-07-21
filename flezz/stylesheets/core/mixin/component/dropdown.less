@@ -1,0 +1,143 @@
+///******************************************/
+///*          flezz framework 1.0           */
+///******************************************/
+///*  Name: dropdown
+///*  Version: 0.1.0
+///*  Description: description dropdown
+///*  Author: Giancarlo Ortiz.
+///*  URI: http://www.zerez.org
+///*  License: GNU General Public License v2 or later
+///*  License URI: http://www.gnu.org/licenses/gpl-2.0.html
+///*  Tags: dropdown, mixin, plugin, css.
+///******************************************/
+///*  	Content
+///*
+///*  1. Config modules.
+///*  2. Road map.
+///*  3. Base Modules.
+///*  4. Config mixin.
+///*  5. preconfigured patterns.
+///*  6. initialized patterns.
+///******************************************/
+///* PATH */
+//
+///* Dependencies */
+@import 'equalize/_config.equalize.less';
+//
+///* 1 *//* CONFIG MODULES VARIABLES *///
+//
+///* global variables */
+///* general option */
+@Dropdown-width-auto: false;
+@Dropdown-depth: true;
+@Dropdown-select: false;
+///* size tabs */
+@Dropdown-width: 140px;
+@Dropdown-radius-width: 4px;
+@Dropdown-content-radius-width: 4px;
+@Dropdown-content-padding: 28px;
+@Dropdown-border-width: 1px;
+@Dropdown-gap: @Dropdown-border-width*2;
+@Dropdown-link-padding-topbottom: 10px;
+@Dropdown-link-padding-leftright: 15px;
+///* list dropdown */
+@Dropdown-bck-color-list: rgb(255, 255, 255);
+@Dropdown-font-color-list: rgb(32, 80, 129);
+@Dropdown-border-color-list: rgb(204, 204, 204);
+///* button dropdown */
+@Dropdown-bck-color: darken(@Dropdown-bck-color-list,10%);
+@Dropdown-font-color: lighten(@Dropdown-font-color-list,10%);
+@Dropdown-border-color: transparent;
+//
+///* local variables */
+
+//
+///* 2 *//* ROAD MAP */
+// --------------------------------------------------
+
+// --------------------------------------------------
+//
+///* 3 *//* BASE MODULES */
+.drp-dropdown (@drp-button: false) {
+    position: relative;
+    .drp-button(@drp-button);
+    .drp-select();
+    
+    ul {
+        position: absolute;
+        top: ~'calc(100% + 10px)';
+        display: none;
+        margin: 0;
+        padding: 0;
+        border: 1px solid @Dropdown-border-color-list;
+        background-color: @Dropdown-bck-color-list;
+        min-width: 160px;
+        z-index: 900;
+        
+        li {
+            display: block;
+            list-style: none;
+            &:first-child {
+                padding-top: 7px;
+            }
+            &:last-child {
+                padding-bottom: 7px;
+            }            
+            
+            a {
+                padding: 7px 15px;
+                display: block;
+                color: @Dropdown-font-color-list;
+                
+                &:hover {
+                    background-color: @Dropdown-bck-color;
+                    color: @Dropdown-font-color;
+                }
+            }
+        }
+    }
+    .open {
+        display: block;
+    }
+    .caret {
+        .caret();
+    }
+}
+//
+///* 4 *//* CONFIG MIXIN */
+.drp-select() when (@Dropdown-select = false) {
+    .user-select();
+}
+
+.drp-button(@drp-button) when (@drp-button = true) {
+    .btn-pattern-box (@Dropdown-font-color; @Dropdown-bck-color; @Dropdown-border-color; @size: 4);
+}
+
+.drp-button-disabled(@drp-button) when (@drp-button = true) {
+    div.dropdown[data-state="disabled"] {
+        cursor: not-allowed;      
+        .btn-pattern-box (@Dropdown-font-color; @Dropdown-bck-color; @Dropdown-border-color; @size: 4);
+    }
+}
+//
+///* 5 *//* PRECONFIGURED PATTERNS */
+.dropdown(@drp-button: false) {
+    .dropdown {
+        .drp-dropdown(@drp-button); 
+    }
+    div.dropdown[data-state="open"] {
+        .arrow-selected(@arrow-down: 11px);
+        .caret {transform: rotate(180deg);}
+    }
+    .drp-button-disabled(@drp-button);
+}
+//
+///* 6 *//* INITIALIZED PATTERNS */
+.dropdown-init() {
+    .dropdown();
+}
+//
+/* dropdown cmp -------- [ OK ] */@state: OK;
+///******************************************/
+///*  	FIN
+///******************************************/

@@ -30,9 +30,9 @@
                     <li role="presentation" aria-selected="false"><a tabindex="0" data-tab="panel-horizontal-two">tab 2</a></li>
                     <li role="presentation" aria-selected="false"><a tabindex="0" data-tab="panel-horizontal-three">tab 3</a></li>
                     <li role="presentation" class="disabled" aria-selected="false"><a tabindex="0" data-tab="panel-horizontal-four">tab 4</a></li>
-                    <li role="listbox" aria-expanded="false">
+                    <li role="listbox" class="dropdown" aria-expanded="false" data-state="close">
                         <a>Dropdown<i class="caret"></i></a>
-                        <ul>
+                        <ul aria-hidden="true">
                             <li><a data-tab="panel-horizontal-five">tab 5</a></li>
                             <li><a data-tab="panel-horizontal-six">tab 6</a></li>
                         </ul>
@@ -80,9 +80,9 @@
                     <li role="presentation" aria-selected="false"><a tabindex="0" data-tab="panel-vertical-two">tab 2</a></li>
                     <li role="presentation" aria-selected="false"><a tabindex="0" data-tab="panel-vertical-three">tab 3</a></li>
                     <li role="presentation" class="disabled" aria-selected="false"><a tabindex="0" data-tab="panel-vertical-four">tab 4</a></li>
-                    <li role="listbox" aria-expanded="false">
+                    <li role="listbox" class="dropdown" aria-expanded="false" data-state="close">
                         <a>Dropdown<i class="caret"></i></a>
-                        <ul>
+                        <ul aria-hidden="true">
                             <li><a data-tab="panel-vertical-five">tab 5</a></li>
                             <li><a data-tab="panel-vertical-six">tab 6</a></li>
                         </ul>
@@ -128,5 +128,6 @@
         </section>
         <script src="../vendor/jquery-2.1.0.js"></script>
         <script src="tabs.js"></script>
+        <script src="dropdown.js"></script>
     </body>
 </html>

@@ -1,0 +1,84 @@
+/* style designed by: Giancarlo Ortiz */
+@vendor-path: 'vendor';
+@theme-path:'../../../stylesheets/themes';
+
+@import '@{theme-path}/theme.udenar.style.less';
+
+@logos-path:'../img/logos';
+@Family-style: normal;
+@theme-color: #205081;
+@theme-bg-color: #bbbbbb;
+@font-dolor-hover: @theme-color;
+
+@bck-logo-big: url("../img/logos/logo_big.png") no-repeat;
+@bck-logo: url("../img/logos/logo.png") no-repeat;
+
+@theme-padding: 20px;
+
+//temp
+.dropdown>ul{ display: none}
+.modal{display: none}
+//
+
+
+//body {overflow: hidden}
+
+.avatar img {width: 35px;}
+
+.wrapper { height: 100%; width: 100%; padding: 0 @theme-padding }
+
+#header-main {
+    height:100px; padding:19px 0px; background-color:#FFFFFF;
+    
+    nav {
+      margin-left: 225px;
+      transition: all 0.3s ease 0s;
+    }
+}
+
+
+.admin_panel{
+    margin-right: 15px;
+    height: 60px;
+    width: 183px;
+    float: right;
+    padding-top: 4px;
+}
+
+.search_panel {
+    height: 60px;
+    float: right;
+    margin-right: 20px;
+    margin-top: 15px;
+    width: 150px;
+    color: #adadad;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    height: 32px;
+    line-height: 1.42857;
+    vertical-align: middle;
+    i {
+        color: #999999;
+        float: right;
+        font-size: 15px;
+        margin: 6px 0 0 125px;
+        position: absolute;
+    }
+}
+
+.tab_btn {
+  float: left;
+  border: 1px solid #e0e0e0;
+  height: 30px;
+  padding: 5px 11px;
+  margin: 17px 15px 0px 0px;
+  clear: right;
+}
+
+.top_nav_right_notif {
+    height: 60px;
+    float: right;
+    margin-right: 5px;
+    margin-top: -1px;
+}

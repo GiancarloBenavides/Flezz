@@ -1,8 +1,44 @@
+///******************************************/
+///*          flezz framework 1.0           */
+///******************************************/
+///*  Name: scroll
+///*  Version: 0.1.5
+///*  Description: scroll plugin for jquery
+///*  Author: Giancarlo Ortiz.
+///*  URI: http://www.zerez.org
+///*  License: GNU General Public License v2 or later
+///*  License URI: http://www.gnu.org/licenses/gpl-2.0.html
+///*  Tags: scroll, plugin, js.
+///******************************************/
+///*    Content
+///*
+///*  1. Road map.
+///*  2. Plugin start.
+///*  3. Config variables.
+///*  4. Private function.
+///*  5. Public function.
+///*  6. Public options default.
+///******************************************/
 /*jslint nomen: true*/
 /*jslint regexp: true*/
+/*global document, window, alert, console, jQuery, require*/
+///* 1 *//* ROAD MAP */
+
+//
+///* 2 *//* PLUGIN - MODULE */
+///* Use plugin development pattern, by Mike Alsup */
+///*  URI: http://www.learningjquery.com/2007/10/a-plugin-development-pattern */
+// Se implementa creando un cierre y funcion anónima que se auto-invoca y estiende el objeto jquery.fn de jquery
+// en el interior definimos la variable FlezzScroll la cual contendrá todo el prototipo de nuestro modulo.
+//
+// create closure
 (function ($) {
     "use strict";
+    ///* 3 *//* CONFIG VARIABLES */
+    ///* private variables, and private methods *///
     var BROWSER_IS_IE7, BROWSER_SCROLLBAR_WIDTH, DOMSCROLL, DOWN, DRAG, ENTER, KEYDOWN, KEYUP, MOUSEDOWN, MOUSEENTER, MOUSEMOVE, MOUSEUP, MOUSEWHEEL, FlezzScroll, PANEDOWN, RESIZE, SCROLL, SCROLLBAR, TOUCHMOVE, UP, WHEEL, cAF, defaults, getBrowserScrollbarWidth, hasTransform, isFFWithBuggyScrollbar, rAF, transform, _elementStyle, _prefixStyle, _vendor;
+    //
+    ///* config selector *///
     defaults = {
         paneClass: 'scroll-bar',
         sliderClass: 'scroll-slider',
@@ -41,57 +77,7 @@
     BROWSER_SCROLLBAR_WIDTH = null;
     rAF = window.requestAnimationFrame;
     cAF = window.cancelAnimationFrame;
-    _elementStyle = document.createElement('div').style;
-    _vendor = (function () {
-        var i, transform, vendor, vendors, _i, _len;
-        vendors = ['t', 'webkitT', 'MozT', 'msT', 'OT'];
-        for (i = _i = 0, _len = vendors.length; _i < _len; i = ++_i) {
-            vendor = vendors[i];
-            transform = vendors[i] + 'ransform';
-            if (transform in _elementStyle) {
-                return vendors[i].substr(0, vendors[i].length - 1);
-            }
-        }
-        return false;
-    }());
-    _prefixStyle = function (style) {
-        if (_vendor === false) {
-            return false;
-        }
-        if (_vendor === '') {
-            return style;
-        }
-        return _vendor + style.charAt(0).toUpperCase() + style.substr(1);
-    };
-    transform = _prefixStyle('transform');
-    hasTransform = transform !== false;
-    getBrowserScrollbarWidth = function () {
-        var outer, outerStyle, scrollbarWidth;
-        outer = document.createElement('div');
-        outerStyle = outer.style;
-        outerStyle.position = 'absolute';
-        outerStyle.width = '100px';
-        outerStyle.height = '100px';
-        outerStyle.overflow = SCROLL;
-        outerStyle.top = '-9999px';
-        document.body.appendChild(outer);
-        scrollbarWidth = outer.offsetWidth - outer.clientWidth;
-        document.body.removeChild(outer);
-        return scrollbarWidth;
-    };
-    isFFWithBuggyScrollbar = function () {
-        var isOSXFF, ua, version;
-        ua = window.navigator.userAgent;
-        isOSXFF = /(?=.+Mac OS X)(?=.+Firefox)/.test(ua);
-        if (!isOSXFF) {
-            return false;
-        }
-        version = /Firefox\/\d{2}\./.exec(ua);
-        if (version) {
-            version = version[0].replace(/\D+/g, '');
-        }
-        return isOSXFF && +version > 23;
-    };
+    // plugin definition
     FlezzScroll = (function () {
         function FlezzScroll(el, options) {
             this.el = el;
@@ -504,6 +490,63 @@
         };
         return FlezzScroll;
     }());
+    //
+    ///* 4 *//* PRIVATE FUNTIONS */
+    _elementStyle = document.createElement('div').style;
+    _vendor = (function () {
+        var i, transform, vendor, vendors, _i, _len;
+        vendors = ['t', 'webkitT', 'MozT', 'msT', 'OT'];
+        for (i = _i = 0, _len = vendors.length; _i < _len; i = ++_i) {
+            vendor = vendors[i];
+            transform = vendors[i] + 'ransform';
+            if (transform in _elementStyle) {
+                return vendors[i].substr(0, vendors[i].length - 1);
+            }
+        }
+        return false;
+    }());
+    _prefixStyle = function (style) {
+        if (_vendor === false) {
+            return false;
+        }
+        if (_vendor === '') {
+            return style;
+        }
+        return _vendor + style.charAt(0).toUpperCase() + style.substr(1);
+    };
+    //
+    transform = _prefixStyle('transform');
+    hasTransform = transform !== false;
+    getBrowserScrollbarWidth = function () {
+        var outer, outerStyle, scrollbarWidth;
+        outer = document.createElement('div');
+        outerStyle = outer.style;
+        outerStyle.position = 'absolute';
+        outerStyle.width = '100px';
+        outerStyle.height = '100px';
+        outerStyle.overflow = SCROLL;
+        outerStyle.top = '-9999px';
+        document.body.appendChild(outer);
+        scrollbarWidth = outer.offsetWidth - outer.clientWidth;
+        document.body.removeChild(outer);
+        return scrollbarWidth;
+    };
+    isFFWithBuggyScrollbar = function () {
+        var isOSXFF, ua, version;
+        ua = window.navigator.userAgent;
+        isOSXFF = /(?=.+Mac OS X)(?=.+Firefox)/.test(ua);
+        if (!isOSXFF) {
+            return false;
+        }
+        version = /Firefox\/\d{2}\./.exec(ua);
+        if (version) {
+            version = version[0].replace(/\D+/g, '');
+        }
+        return isOSXFF && +version > 23;
+    };
+    //
+    ///* 5 *//* PUBLIC FUNTIONS - METHODS */
+    // define and expose our function
     $.fn.scrollable = function (settings) {
         return this.each(function () {
             var options, scrollbar;
@@ -545,4 +588,25 @@
         });
     };
     $.fn.scrollable.Constructor = FlezzScroll;
+    //
+    ///* 6 *//* PUBLIC PROPERTIES */
+    // define and expose plugin defaults
+    $.fn.scrollable.defaults = {
+        paneClass: 'scroll-bar',
+        sliderClass: 'scroll-slider',
+        contentClass: 'scroll-content',
+        enabledClass: 'has-scrollbar',
+        flashedClass: 'flashed',
+        activeClass: 'active',
+        iOSNativeScrolling: false,
+        preventPageScrolling: false,
+        disableResize: false,
+        alwaysVisible: false,
+        sliderMinHeight: 20,
+        sliderMaxHeight: null,
+        documentContext: null,
+        windowContext: null
+    };
+    //
+    // end of closure
 }(jQuery));

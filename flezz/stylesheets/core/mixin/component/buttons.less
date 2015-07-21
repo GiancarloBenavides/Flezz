@@ -160,34 +160,6 @@
         .button(@color; @back-color; @border-color; @border-width; @size; @radius; @shape);
     }
 }
-
-.btn-pattern-disabled (@color: @button-default-font-color; @back-color: @button-default-background-color; @border-color: @button-default-border-color; @border-width: @button-border-width; @size: @button-size; @radius: @button-radius-length; @shape: false; @expanded: false; @round: false) {
-    @font-base: 1rem * (@size + 6) * 1/10;
-    @padSup: @font-base * (@size + 3) * 1/20;
-    @padLat: 1rem * (@size + 1) * 15/100;
-    @padding: @padSup @padLat;
-    .btn-expanded(@expanded);
-    .user-select();
-
-    & > a,
-    & > a:hover,
-    & > a:active {
-        font-size: @font-base;
-        padding: @padding;
-        display: block;
-        line-height: @button-line-height;
-        background-color: @back-color;
-        color: @color;
-        border: @border-width solid @border-color;
-        text-decoration: none;
-        cursor: not-allowed;
-        .btn-text-transform();
-        .btn-shaped(@shape);
-        .btn-round(@radius, @round); 
-        .btn-radius(@size, @round);
-    }
-}
-
 //
 ///* 4 *//* CONFIG MIXIN */
 .button(@color; @back-color; @border-color; @border-width; @size; @radius; @shape) when (@shape = true) {
@@ -327,27 +299,44 @@
 }
 //
 ///* state patterns *///
-.button-disabled(@btn-size; @radius: @button-radius-length; @btn-shape: false; @btn-expanded: false; @btn-round: false) {
-    .btn-pattern-disabled (@color: @button-disabled-font-color; @back-color: @button-disabled-background-color; @border-color: @button-disabled-border-color; @border-width: @button-border-width; @size: @btn-size; @radius ; @shape: @btn-shape; @expanded: @btn-expanded; @round: @btn-round);
+.button-test-disabled() {
+    [data-state*="disabled"]>a,
+    [data-state*="disabled"]>a:hover,
+    [data-state*="disabled"]>a:active {
+        background-color: #eeeeee !important;
+        color: #919191 !important;
+        cursor: not-allowed !important;
+        border-color: #eeeeee !important;
+        text-shadow: none !important;
+        background-image: none !important;
+    }
 }
 //
+///* legacy patterns *///
+.button-legacy() {
+    div[class^=btn]{
+        .btn-warning(4);
+        a {background-image: none !important;}
+    }
+}
 ///* 6 *//* INITIALIZE PATTERNS */
-.button-flezz-init(){
+.button-init(){
     ///* flezz round buttons*///
-    button-round-prymary{.button-round(@button-size; @prymary)}
-    button-round-secondary{.button-round(@button-size; @secundary)}
-    button-round-success{.button-round(@button-size; @success)}
-    button-round-disable{.button-disabled(@button-size; 2em; false; false; true)}
+    .button-round-primary{.button-round(@button-size; @prymary)}
+    .button-round-secondary{.button-round(@button-size; @secundary)}
+    .button-round-success{.button-round(@button-size; @success)}
+    .button-round-danger{.button-round(@button-size; @danger)}
     ///* flezz default buttons *///
-    button-prymary{.button-square(@button-size; @prymary)}
-    button-secondary{.button-square(@button-size; @secundary)}
-    button-success{.button-square(@button-size; @success)}
-    button-disable{.button-disabled(@button-size; 0; false; false; true)}
+    .button-primary{.button-square(@button-size; @prymary)}
+    .button-secondary{.button-square(@button-size; @secundary)}
+    .button-success{.button-square(@button-size; @success)}
+    .button-danger{.button-square(@button-size; @danger)}
     ///* flezz expanded buttons *///
-    button-expanded-prymary{.button-expanded(@button-size; @prymary)}
-    button-expanded-secondary{.button-expanded(@button-size; @secundary)}
-    button-expanded-success{.button-expanded(@button-size; @success)}
-    button-expanded-disable{.button-disabled(@button-size; 0; false; true; true)}
+    .button-expanded-primary{.button-expanded(@button-size; @prymary)}
+    .button-expanded-secondary{.button-expanded(@button-size; @secundary)}
+    .button-expanded-success{.button-expanded(@button-size; @success)}
+    .button-expanded-danger{.button-expanded(@button-size; @danger)}
+    .button-test-disabled();
 }
 //
 /* cmp btn ---------- [ OK ] */@state: OK;

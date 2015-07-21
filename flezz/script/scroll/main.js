@@ -1,15 +1,13 @@
-$(function(){
-
-  $('.nano').nanoScroller({
-    preventPageScrolling: true
-  });
-  $("#main").find('.description').load("readme.html", function(){
-    $(".nano").nanoScroller();
-    $("#main").find("img").load(function() {
-        $(".nano").nanoScroller();
+$(function () {
+    "use strict";
+    $('.flezz-scroll').scrollable({
+        preventPageScrolling: true
     });
-  });
-
-
+    //
+    $("#main").find('.description').load("readme.html", function () {
+        $(".flezz-scroll").scrollable();
+        $("#main").find("img").load(function () {
+            $(".nano").scrollable();
+        });
+    });
 });
-

@@ -22,6 +22,7 @@
 ///*  8. Public function.
 ///*  9. Revealing function.
 ///******************************************/
+/*global document, window, alert, console, jQuery, $, require*/
 ///* 1 *//* ROAD MAP */
 
 //
@@ -29,6 +30,7 @@
 ///* Use Revealing Module Pattern */
 // Se implementa creando una función anónima que se auto-invoca y regresa un objeto literal
 // Definimos la variable name_component la cual contendrá todo nuestro modulo.
+
 var name_component = (function () {
     // Defines that JavaScript code should be executed in "strict mode" to avoid errors.
     "use strict";

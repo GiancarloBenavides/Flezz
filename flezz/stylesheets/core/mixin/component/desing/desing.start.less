@@ -31,7 +31,11 @@
 //
 ///* global variables */
 ///* general option */
-@desing-overflow-vertical: true;
+@desing-select: false;
+@desing-list-reset: true;
+@desing-link-reset: true;
+@desing-form-reset: true;
+@desing-overflow-vertical: false;
 @desing-font-size-inerit: true; //rem browser = true or rem fixed = false
 @desing-color-inverted: true;
 @desing-scroll-style: flezz;
@@ -40,7 +44,7 @@
 @desing-font-header-family: @OpenSansRegular;
 ///* nanoScrollerJS */
 @desing-nanoClass: ~'flezz-scroll';
-@desing-paneClass: ~'scroll-pane';
+@desing-paneClass: ~'scroll-bar';
 @desing-sliderClass: ~'scroll-slider';
 @desing-contentClass: ~'scroll-content';
 //
@@ -66,6 +70,7 @@
     .dsn-color();
     .dsn-body-font();
     .dsn-overflow();
+    .dsn-select();
 }
 //
 ///* 4 *//* CONFIG MIXIN */
@@ -103,6 +108,41 @@
     overflow: hidden;
 }
 
+.dsn-select() when (@desing-select = false) {
+    .user-select();
+}
+
+.dsn-list() when (@desing-list-reset = true) {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        
+        li {
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+.dsn-link() when (@desing-link-reset = true) {
+    a {
+        background-color: transparent;
+        color: @facebook-blue;
+        text-decoration: none;
+        
+        &:hover {
+            outline: 0;
+            color: @twitter-LinK;
+        }
+    }
+}
+
+.dsn-form() when (@desing-form-reset = true) {
+    input {
+        outline: 0;
+    }
+}
 
 .dsn-scroll() when (@desing-scroll-style = chrome) {
     ::-webkit-scrollbar {
@@ -127,6 +167,8 @@
 }
 
 .dsn-scroll() when (@desing-scroll-style = flezz) {
+    @padding: 10px;
+    @margin-bar: 12px;
     .@{desing-nanoClass} {
         position: relative;
         width: 100%;
@@ -140,7 +182,10 @@
             top: 0;
             right: 0;
             bottom: 0;
-            left: 0;
+            //left: 0;
+            padding-left: @padding*2;
+            padding-right: @padding;
+            //width: ~'calc(100% - @{padding})';
 
             &:focus {
                 outline: thin dotted;
@@ -152,12 +197,13 @@
         }
 
         > .@{desing-paneClass} {
-            background: rgba(0,0,0,.25);
+            background: rgba(3,3,3,.3);
             position: absolute;
-            width: 10px;
-            right: 0;
-            top: 0;
-            bottom: 0;
+            margin: 10px @margin-bar 10px 0;
+            width: 8px;
+            right: 1px;
+            top: 1px;
+            bottom: 1px;
             /* Target only IE7 and IE8 with this hack */
             visibility: hidden\9;
             opacity: .01;
@@ -170,8 +216,8 @@
             border-radius: 5px;
 
             > .@{desing-sliderClass} {
-                background: #444;
-                background: rgba(0,0,0,.5);
+                background: #333;
+                background: rgba(3,3,3,.3);
                 position: relative;
                 margin: 0 1px;
                 -moz-border-radius: 3px;
@@ -211,6 +257,9 @@
 .desing-start-init() {
     .desing-html();
     .desing-body();
+    .dsn-list();
+    .dsn-link();
+    .dsn-form();
     .dsn-scroll();
 }
 //

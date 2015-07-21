@@ -1,33 +1,27 @@
 ///******************************************/
 ///*          flezz framework 1.0           */
 ///******************************************/
-///*  Name: name_module
-///*  Version: 0.1.0
-///*  Description: description name_module
+///*  Name: tabs
+///*  Version: 1.2.0
+///*  Description: tabs component
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org
 ///*  License: GNU General Public License v2 or later
 ///*  License URI: http://www.gnu.org/licenses/gpl-2.0.html
-///*  Tags: name_module, mixin, plugin, css.
+///*  Tags: tab, plugin, css.
 ///******************************************/
 ///*  	Content
 ///*
-///*  1. Config modules.
+///*  1. Config component variables.
 ///*  2. Road map.
-///*  3. Base Modules.
+///*  3. Base class.
 ///*  4. Config mixin.
-///*  5. preconfigured patterns.
-///*  6. initialized patterns.
 ///******************************************/
-///* PATH */
 //
-///* Dependencies */
-
-//
-///* 1 *//* CONFIG MODULES VARIABLES *///
+///* 1 *//* CONFIG COMPONENT VARIABLES */
 //
 ///* global variables */
-///* general option */
+///* general option tabs */
 @tabs-header: false;
 @tabs-shadow: true;
 @tabs-width-auto: false;
@@ -66,11 +60,20 @@
 //
 ///* 2 *//* ROAD MAP */
 // --------------------------------------------------
-
+//opciones:
+//bottom
+//rigth
+//left
+//top
+@tabs-underline: true;
+@tabs-radius: true;
+@tabs-border: true;
+@tabs-group: true;
+@tabs-icon: true;
 // --------------------------------------------------
 //
-///* 3 *//* BASE MODULES */
-.tbs-tabs() {
+///* 3 *//* BASE CLASS */
+.tabs {
     width: 100%;
     // -----
     // TABS
@@ -96,7 +99,6 @@
                 display: block;
                 padding: @tabs-link-padding-topbottom @tabs-link-padding-leftright;
                 text-decoration: none;
-                .user-select();
 
                 &:hover,
                 &:focus {
@@ -157,7 +159,7 @@
             // Make the list-items overlay the bottom border
             // Actual tabs (as links)
             > a {
-                .tbs-depth();
+                .depth();
                 margin-right: @tabs-gap;
                 //border-bottom:  @tabs-border-width solid @tabs-border-color-selected;                
                 border-radius: @tabs-radius-width @tabs-radius-width 0 0;
@@ -179,8 +181,8 @@
                     border: @tabs-border-width solid @tabs-border-color-selected;
                     border-bottom-color: @tabs-bck-color-selected;
                     border-right: @tabs-border-width solid @tabs-border-color-selected;
-                    .tbs-depth-restore();
-                    .tbs-shadow-tab-horizontal(); 
+                    .depth-restore();
+                    .shadow-tab-horizontal(); 
                 }
             }
         }
@@ -191,7 +193,7 @@
         float: left;
         padding: 0;
         margin: 0;
-        .tbs-width();
+        .tabs-width();
 
         li {
             a {
@@ -207,7 +209,7 @@
                     margin-right: -1*@tabs-border-width;
                     border: @tabs-border-width solid @tabs-border-color-selected;
                     border-right: none;
-                    .tbs-shadow-tab-vertical();
+                    .shadow-tab-vertical();
                 }
             }
         }
@@ -238,7 +240,7 @@
             border: @tabs-border-width solid @tabs-border-color-selected;
             //border-top: none;
             border-radius: 0 0 @tabs-content-radius-width @tabs-content-radius-width;
-            .tbs-shadow-content-down();
+            .shadow-content-down();
         }
 
         ///* vertical Tabable *///
@@ -251,7 +253,7 @@
             border: @tabs-border-width solid @tabs-border-color-selected;
             //border-left: none;
             border-radius: 0 @tabs-content-radius-width @tabs-content-radius-width 0;
-            .tbs-shadow-content-down();
+            .shadow-content-down();
 
             &:after {
                 clear: both;
@@ -268,38 +270,39 @@
     // ----------
     // Dropdowns
     // ----------
-//    li[role="listbox"] {
-//        & > ul {
-//            display: none;
-//        }
-//        // Open dropdowns
-//        .open > a {
-//            &,
-//            &:hover,
-//            &:focus {
-//                background-color: @nav-link-hover-bg;
-//                border-color: @link-color;
-//            }
-//        }
-//        // Specific dropdowns
-//        .nav-tabs .dropdown-menu {
-//            // make dropdown border overlap tab border
-//            margin-top: -1*@tabs-border-width;
-//            // Remove the top rounded corners here since there is a hard edge above the menu
-//            //.border-top-radius(0);
-//        }
-//        .caret{
-//            .caret();
-//        }
-//    }
+    li[role="listbox"] {
+        & > ul {
+            display: none;
+        }
+        // Open dropdowns
+        .open > a {
+            &,
+            &:hover,
+            &:focus {
+                background-color: @nav-link-hover-bg;
+                border-color: @link-color;
+            }
+        }
+        // Specific dropdowns
+        .nav-tabs .dropdown-menu {
+            // make dropdown border overlap tab border
+            margin-top: -1*@tabs-border-width;
+            // Remove the top rounded corners here since there is a hard edge above the menu
+            //.border-top-radius(0);
+        }
+        .caret{
+            .caret();
+        }
+    }
     // --------------
     //  MIXIN
     // --------------
-    .tbs-header();
+    .header();
 }
 //
+//
 ///* 4 *//* CONFIG MIXIN */
-.tbs-header() when (@tabs-header = true) {
+.header() when (@tabs-header = true) {
     @tabs-radius-width: 0px;
 
     .horizontal {
@@ -312,40 +315,26 @@
     }
 }
 
-.tbs-shadow-tab-horizontal() when (@tabs-shadow = true) {
+.shadow-tab-horizontal() when (@tabs-shadow = true) {
     -webkit-box-shadow: 2px 0px 1px -1px rgba(100,100,100,0.3);
     -moz-box-shadow:    2px 0px 1px -1px rgba(100,100,100,0.3);
     box-shadow:         2px 0px 1px -1px rgba(100,100,100,0.3);
 }
 
-.tbs-shadow-tab-vertical() when (@tabs-shadow = true) {
+.shadow-tab-vertical() when (@tabs-shadow = true) {
     -webkit-box-shadow: 0px 2px 1px -1px rgba(100,100,100,0.3);
     -moz-box-shadow:    0px 2px 1px -1px rgba(100,100,100,0.3);
     box-shadow:         0px 2px 1px -1px rgba(100,100,100,0.3);
 }
 
-.tbs-shadow-content-down() when (@tabs-shadow = true) {
+.shadow-content-down() when (@tabs-shadow = true) {
     -webkit-box-shadow: 4px 6px 8px -2px rgba(100,100,100,0.39);
     -moz-box-shadow:    4px 6px 8px -2px rgba(100,100,100,0.39);
     box-shadow:         4px 6px 8px -2px rgba(100,100,100,0.39);
 }
 
-.tbs-width() when (@tabs-width-auto = false) {
+.tabs-width() when (@tabs-width-auto = false) {
     width: @tabs-width;
-}
-
-.tbs-depth() when (@tabs-depth = true) {
-    margin: 3px @tabs-gap 1px 1px;
-    padding: (@tabs-link-padding-topbottom - 4px) (@tabs-link-padding-leftright - 4px);
-}
-
-.tbs-depth-restore() when (@tabs-depth = true) {
-    @margin-sum: (4px-@tabs-border-width);
-    margin: 0;
-    margin-bottom: -1*@tabs-border-width;
-    padding: (@tabs-link-padding-topbottom ) (@tabs-link-padding-leftright) (@tabs-link-padding-topbottom - @margin-sum) (@tabs-link-padding-leftright);
-    border-right: 2*@tabs-border-width solid @tabs-border-color-selected;
-    margin-right: @tabs-gap;
 }
 
 .caret() {
@@ -364,24 +353,17 @@
         transform: rotate(180deg);
     }
 }
-//
-///* 5 *//* PRECONFIGURED PATTERNS */
-.tabs() {
-    .tabs {
-        .tbs-tabs();
-    }
-    li.dropdown[data-state="open"] {
-        .arrow-selected(@arrow-down: 11px);
-        .caret {transform: rotate(180deg);}
-    }
+
+.depth() when (@tabs-depth = true) {
+    margin: 3px @tabs-gap 1px 1px;
+    padding: (@tabs-link-padding-topbottom - 4px) (@tabs-link-padding-leftright - 4px);
 }
-//
-///* 6 *//* INITIALIZED PATTERNS */
-.tabs-init() {
-    .tabs()
+
+.depth-restore() when (@tabs-depth = true) {
+    @margin-sum: (4px-@tabs-border-width);
+    margin: 0;
+    margin-bottom: -1*@tabs-border-width;
+    padding: (@tabs-link-padding-topbottom ) (@tabs-link-padding-leftright) (@tabs-link-padding-topbottom - @margin-sum) (@tabs-link-padding-leftright);
+    border-right: 2*@tabs-border-width solid @tabs-border-color-selected;
+    margin-right: @tabs-gap;
 }
-//
-/* tabs cmp ------- [ OK ] */@state: OK;
-///******************************************/
-///*  	FIN
-///******************************************/

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>check</title>
         <link rel="stylesheet" href="../core/flezz.core.css">
-        <link rel="stylesheet" href="ChekMixin.css">
+        <link rel="stylesheet" href="ChekButton.css">
     </head>
     <body>
         <div class="clear"><br></div>
@@ -45,10 +45,34 @@
             <div class="expanded"><a>button expanded</a></div>
         </section>
         <section>
+            <div class="radius"><a><i class="fa fa-shopping-cart"></i> button radius</a></div>
+            <div class="round"><a><i class="fa fa-unlock"></i> button round</a></div>
+            <div class="round"><a><i class="fa fa-rocket"></i></a></div>
+            <div class="square"><a><i class="fa fa-arrow-up"></i> button square</a></div>
+            <div class="square"><a><i class="fa fa-star"></i></a></div>
+            <div class="expanded"><a><i class="fa fa-copyright"></i> button expanded</a></div>
+        </section>
+        <section>
             <div class="square"><a>enable</a></div>
-            <div class="disable"><a>disable</a></div>
+            <div class="square" data-state="disabled"><a>disable</a></div>
             <div class="aceptar"><a>enable</a></div>
-            <div class="stop"><a>disable</a></div>
+            <div class="aceptar" data-state="disabled"><a>disable</a></div>
+        </section>
+        <section>
+            <p>Botones boostrap usando selectores css3</p>
+            <div class="btn-primary"><a>boostrap</a></div>
+            <div class="btn-secondary"><a>boostrap</a></div>
+            <div class="btn-success"><a>boostrap</a></div>
+            <div class="btn-danger"><a>boostrap</a></div>
+            <div class="btn-danger" data-state="disabled"><a>boostrap</a></div>
+        </section>
+        <section>
+            <p>Botones por defecto de flezz</p>
+            <div class="button-primary"><a>button-primary</a></div>
+            <div class="button-secondary"><a>button-secondary</a></div>
+            <div class="button-success"><a>button-success</a></div>
+            <div class="button-danger"><a>button-danger</a></div>
+            <div class="button-danger" data-state="disabled"><a>data-state="disabled"</a></div>
         </section>
     </body>
 </html>

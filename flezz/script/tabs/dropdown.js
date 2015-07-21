@@ -1,7 +1,7 @@
 ///******************************************/
 ///*          flezz framework 1.0           */
 ///******************************************/
-///*  Name: name_component
+///*  Name: dropdown
 ///*  Version: 0.1.0
 ///*  Description: description name_component
 ///*  Author: Giancarlo Ortiz.
@@ -22,6 +22,7 @@
 ///*  8. Public function.
 ///*  9. Revealing function.
 ///******************************************/
+/*global document, window, alert, console, jQuery, require*/
 ///* 1 *//* ROAD MAP */
 
 //
@@ -29,22 +30,22 @@
 ///* Use Revealing Module Pattern */
 // Se implementa creando una función anónima que se auto-invoca y regresa un objeto literal
 // Definimos la variable name_component la cual contendrá todo nuestro modulo.
-var name_component = (function () {
+var dropdown = (function ($) {
     // Defines that JavaScript code should be executed in "strict mode" to avoid errors.
     "use strict";
     //
     ///* 3 *//* CONFIG VARIABLES */
     ///* private variables, and private methods *///
-    var settings, dom, catcheDom, suscribeEvents, events, privateFuntion, initialize;
+    var settings, dom, catcheDom, suscribeEvents, events, toggle, initialize;
     ///* config selector *///
     // Objeto literal en el cual establecemos valores que vamos a usar mas adelante en este ámbito
     // los objetos literales pueden contener propiedades y métodos
     settings = {
-        selector_main:      '#contexto-del-plugin',
+        selector_main:      '.dropdown',
         selector_item:      'li',
         selector_trigger:   'a',
         selector_stop:      '.close',
-        selector_target:    'div.class',
+        selector_target:    'ul',
         // other options
         interval: 400
         //....
@@ -57,43 +58,56 @@ var name_component = (function () {
     catcheDom = function () {
         // encontrar y almacenar los elementos objetivo del DOM
         dom.context = $(settings.selector_main);
-        dom.trigger = dom.context.find(settings.selector_trigger);
-        dom.target = dom.context.find(settings.selector_target);
+        dom.trigger = dom.context.children(settings.selector_trigger);
     };
     //
     ///* 5 *//* EVENT RECORD */
     // Función donde establecemos los eventos que tendrán cada uno de los elementos del objeto DOM.
     suscribeEvents = function () {
         dom.trigger.on('click', events.callbackClick);
-        dom.trigger.on('keypress', events.callbackTab);
-        dom.context.on('click', settings.selector_stop, events.callbackStop);
     };
     //
     ///* 6 *//* EVENT LOGIC */
     // Objeto que guarda métodos que se van a usar en cada evento definido en la función suscribeEvents
     events = {
         callbackClick: function (e) {
-            var context, item, target;
-            item = dom.context.find(item);
-            //....
-            privateFuntion(e);
-            //....
+            var context, item, state, target, clase, trigger;
+            trigger = $(this);
+            context = trigger.parent();
+            target = context.find(settings.selector_item);
+            state = context.attr('data-state');
+            if (state !== 'disabled') {
+                if (state === 'close') {
+                    target.on('click', events.callbackSelected);
+                }
+                toggle(e, trigger, state);
+            }
         },
-        callbackTab: function (e) {
-            //....
-            privateFuntion(e);
-            //....
+        callbackSelected: function (e) {
+            var context, item, state, target, clase, trigger;
+            item = $(this);
+            target = item.parent();
+            target.attr('aria-hidden', 'true').removeClass('open');
+            target.parent().attr('data-state', 'close').attr('aria-expanded', 'false');
         },
         callbackStop: function (e) {
-            //....
-            privateFuntion(e);
-            //....
+
         }
     };
     //
     ///* 7 *//* PRIVATE FUNTIONS */
-    privateFuntion = function (e) {
-        //....
+    toggle = function (e, trigger, state) {
+        var context, list;
+        context = trigger.parent();
+        list = context.children('ul');
+        if (state === 'open') {
+            context.attr('data-state', 'close').attr('aria-expanded', 'false');
+            list.attr('aria-hidden', 'true');
+        } else {
+            context.attr('data-state', 'open').attr('aria-expanded', 'true');
+            list.attr('aria-hidden', 'false');
+        }
+        list.toggleClass('open');
     };
     //
     ///* 8 *//* PUBLIC FUNTIONS - METHODS */
@@ -111,8 +125,8 @@ var name_component = (function () {
         // Alias de metodos privados
         init: initialize
     };
-}());
+}(jQuery));
 //
 ///* initialize plugin *///
 // Ejecutando el método "init" del módulo name_component.
-name_component.init();
+dropdown.init();
