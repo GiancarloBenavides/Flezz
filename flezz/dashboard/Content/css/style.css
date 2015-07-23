@@ -4101,7 +4101,7 @@ div.dropdown[data-state="open"] .caret {
 .header {
   height: 100px;
   padding: 19px 0px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 .brand {
   width: 225px;
@@ -4139,7 +4139,7 @@ div.dropdown[data-state="open"] .caret {
   color: #505a64;
 }
 .form-control::-moz-placeholder {
-  color: #505a64!important;
+  color: #505a64 !important;
 }
 .form-control:-ms-input-placeholder {
   color: #505a64;
@@ -4174,7 +4174,7 @@ body a:hover,
 }
 b,
 strong {
-  font-weight: normal!important;
+  font-weight: normal !important;
 }
 h1,
 h2,
@@ -4241,7 +4241,7 @@ div.title {
   background-color: #f1f1f1;
 }
 .tab_btn:hover i {
-  color: #dddddd;
+  color: #8d8d8d;
 }
 .admin_panel {
   margin-right: -10px;
@@ -4406,10 +4406,10 @@ div.title {
   margin: 0 -250px 0 0 !important;
 }
 .fixed_header.mini_nav .left_nav {
-  margin: 0px!important;
+  margin: 0px !important;
 }
 .fixed_header.right_nav.mini_nav .left_nav {
-  margin: 0px!important;
+  margin: 0px !important;
 }
 .fixed_nav .left_nav {
   position: fixed;
@@ -4418,35 +4418,37 @@ div.title {
   position: fixed;
 }
 .left_nav {
+  background-color: #f1f1f1;
+  color: #8d8d8d;
   margin: 0px 25px 0px 0px;
   border: 1px solid #dddee0;
-  background-color: #f1f1f1;
   min-height: 250px;
   width: 225px;
   clear: both;
   float: left;
+}
+.left_nav a {
+  color: #b1b1b1;
+}
+.left_nav i {
+  color: #d4d4d4;
 }
 .left_nav ul {
   margin: 0px 0px;
   padding: 0;
 }
 .left_nav ul p {
-  border-bottom: 1px solid #dddee0;
   font-size: 25px;
+  border-bottom: 1px solid #dddee0;
   padding: 20px 28px;
-  color: #cacaca;
   text-transform: uppercase;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 .left_nav ul p i {
-  font-size: 25px;
   padding: 20px 28px;
-  color: #cacaca;
   display: none;
 }
 .left_nav ul p b {
-  font-size: 25px;
-  color: #cacaca;
   text-transform: uppercase;
   text-align: center;
   margin-top: 5px;
@@ -4461,9 +4463,7 @@ div.title {
   display: block;
   text-decoration: none;
   padding: 11px 5px 11px 30px;
-  background-color: #f1f1f1;
   text-transform: none;
-  color: #8d8d8d;
   border-bottom: 1px solid #dddee0;
 }
 .left_nav ul li a i {
@@ -4481,53 +4481,19 @@ div.title {
   margin: 0px 0px 2px 2px;
 }
 .left_nav ul li a span i {
-  color: #d1d1d1;
   display: block;
   float: right;
   font-size: 23px;
   margin-right: 5px;
-}
-.left_nav ul li a:hover {
-  background-color: #26282b!important;
-  color: #8d8d8d !important;
-}
-.left_nav ul li a i:hover {
-  color: #8d8d8d;
 }
 .left_nav ul li a b {
   font-size: 16px;
 }
-.left_nav ul li a:active {
-  display: block;
-  text-decoration: none;
-  padding: 11px 5px 11px 30px;
-  background-color: #8d8d8d;
-  font-size: 17px;
-  text-transform: none;
-  color: #FFFFFF;
-}
-.left_nav ul li a i:active {
-  display: block;
-  float: left;
-  font-size: 22px;
-  margin-right: 18px;
-  padding-top: 1px;
-  text-align: center;
-  width: 21px;
-  color: #FFFFFF;
-}
-.left_nav ul li a:active span i {
-  color: #FFFFFF;
-  display: block;
-  float: right;
-  font-size: 23px;
-  margin-right: 5px;
-}
 .left_nav ul li ul {
+  background-color: #fafafa;
   display: none;
   margin: 0px;
-  padding: 15px 0px 15px 0px;
-  background-color: #FFFFFF;
+  padding: 2px 0px !important;
   border-bottom: 1px solid #dddee0;
 }
 .left_nav ul li ul li {
@@ -4543,112 +4509,45 @@ div.title {
   display: block;
   text-decoration: none;
   padding: 5px 5px 5px 30px;
-  background-color: #FFFFFF;
   font-size: 16px;
   text-transform: none;
-  color: #808080;
   border: none;
 }
 .left_nav ul li ul li a i {
   font-size: 10px;
-  color: #a3a3a3;
   margin-left: 38px;
   padding-top: 3px;
 }
-.left_nav ul li ul li a:active {
-  display: block;
-  text-decoration: none;
-  padding: 5px 5px 5px 30px;
-  background-color: #FFFFFF;
-  font-size: 18px;
-  text-transform: uppercase;
-  color: #8d8d8d;
-}
-.left_nav ul li ul li a:active i {
-  color: #8d8d8d;
-}
 .left_nav ul li ul li a:hover {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
+}
+.left_nav ul li ul li a:hover i,
+.left_nav ul li ul li a:hover b {
   color: #8d8d8d;
 }
-.left_nav ul li ul li a:hover i {
+.left_nav ul li a:hover {
+  background-color: #f8f8f8;
   color: #8d8d8d;
 }
-.light_theme .left_nav {
-  background-color: #f1f1f1;
-  border: 1px solid #DDDEE0;
-}
-.light_theme .left_nav ul p {
-  border-bottom: 1px solid #DDDEE0;
-  color: #CACACA;
-}
-.light_theme .left_nav ul li a {
-  background-color: #f1f1f1;
-  border-bottom: 1px solid #DDDEE0;
-  color: #8D8D8D;
-}
-.light_theme .left_nav ul li a i {
-  color: #c1c1c1;
-}
-.light_theme .left_nav ul li a:hover {
-  background-color: #f8f8f8 !important;
-  color: #8d8d8d;
-}
-.light_theme .left_nav ul li a:hover i {
+.left_nav ul li a:hover i {
   color: #205081;
 }
-.light_theme .left_nav ul li a:active i {
-  color: #FFFFFF!important;
+.left_nav ul li a:active i {
+  color: #f8f8f8;
 }
-.light_theme .left_nav ul li a:hover.menu_selected,
-.light_theme .left_nav ul li a:hover.menu_selected i,
-.light_theme .left_nav ul li a:active.menu_selected {
+a.menu_selected,
+a.menu_selected:hover {
   background-color: #205081 !important;
-  color: #FFFFFF !important;
 }
-.light_theme .left_nav ul li ul {
-  background-color: #FFFFFF!important;
-  border-bottom: 1px solid #DDDEE0;
-}
-.light_theme .left_nav ul li ul li a {
-  background-color: #FFFFFF;
-  border: medium none;
-  color: #808080;
-}
-.light_theme .left_nav ul li ul li a:hover {
-  border: 0;
-  color: #8d8d8d;
-}
-.menu_selected {
-  background-color: #205081 !important;
+a.menu_selected:hover b,
+a.menu_selected:hover i {
   color: #ffffff !important;
 }
-.menu_selected:hover {
-  background-color: #205081 !important;
-  color: #ffffff !important;
-}
-.menu_active.menu_selected {
-  background-color: #8d8d8d !important;
-  color: #ffffff !important;
-}
-.menu_active {
-  color: #FFFFFF !important;
-}
-.menu_active i {
-  color: #ffffff !important;
-}
-.submenu_active {
-  color: #8d8d8d !important;
-}
-.submenu_active i {
-  color: #8d8d8d !important;
-}
-.left_nav .selected {
-  background: #E7EAEC;
-}
-.left_nav .selected:hover {
-  background: #E7EAEC;
-}
+/*
+
+
+.menu_active.menu_selected{background-color:@light-color!important; color:#FFFFFF!important}
+*/
 .mini_nav .has-sub:hover ul {
   display: block!important;
 }
@@ -4810,11 +4709,11 @@ div.title {
   text-transform: none;
 }
 .quote_footer {
-  font-size: 14px!important;
+  font-size: 14px !important;
 }
 h3,
 .h3 {
-  font-size: 18px!important;
+  font-size: 18px !important;
 }
 /* general CSS start*/
 .pagination-lg > li:first-child > a,
@@ -5166,7 +5065,6 @@ h3,
   .left_nav ul p i {
     font-size: 25px;
     padding: 0px;
-    color: #cacaca;
     display: block;
   }
   .left_nav ul p b {
@@ -5180,8 +5078,6 @@ h3,
   }
   .left_nav ul li a:active {
     padding: 16px 0 36px 18px;
-    background-color: #8d8d8d;
-    color: #FFFFFF!important;
   }
   .left_nav ul li a i {
     display: block;
@@ -5205,7 +5101,6 @@ h3,
     border: 1px solid #DDDEE0;
     margin-top: -53px;
     padding: 15px 0;
-    background-color: #FFFFFF;
   }
   .left_nav ul li ul li a {
     padding: 5px;
@@ -5235,7 +5130,6 @@ h3,
     border: 1px solid #DDDEE0;
     margin-top: -53px;
     padding: 15px 0;
-    background-color: #FFFFFF;
   }
   .breadcromb2 {
     display: none;
@@ -5269,7 +5163,6 @@ h3,
   .max_nav .left_nav ul p i {
     font-size: 25px;
     padding: 0px;
-    color: #cacaca;
     display: none;
   }
   .max_nav .left_nav ul p b {
@@ -5291,7 +5184,6 @@ h3,
   .max_nav .left_nav ul li ul {
     margin: 0px;
     padding: 15px 0px 15px 0px;
-    background-color: #FFFFFF;
     position: relative;
     border: 0px;
     display: none;
@@ -5546,7 +5438,6 @@ h3,
   .left_nav ul p i {
     font-size: 25px;
     padding: 0px;
-    color: #cacaca;
     display: block;
   }
   .left_nav ul p b {
@@ -5560,7 +5451,6 @@ h3,
   }
   .left_nav ul li a:active {
     padding: 16px 0 36px 18px;
-    background-color: #8d8d8d;
   }
   .left_nav ul li a i {
     display: block;
@@ -5584,7 +5474,6 @@ h3,
     border: 1px solid #DDDEE0;
     margin-top: -53px;
     padding: 15px 0;
-    background-color: #FFFFFF;
   }
   .left_nav ul li ul li a {
     padding: 5px;
@@ -5618,7 +5507,6 @@ h3,
     border: 1px solid #DDDEE0;
     margin-top: -53px;
     padding: 15px 0;
-    background-color: #FFFFFF;
   }
   .breadcromb2 {
     display: none;
@@ -5655,7 +5543,6 @@ h3,
   .max_nav .left_nav ul p i {
     font-size: 25px;
     padding: 0px;
-    color: #cacaca;
     display: none;
   }
   .max_nav .left_nav ul p b {
@@ -5677,7 +5564,6 @@ h3,
   .max_nav .left_nav ul li ul {
     margin: 0px;
     padding: 15px 0px 15px 0px;
-    background-color: #FFFFFF;
     position: relative;
     border: 0px;
     width: 223px;
@@ -5772,7 +5658,6 @@ h3,
   .left_nav ul p i {
     font-size: 25px;
     padding: 0px;
-    color: #cacaca;
     display: none;
   }
   .left_nav ul p b {
@@ -5785,7 +5670,6 @@ h3,
   }
   .left_nav ul li a:active {
     padding: 11px 5px 11px 30px;
-    background-color: #8d8d8d;
   }
   .left_nav ul li a b {
     display: block;
@@ -5798,7 +5682,6 @@ h3,
   .left_nav ul li ul {
     margin: 0px;
     padding: 15px 0px 15px 0px;
-    background-color: #FFFFFF;
     position: relative;
     border: 0px;
     width: 223px;
@@ -5816,7 +5699,6 @@ h3,
   .right_nav .left_nav ul li ul {
     margin: 0px;
     padding: 15px 0px 15px 0px;
-    background-color: #FFFFFF;
     position: relative;
     border: 0px;
     display: block;
@@ -5831,7 +5713,6 @@ h3,
   .max_nav .left_nav ul li ul {
     margin: 0px;
     padding: 15px 0px 15px 0px;
-    background-color: #FFFFFF;
     position: relative;
     border: 0px;
     display: none;
@@ -5903,7 +5784,6 @@ h3,
   .left_nav ul p i {
     font-size: 25px;
     padding: 0px;
-    color: #cacaca;
     display: none;
   }
   .left_nav ul p b {
@@ -5916,7 +5796,6 @@ h3,
   }
   .left_nav ul li a:active {
     padding: 11px 5px 11px 30px;
-    background-color: #8d8d8d;
   }
   .left_nav ul li a b {
     display: block;
@@ -5929,7 +5808,6 @@ h3,
   .left_nav ul li ul {
     margin: 0px;
     padding: 15px 0px 15px 0px;
-    background-color: #FFFFFF;
     position: relative;
     border: 0px;
     width: 223px;
@@ -5950,7 +5828,6 @@ h3,
   .right_nav .left_nav ul li ul {
     margin: 0px;
     padding: 15px 0px 15px 0px;
-    background-color: #FFFFFF;
     position: relative;
     border: 0px;
     display: none;
@@ -5959,7 +5836,6 @@ h3,
   .max_nav .left_nav ul li ul {
     margin: 0px;
     padding: 15px 0px 15px 0px;
-    background-color: #FFFFFF;
     position: relative;
     border: 0px;
     display: none;
