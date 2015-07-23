@@ -41,8 +41,8 @@
 @light-selected: @theme-light-selected-background-color;
 @dark-selected-font: @theme-light-selected-color;
 //
-@import '@{theme-path}/theme.udenar.style.less';
 @import '@{vendor-path}/bootstrap.css';
+@import '@{theme-path}/theme.udenar.style.less';
 @import '@{vendor-path}/font-awesome.less';
 @import '@{vendor-path}/scrollbar.less';
 //
@@ -123,10 +123,11 @@ div.title {
 
 .top_nav {  height: 60px; padding-left:25px; margin-left:225px;}
 
-@pad_nav: 17px;
+@height_nav: 2em;
+@pad_nav: 1em;
 
 .tab_btn { 
-    float:left; height:30px; padding: 5px 11px; margin: @pad_nav 15px 0px 0px; clear:right;	border:1px solid #e0e0e0;
+    float:left; height:@height_nav; padding: 5px 11px; margin: @pad_nav 15px 0px 0px; clear:right;	border:1px solid #e0e0e0;
     
     a {list-style: none outside none;}
     i {color:#bababa; font-size:17px;}
@@ -137,67 +138,21 @@ div.title {
     }
 }
 
-.top_nav_left_panel { 
-    height:60px; float:left; 
-    
-    ul { 
-        margin:0px; padding:17px 0px 0px 0px;
-        
-        li { 
-            list-style: none outside none; float:left; margin-right:15px;
-            
-            a { 
-                list-style: none outside none; text-align:center; font-size:14px; color:#FFFFFF; text-transform:uppercase; 
-                b {font-family:@font-family-bold; font-size:15px; color:#FFFFFF; text-transform:uppercase; display:block; padding: 4px 10px 4px 10px; float:left; height:30px; font-weight:bold;}
-                span { background-color:#505a64; font-size:15px; color:#FFFFFF; text-transform: none; display:block; padding: 4px 10px 4px 10px; float:left; height:30px; }
-                &:hover span { background-color: #222223;}
-            }
-        }
-    }
-}
-
 .admin_panel {
-    margin-right:-10px; height:60px; width:183px; float:right; padding-top: 4px;
-    ///* dropdown *///
-    ul {
-        background-color: #fff;
-        border-radius: 0px;
-        border:1px solid #d6d6d6;
-        box-shadow:none;
-        cursor: pointer;
-        margin: 9px -3px 0;
-        padding: 0;
-        position: absolute;
-        right: -20px;
-        width: 145px;
-        z-index: 99;
-        
-        li {
-            color: #6e778c !important;
-            font-size: 13px;
-            list-style-type: none;
-            
-            a {
-                padding: 7px 0;
-                &:hover { background-color: #F5F5F5!important; color:@light-color}
-            }
-            i {float: left; margin: 4px 10px 0;}
-        }
+    margin-right:-10px; height:60px; width:183px; float:right; margin-top: (@pad_nav - 0.3em);
+    ///* dropdown *//
+    &>.dropdown{
+        border: 3px solid #dddee0;
+        float: left;
+        height: 2.5em;
+        margin-right: 9px;
+        width: 2.5em;
     }
     ///* login *///
-    .user{margin-top: 4px}
-    .user>a{font-family:@font-family-bold;color: white;text-decoration: none;}
+    .user{margin-top: -0.25em}
+    .user>a{font-family:@font-family-bold; color: white; text-decoration: none;}
     .user>div>a{font-size:0.7em;}
-}
-.avatar { 
-	border: 3px solid #dddee0;
-	float: left;
-	height: 41px;
-	margin-right: 9px;
-	margin-top: 6px;
-	width: 41px;
-    
-    img{width:35px;}
+    img{width: ~'calc(2.5em - 6px)'}
 }
 
 .user_subtext { 
@@ -216,11 +171,10 @@ div.title {
         margin-right: 3px;
         &:hover {color:#666666!important; text-decoration:none;}
     }
-
 }
 
 .top_nav_right_notif {
-    height:60px; float:right; margin-right: 5px; margin-top: @pad_nav;
+    height: @height_nav; float:right; margin-right: 5px; margin-top: @pad_nav;
     ul { margin:0px; padding:0;
         li { list-style: none outside none; float:left; margin-right:15px;
             a { list-style: none outside none; text-align:center; font-size:14px; color:#FFFFFF; text-transform:uppercase; 
@@ -233,14 +187,13 @@ div.title {
     }
 }
 
-
 .search_panel {
     float:right; 
     margin-right: 20px; 
     margin-top: @pad_nav;
     color: #adadad;
     display: block;
-    height: 32px;
+    height: @height_nav;
     line-height: 1.42857;
     vertical-align: middle;
     
@@ -340,7 +293,7 @@ div.title {
                     }
                     a:hover {
                         background-color:#FFFFFF; color:@light-color; 
-                        i {background-color:#FFFFFF; color:@light-color;}
+                        i {color:@light-color;}
                     }
                 }
             }
@@ -348,12 +301,36 @@ div.title {
     }
 }
 
+.light_theme {
+    .left_nav { background-color: #f1f1f1; border: 1px solid #DDDEE0;
+        ul p { border-bottom: 1px solid #DDDEE0; color: #CACACA;}
+        ul li a { background-color: #f1f1f1; border-bottom: 1px solid #DDDEE0; color: #8D8D8D;}
+        ul li a i { color: #c1c1c1;} 
+        ul li a:hover { background-color:#f8f8f8 !important; color:@light-color;}	
+        ul li a:hover i {color:@dark-bck;}       
+        ul li a:active i {color:#FFFFFF!important;}
+        ul li a:hover.menu_selected,
+        ul li a:hover.menu_selected i, 
+        ul li a:active.menu_selected {background-color:@dark-bck !important; color:#FFFFFF !important;}
+        ul li ul { background-color: #FFFFFF!important; border-bottom: 1px solid #DDDEE0;}
+        ul li ul li a {background-color: #FFFFFF; border: medium none; color: #808080;}
+        ul li ul li a:hover {border:0; color: @light-color;}
+    }
+}
+
+.menu_selected{background-color: @dark-bck !important; color:#FFFFFF!important}
+.menu_selected:hover{background-color: @dark-bck !important; color:#FFFFFF!important}
+.menu_active.menu_selected{background-color:@light-color!important; color:#FFFFFF!important}
+
 
 .menu_active {color: #FFFFFF !important;}
 .menu_active i { color:#FFFFFF !important}
-
 .submenu_active{color:@light-color!important;}
 .submenu_active i {color:@light-color!important;}
+.left_nav .selected{background:#E7EAEC;}
+.left_nav  .selected:hover{background:#E7EAEC;}
+.mini_nav .has-sub:hover ul {display:block!important; }
+.left_nav_hold {overflow:hidden;}
 
 
 /* max nav */
@@ -386,22 +363,6 @@ div.title {
     .left_nav ul p {padding: 20px 16px;}
 }
 
-.light_theme {
-    .left_nav { background-color: #f1f1f1; border: 1px solid #DDDEE0;
-        ul p { border-bottom: 1px solid #DDDEE0; color: #CACACA;}
-        ul li a { background-color: #f1f1f1; border-bottom: 1px solid #DDDEE0; color: #8D8D8D;}
-        ul li a i { color: #c1c1c1;} 
-        ul li a:hover.menu_selected {background-color: @light-color!important; color:#FFFFFF!important;}
-        ul li a:hover { background-color:#f8f8f8!important; color:@light-color;}	
-        ul li a:hover i {color:@light-color;}
-        ul li a:active i {color:#FFFFFF!important;}
-        ul li ul { background-color: #FFFFFF!important; border-bottom: 1px solid #DDDEE0;}
-        ul li ul li a { background-color: #FFFFFF; border: medium none; color: #808080;}
-        ul li ul li a:hover { background-color: #FFFFFF!important; border:0px; color: @light-color;}
-        ul li ul li a:hover i{ background-color: #FFFFFF;}
-    }
-    .menu_selected i { color: #FFFFFF!important;}
-}
 
 	
 .right_container { background-color:#f1f1f1; border:1px solid #DDDEE0; margin-left:250px; min-height:350px; padding:20px; overflow:auto;}	
@@ -409,22 +370,15 @@ div.title {
 .active_title { float:left; font-size:34px; font-weight:normal; margin-top:-10px; margin-right:10px;}
 .slash { float:left; color:#eaeaea; font-size:20px; margin-top:-1px; margin-right:10px;}
 .title_subtext	{ float:left; color:#bbbbbb; font-size:14px; margin-top:3px;}
-
 .breadcromb2 { float:right; height:40px;}
 .breadcromb2 ul { margin:0px; padding:0px;}
 .breadcromb2 ul li { margin:0; padding:0; list-style:none;}
 .breadcromb2 ul li b {text-decoration:none; font-size:16px; text-transform: none; color:#adadad; font-weight:normal;}
 .breadcromb2 ul li i {font-size:15px; color:#adadad; margin-right:3px;}
 .breadcromb2 ul li span { text-decoration:none; font-size:16px; text-transform: none;}
-
 .quote_footer { font-size:14px!important;}
 
-
-h3, .h3 {
-    font-size: 18px!important;
-}
-
-
+h3, .h3 {font-size: 18px!important;}
 
 /* general CSS start*/
 
@@ -476,16 +430,9 @@ h3, .h3 {
     .chat_heading { margin:0px 0px; border-bottom:1px solid #3e4143; clear:both; display:block; height:58px; background-color:#1d1e1f; padding:19px 0px;}
     .chatbox_content{overflow:hidden}
 }
-
+.chat_box .right_container{margin-right:250px;transition:all 0.3s ease 0s;}
 
 /*ADDED LATER*/
-.left_nav .selected{background:#E7EAEC;}
-.left_nav  .selected:hover{background:#E7EAEC;}
-.menu_selected{background-color:@light-color!important; color:#FFFFFF!important}
-.menu_active.menu_selected{background-color:@light-color!important; color:#FFFFFF!important}
-.chat_box .right_container{margin-right:250px;transition:all 0.3s ease 0s;}
-.mini_nav .has-sub:hover ul {display:block!important; }
-.left_nav_hold {overflow:hidden;}
 .right_nav .brand{position:relative;}
 
 @import 'querys.less';

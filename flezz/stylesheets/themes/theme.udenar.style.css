@@ -2653,6 +2653,9 @@ li.dropdown[data-state="open"] .caret {
   -ms-user-select: none;
   user-select: none;
 }
+.dropdown a {
+  display: block;
+}
 .dropdown ul {
   position: absolute;
   top: calc(100% + 10px);
@@ -2676,7 +2679,7 @@ li.dropdown[data-state="open"] .caret {
 }
 .dropdown ul li a {
   padding: 7px 15px;
-  display: block;
+  text-decoration: none;
   color: #205081;
 }
 .dropdown ul li a:hover {

@@ -79,6 +79,7 @@ var dropdown = (function ($) {
             if (state !== 'disabled') {
                 if (state === 'close') {
                     target.on('click', events.callbackSelected);
+                    console.log('click secundario');
                 }
                 toggle(e, trigger, state);
             }

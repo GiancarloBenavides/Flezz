@@ -58,9 +58,17 @@ var tabs = (function ($) {
             var trigger, item;
             trigger = $(this);
             item = trigger.parent();
-            if (!item.hasClass('selected') && !item.hasClass('disabled')) {
-                //console.log('click');
-                changueTabPanel(e, trigger);
+            
+            if (item.hasClass('dropdown')) {
+                if (item.parent().attr('class') === 'close') {
+                    changueTabPanel(e, trigger);
+                    console.log('click interior');
+                }
+            } else {
+                if (!item.hasClass('selected') && !item.hasClass('disabled')) {
+                    //console.log('click');
+                    changueTabPanel(e, trigger);
+                }
             }
         },
         eKeypressTab: function (e) {

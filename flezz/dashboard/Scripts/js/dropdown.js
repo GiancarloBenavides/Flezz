@@ -65,6 +65,7 @@ var dropdown = (function ($) {
     // Función donde establecemos los eventos que tendrán cada uno de los elementos del objeto DOM.
     suscribeEvents = function () {
         dom.trigger.on('click', events.callbackClick);
+        console.log("click");
     };
     //
     ///* 6 *//* EVENT LOGIC */
