@@ -263,6 +263,7 @@ div.title {
     background-color:@light-bck; color:@light-color; margin:0px 25px 0px 0px; border: 1px solid @light-border; min-height:250px; width:225px; clear:both; float:left;
     a{color:lighten(@light-color,14)}
     i{color:lighten(@light-color,28)}
+    box-shadow: 2px 1px 1px #205081, 5px 4px 2px rgba(0, 0, 0, 0.1);
     
     ul {
         margin:0px 0px; padding:0;
@@ -299,14 +300,7 @@ div.title {
     }
 }
 a.menu_selected, a.menu_selected:hover{background-color: @dark-bck!important}
-//a.menu_selected:hover{background-color: @dark-bck!important; color: #FFFFFF!important}
 a.menu_selected:hover b, a.menu_selected:hover i{color: #FFFFFF!important}
-/*
-
-
-.menu_active.menu_selected{background-color:@light-color!important; color:#FFFFFF!important}
-*/
-
 
 
 .mini_nav .has-sub:hover ul {display:block!important; }
@@ -345,7 +339,13 @@ a.menu_selected:hover b, a.menu_selected:hover i{color: #FFFFFF!important}
 
 
 	
-.right_container {background-color:#f1f1f1; border:1px solid #DDDEE0; margin-left:250px; min-height:350px; padding:20px; overflow:auto}	
+.right_container {
+    background-color:#f1f1f1; border:1px solid #DDDEE0; margin-left:250px; min-height:350px; padding:20px; overflow:auto;
+    box-shadow: 2px 1px 1px #205081, 5px 4px 2px rgba(0, 0, 0, 0.1);
+}
+
+
+
 .breadcromb {padding-bottom:10px; border-bottom:1px solid #DDDEE0; height:46px; margin-bottom:20px; padding-top: 1px}
 .active_title {float:left; font-size:34px; font-weight:normal; margin-top:-10px; margin-right:10px}
 .slash {float:left; color:#eaeaea; font-size:20px; margin-top:-1px; margin-right:10px}
