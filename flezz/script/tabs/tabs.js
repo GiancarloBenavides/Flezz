@@ -55,19 +55,22 @@ var tabs = (function ($) {
     ///* 5 *//* EVENT LOGIC */
     events = {
         eSelectedTab: function (e) {
-            var trigger, item;
+            var trigger, item, drop, list, tab, state;
             trigger = $(this);
             item = trigger.parent();
-            
-            if (item.hasClass('dropdown')) {
-                if (item.parent().attr('class') === 'close') {
-                    changueTabPanel(e, trigger);
-                    console.log('click interior');
-                }
-            } else {
-                if (!item.hasClass('selected') && !item.hasClass('disabled')) {
-                    //console.log('click');
-                    changueTabPanel(e, trigger);
+            tab = item.parent().parent();
+            if (!item.hasClass('disabled') && (!item.hasClass('dropdown'))) {
+                if (tab.hasClass('dropdown')) {
+                    drop = tab;
+                    tab = drop.parent().parent();
+                    changueTabPanel(e, trigger, tab);
+                    drop.addClass('includes');
+                } else {
+                    if (!item.hasClass('selected')) {
+                        changueTabPanel(e, trigger, tab);
+                        console.log('click');
+                        tab.find('li.includes').removeClass('includes');
+                    }
                 }
             }
         },
@@ -81,17 +84,17 @@ var tabs = (function ($) {
         }
     };
     ///* 6 *//* PRIVATE FUNTIONS */
-    changueTabPanel = function (e, trigger) {
-        var brother, pane, item, list, tab;
+    changueTabPanel = function (e, trigger, tab) {
+        var brother, pane, item, list;
         item = trigger.parent();
         list = item.parent();
-        tab = list.parent();
         ///* changue tab *///        
-        list.find('li.selected').toggleClass('selected').attr('aria-selected', 'false');
+        tab.find('li.selected').toggleClass('selected').attr('aria-selected', 'false');
         ///* changue panel *///
         pane = trigger.attr('data-tab');
         tab.find("#" + pane).attr('data-state', 'active').attr('aria-hidden', 'false');
         tab.find("#" + pane).siblings().attr('data-state', 'inactive').attr('aria-hidden', 'true');
+        ///* changue tab */// 
         item.addClass('selected').attr('aria-selected', 'true');
         //console.log('changue panel');
     };

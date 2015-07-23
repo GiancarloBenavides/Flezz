@@ -2073,8 +2073,11 @@ section {
   cursor: not-allowed;
 }
 .tabs > ul > li.selected > a,
+.tabs > ul > li.includes > a,
 .tabs > ul > li.selected > a:hover,
-.tabs > ul > li.selected > a:focus {
+.tabs > ul > li.includes > a:hover,
+.tabs > ul > li.selected > a:focus,
+.tabs > ul > li.includes > a:focus {
   color: #205081;
   background-color: white;
   outline: none;
@@ -2116,8 +2119,11 @@ section {
   border-bottom: none;
 }
 .tabs .horizontal > li.selected > a,
+.tabs .horizontal > li.includes > a,
 .tabs .horizontal > li.selected > a:hover,
-.tabs .horizontal > li.selected > a:focus {
+.tabs .horizontal > li.includes > a:hover,
+.tabs .horizontal > li.selected > a:focus,
+.tabs .horizontal > li.includes > a:focus {
   margin-bottom: -2px;
   border: 1px solid #cccccc;
   border-bottom-color: white;
@@ -2144,8 +2150,11 @@ section {
   border-radius: 4px 0 0 4px;
 }
 .tabs .vertical li.selected > a,
+.tabs .vertical li.includes > a,
 .tabs .vertical li.selected > a:hover,
-.tabs .vertical li.selected > a:focus {
+.tabs .vertical li.includes > a:hover,
+.tabs .vertical li.selected > a:focus,
+.tabs .vertical li.includes > a:focus {
   margin-right: -1px;
   border: 1px solid #cccccc;
   border-right: none;
@@ -2187,6 +2196,9 @@ section {
   content: " ";
   display: table;
 }
+.tabs li.dropdown li.selected {
+  font-weight: bold;
+}
 li.dropdown[data-state="open"] > a {
   position: relative;
 }
@@ -2220,6 +2232,9 @@ li.dropdown[data-state="open"] .caret {
   -ms-user-select: none;
   user-select: none;
 }
+.dropdown a {
+  display: block;
+}
 .dropdown ul {
   position: absolute;
   top: calc(100% + 10px);
@@ -2243,7 +2258,7 @@ li.dropdown[data-state="open"] .caret {
 }
 .dropdown ul li a {
   padding: 7px 15px;
-  display: block;
+  text-decoration: none;
   color: #205081;
 }
 .dropdown ul li a:hover {

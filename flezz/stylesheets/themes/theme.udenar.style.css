@@ -2506,8 +2506,11 @@ input {
   cursor: not-allowed;
 }
 .tabs > ul > li.selected > a,
+.tabs > ul > li.includes > a,
 .tabs > ul > li.selected > a:hover,
-.tabs > ul > li.selected > a:focus {
+.tabs > ul > li.includes > a:hover,
+.tabs > ul > li.selected > a:focus,
+.tabs > ul > li.includes > a:focus {
   color: #205081;
   background-color: white;
   outline: none;
@@ -2549,8 +2552,11 @@ input {
   border-bottom: none;
 }
 .tabs .horizontal > li.selected > a,
+.tabs .horizontal > li.includes > a,
 .tabs .horizontal > li.selected > a:hover,
-.tabs .horizontal > li.selected > a:focus {
+.tabs .horizontal > li.includes > a:hover,
+.tabs .horizontal > li.selected > a:focus,
+.tabs .horizontal > li.includes > a:focus {
   margin-bottom: -2px;
   border: 1px solid #cccccc;
   border-bottom-color: white;
@@ -2577,8 +2583,11 @@ input {
   border-radius: 4px 0 0 4px;
 }
 .tabs .vertical li.selected > a,
+.tabs .vertical li.includes > a,
 .tabs .vertical li.selected > a:hover,
-.tabs .vertical li.selected > a:focus {
+.tabs .vertical li.includes > a:hover,
+.tabs .vertical li.selected > a:focus,
+.tabs .vertical li.includes > a:focus {
   margin-right: -1px;
   border: 1px solid #cccccc;
   border-right: none;
@@ -2619,6 +2628,9 @@ input {
 .tabs .tabs-content .tabs-vertical:before {
   content: " ";
   display: table;
+}
+.tabs li.dropdown li.selected {
+  font-weight: bold;
 }
 li.dropdown[data-state="open"] > a {
   position: relative;

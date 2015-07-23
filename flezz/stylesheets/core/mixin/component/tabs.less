@@ -116,7 +116,8 @@
                     cursor: @cursor-disabled;
                 }
             }
-            &.selected > a {
+            &.selected > a,
+            &.includes > a {
                 &,
                 &:hover,
                 &:focus {
@@ -171,7 +172,8 @@
 
             }
             // selected state, and its :hover to override normal :hover
-            &.selected > a {
+            &.selected > a,
+            &.includes > a {
                 &,
                 &:hover,
                 &:focus {
@@ -200,7 +202,8 @@
                 border-radius: @tabs-radius-width 0 0 @tabs-radius-width;
 
             }
-            &.selected > a {
+            &.selected > a,
+            &.includes > a {
                 &,
                 &:hover,
                 &:focus {  
@@ -264,7 +267,7 @@
         }
 
     }
-
+    li.dropdown li.selected{font-weight: bold;}
     // ----------
     // Dropdowns
     // ----------
