@@ -28,6 +28,10 @@ form {
     .icon-inline(@opc-color:white);
 }
 
+*:after, *:before{
+    box-sizing: border-box;
+}
+
 @form-background: #efefef;
 @input-font-color: #205081;
 @input-afix-color: darken(@input-border-color, 10%); //lighten(@input-font-color, -10%);
@@ -44,7 +48,7 @@ form {
 
 
 //locales
-
+@textarea-margin: @input-margin-left + 5px;
 @size: @input-size;
 @font-base: 1rem * (@size + 6) * 1/10;
 @padSup: @font-base * (@size + 3) * 1/20;
@@ -137,11 +141,6 @@ label {
         width: auto;
         height: ~'calc(1.9142rem + 2px)';
     }
-}
-
-
-*:after, *:before{
-    box-sizing: border-box;
 }
 
 .afix,
@@ -239,7 +238,7 @@ label {
     }    
 }
 
-@textarea-margin: @input-margin-left + 5px;
+
 
 textarea {
     width: ~'calc(100% - @{textarea-margin})';

@@ -14,6 +14,7 @@
 /* cmp btn ---------- [ OK ] */
 /* dropdown cmp -------- [ OK ] */
 /* tabs cmp ------- [ OK ] */
+/* input cmp ------ [ OK ] */
 /* include cmp ------ [ OK ] */
 /* include mixin ---- [ OK ] */
 /* include picture -- [ OK ] */
@@ -2066,6 +2067,10 @@ form {
 .user:before {
   content: "\f007";
 }
+*:after,
+*:before {
+  box-sizing: border-box;
+}
 input[type="text"] {
   width: calc(100% - 15px);
   box-sizing: border-box;
@@ -2136,10 +2141,6 @@ label {
   display: table-cell;
   width: auto;
   height: calc(1.9142rem + 2px);
-}
-*:after,
-*:before {
-  box-sizing: border-box;
 }
 .afix,
 .prefix,

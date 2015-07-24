@@ -2,7 +2,7 @@
 ///*          flezz framework 1.0           */
 ///******************************************/
 ///*  Name: inputs
-///*  Version: 0.1.0
+///*  Version: 0.1.1
 ///*  Description: description inputs
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org
@@ -69,7 +69,38 @@
 // --------------------------------------------------
 //
 ///* 3 *//* BASE MODULES */
-.inp-txt(@size: 4){
+.inp-field() {
+    margin: 0 0 1em;
+    position: relative;
+    clear: both;
+    
+    button {
+        font-size: 0.5em;
+        font-family: 'OpenSansBold';
+        background-color: @input-font-color;
+        color: @input-background-color;
+        line-height: 1.2142em;
+        padding: .67861429em 1em;
+        border: 1px solid rgba(34,36,38,.15);
+        white-space: nowrap;
+        display: table-cell;
+        width: auto;
+        height: ~'calc(1.9142rem + 2px)';
+    }
+    
+    label {
+        //display: block;
+        margin: 0 0 .28571429rem;
+        color: @input-font-color;
+        font-family: 'OpenSansBold';    
+        font-size: .7em;
+        //font-weight: bolder;
+        text-transform: capitalize;
+    }
+}
+//
+///* 4 *//* CONFIG MIXIN */
+.inp-txt(@size: 4) {
     width: ~'calc(100% - @{input-margin-left})'; 
     box-sizing: border-box;
     -webkit-box-sizing:border-box;
@@ -81,8 +112,6 @@
     //
     //    tap-highlight-color: rgba(255,255,255,0);
     line-height: 1.2142em;
-    padding: @padding; //.67861429em 1em;
-    font-size: @font-base;
     background: @input-background-color;
     border: 1px solid @input-border-color;
     color: rgba(0,0,0,.87);
@@ -92,6 +121,8 @@
     -webkit-transition: color .1s ease,border-color .1s ease;
     transition: color .1s ease,border-color .1s ease;
     .fnt-padding(@size: 4);
+    font-size: @fontBase;
+    padding: @padding; //.67861429em 1em;
     
     &:focus {
         //        color: rgba(0,0,0,.95);
@@ -107,7 +138,7 @@
     }    
 }
 
-.inp-chk(@size: 4){
+.inp-chk(@size: 4) {
     vertical-align: middle;
     margin: 0 0 0 @input-margin-left;
 
@@ -117,7 +148,7 @@
     }
 }
 
-.inp-rdo(@size: 4){
+.inp-rdo(@size: 4) {
     vertical-align: middle;
     margin: 0 0 0 @input-margin-left;
 
@@ -127,7 +158,7 @@
     }
 }
 
-.inp-txt-area {
+.inp-txt-area() {
     width: ~'calc(100% - @{textarea-margin})';
     margin: 0 0 0 @input-margin-left !important;
     resize: vertical;
@@ -135,15 +166,141 @@
     border-color:@input-border-color;
 }
 
-.inp-fieldset {
+.inp-fieldset() {
     margin-bottom: 1em;
     padding: 1em 2em;
 }
+
+.inp-afix() {
+    .afix,
+    .prefix,
+    .postfix {
+
+        width: ~'calc(100% - @{input-margin-left})';
+        display: table;
+        margin: 0 0 0 @input-margin-left;
+        position: relative;
+        border-collapse: separate;
+        box-sizing: border-box;
+        //margin: 0 0 0 10px;
+
+
+        & span {
+            white-space: nowrap;
+            background-color: @input-afix-color;    
+            padding: 0 10px;
+            margin: 0;
+            color: white;
+            display: table-cell;
+            border: 1px solid darken(@input-border-color, 10%);
+            width: 1%;
+            vertical-align: middle;
+        }
+
+        & input{
+            display: table-cell;
+            margin: 0;
+            float: left;
+            width: 100%;
+        }
+        .button{
+            padding: 0;
+        }
+    }
+
+    .prefix {
+        & span {
+            //-webkit-border-top-left-radius: .28571429rem;
+            //-webkit-border-bottom-left-radius: .28571429rem;
+            border-right: none;
+        }
+        & input{
+            -webkit-border-top-left-radius: 0;
+            -webkit-border-bottom-left-radius: 0;
+            border-left: none;
+            &:focus{
+                border-left:none;
+
+            }
+
+        }
+    }
+
+    .postfix {
+        & span {
+            //-webkit-border-top-left-radius: .28571429rem;
+            //-webkit-border-bottom-left-radius: .28571429rem;
+            border-left: none;//1px solid @input-afix-color;
+        }
+        input{
+            border-right: none;
+            -webkit-border-top-right-radius: 0;
+            -webkit-border-bottom-right-radius: 0;
+            &:focus{
+                border-left-color: @input-border-color;
+                border-right: none;
+
+            }
+        }    
+    }
+
+    .afix {
+        & span:first-child {
+            //-webkit-border-top-left-radius: .28571429rem;
+            //-webkit-border-bottom-left-radius: .28571429rem;
+            border-right: none;
+        }
+        & span:last-child {
+            //-webkit-border-top-left-radius: .28571429rem;
+            //-webkit-border-bottom-left-radius: .28571429rem;
+            border-left: none;
+        }
+        & input{
+            border-radius: 0;
+            border-right: none;
+            border-left: none;
+            &:focus{
+                border-right: none;
+                border-left: none;
+
+            }
+        }    
+    }
+}
 //
-///* 4 *//* CONFIG MIXIN */
+///* 5 *//* PRECONFIGURED PATTERNS */
+.inputs-field(){
+    field {
+        .inp-field();
+        .inp-afix();
+        
+        input[type="text"] {
+            .inp-txt(@size: 4);
+        }
+
+        textarea {
+            .inp-txt-area();
+        }
+
+        input[type='checkbox']{
+            .inp-chk(@size: 4);
+        }
+
+        input[type='radio']{
+            .inp-rdo(@size: 4)
+        }
+
+        fieldset{
+            .inp-fieldset();
+        }
+        
+    }
+}
 //
 ///* 6 *//* INITIALIZED PATTERNS */
+.input-init(){
 
+}
 //
 /* input cmp ------ [ OK ] */@state: OK;
 ///******************************************/
