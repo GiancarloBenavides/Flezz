@@ -2577,17 +2577,17 @@ input {
   margin: 0;
   width: 140px;
 }
-.tabs .vertical li a {
+.tabs .vertical > li a {
   padding-left: 30px !important;
   margin-bottom: 2px;
   border-radius: 4px 0 0 4px;
 }
-.tabs .vertical li.selected > a,
-.tabs .vertical li.includes > a,
-.tabs .vertical li.selected > a:hover,
-.tabs .vertical li.includes > a:hover,
-.tabs .vertical li.selected > a:focus,
-.tabs .vertical li.includes > a:focus {
+.tabs .vertical > li.selected > a,
+.tabs .vertical > li.includes > a,
+.tabs .vertical > li.selected > a:hover,
+.tabs .vertical > li.includes > a:hover,
+.tabs .vertical > li.selected > a:focus,
+.tabs .vertical > li.includes > a:focus {
   margin-right: -1px;
   border: 1px solid #cccccc;
   border-right: none;

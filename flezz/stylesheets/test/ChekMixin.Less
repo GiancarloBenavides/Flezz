@@ -5,6 +5,7 @@
 ul {
     width: auto;
     float: left;
+    &:after {content: " "; display: table; clear: both;}
 
     li {
         background-color: #205081;
@@ -37,6 +38,7 @@ ul {
     text-align: center;
     min-width: 150px;
     clear: both;
+    &:extend(.clearfix all);
 }
 .clear:after,
 .clear:before {
@@ -128,6 +130,12 @@ label{
         -webkit-border-top-right-radius: 0;
         -webkit-border-bottom-right-radius: 0;
     }    
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 //
 /* color check   ---- [ OK ] */@state: OK;

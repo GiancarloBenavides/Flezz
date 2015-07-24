@@ -1,14 +1,14 @@
 ///******************************************/
 ///*          flezz framework 1.0           */
 ///******************************************/
-///*  Name: name_module
+///*  Name: tabs
 ///*  Version: 0.1.0
-///*  Description: description name_module
+///*  Description: tabs description
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org
 ///*  License: GNU General Public License v2 or later
 ///*  License URI: http://www.gnu.org/licenses/gpl-2.0.html
-///*  Tags: name_module, mixin, plugin, css.
+///*  Tags: tabs, mixin, plugin, css.
 ///******************************************/
 ///*  	Content
 ///*
@@ -32,15 +32,15 @@
 @tabs-shadow: true;
 @tabs-width-auto: false;
 @tabs-depth: true;
+@tabs-alignment-right: false;    //default left
 ///* size tabs */
+@tabs-size: 4;
 @tabs-width: 140px;
 @tabs-radius-width: 4px;
 @tabs-content-radius-width: 4px;
 @tabs-content-padding: 28px;
 @tabs-border-width: 1px;
 @tabs-gap: @tabs-border-width*2;
-@tabs-link-padding-topbottom: 10px;
-@tabs-link-padding-leftright: 15px;
 ///* title tabs */
 @tabs-font-color-title: rgb(32, 80, 129);
 ///* selected tabs */
@@ -62,7 +62,10 @@
 ///* local variables */
 @nav-link-hover-bg: red;
 @link-color: blue;
-@line-height-base: 1.428571429; // 20/14
+@line-height-base: 1.428571429; //20/14
+@tbs-padd-top: 10px;
+@tbs-padd-left: 15px;
+@dfl-size: @tabs-size;
 //
 ///* 2 *//* ROAD MAP */
 // --------------------------------------------------
@@ -94,7 +97,7 @@
                 line-height: @line-height-base;
                 position: relative;
                 display: block;
-                padding: @tabs-link-padding-topbottom @tabs-link-padding-leftright;
+                padding: @tbs-padd-top @tbs-padd-left;
                 text-decoration: none;
                 .user-select();
 
@@ -138,7 +141,7 @@
                     border-bottom: none;
                     cursor: default;
                     outline: none;
-                    padding: (@tabs-link-padding-topbottom + @tabs-border-width) (@tabs-link-padding-leftright);
+                    padding: (@tbs-padd-top + @tabs-border-width) (@tbs-padd-left);
                     line-height: 100%;
                 }
             }
@@ -154,13 +157,12 @@
         margin-bottom: -1*@tabs-border-width; //t
 
         > li {
-            float: left;
+            .tbs-alignment();
             // Make the list-items overlay the bottom border
             // Actual tabs (as links)
             > a {
                 .tbs-depth();
                 margin-right: @tabs-gap;
-                //border-bottom:  @tabs-border-width solid @tabs-border-color-selected;                
                 border-radius: @tabs-radius-width @tabs-radius-width 0 0;
                 border: @tabs-border-width solid @tabs-border-color-unselected;
                 border-bottom: none;
@@ -195,7 +197,7 @@
         margin: 0;
         .tbs-width();
 
-        li {
+        > li {
             a {
                 padding-left: 30px !important;
                 margin-bottom: @tabs-gap;
@@ -268,36 +270,6 @@
 
     }
     li.dropdown li.selected{font-weight: bold;}
-    // ----------
-    // Dropdowns
-    // ----------
-//    li[role="listbox"] {
-//        & > ul {
-//            display: none;
-//        }
-//        // Open dropdowns
-//        .open > a {
-//            &,
-//            &:hover,
-//            &:focus {
-//                background-color: @nav-link-hover-bg;
-//                border-color: @link-color;
-//            }
-//        }
-//        // Specific dropdowns
-//        .nav-tabs .dropdown-menu {
-//            // make dropdown border overlap tab border
-//            margin-top: -1*@tabs-border-width;
-//            // Remove the top rounded corners here since there is a hard edge above the menu
-//            //.border-top-radius(0);
-//        }
-//        .caret{
-//            .caret();
-//        }
-//    }
-    // --------------
-    //  MIXIN
-    // --------------
     .tbs-header();
 }
 //
@@ -339,16 +311,24 @@
 
 .tbs-depth() when (@tabs-depth = true) {
     margin: 3px @tabs-gap 1px 1px;
-    padding: (@tabs-link-padding-topbottom - 4px) (@tabs-link-padding-leftright - 4px);
+    padding: (@tbs-padd-top - 4px) (@tbs-padd-left - 4px);
 }
 
 .tbs-depth-restore() when (@tabs-depth = true) {
     @margin-sum: (4px-@tabs-border-width);
     margin: 0;
     margin-bottom: -1*@tabs-border-width;
-    padding: (@tabs-link-padding-topbottom ) (@tabs-link-padding-leftright) (@tabs-link-padding-topbottom - @margin-sum) (@tabs-link-padding-leftright);
+    padding: (@tbs-padd-top) (@tbs-padd-left) (@tbs-padd-top - @margin-sum) (@tbs-padd-left);
     border-right: 2*@tabs-border-width solid @tabs-border-color-selected;
     margin-right: @tabs-gap;
+}
+
+.tbs-alignment() when (@tabs-alignment-right = true){
+    float: right;
+}
+
+.tbs-alignment() when (@tabs-alignment-right = false){
+    float: left;
 }
 
 .caret() {

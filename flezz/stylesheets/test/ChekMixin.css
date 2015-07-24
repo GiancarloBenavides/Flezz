@@ -11,6 +11,8 @@
 /* dsn others ------- [ OK ] */
 /* include dsn ------ [ OK ] */
 /* cmp btn ---------- [ OK ] */
+/* dropdown cmp -------- [ OK ] */
+/* tabs cmp ------- [ OK ] */
 /* include cmp ------ [ OK ] */
 /* include mixin ---- [ OK ] */
 /* include picture -- [ OK ] */
@@ -2033,6 +2035,11 @@ ul {
   width: auto;
   float: left;
 }
+ul:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
 ul li {
   background-color: #205081;
 }
@@ -2189,5 +2196,11 @@ label {
   margin-right: 6px;
   -webkit-border-top-right-radius: 0;
   -webkit-border-bottom-right-radius: 0;
+}
+.clearfix:after,
+.panel-down:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 /* color check   ---- [ OK ] */
