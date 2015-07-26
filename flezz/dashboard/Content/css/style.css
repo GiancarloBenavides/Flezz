@@ -1957,7 +1957,7 @@ body {
   display: none;
 }
 .flezz-scroll > .scroll-bar {
-  background: rgba(3, 3, 3, 0.3);
+  background: rgba(2, 2, 2, 0.2);
   position: absolute;
   width: 8px;
   right: 1px;
@@ -1977,7 +1977,7 @@ body {
 }
 .flezz-scroll > .scroll-bar > .scroll-slider {
   background: #333;
-  background: rgba(3, 3, 3, 0.3);
+  background: rgba(4, 4, 4, 0.4);
   position: relative;
   margin: 0 1px;
   -moz-border-radius: 3px;
@@ -2765,12 +2765,12 @@ div.dropdown[data-state="open"] .caret {
   text-transform: capitalize;
 }
 .field button {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-family: 'OpenSansBold';
   background-color: #205081;
   color: #fafafa;
   line-height: 1.2142em;
-  padding: 0.35rem 0.75rem;
+  padding: 0.54rem 1.05rem;
   border: 1px solid #205081;
   outline: 1px solid #205081;
   white-space: nowrap;
@@ -2788,9 +2788,9 @@ div.dropdown[data-state="open"] .caret {
   position: absolute;
   float: right;
   color: #c2c2c2;
-  right: 0.75rem;
-  font-size: 1rem;
-  top: 1.95rem;
+  right: 1.05rem;
+  font-size: 1.2rem;
+  top: 2.14rem;
 }
 .field > .error {
   position: absolute;
@@ -2829,8 +2829,8 @@ div.dropdown[data-state="open"] .caret {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   line-height: 1.2142em;
-  padding: 0.35rem 2.25rem 0.35rem 0.75rem;
-  font-size: 1rem;
+  padding: 0.54rem 3.15rem 0.54rem 1.05rem;
+  font-size: 1.2rem;
   background: #fafafa;
   border: 1px solid #e5e5e5;
   color: #757575;
@@ -2867,14 +2867,14 @@ div.dropdown[data-state="open"] .caret {
   position: relative;
   border-collapse: separate;
   box-sizing: border-box;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 .field .afix > span,
 .field .prefix > span,
 .field .postfix > span {
   white-space: nowrap;
   background-color: #cccccc;
-  padding: 0.35rem 0.828125rem;
+  padding: 0.54rem 1.128125rem;
   margin: 0;
   color: white;
   display: table-cell;
@@ -2885,7 +2885,7 @@ div.dropdown[data-state="open"] .caret {
 .field .afix > span > i,
 .field .prefix > span > i,
 .field .postfix > span > i {
-  width: 1em !important;
+  width: 1.2em !important;
 }
 .field .afix > input,
 .field .prefix > input,
