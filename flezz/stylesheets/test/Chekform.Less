@@ -1,27 +1,13 @@
 ///* Dependencies */
 @import '../themes/theme.docs.style.less';
-/* color check */
-//html,
-//body,
-//section,
-//form, 
-//.field {
-//    max-width: 100%;
-//    width: 100%;
-//    padding: 0;
-//    margin: 0;
-//    //overflow-x: hidden;
-//}
+
+@form-background: #efefef;
+
 form {
     padding: 40px;
     background-color: @form-background;
     border-radius: 10px;
     border: 1px solid saturate(@input-font-color, -10%);
-}
-
-.field {
-    margin: 0 0 1rem;
-    //display: table;
 }
 
 .user {
@@ -32,101 +18,48 @@ form {
     box-sizing: border-box;
 }
 
-@form-background: #efefef;
-@input-font-color: #205081;
-@input-afix-color: darken(@input-border-color, 10%); //lighten(@input-font-color, -10%);
-
+.group{
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid @input-background-color;
+    input{
+        margin-bottom: 5px;
+    }
+}
+//
+@input-margin-left: true;
+@input-text-inline: true;
+//
+@input-margin-left-width: 15px;
+@input-border-radius: 10px;//.28571429rem;
+@input-size: 4;
+//
 @input-background-color: #fafafa;
-@input-border-color: darken(@form-background, 4%);//#dddddd;
-@input-border-radius: 0;//.28571429rem;
+@input-border-color: darken(@form-background, 4%);
 @input-focus-border-color: darken(@input-border-color,7%);
 @input-focus-shadow-color: fade(@input-border-color,30%);
-
-@input-size: 4;
-@input-margin-left: 15px;
-
-
-
+@input-font-color: #205081;
+@input-afix-color: darken(@input-border-color, 10%);
+//
 //locales
-@textarea-margin: @input-margin-left + 5px;
+@textarea-margin: @input-margin-left-width + 5px;
 @size: @input-size;
 @font-base: 1rem * (@size + 6) * 1/10;
 @padSup: @font-base * (@size + 3) * 1/20;
 @padLat: 1rem * (@size + 1) * 15/100;
 @padding: @padSup @padLat;
 //
-input[type="text"] {
-    width: ~'calc(100% - @{input-margin-left})'; 
-    box-sizing: border-box;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing: border-box;
-    //   display: block;
-    font-family: 'OpenSansLight',Arial,Helvetica,sans-serif;
-    margin: 0 0 0 @input-margin-left;
-    outline: 0;
-    //
-    //    tap-highlight-color: rgba(255,255,255,0);
-    line-height: 1.2142em;
-    padding: @padding; //.67861429em 1em;
-    font-size: @font-base;
-    background: @input-background-color;
-    border: 1px solid @input-border-color;
-    color: rgba(0,0,0,.87);
-    border-radius: @input-border-radius;
-    box-shadow: 0 0 0 0 transparent inset;
-    -webkit-appearance: none;
-    -webkit-transition: color .1s ease,border-color .1s ease;
-    transition: color .1s ease,border-color .1s ease;
-    &:focus {
-        //        color: rgba(0,0,0,.95);
-        //        border-color: @input-focus-border-color;
-        //        border-radius: .28571429rem;
-        background: darken(@input-background-color,-10%);
-        //-webkit-box-shadow: inset 1px 1px 7px 0 darken(@input-background-color,10%),0 0 8px @input-focus-shadow-color;
-        //box-shadow: inset 1px 1px 7px 0 darken(@input-background-color,10%),0 0 8px @input-focus-shadow-color;
-        border-top: 1px solid darken(@input-border-color, 10%);
-        border-bottom: 1px solid darken(@input-border-color, -5%);
-        border-left: 1px solid darken(@input-border-color, 10%);
-        border-right: 1px solid darken(@input-border-color, -5%);
-    }    
-}
-
-.error {
-    position: absolute;
-    background-color: red;
-    color: white;
-    padding: 0 10px;
-    border-radius: 2px;
-    right: 2px;
-    bottom: -2em;
-    & .arrow{
-        border-bottom: 5px solid red;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        height: 0;
-        position: absolute;
-        top: -5px;
-        right: 5px;
-        width: 0;
-    }
-    //bottom: -1.5rem;
-}
-
-label {
-    //display: block;
-    margin: 0 0 .28571429rem;
-    color: @input-font-color;
-    font-family: 'OpenSansBold';    
-    font-size: .7em;
-    //font-weight: bolder;
-    text-transform: capitalize;
-}
-
-
-.field{
+.inp-field() {
     position: relative;
     clear: both;
-    margin: 0 0 1em;
+    margin: 0 0 1em; 
+    
+    label {
+        color: @input-font-color;
+        font-family: 'OpenSansBold';    
+        font-size: .7em;
+        text-transform: capitalize;
+    }
 
     button {
         font-size: 0.5em;
@@ -141,130 +74,164 @@ label {
         width: auto;
         height: ~'calc(1.9142rem + 2px)';
     }
+
+    &>.error {
+        position: absolute;
+        background-color: red;
+        color: white;
+        padding: 0 10px;
+        border-radius: 2px;
+        right: 2px;
+        bottom: -2em;
+        
+        &>.arrow {
+            border-bottom: 5px solid red;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            height: 0;
+            position: absolute;
+            top: -5px;
+            right: 5px;
+            width: 0;
+        }
+    }
+    .inp-margin-left();
 }
 
+.inp-margin-left() when (@input-margin-left = true) {
+    &>input,.afix,.prefix,.postfix {
+        margin-left: @input-margin-left-width;
+        width: ~'calc(100% - @{input-margin-left-width})';
+    }
+}
+
+.inp-reset(){
+    input{outline: 0;}
+}
+
+.inp-input(@opc-type) when (@opc-type = 'text'){
+    &>input[type="text"] {border-radius: @input-border-radius;}
+    input[type="text"] {
+        box-sizing: border-box;
+        -webkit-box-sizing:border-box;
+        -moz-box-sizing: border-box;
+        //    tap-highlight-color: rgba(255,255,255,0);
+        line-height: 1.2142em;
+        padding: @padding; //.67861429em 1em;
+        font-size: @font-base;
+        background: @input-background-color;
+        border: 1px solid @input-border-color;
+        color: rgba(0,0,0,.87);
+        box-shadow: 0 0 0 0 transparent inset;
+        -webkit-appearance: none;
+        -webkit-transition: color .1s ease,border-color .1s ease;
+        transition: color .1s ease,border-color .1s ease;
+
+        &:focus {
+            //        color: rgba(0,0,0,.95);
+            //        border-color: @input-focus-border-color;
+            background: darken(@input-background-color,-10%);
+            //-webkit-box-shadow: inset 1px 1px 7px 0 darken(@input-background-color,10%),0 0 8px @input-focus-shadow-color;
+            //box-shadow: inset 1px 1px 7px 0 darken(@input-background-color,10%),0 0 8px @input-focus-shadow-color;
+            border-top: 1px solid darken(@input-border-color, 10%);
+            border-bottom: 1px solid darken(@input-border-color, -5%);
+            border-left: 1px solid darken(@input-border-color, 10%);
+            border-right: 1px solid darken(@input-border-color, -5%);
+        }    
+    }
+}
+    
 .afix,
 .prefix,
-.postfix {
-
-    width: ~'calc(100% - @{input-margin-left})';
-    display: table;
-    margin: 0 0 0 @input-margin-left;
+.postfix { 
+    display: table;   
     position: relative;
     border-collapse: separate;
     box-sizing: border-box;
-    //margin: 0 0 0 10px;
 
-
-    & span {
+    &>span {
         white-space: nowrap;
         background-color: @input-afix-color;    
         padding: 0 10px;
         margin: 0;
         color: white;
         display: table-cell;
-        border: 1px solid darken(@input-border-color, 10%);
+        border: 1px solid @input-afix-color;
         width: 1%;
         vertical-align: middle;
     }
 
-    & input{
+    &>input{
         display: table-cell;
         margin: 0;
         float: left;
-        width: 100%;
+        width: 100% !important;
     }
-    .button{
+    
+    &>.button{
         padding: 0;
     }
 }
 
-.prefix {
-    & span {
-        //-webkit-border-top-left-radius: .28571429rem;
-        //-webkit-border-bottom-left-radius: .28571429rem;
-        border-right: none;
-    }
-    & input{
-        -webkit-border-top-left-radius: 0;
-        -webkit-border-bottom-left-radius: 0;
-        border-left: none;
-        &:focus{
-            border-left:none;
-
-        }
-
-    }
+.afix>input[type="text"],
+.prefix>input[type="text"],
+.afix>input[type="text"]:focus,
+.prefix>input[type="text"]:focus{
+    border-left-color: @input-afix-color !important;
 }
 
-.postfix {
-    & span {
-        //-webkit-border-top-left-radius: .28571429rem;
-        //-webkit-border-bottom-left-radius: .28571429rem;
-        border-left: none;//1px solid @input-afix-color;
-    }
-    input{
-        border-right: none;
-        -webkit-border-top-right-radius: 0;
-        -webkit-border-bottom-right-radius: 0;
-        &:focus{
-            border-left-color: @input-border-color;
-            border-right: none;
-
-        }
-    }    
+.afix>input[type="text"],
+.postfix>input[type="text"],
+.afix>input[type="text"]:focus,
+.postfix>input[type="text"]:focus{
+    border-right-color: @input-afix-color !important;
 }
 
-.afix {
-    & span:first-child {
-        //-webkit-border-top-left-radius: .28571429rem;
-        //-webkit-border-bottom-left-radius: .28571429rem;
-        border-right: none;
-    }
-    & span:last-child {
-        //-webkit-border-top-left-radius: .28571429rem;
-        //-webkit-border-bottom-left-radius: .28571429rem;
-        border-left: none;
-    }
-    & input{
-        border-radius: 0;
-        border-right: none;
-        border-left: none;
-        &:focus{
-            border-right: none;
-            border-left: none;
-
-        }
-    }    
+.afix>span:first-child,
+.postfix>input[type="text"],
+.prefix>span {
+    -webkit-border-top-left-radius: @input-border-radius;
+    -webkit-border-bottom-left-radius: @input-border-radius;
+    border-right: none;
 }
-
+.afix>span:last-child,
+.prefix>input[type="text"],
+.postfix>span {
+    -webkit-border-top-right-radius: @input-border-radius;
+    -webkit-border-bottom-right-radius: @input-border-radius;
+    border-left: none;
+}
 
 
 textarea {
     width: ~'calc(100% - @{textarea-margin})';
-    margin: 0 0 0 @input-margin-left !important;
+    margin: 0 0 0 @input-margin-left-width !important;
     resize: vertical;
     outline: 0;
     border-color:@input-border-color;
 }
 
-input[type='checkbox']{
-    vertical-align: middle;
-    margin: 0 0 0 @input-margin-left;
+.inp-input(@opc-type) when (@opc-type = 'checkbox'){
+    input[type='checkbox']{
+        vertical-align: middle;
+        margin: 0 0 0 @input-margin-left-width;
 
-    &::before {
-        clear:both;
-        content: "\000a";
+        &::before {
+            clear:both;
+            content: "\000a";
+        }
     }
 }
+    
+.inp-input(@opc-type) when (@opc-type = 'radio'){
+    input[type='radio']{
+        vertical-align: middle;
+        margin: 0 0 0 @input-margin-left-width;
 
-input[type='radio']{
-    vertical-align: middle;
-    margin: 0 0 0 @input-margin-left;
-
-    &::before {
-        clear:both;
-        content: "\000a";
+        &::before {
+            clear:both;
+            content: "\000a";
+        }
     }
 }
 
@@ -272,10 +239,14 @@ fieldset{
     margin-bottom: 1em;
     padding: 1em 2em;
 }
-//
-////
-//.disable{.button-disabled(8;0;false; false; true)}
-//.stop{.button-disabled(7;0;true; false; false)}
+
+.field {
+    .inp-reset();
+    .inp-field();
+    .inp-input('text');
+    .inp-input('checkbox');
+    .inp-input('radio');
+}
 //
 /* color check   ---- [ OK ] */@state: OK;
 ///******************************************/

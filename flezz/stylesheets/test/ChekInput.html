@@ -6,7 +6,7 @@
     <meta name="description" content="Demo Flezz">
     <meta name="author" content="Giancarlo Ortiz">
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="Chekform.css">
+    <link rel="stylesheet" href="ChekInput.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <![CDATA[
         /*
@@ -25,7 +25,14 @@
                 <!-- INPUT TEXT -->
                 <div class="field">
                     <label for="">name_field_one</label>
+                    <input type="text" placeholder="name_field_one" data-tooltip="tip_one">     
+                </div>
+                
+                <!-- INPUT TEXT ICON-->
+                <div class="field">
+                    <label for="">name_field_one</label>
                     <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                    <span><i class="fa fa-rocket"></i></span>
                 </div>
 
                 <!-- INPUT TEXT WIDTH ERROR-->
@@ -39,7 +46,7 @@
                 <div class="field">
                     <label for="">name_field_one</label>
                     <div class="prefix">
-                        <span><i class="user"></i></span>
+                        <span><i class="fa fa-rocket"></i></span>
                         <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
                     </div>
                 </div>
@@ -59,7 +66,7 @@
                     <div class="afix">
                         <span>http://</span>   
                         <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
-                        <span>.COM</span>
+                        <span>.org</span>
                     </div>
                 </div>
 
@@ -81,46 +88,6 @@
                     </div>
                 </div>
 
-                <!--INPUT TEXT GROUP--> 
-                <div class="group">
-                    <div class="field">
-                        <label for="">name_field_one</label>
-                        <input type="text" placeholder="name_field_one" data-tooltip="tip_one"> 
-                    </div>
-                    <div class="field">
-                        <label for="">name_field_two</label>
-                        <input type="text" placeholder="name_field_two" data-tooltip="tip_two"> 
-                    </div>
-                    <div class="field">
-                        <label for="">name_field_three</label>
-                        <input type="text" placeholder="name_field_three" data-tooltip="tip_three"> 
-                    </div>
-                </div>
-                
-                <!--INPUT TEXT GROUP--> 
-                <div class="group">
-                    <div class="field">
-                        <label for="">name_field_one</label>
-                        <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
-                        <input type="text" placeholder="name_field_two" data-tooltip="tip_two">
-                        <input type="text" placeholder="name_field_three" data-tooltip="tip_three"> 
-                    </div>
-                    <div class="field">
-                        <label for="">name_field_two</label>
-                        <input type="text" placeholder="name_field_two" data-tooltip="tip_two"> 
-                    </div>
-                    <div class="field">
-                        <label for="">name_field_three</label>
-                        <input type="text" placeholder="name_field_three" data-tooltip="tip_one"> 
-                    </div>
-                </div>
-
-                <!-- INPUT TEXTAREA -->
-                <div class="field">
-                    <label for="">name_field_one</label>
-                    <textarea name="" id="" cols="" rows=""></textarea>
-                </div>
-
                 <!-- CHECKBOX -->
                 <div class="field">
                     <input type="checkbox" >
@@ -137,17 +104,6 @@
                         <label for="checkbox-one" data-tooltip="tip_one">name_field_one</label><br>
                     </div>
                 </div>
-
-                <!-- FIELDSET -->
-                <fieldset>
-                    <legend>Fieldset Legend</legend>
-                    <label>Input Label
-                        <input type="text" placeholder="Inputs a elements go inside...">
-                    </label>
-                    <label>Input Label
-                        <input type="text" placeholder="Inputs a elements go inside...">
-                    </label>
-                </fieldset>
 
                 <!-- RADIO -->
                 <div class="field">

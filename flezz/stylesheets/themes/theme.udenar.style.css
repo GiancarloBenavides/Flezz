@@ -1931,6 +1931,65 @@ body {
   -ms-user-select: none;
   user-select: none;
 }
+.flezz-scroll {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.flezz-scroll > .scroll-content {
+  position: absolute;
+  overflow: scroll;
+  overflow-x: hidden;
+  top: 0;
+  bottom: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.flezz-scroll > .scroll-content:focus {
+  outline: thin dotted;
+}
+.flezz-scroll > .scroll-content::-webkit-scrollbar {
+  display: none;
+}
+.flezz-scroll > .scroll-bar {
+  background: rgba(2, 2, 2, 0.2);
+  position: absolute;
+  width: 8px;
+  right: 1px;
+  top: 1px;
+  bottom: 1px;
+  /* Target only IE7 and IE8 with this hack */
+  visibility: hidden\9;
+  opacity: .01;
+  -webkit-transition: .2s;
+  -moz-transition: .2s;
+  -o-transition: .2s;
+  transition: .2s;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin: 10px 0 10px 12px;
+}
+.flezz-scroll > .scroll-bar > .scroll-slider {
+  background: #333;
+  background: rgba(4, 4, 4, 0.4);
+  position: relative;
+  margin: 0 1px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.flezz-scroll:hover > .scroll-bar,
+.scroll-bar.active,
+.scroll-bar.flashed {
+  /* Target only IE7 and IE8 with this hack */
+  visibility: visible\9;
+  opacity: 0.99;
+}
+.has-scrollbar > .scroll-content::-webkit-scrollbar {
+  display: block;
+}
 ul {
   margin: 0;
   padding: 0;
@@ -1951,66 +2010,6 @@ a:hover {
 }
 input {
   outline: 0;
-}
-.flezz-scroll {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-.flezz-scroll > .scroll-content {
-  position: absolute;
-  overflow: scroll;
-  overflow-x: hidden;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  padding-left: 20px;
-  padding-right: 10px;
-}
-.flezz-scroll > .scroll-content:focus {
-  outline: thin dotted;
-}
-.flezz-scroll > .scroll-content::-webkit-scrollbar {
-  display: none;
-}
-.flezz-scroll > .scroll-bar {
-  background: rgba(3, 3, 3, 0.3);
-  position: absolute;
-  margin: 10px 12px 10px 0;
-  width: 8px;
-  right: 1px;
-  top: 1px;
-  bottom: 1px;
-  /* Target only IE7 and IE8 with this hack */
-  visibility: hidden\9;
-  opacity: .01;
-  -webkit-transition: .2s;
-  -moz-transition: .2s;
-  -o-transition: .2s;
-  transition: .2s;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-}
-.flezz-scroll > .scroll-bar > .scroll-slider {
-  background: #333;
-  background: rgba(3, 3, 3, 0.3);
-  position: relative;
-  margin: 0 1px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-}
-.flezz-scroll:hover > .scroll-bar,
-.scroll-bar.active,
-.scroll-bar.flashed {
-  /* Target only IE7 and IE8 with this hack */
-  visibility: visible\9;
-  opacity: 0.99;
-}
-.has-scrollbar > .scroll-content::-webkit-scrollbar {
-  display: block;
 }
 .button-round-primary {
   display: inline-block;
@@ -2746,6 +2745,182 @@ div.dropdown[data-state="open"] > a:after {
 }
 div.dropdown[data-state="open"] .caret {
   transform: rotate(180deg);
+}
+.field {
+  position: relative;
+  clear: both;
+  margin: 0 0 1em;
+}
+.field input {
+  outline: 0;
+}
+.field label {
+  color: #205081;
+  font-family: 'OpenSansBold';
+  font-size: .7em;
+  text-transform: capitalize;
+}
+.field button {
+  font-size: 1rem;
+  font-family: 'OpenSansBold';
+  background-color: #205081;
+  color: #fafafa;
+  line-height: 1.2142em;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid #205081;
+  outline: 1px solid #205081;
+  white-space: nowrap;
+  display: table-cell;
+  width: auto;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+}
+.field button:hover {
+  background-color: #1b436d;
+  border: 1px solid #1b436d;
+  outline: 1px solid #1b436d;
+}
+.field > span > i {
+  position: absolute;
+  float: right;
+  color: #c2c2c2;
+  right: 0.75rem;
+  font-size: 1rem;
+  top: 1.95rem;
+}
+.field > .error {
+  position: absolute;
+  background-color: red;
+  color: white;
+  padding: 0 20px;
+  border-radius: 4px;
+  right: 2px;
+  bottom: -2em;
+}
+.field > .error > .arrow {
+  border-bottom: 5px solid red;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  height: 0;
+  position: absolute;
+  top: -5px;
+  right: 25px;
+  width: 0;
+}
+.field > input[type="text"],
+.field .afix,
+.field .prefix,
+.field .postfix {
+  margin-left: 15px;
+  width: calc(100% - 15px);
+}
+.field input {
+  margin-left: 15px;
+}
+.field > input[type="text"] {
+  border-radius: 5px;
+}
+.field input[type="text"] {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  line-height: 1.2142em;
+  padding: 0.35rem 2.25rem 0.35rem 0.75rem;
+  font-size: 1rem;
+  background: #fafafa;
+  border: 1px solid #e5e5e5;
+  color: #757575;
+  box-shadow: 0 0 0 0 transparent inset;
+  -webkit-appearance: none;
+  -webkit-transition: color 0.1s ease, border-color 0.1s ease;
+  transition: color 0.1s ease, border-color 0.1s ease;
+}
+.field input[type="text"]:focus {
+  background: #ffffff;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #f2f2f2;
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid #f2f2f2;
+}
+.field input[type='checkbox'] {
+  vertical-align: middle;
+}
+.field input[type='checkbox']::before {
+  clear: both;
+  content: "\000a";
+}
+.field input[type='radio'] {
+  vertical-align: middle;
+}
+.field input[type='radio']::before {
+  clear: both;
+  content: "\000a";
+}
+.field .afix,
+.field .prefix,
+.field .postfix {
+  display: table;
+  position: relative;
+  border-collapse: separate;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+.field .afix > span,
+.field .prefix > span,
+.field .postfix > span {
+  white-space: nowrap;
+  background-color: #cccccc;
+  padding: 0.35rem 0.828125rem;
+  margin: 0;
+  color: white;
+  display: table-cell;
+  border: 1px solid #cccccc;
+  width: 1%;
+  vertical-align: middle;
+}
+.field .afix > span > i,
+.field .prefix > span > i,
+.field .postfix > span > i {
+  width: 1em !important;
+}
+.field .afix > input,
+.field .prefix > input,
+.field .postfix > input {
+  display: table-cell;
+  margin: 0;
+  float: left;
+  width: 100% !important;
+}
+.field .afix > .button,
+.field .prefix > .button,
+.field .postfix > .button {
+  padding: 0;
+}
+.field .afix > input[type="text"],
+.field .prefix > input[type="text"],
+.field .afix > input[type="text"]:focus,
+.field .prefix > input[type="text"]:focus {
+  border-left-color: #cccccc !important;
+}
+.field .afix > input[type="text"],
+.field .postfix > input[type="text"],
+.field .afix > input[type="text"]:focus,
+.field .postfix > input[type="text"]:focus {
+  border-right-color: #cccccc !important;
+}
+.field .afix > span:first-child,
+.field .postfix > input[type="text"],
+.field .prefix > span {
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-right: none;
+}
+.field .afix > span:last-child,
+.field .prefix > input[type="text"],
+.field .postfix > span {
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-left: none;
 }
 .totalScrollOffsetInfo {
   border: 2px solid #fc0;

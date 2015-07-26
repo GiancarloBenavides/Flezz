@@ -42,15 +42,23 @@
 @light-selected-font: @theme-light-selected-color;
 @light-border: #dddee0;
 //
+@dashboard-margin: 20px;
+@dashboard-header-height: 70px;
+//
 @import '@{vendor-path}/bootstrap.css';
 @import '@{theme-path}/theme.udenar.style.less';
 @import '@{vendor-path}/font-awesome.less';
 @import '@{vendor-path}/scrollbar.less';
 //
+/*locales*/
+@dsh-margin: @dashboard-header-height + @dashboard-margin;
+
+.flezz-scroll{
+    height: ~'calc(100% - 100px)';
+}
 ///* CSS Document *///
 .body {color:@dark-color; background-color: @dark-bck}
 .container{max-width:100%}
-.header {height:100px; padding:19px 0px; background-color:#FFFFFF}
 .brand {width:225px; height:60px; float:left}
 .logo {width:225px; height:60px; background: @bck-logo-big;background-size: cover; height:60px; margin-left: 31px; width: auto !important}
 .logo span {font-size:1.5rem; text-transform:uppercase;; text-align:center;  margin-left:70px; padding-top:11px; display:none}
@@ -64,10 +72,12 @@
 .form-control:-ms-input-placeholder {color: #505a64}
 .form-control::-webkit-input-placeholder {color: #505a64}
 
-.wrapper {margin:0 20px 20px; padding:0px; }
+.wrapper {margin:0 @dashboard-margin @dashboard-margin; padding:0px;}
 
 .left_nav{
-    top: 100px;
+    top: @dashboard-header-height;
+    height: ~'calc(100% - @{dsh-margin})' !important;
+    z-index: 10000;
 }
 
 body,
@@ -77,6 +87,18 @@ body,
     color: @dark-color;
     a {color: @dark-color}
     a:hover{color: white}
+}
+
+.fixed_header {
+    .header {
+        position: fixed;
+        height: @dashboard-header-height;
+        z-index:100;left:0px; right:0px; padding:0 20px;
+    }
+    .admin_panel {margin-right: 15px}	
+    .body_container {position: relative; height: ~'calc(100% - @{dsh-margin})' !important; top: @dashboard-header-height}
+    .right_container {height: 100% !important;}
+    .left_nav {margin:0 -250px 0 0!important}
 }
 
 .light_theme .left_nav ul li a:hover,
@@ -237,15 +259,7 @@ div.title {
     width: 100%;
 }
 
-.fixed_header {
-    .header {
-        position: fixed;
-        z-index:100;left:0px; right:0px; padding:19px 20px;
-    }
-    .admin_panel {margin-right: 15px}	
-    .body_container {position: relative; top: 100px}
-    .left_nav {margin:0 -250px 0 0!important}
-}
+
 
 		
 

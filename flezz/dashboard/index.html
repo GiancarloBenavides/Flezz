@@ -96,13 +96,111 @@
                         </ul>
                     </div>
                 </div>
-                <!-- Left Nav -->
+                <!-- Content Conteiner -->
                 <div class="right_container">
                     <div class="breadcromb">
                         <div>
                             <div class="active_title theme_color_text">Home</div>
                             <div class="slash">/</div>
                             <div class="title_subtext">Pagina de Inicio</div>
+                        </div>
+                    </div>
+                    <div class="flezz-scroll">
+                        <div class="scroll-content">
+                            <!-- Content -->
+                            <form action="">  
+                                <!-- INPUT TEXT -->
+                                <div class="field">
+                                    <label for="">name_field_one</label>
+                                    <input type="text" placeholder="name_field_one" data-tooltip="tip_one">     
+                                </div>
+
+                                <!-- INPUT TEXT ICON-->
+                                <div class="field">
+                                    <label for="">name_field_one</label>
+                                    <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                                    <span><i class="fa fa-rocket"></i></span>
+                                </div>
+
+                                <!-- INPUT TEXT WIDTH ERROR-->
+                                <div class="field">
+                                    <label for="">name_field_one</label>
+                                    <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                                    <small class="error">name_error <span class="arrow"></span></small>
+                                </div>
+
+                                <!-- INPUT TEXT WIDTH PREFIX [ICON AND TEXT] -->
+                                <div class="field">
+                                    <label for="">name_field_one</label>
+                                    <div class="prefix">
+                                        <span><i class="fa fa-rocket"></i></span>
+                                        <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                                    </div>
+                                </div>
+
+                                <!-- INPUT TEXT WIDTH POSTFIX [ICON AND TEXT] -->
+                                <div class="field">
+                                    <label for="">name_field_one</label>
+                                    <div class="postfix">
+                                        <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                                        <span>.COM</span>
+                                    </div>
+                                </div>
+
+                                <!-- INPUT TEXT WIDTH PREFIX AND POSTFIX [ICON AND TEXT] -->
+                                <div class="field">
+                                    <label for="">name_field_one</label>
+                                    <div class="afix">
+                                        <span>http://</span>   
+                                        <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                                        <span>.org</span>
+                                    </div>
+                                </div>
+
+                                <!-- INPUT TEXT WIDTH PREFIX [BUTTON] -->
+                                <div class="field">
+                                    <label for="">name_field_one</label>
+                                    <div class="prefix">
+                                        <span class="button"><button>name_button</button></span>
+                                        <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                                    </div>                
+                                </div>
+
+                                <!-- INPUT TEXT WIDTH POSTFIX [BUTTON] -->
+                                <div class="field">
+                                    <label for="">name_field_one</label>
+                                    <div class="postfix">
+                                        <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                                        <span class="button"><button>name_button</button></span>
+                                    </div>
+                                </div>
+
+                                <!-- CHECKBOX -->
+                                <div class="field">
+                                    <input type="checkbox" >
+                                    <label for="" data-tooltip="tip_one">name_field_one</label>
+                                </div>
+
+                                <!-- CHECKBOX GROUP-->
+                                <div class="field">
+                                    <div class="set">
+                                        <div>Name group</div>
+                                        <input id="checkbox-one" type="checkbox" >
+                                        <label for="checkbox-one" data-tooltip="tip_one">name_field_one</label><br>
+                                        <input id="checkbox-one" type="checkbox" >
+                                        <label for="checkbox-one" data-tooltip="tip_one">name_field_one</label><br>
+                                    </div>
+                                </div>
+
+                                <!-- RADIO -->
+                                <div class="field">
+                                    <div>Choose Your Option</div>
+                                    <div class="set">
+                                        <label for="one"><input type="radio" name="option" value="one" id="one">name_opcion_one</label>
+                                        <label for="two"><input type="radio" name="option" value="two" id="two">name_opcion_two</label>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -141,5 +239,7 @@
         <script src="Scripts/js/vendor/scrollbar.js"></script>
         <script src="Scripts/js/vendor/jquery.fullscreen-min.js"></script>
         <script src="Scripts/js/dropdown.js"></script>
+        <script src="Scripts/js/jquery.flezz.scroll.js"></script>
+        <script src="Scripts/main.js"></script>
     </body>
 </html>

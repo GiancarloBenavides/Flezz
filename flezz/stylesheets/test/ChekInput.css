@@ -2032,120 +2032,6 @@ section {
   margin-left: 20%;
   margin-right: 10%;
 }
-form {
-  padding: 40px;
-  background-color: #efefef;
-  border-radius: 10px;
-  border: 1px solid #285079;
-}
-.user {
-  line-height: 0.75em;
-  vertical-align: -15%;
-  font-family: 'FontAwesome';
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-decoration: none;
-  width: 1em;
-  text-align: center;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -moz-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  -o-transform: translate(0, 0);
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
-  font-size: 1.33333333em;
-  color: white;
-  display: inline-block;
-}
-.user:before {
-  content: "\f007";
-}
-*:after,
-*:before {
-  box-sizing: border-box;
-}
-.group {
-  margin: 10px;
-  padding: 20px;
-  border: 1px solid #fafafa;
-}
-.group input {
-  margin-bottom: 5px;
-}
-.afix,
-.prefix,
-.postfix {
-  display: table;
-  position: relative;
-  border-collapse: separate;
-  box-sizing: border-box;
-}
-.afix > span,
-.prefix > span,
-.postfix > span {
-  white-space: nowrap;
-  background-color: #cbcbcb;
-  padding: 0 10px;
-  margin: 0;
-  color: white;
-  display: table-cell;
-  border: 1px solid #cbcbcb;
-  width: 1%;
-  vertical-align: middle;
-}
-.afix > input,
-.prefix > input,
-.postfix > input {
-  display: table-cell;
-  margin: 0;
-  float: left;
-  width: 100% !important;
-}
-.afix > .button,
-.prefix > .button,
-.postfix > .button {
-  padding: 0;
-}
-.afix > input[type="text"],
-.prefix > input[type="text"],
-.afix > input[type="text"]:focus,
-.prefix > input[type="text"]:focus {
-  border-left-color: #cbcbcb !important;
-}
-.afix > input[type="text"],
-.postfix > input[type="text"],
-.afix > input[type="text"]:focus,
-.postfix > input[type="text"]:focus {
-  border-right-color: #cbcbcb !important;
-}
-.afix > span:first-child,
-.postfix > input[type="text"],
-.prefix > span {
-  -webkit-border-top-left-radius: 10px;
-  -webkit-border-bottom-left-radius: 10px;
-  border-right: none;
-}
-.afix > span:last-child,
-.prefix > input[type="text"],
-.postfix > span {
-  -webkit-border-top-right-radius: 10px;
-  -webkit-border-bottom-right-radius: 10px;
-  border-left: none;
-}
-textarea {
-  width: calc(100% - 20px);
-  margin: 0 0 0 15px !important;
-  resize: vertical;
-  outline: 0;
-  border-color: #e5e5e5;
-}
-fieldset {
-  margin-bottom: 1em;
-  padding: 1em 2em;
-}
 .field {
   position: relative;
   clear: both;
@@ -2154,126 +2040,82 @@ fieldset {
 .field input {
   outline: 0;
 }
+.field label {
+  color: #205081;
+  font-family: 'OpenSansBold';
+  font-size: .7em;
+  text-transform: capitalize;
+}
+.field button {
+  font-size: 1rem;
+  font-family: 'OpenSansBold';
+  background-color: #205081;
+  color: #fafafa;
+  line-height: 1.2142em;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid #205081;
+  outline: 1px solid #205081;
+  white-space: nowrap;
+  display: table-cell;
+  width: auto;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+}
+.field button:hover {
+  background-color: #1b436d;
+  border: 1px solid #1b436d;
+  outline: 1px solid #1b436d;
+}
+.field > span > i {
+  position: absolute;
+  float: right;
+  color: #c2c2c2;
+  right: 0.75rem;
+  font-size: 1rem;
+  top: 1.95rem;
+}
+.field > .error {
+  position: absolute;
+  background-color: red;
+  color: white;
+  padding: 0 20px;
+  border-radius: 4px;
+  right: 2px;
+  bottom: -2em;
+}
+.field > .error > .arrow {
+  border-bottom: 5px solid red;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  height: 0;
+  position: absolute;
+  top: -5px;
+  right: 25px;
+  width: 0;
+}
+.field > input[type="text"],
+.field .afix,
+.field .prefix,
+.field .postfix {
+  margin-left: 15px;
+  width: calc(100% - 15px);
+}
 .field input {
-  outline: 0;
-}
-.field label {
-  color: #205081;
-  font-family: 'OpenSansBold';
-  font-size: .7em;
-  text-transform: capitalize;
-}
-.field button {
-  font-size: 0.5em;
-  font-family: 'OpenSansBold';
-  background-color: #205081;
-  color: #fafafa;
-  line-height: 1.2142em;
-  padding: .67861429em 1em;
-  border: 1px solid rgba(34, 36, 38, 0.15);
-  white-space: nowrap;
-  display: table-cell;
-  width: auto;
-  height: calc(1.9142rem + 2px);
-}
-.field > .error {
-  position: absolute;
-  background-color: red;
-  color: white;
-  padding: 0 10px;
-  border-radius: 2px;
-  right: 2px;
-  bottom: -2em;
-}
-.field > .error > .arrow {
-  border-bottom: 5px solid red;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  height: 0;
-  position: absolute;
-  top: -5px;
-  right: 5px;
-  width: 0;
-}
-.field > input,
-.field .afix,
-.field .prefix,
-.field .postfix {
   margin-left: 15px;
-  width: calc(100% - 15px);
-}
-.field > input,
-.field .afix,
-.field .prefix,
-.field .postfix {
-  margin-left: 15px;
-  width: calc(100% - 15px);
-}
-.field label {
-  color: #205081;
-  font-family: 'OpenSansBold';
-  font-size: .7em;
-  text-transform: capitalize;
-}
-.field button {
-  font-size: 0.5em;
-  font-family: 'OpenSansBold';
-  background-color: #205081;
-  color: #fafafa;
-  line-height: 1.2142em;
-  padding: .67861429em 1em;
-  border: 1px solid rgba(34, 36, 38, 0.15);
-  white-space: nowrap;
-  display: table-cell;
-  width: auto;
-  height: calc(1.9142rem + 2px);
-}
-.field > .error {
-  position: absolute;
-  background-color: red;
-  color: white;
-  padding: 0 10px;
-  border-radius: 2px;
-  right: 2px;
-  bottom: -2em;
-}
-.field > .error > .arrow {
-  border-bottom: 5px solid red;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  height: 0;
-  position: absolute;
-  top: -5px;
-  right: 5px;
-  width: 0;
-}
-.field > input,
-.field .afix,
-.field .prefix,
-.field .postfix {
-  margin-left: 15px;
-  width: calc(100% - 15px);
-}
-.field > input,
-.field .afix,
-.field .prefix,
-.field .postfix {
-  margin-left: 15px;
-  width: calc(100% - 15px);
 }
 .field > input[type="text"] {
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .field input[type="text"] {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   line-height: 1.2142em;
-  padding: 0.35rem 0.75rem;
+  padding: 0.35rem 2.25rem 0.35rem 0.75rem;
   font-size: 1rem;
   background: #fafafa;
   border: 1px solid #e5e5e5;
-  color: rgba(0, 0, 0, 0.87);
+  color: #757575;
   box-shadow: 0 0 0 0 transparent inset;
   -webkit-appearance: none;
   -webkit-transition: color 0.1s ease, border-color 0.1s ease;
@@ -2281,66 +2123,92 @@ fieldset {
 }
 .field input[type="text"]:focus {
   background: #ffffff;
-  border-top: 1px solid #cbcbcb;
+  border-top: 1px solid #cccccc;
   border-bottom: 1px solid #f2f2f2;
-  border-left: 1px solid #cbcbcb;
+  border-left: 1px solid #cccccc;
   border-right: 1px solid #f2f2f2;
 }
-.field > input[type="text"] {
-  border-radius: 10px;
+.field input[type='checkbox'] {
+  vertical-align: middle;
 }
-.field input[type="text"] {
+.field input[type='checkbox']::before {
+  clear: both;
+  content: "\000a";
+}
+.field input[type='radio'] {
+  vertical-align: middle;
+}
+.field input[type='radio']::before {
+  clear: both;
+  content: "\000a";
+}
+.field .afix,
+.field .prefix,
+.field .postfix {
+  display: table;
+  position: relative;
+  border-collapse: separate;
   box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  line-height: 1.2142em;
-  padding: 0.35rem 0.75rem;
   font-size: 1rem;
-  background: #fafafa;
-  border: 1px solid #e5e5e5;
-  color: rgba(0, 0, 0, 0.87);
-  box-shadow: 0 0 0 0 transparent inset;
-  -webkit-appearance: none;
-  -webkit-transition: color 0.1s ease, border-color 0.1s ease;
-  transition: color 0.1s ease, border-color 0.1s ease;
 }
-.field input[type="text"]:focus {
-  background: #ffffff;
-  border-top: 1px solid #cbcbcb;
-  border-bottom: 1px solid #f2f2f2;
-  border-left: 1px solid #cbcbcb;
-  border-right: 1px solid #f2f2f2;
-}
-.field input[type='checkbox'] {
+.field .afix > span,
+.field .prefix > span,
+.field .postfix > span {
+  white-space: nowrap;
+  background-color: #cccccc;
+  padding: 0.35rem 0.828125rem;
+  margin: 0;
+  color: white;
+  display: table-cell;
+  border: 1px solid #cccccc;
+  width: 1%;
   vertical-align: middle;
-  margin: 0 0 0 15px;
 }
-.field input[type='checkbox']::before {
-  clear: both;
-  content: "\000a";
+.field .afix > span > i,
+.field .prefix > span > i,
+.field .postfix > span > i {
+  width: 1em !important;
 }
-.field input[type='checkbox'] {
-  vertical-align: middle;
-  margin: 0 0 0 15px;
+.field .afix > input,
+.field .prefix > input,
+.field .postfix > input {
+  display: table-cell;
+  margin: 0;
+  float: left;
+  width: 100% !important;
 }
-.field input[type='checkbox']::before {
-  clear: both;
-  content: "\000a";
+.field .afix > .button,
+.field .prefix > .button,
+.field .postfix > .button {
+  padding: 0;
 }
-.field input[type='radio'] {
-  vertical-align: middle;
-  margin: 0 0 0 15px;
+.field .afix > input[type="text"],
+.field .prefix > input[type="text"],
+.field .afix > input[type="text"]:focus,
+.field .prefix > input[type="text"]:focus {
+  border-left-color: #cccccc !important;
 }
-.field input[type='radio']::before {
-  clear: both;
-  content: "\000a";
+.field .afix > input[type="text"],
+.field .postfix > input[type="text"],
+.field .afix > input[type="text"]:focus,
+.field .postfix > input[type="text"]:focus {
+  border-right-color: #cccccc !important;
 }
-.field input[type='radio'] {
-  vertical-align: middle;
-  margin: 0 0 0 15px;
+.field .afix > span:first-child,
+.field .postfix > input[type="text"],
+.field .prefix > span {
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-right: none;
 }
-.field input[type='radio']::before {
-  clear: both;
-  content: "\000a";
+.field .afix > span:last-child,
+.field .prefix > input[type="text"],
+.field .postfix > span {
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-left: none;
 }
-/* color check   ---- [ OK ] */
+form {
+  background-color: #f5f5f5;
+  padding: 20px;
+}

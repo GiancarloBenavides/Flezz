@@ -7,11 +7,14 @@
 /* eql other -------- [ OK ] */
 /* include Eql ------ [ OK ] */
 /* dsn others ------- [ OK ] */
+/* dsn others ------- [ OK ] */
 /* dsn normalize301 - [ OK ] */
 /* dsn others ------- [ OK ] */
 /* include dsn ------ [ OK ] */
 /* cmp btn ---------- [ OK ] */
 /* dropdown cmp -------- [ OK ] */
+/* tabs cmp ------- [ OK ] */
+/* input cmp ------ [ OK ] */
 /* include cmp ------ [ OK ] */
 /* include mixin ---- [ OK ] */
 /* include picture -- [ OK ] */

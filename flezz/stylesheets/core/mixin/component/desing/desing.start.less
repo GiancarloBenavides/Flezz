@@ -39,17 +39,23 @@
 @desing-font-size-inerit: true; //rem browser = true or rem fixed = false
 @desing-color-inverted: true;
 @desing-scroll-style: flezz;
+//
 @desing-font-size-init: 18; // when @desing-font-size-inerit = false
 @desing-font-body-family: @OpenSansLight;
 @desing-font-header-family: @OpenSansRegular;
-///* nanoScrollerJS */
-@desing-nanoClass: ~'flezz-scroll';
+///* Flezz Scroll - CAUTION: include JS */
+@desing-scroll-class: ~'flezz-scroll';
+@desing-contentClass: ~'scroll-content';
 @desing-paneClass: ~'scroll-bar';
 @desing-sliderClass: ~'scroll-slider';
-@desing-contentClass: ~'scroll-content';
+@desing-scroll-margin: true;
+//
+@scroll-content-padding: 20px;
+@scroll-bar-width: 8px;
 //
 ///* local variables */
 @dfl-size10: @desing-font-size-init*62.5;
+@scroll-bar-margin-right: (@scroll-content-padding - @scroll-bar-width)/2;
 //
 ///* 2 *//* ROAD MAP */
 // --------------------------------------------------
@@ -166,10 +172,9 @@
     }
 }
 
-.dsn-scroll() when (@desing-scroll-style = flezz) {
-    @padding: 10px;
-    @margin-bar: 12px;
-    .@{desing-nanoClass} {
+
+.dsn-scroll(@opc-align: 'right') when (@desing-scroll-style = flezz) {
+    .@{desing-scroll-class} {
         position: relative;
         width: 100%;
         height: 100%;
@@ -180,11 +185,10 @@
             overflow: scroll;
             overflow-x: hidden;
             top: 0;
-            right: 0;
+            //right: 0 !important;
             bottom: 0;
-            //left: 0;
-            padding-left: @padding*2;
-            padding-right: @padding;
+            padding-left: @scroll-content-padding;
+            padding-right: @scroll-content-padding;
             //width: ~'calc(100% - @{padding})';
 
             &:focus {
@@ -197,10 +201,9 @@
         }
 
         > .@{desing-paneClass} {
-            background: rgba(3,3,3,.3);
+            background: rgba(2,2,2,.2);
             position: absolute;
-            margin: 10px @margin-bar 10px 0;
-            width: 8px;
+            width: @scroll-bar-width;
             right: 1px;
             top: 1px;
             bottom: 1px;
@@ -214,10 +217,11 @@
             -moz-border-radius: 5px;
             -webkit-border-radius: 5px;
             border-radius: 5px;
+            .dsn-scroll-bar-margin(@opc-align);
 
             > .@{desing-sliderClass} {
                 background: #333;
-                background: rgba(3,3,3,.3);
+                background: rgba(4,4,4,.4);
                 position: relative;
                 margin: 0 1px;
                 -moz-border-radius: 3px;
@@ -227,7 +231,7 @@
         }
     }
 
-    .@{desing-nanoClass}:hover > .@{desing-paneClass},
+    .@{desing-scroll-class}:hover > .@{desing-paneClass},
     .@{desing-paneClass}.active,
     .@{desing-paneClass}.flashed {
         /* Target only IE7 and IE8 with this hack */
@@ -238,6 +242,14 @@
     .has-scrollbar > .@{desing-contentClass}::-webkit-scrollbar {
         display: block;
     }
+}
+
+.dsn-scroll-bar-margin(@opc-align) when (@opc-align = 'right'){
+    margin: 10px 0 10px @scroll-bar-margin-right*2;
+}
+
+.dsn-scroll-bar-margin(@opc-align) when (@opc-align = 'nornal'){
+    margin: 10px @scroll-bar-margin-right 10px @scroll-bar-margin-right;
 }
 //
 ///* 5 *//* PRECONFIGURED PATTERNS */
@@ -252,15 +264,19 @@
         .dsn-body-start();
     }
 }
+
+.desing-scroll() {
+    .dsn-scroll();
+}
 //
 ///* 6 *//* INITIALIZED PATTERNS */
 .desing-start-init() {
     .desing-html();
     .desing-body();
+    .desing-scroll();
     .dsn-list();
     .dsn-link();
     .dsn-form();
-    .dsn-scroll();
 }
 //
 /* dsn others ------- [ OK ] */@state: OK;
