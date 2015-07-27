@@ -1,0 +1,155 @@
+///******************************************/
+///*          flezz framework 1.0           */
+///******************************************/
+///*  Name: name_module
+///*  Version: 0.1.0
+///*  Description: description name_module
+///*  Author: Giancarlo Ortiz.
+///*  URI: http://www.zerez.org
+///*  License: GNU General Public License v2 or later
+///*  License URI: http://www.gnu.org/licenses/gpl-2.0.html
+///*  Tags: name_module, mixin, plugin, css.
+///******************************************/
+///*  	Content
+///*
+///*  1. Config modules.
+///*  2. Road map.
+///*  3. Base Modules.
+///*  4. Config mixin.
+///*  5. preconfigured patterns.
+///*  6. initialized patterns.
+///******************************************/
+///* PATH */
+//
+///* Dependencies */
+@import 'desing/_config.desing.less';
+//
+///* 1 *//* CONFIG MODULES VARIABLES *///
+//
+///* global variables */
+///* general option */
+@tiles-opacity: false;
+@tiles-background-change: true;
+@tiles-border-radius: false;
+@tiles-background-change-color: #1a1d50;
+@tiles-size-min: 60px;
+@tiles-padding: 8px;
+//
+///* local variables */
+
+//
+///* 2 *//* ROAD MAP */
+// --------------------------------------------------
+
+// --------------------------------------------------
+//
+///* 3 *//* BASE MODULES */
+.tls-tile() {
+    float: left;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    font-size: 10px;
+    text-align: center;
+    padding: 0px;
+    overflow: hidden;
+    perspective: 0;
+    -webkit-perspective: 0;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transition: transform 0.2s;
+    -webkit-transition: -webkit-transform 0.2s;
+    box-sizing: border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    outline: 0;
+    box-shadow: 1px 1px 2px #ABAAAD;
+    .tls-background-transition();
+    .tls-border-radius();
+    
+    a {
+        display: block;
+        margin: 0;
+        padding: 0;
+        float: none;
+        height: 100%;
+        text-decoration: none;
+        border: 2px solid transparent;
+        .tls-opacity();
+        
+        &:hover,
+        &:active {
+            .tls-opacity-active();
+            .tls-background-active();
+        }
+        
+        &:focus {
+            border-color: white; 
+        }
+
+        &:active {
+            border: 4px solid rgba(1, 1, 1, 0.1);
+            border-bottom: 2px solid rgba(2, 2, 2, 0.2);
+        }
+    }
+}
+
+.tls-tiles-width() {
+    div[class$="mid-s"] {
+        width: @tiles-size-min;
+        height: @tiles-size-min;
+    }
+    div[class$="one-s"] {
+        width: @tiles-size-min*2 + @tiles-padding;
+        height: @tiles-size-min*2 + @tiles-padding;
+    }
+    div[class$="two-h"] {
+        width: @tiles-size-min*4 + @tiles-padding*3;
+        height: @tiles-size-min*2 + @tiles-padding;
+    }
+    div[class$="two-v"] {
+        width: @tiles-size-min*2 + @tiles-padding;
+        height: @tiles-size-min*4 + @tiles-padding*3;
+    }
+}
+//
+///* 4 *//* CONFIG MIXIN */
+.tls-border-radius() when (@tiles-border-radius = true){
+    border-radius: 4px;
+}
+
+.tls-background-active() when (@tiles-background-change = true) {
+    background-color: @tiles-background-change-color;
+}
+
+.tls-opacity() when (@tiles-opacity = true) {
+    -khtml-opacity: .8;
+    -moz-opacity: .8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+}
+
+.tls-opacity-active() when (@tiles-opacity = true) {
+    -khtml-opacity: 1;
+    -moz-opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+}
+
+.tls-background-transition(@time: @tiles-transition-time) {
+    -moz-transition: background-color @time ease-out;
+    -o-transition: background-color @time ease-out;
+    -webkit-transition: background-color @time ease-out;
+    transition: background-color @time ease-out;
+}
+//
+///* 5 *//* PRECONFIGURED PATTERNS */
+
+//
+///* 6 *//* INITIALIZED PATTERNS */
+//
+/* name_module cmp -------- [ OK ] */@state: OK;
+///******************************************/
+///*  	FIN
+///******************************************/

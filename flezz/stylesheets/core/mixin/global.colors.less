@@ -217,12 +217,40 @@
     @footer-subtitle-color: lighten(@footer-font-color,@font-title-icrement);   
     @footer-title-color: lighten(@footer-font-color,(2*@font-title-icrement));
 }
+///* 3 *//* BASE MODULES */
+
+//
+///* 4 *//* CONFIG MIXIN */
+
+//
+///* 5 *//* PRECONFIGURED PATTERNS */
+
+//
+///* 6 *//* INITIALIZED PATTERNS */
+.font-color(){
+    .fontPrimaryColor();
+    .fontSecondaryColor();
+    .fontFooterColor();   
+}
+.tiles-color(){
+    a[class~="white-back"] {background-color: @white;}
+    a[class~="black-back"] {background-color: @black;}
+    a[class~="blue-back"], a[class~="accent"] {background-color: @tile-blue;}
+    a[class~="brown-back"] {background-color: @tile-brown;}
+    a[class~="green-back"] {background-color: @tile-green;}
+    a[class~="lime-back"] {background-color: @tile-lime;}
+    a[class~="magenta-back"] {background-color: @tile-magenta;}
+    a[class~="orange-back"] {background-color: @tile-orange;}
+    a[class~="pink-back"] {background-color: @tile-pink;}
+    a[class~="purple-back"] {background-color: @tile-purple;}
+    a[class~="red-back"] {background-color: @tile-red;}
+    a[class~="teal-back"] {background-color: @tile-teal;}
+}
 //
 ///* Shorthand - Initialize Color *///
 .flezz-color-init() {
-    .fontPrimaryColor();
-    .fontSecondaryColor();
-    .fontFooterColor();
+    .font-color();
+    .tiles-color();
 }
 //
 /* include color ---- [ OK ] */@state: OK;

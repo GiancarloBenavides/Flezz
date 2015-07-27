@@ -1733,6 +1733,43 @@
   font-size: 3em;
   display: inline-block;
 }
+a[class~="white-back"] {
+  background-color: #fafafa;
+}
+a[class~="black-back"] {
+  background-color: #0a0a0f;
+}
+a[class~="blue-back"],
+a[class~="accent"] {
+  background-color: #1ba1e2;
+}
+a[class~="brown-back"] {
+  background-color: #a05000;
+}
+a[class~="green-back"] {
+  background-color: #339933;
+}
+a[class~="lime-back"] {
+  background-color: #8cbf26;
+}
+a[class~="magenta-back"] {
+  background-color: #ff0097;
+}
+a[class~="orange-back"] {
+  background-color: #f09609;
+}
+a[class~="pink-back"] {
+  background-color: #e671b8;
+}
+a[class~="purple-back"] {
+  background-color: #a200ff;
+}
+a[class~="red-back"] {
+  background-color: #e51400;
+}
+a[class~="teal-back"] {
+  background-color: #00aba9;
+}
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
