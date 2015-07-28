@@ -108,70 +108,99 @@
                     <div class="flezz-scroll">
                         <div class="scroll-content">
                             <!-- Content -->
-                            <div class="tile-two-v">
-                                <a tabindex="1" class="orange-back">
-                                    <i class="fa fa-rocket"></i>
-                                    <p>iconos</p>
-                                    <small>fuente awesome</small>
-                                </a>
-                            </div>
-                            <div class="tile-two-h">
-                                <a tabindex="2" class="green-back" href="buttons.html">
-                                    <i class="fa fa-hand-o-up"></i>
-                                    <p class="tile-name">botones</p>
-                                    <small>plain buttons</small>
-                                </a>
-                            </div>
-                            <div class="tile-two-h">
-                                <a tabindex="3" class="magenta-back" href="dropdown.html">
-                                    <i class="fa fa-caret-down"></i>
-                                    <p class="tile-name">Listas</p>
-                                    <small>list dropdown</small>
-                                </a>
-                            </div>
-                            <div class="tile-two-h">
-                                <a tabindex="4" class="red-back casa">
-                                    <i class="fa fa-windows"></i>
-                                    <p class="tile-name">Baldosas</p>
-                                    <small>tiles</small>
-                                </a>
-                            </div>
-                            <div class="tile-one-s">
-                                <a tabindex="5" class="teal-back" href="input.html">
-                                    <i class="fa fa-edit"></i>
-                                    <p class="tile-name">Controles</p>
-                                    <small>input field</small>
-                                </a>
-                            </div>
-                            <div class="tile-one-s">
-                                <a tabindex="6" class="flezz" href="index.html">
-                                    <i class="fa fa-html5"></i>
-                                    <p class="tile-name">FLezz</p>
-                                    <small>less framework</small>
-                                </a>
-                            </div>
-                            <div class="tile-two-h">
-                                <a tabindex="7" class="purple-back">
-                                    <i class="fa fa-list-alt"></i>
-                                    <p class="tile-name">formularios</p>
-                                    <small>form</small>
-                                </a>
-                            </div>
-                            <div class="tile-one-s">
-                                <a tabindex="8" class="blue-back" href="tabs.html">
-                                    <i class="fa fa-folder"></i>
-                                    <p class="tile-name">pestañas</p>
-                                    <small>tabs</small>
-                                </a>
-                            </div>
-                            <div class="tile-two-h">
-                                <a tabindex="9" class="orange-back">
-                                    <i class="fa fa-font"></i>
-                                    <p class="tile-name">Fuentes</p>
-                                    <small>typography</small>
-                                </a>
-                            </div>
-                        <!-- End Content -->
+                            <form action="">  
+                                <!-- INPUT TEXT -->
+                                <div class="field">
+                                    <label for="">name_field_one</label>
+                                    <input type="text" placeholder="name_field_one" data-tooltip="tip_one">     
+                                </div>
+
+                                <!-- INPUT TEXT ICON-->
+                                <div class="field">
+                                    <label for="">name_field_one</label>
+                                    <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                                    <span><i class="fa fa-rocket"></i></span>
+                                </div>
+
+                                <!-- INPUT TEXT WIDTH ERROR-->
+                                <div class="field">
+                                    <label for="">name_field_one</label>
+                                    <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                                    <small class="error">name_error <span class="arrow"></span></small>
+                                </div>
+
+                                <!-- INPUT TEXT WIDTH PREFIX [ICON AND TEXT] -->
+                                <div class="field">
+                                    <label for="">name_field_one</label>
+                                    <div class="prefix">
+                                        <span><i class="fa fa-rocket"></i></span>
+                                        <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                                    </div>
+                                </div>
+
+                                <!-- INPUT TEXT WIDTH POSTFIX [ICON AND TEXT] -->
+                                <div class="field">
+                                    <label for="">name_field_one</label>
+                                    <div class="postfix">
+                                        <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                                        <span>.COM</span>
+                                    </div>
+                                </div>
+
+                                <!-- INPUT TEXT WIDTH PREFIX AND POSTFIX [ICON AND TEXT] -->
+                                <div class="field">
+                                    <label for="">name_field_one</label>
+                                    <div class="afix">
+                                        <span>http://</span>   
+                                        <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                                        <span>.org</span>
+                                    </div>
+                                </div>
+
+                                <!-- INPUT TEXT WIDTH PREFIX [BUTTON] -->
+                                <div class="field">
+                                    <label for="">name_field_one</label>
+                                    <div class="prefix">
+                                        <span class="button"><button>name_button</button></span>
+                                        <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                                    </div>                
+                                </div>
+
+                                <!-- INPUT TEXT WIDTH POSTFIX [BUTTON] -->
+                                <div class="field">
+                                    <label for="">name_field_one</label>
+                                    <div class="postfix">
+                                        <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                                        <span class="button"><button>name_button</button></span>
+                                    </div>
+                                </div>
+
+                                <!-- CHECKBOX -->
+                                <div class="field">
+                                    <input type="checkbox" >
+                                    <label for="" data-tooltip="tip_one">name_field_one</label>
+                                </div>
+
+                                <!-- CHECKBOX GROUP-->
+                                <div class="field">
+                                    <div class="set">
+                                        <div>Name group</div>
+                                        <input id="checkbox-one" type="checkbox" >
+                                        <label for="checkbox-one" data-tooltip="tip_one">name_field_one</label><br>
+                                        <input id="checkbox-one" type="checkbox" >
+                                        <label for="checkbox-one" data-tooltip="tip_one">name_field_one</label><br>
+                                    </div>
+                                </div>
+
+                                <!-- RADIO -->
+                                <div class="field">
+                                    <div>Choose Your Option</div>
+                                    <div class="set">
+                                        <label for="one"><input type="radio" name="option" value="one" id="one">name_opcion_one</label>
+                                        <label for="two"><input type="radio" name="option" value="two" id="two">name_opcion_two</label>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

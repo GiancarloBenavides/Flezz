@@ -108,70 +108,41 @@
                     <div class="flezz-scroll">
                         <div class="scroll-content">
                             <!-- Content -->
-                            <div class="tile-two-v">
-                                <a tabindex="1" class="orange-back">
-                                    <i class="fa fa-rocket"></i>
-                                    <p>iconos</p>
-                                    <small>fuente awesome</small>
-                                </a>
-                            </div>
-                            <div class="tile-two-h">
-                                <a tabindex="2" class="green-back" href="buttons.html">
-                                    <i class="fa fa-hand-o-up"></i>
-                                    <p class="tile-name">botones</p>
-                                    <small>plain buttons</small>
-                                </a>
-                            </div>
-                            <div class="tile-two-h">
-                                <a tabindex="3" class="magenta-back" href="dropdown.html">
-                                    <i class="fa fa-caret-down"></i>
-                                    <p class="tile-name">Listas</p>
-                                    <small>list dropdown</small>
-                                </a>
-                            </div>
-                            <div class="tile-two-h">
-                                <a tabindex="4" class="red-back casa">
-                                    <i class="fa fa-windows"></i>
-                                    <p class="tile-name">Baldosas</p>
-                                    <small>tiles</small>
-                                </a>
-                            </div>
-                            <div class="tile-one-s">
-                                <a tabindex="5" class="teal-back" href="input.html">
-                                    <i class="fa fa-edit"></i>
-                                    <p class="tile-name">Controles</p>
-                                    <small>input field</small>
-                                </a>
-                            </div>
-                            <div class="tile-one-s">
-                                <a tabindex="6" class="flezz" href="index.html">
-                                    <i class="fa fa-html5"></i>
-                                    <p class="tile-name">FLezz</p>
-                                    <small>less framework</small>
-                                </a>
-                            </div>
-                            <div class="tile-two-h">
-                                <a tabindex="7" class="purple-back">
-                                    <i class="fa fa-list-alt"></i>
-                                    <p class="tile-name">formularios</p>
-                                    <small>form</small>
-                                </a>
-                            </div>
-                            <div class="tile-one-s">
-                                <a tabindex="8" class="blue-back" href="tabs.html">
-                                    <i class="fa fa-folder"></i>
-                                    <p class="tile-name">pestañas</p>
-                                    <small>tabs</small>
-                                </a>
-                            </div>
-                            <div class="tile-two-h">
-                                <a tabindex="9" class="orange-back">
-                                    <i class="fa fa-font"></i>
-                                    <p class="tile-name">Fuentes</p>
-                                    <small>typography</small>
-                                </a>
-                            </div>
-                        <!-- End Content -->
+                            <section>
+                                <!-- tabs horizontal -->
+                                <div class="tabs">
+                                    <ul role="tablist" class="horizontal" data-tab>
+                                        <li class="title"><div id="tab_group_one" tabindex="-1">Title Group</div id="tab_group_one"></li>                   
+                                        <li role="presentation" class="selected" aria-selected="true"><a tabindex="0" data-tab="panel-horizontal-one">tab 1</a></li>
+                                        <li role="presentation" aria-selected="false"><a tabindex="0" data-tab="panel-horizontal-two">tab 2</a></li>
+                                        <li role="presentation" aria-selected="false"><a tabindex="0" data-tab="panel-horizontal-three">tab 3</a></li>
+                                        <li role="presentation" class="disabled" aria-selected="false"><a tabindex="0" data-tab="panel-horizontal-four">tab 4</a></li>
+                                    </ul>
+                                    <div class="tabs-content">
+                                        <div id="panel-horizontal-one" class="tabs-horizontal" role="tabpanel" aria-hidden="false" data-state="active">
+                                            <h1>Lorem ipsum</h1>
+                                            <p>Eveniet optio incidunt modi quas atque eaque accusantium reprehenderit itaque.</p>
+                                            <p>Magnam maxime amet quam, libero officiis! Excepturi consectetur natus rerum.</p>
+                                            <p>Sunt ducimus modi minus magni soluta, voluptatum perferendis molestias in.</p>
+                                            <p>Quae rerum, at rem voluptate quo, nisi cum minima eius.</p>
+                                        </div>
+                                        <div id="panel-horizontal-two" class="tabs-horizontal" role="tabpanel" aria-hidden="true" data-state="inactive">
+                                            Magnam maxime
+                                            <p>Sunt ducimus modi minus magni soluta, voluptatum perferendis molestias in.</p>
+                                            <p>Quae rerum, at rem voluptate quo, nisi cum minima eius.</p>
+                                            <p>Architecto necessitatibus dicta odit tempora exercitationem iure aspernatur ex quis.</p>
+                                            <p>Omnis tenetur voluptatum dolore, nihil placeat minima pariatur est at!</p>
+                                        </div>
+                                        <div id="panel-horizontal-three" class="tabs-horizontal" role="tabpanel" aria-hidden="true" data-state="inactive">
+                                            <img src="Content/img/test/52-tmb.jpg" width="100%" alt="">
+                                        </div>
+                                        <div id="panel-horizontal-four" class="tabs-horizontal" role="tabpanel" aria-hidden="true" data-state="inactive">
+                                            <p>Quae ipsum dolor sit amet, consectetur adipisicing elit. A, rem.</p>
+                                        </div>      
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- End Content -->
                         </div>
                     </div>
                 </div>
@@ -211,6 +182,7 @@
         <script src="Scripts/js/vendor/jquery.fullscreen-min.js"></script>
         <script src="Scripts/js/dropdown.js"></script>
         <script src="Scripts/js/jquery.flezz.scroll.js"></script>
+        <script src="Scripts/js/tabs.js"></script>
         <script src="Scripts/main.js"></script>
     </body>
 </html>

@@ -8,149 +8,8 @@
 ///****************************/
 @import '../themes/theme.docs.style.less';
 //
-///* variables */
-@tiles-opacity: false;
-@tiles-background-change: true;
-@tiles-border-radius: false;
-@tiles-background-change-color: #1a1d50;
-@tiles-size-min: 60px;
-@tiles-padding: 8px;
-@tiles-transition-time: 200ms;
-//
-///* Estilo de las Baldosas Metro */
-div[class|="tile"] {
-    float: left;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    text-align: center;
-    padding: 0;
-    overflow: hidden;
-    perspective: 0;
-    -webkit-perspective: 0;
-    transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-    transition: transform 0.2s;
-    -webkit-transition: -webkit-transform 0.2s;
-    box-sizing: border-box;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    outline: 0;
-    box-shadow: 1px 1px 2px #ABAAAD;
-    .tls-border-radius();
-    .user-select();
-    
-    a {
-        display: block;
-        padding: 1px 10px;
-        margin: 0;
-        float: none;
-        height: 100%;
-        text-decoration: none;
-        border: 2px solid transparent;
-        box-sizing: border-box;
-        color: white;
-        .tls-opacity();
-        .tls-background-transition();
-        
-        &:hover,
-        &:active {
-            .tls-opacity-active();
-            .tls-background-active();
-        }
-        
-        &:focus {
-            border: 2px solid white;
-            outline: 0;
-        }
-
-        &:active {
-            border: 4px solid rgba(1, 1, 1, 0.1);
-            border-bottom: 2px solid rgba(2, 2, 2, 0.2);
-        }
-        
-        &>i {
-            margin-top: 15px;
-            font-size: 2.5em;
-            color: rgba(255,255,255,1);
-            text-shadow: 2px 1px 0px rgba(255,255,255,0.3), 4px 3px 0px rgba(0,0,0,0.2);
-        }
-        &>p {
-            font-family: 'OpenSansRegular';
-            text-transform: lowercase;
-            font-size: 1.5em;
-            margin: 5px 0;
-            
-        }
-        &>small{
-            text-transform: capitalize;
-        }
-    }
-
-}
-
-.tls-border-radius() when (@tiles-border-radius = true){
-    border-radius: 4px;
-}
-
-.tls-background-active() when (@tiles-background-change = true) {
-    background-color: @tiles-background-change-color;
-}
-
-.tls-opacity() when (@tiles-opacity = true) {
-    -khtml-opacity: .8;
-    -moz-opacity: .8;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-    filter: alpha(opacity=80);
-    opacity: 0.8;
-}
-
-.tls-opacity-active() when (@tiles-opacity = true) {
-    -khtml-opacity: 1;
-    -moz-opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-    filter: alpha(opacity=100);
-    opacity: 1;
-}
-
-.tls-background-transition(@time: @tiles-transition-time) {
-    -moz-transition: background-color @time ease-out;
-    -o-transition: background-color @time ease-out;
-    -webkit-transition: background-color @time ease-out;
-    transition: background-color @time ease-out;
-}
-
-//    a[class~="white-back"] i {text-shadow: 4px 3px 0px @white, 9px 8px 0px rgba(0, 0, 0, 0.15);}
-//    a[class~="black-back"] i{text-shadow: 4px 3px 0px @black, 9px 8px 0px rgba(0, 0, 0, 0.15);}
-//    a[class~="blue-back"] i, a[class~="accent"] i {text-shadow: 4px 3px 0px @tile-blue, 9px 8px 0px rgba(0, 0, 0, 0.15);}
-//    a[class~="brown-back"] i {text-shadow: 4px 3px 0px @tile-brown, 9px 8px 0px rgba(0, 0, 0, 0.15);}
-//    a[class~="green-back"] i {text-shadow: 4px 3px 0px @tile-green, 9px 8px 0px rgba(0, 0, 0, 0.15);}
-//    a[class~="lime-back"] i {text-shadow: 4px 3px 0px  @tile-lime, 9px 8px 0px rgba(0, 0, 0, 0.15);}
-//    a[class~="magenta-back"] i {text-shadow: 4px 3px 0px @tile-magenta, 9px 8px 0px rgba(0, 0, 0, 0.15);}
-//    a[class~="orange-back"] i {text-shadow: 4px 3px 0px @tile-orange, 9px 8px 0px rgba(0, 0, 0, 0.15);}
-//    a[class~="pink-back"] i {text-shadow: 4px 3px 0px @tile-pink, 9px 8px 0px rgba(0, 0, 0, 0.15);}
-//    a[class~="purple-back"] i {text-shadow: 4px 3px 0px @tile-purple, 9px 8px 0px rgba(0, 0, 0, 0.15);}
-//    a[class~="red-back"] i {text-shadow: 4px 3px 0px @tile-red, 9px 8px 0px rgba(0, 0, 0, 0.15);}
-//    a[class~="teal-back"] i {text-shadow: 4px 3px 0px @tile-teal, 9px 8px 0px rgba(0, 0, 0, 0.15);}
-//
-///* Tamaño de las Baldosas Metro */
-div[class$="mid-s"] {
-    width: @tiles-size-min;
-    height: @tiles-size-min;
-}
-div[class$="one-s"] {
-    width: @tiles-size-min*2 + @tiles-padding;
-    height: @tiles-size-min*2 + @tiles-padding;
-}
-div[class$="two-h"] {
-    width: @tiles-size-min*4 + @tiles-padding*3;
-    height: @tiles-size-min*2 + @tiles-padding;
-}
-div[class$="two-v"] {
-    width: @tiles-size-min*2 + @tiles-padding;
-    height: @tiles-size-min*4 + @tiles-padding*3;
-}
-
-
+///* init */
+.tiles-init();
 //
 .flezz {
     background-color: #1a1d50;
@@ -163,6 +22,7 @@ div[class$="two-v"] {
 .tiles {
     clear: both;
 }
+
 .tilerow {
     float: left;
     perspective: 0;
