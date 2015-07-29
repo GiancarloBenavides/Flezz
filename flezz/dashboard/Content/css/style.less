@@ -44,10 +44,10 @@
 //
 @dashboard-margin: 20px;
 @dashboard-header-height: 70px;
+@dashboard-min-height: 250px;
 //
 @import '@{vendor-path}/bootstrap.css';
 @import '@{theme-path}/theme.udenar.style.less';
-@import '@{vendor-path}/font-awesome.less';
 @import '@{vendor-path}/scrollbar.less';
 //
 /*locales*/
@@ -55,12 +55,12 @@
 
 section{margin: 5px 0 15px 0;}
 
-.flezz-scroll{
+.flezz-scroll {
     height: ~'calc(100% - 100px)';
 }
 ///* CSS Document *///
 .body {color:@dark-color; background-color: @dark-bck}
-.container{max-width:100%}
+
 .brand {width:225px; height:60px; float:left}
 .logo {width:225px; height:60px; background: @bck-logo-big;background-size: cover; height:60px; margin-left: 31px; width: auto !important}
 .logo span {font-size:1.5rem; text-transform:uppercase;; text-align:center;  margin-left:70px; padding-top:11px; display:none}
@@ -68,13 +68,14 @@ section{margin: 5px 0 15px 0;}
 
 .font-bold {color: #666666; font-family:'OpenSansbold'}
 
+.container{max-width:100%}
 
 .form-control:-moz-placeholder {color: #505a64}
 .form-control::-moz-placeholder {color: #505a64!important}
 .form-control:-ms-input-placeholder {color: #505a64}
 .form-control::-webkit-input-placeholder {color: #505a64}
 
-.wrapper {margin:0 @dashboard-margin @dashboard-margin; padding:0px;}
+.wrapper {height: 100%; margin:0 @dashboard-margin @dashboard-margin; padding:0px;}
 
 .left_nav{
     top: @dashboard-header-height;
@@ -276,7 +277,7 @@ div.title {
 
 
 .left_nav {
-    background-color:@light-bck; color:@light-color; margin:0px 25px 0px 0px; border: 1px solid @light-border; min-height:250px; width:225px; clear:both; float:left;
+    background-color:@light-bck; color:@light-color; margin:0px 25px 0px 0px; border: 1px solid @light-border; min-height: @dashboard-min-height; width:225px; clear:both; float:left;
     a{color:lighten(@light-color,14)}
     i{color:lighten(@light-color,28)}
     box-shadow: 2px 1px 1px #205081, 5px 4px 2px rgba(0, 0, 0, 0.1);
@@ -320,7 +321,10 @@ a.menu_selected:hover b, a.menu_selected:hover i{color: #FFFFFF!important}
 
 
 .mini_nav .has-sub:hover ul {display:block!important; }
-.left_nav_hold {overflow:hidden}
+.left_nav_hold { 
+    height: 100%;
+    &>ul{ height: 100%}
+}
 
 
 /* max nav */
@@ -356,7 +360,7 @@ a.menu_selected:hover b, a.menu_selected:hover i{color: #FFFFFF!important}
 
 	
 .right_container {
-    background-color:#f1f1f1; border:1px solid #DDDEE0; margin-left:250px; min-height:350px; padding:20px; overflow:auto;
+    background-color:#f1f1f1; border:1px solid #DDDEE0; margin-left:250px; min-height: @dashboard-min-height; padding:20px; overflow:auto;
     box-shadow: 2px 1px 1px #205081, 5px 4px 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -413,7 +417,6 @@ h3, .h3 {font-size: 18px!important}
     position: relative;
 }
 
-
 .accordion .panel-heading {
     background: none repeat scroll 0 0 #FFFFFF!important;
  
@@ -422,8 +425,9 @@ h3, .h3 {font-size: 18px!important}
 
 /* chat box */
 .chat_panel {
-    right:-250px; width:250px;  position:fixed; z-index:99999;  background-color: #292c2f; top:0; float:right;
+    height: 100%; right:-250px; width:250px;  position:fixed; z-index:99999;  background-color: #292c2f; top:0; float:right;
     .chat_heading {margin:0px 0px; border-bottom:1px solid #3e4143; clear:both; display:block; height:58px; background-color:#1d1e1f; padding:19px 0px}
+    .title{color: white; font-size: 20px; text-align: center;}
     .chatbox_content{overflow:hidden}
 }
 .chat_box .right_container{margin-right:250px;transition:all 0.3s ease 0s}

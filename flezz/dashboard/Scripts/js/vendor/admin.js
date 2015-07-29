@@ -364,10 +364,11 @@ function init()
 {
 	$('.chatbox_content >div:first').addClass('active');
 	
-	var leftNavHeight = $(window).height() - 130;
+/*	var leftNavHeight = $(window).height() - 100;
+    
 	$(".left_nav").height(leftNavHeight);	
 	var containerHeight = $(".right_container").height();
-	if(containerHeight < leftNavHeight){$(".right_container").height(leftNavHeight-40);	}
+	if(containerHeight < leftNavHeight){$(".right_container").height(leftNavHeight-40);	}*/
 	
 	
 }
