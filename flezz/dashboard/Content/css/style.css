@@ -2001,11 +2001,10 @@ body {
 .flezz-scroll > .scroll-bar {
   background: rgba(2, 2, 2, 0.2);
   position: absolute;
-  width: 8px;
+  width: 7px;
   right: 1px;
   top: 1px;
   bottom: 1px;
-  /* Target only IE7 and IE8 with this hack */
   visibility: hidden\9;
   opacity: .01;
   -webkit-transition: .2s;
@@ -2015,7 +2014,11 @@ body {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  margin: 10px 0 10px 12px;
+  margin: 10px 0 10px 13px;
+}
+.flezz-scroll > .scroll-bar:hover,
+.flezz-scroll > .scroll-bar:active {
+  width: 10.5px;
 }
 .flezz-scroll > .scroll-bar > .scroll-slider {
   background: #333;
@@ -2029,12 +2032,19 @@ body {
 .flezz-scroll:hover > .scroll-bar,
 .scroll-bar.active,
 .scroll-bar.flashed {
-  /* Target only IE7 and IE8 with this hack */
   visibility: visible\9;
   opacity: 0.99;
 }
 .has-scrollbar > .scroll-content::-webkit-scrollbar {
   display: block;
+}
+.bar-min > .scroll-content {
+  padding: 0;
+}
+.bar-min > .scroll-bar,
+.bar-min > .scroll-bar:hover,
+.bar-min > .scroll-bar:active {
+  width: 4px;
 }
 ul {
   margin: 0;

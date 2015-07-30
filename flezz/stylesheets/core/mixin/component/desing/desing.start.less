@@ -44,14 +44,17 @@
 @desing-font-body-family: @OpenSansLight;
 @desing-font-header-family: @OpenSansRegular;
 ///* Flezz Scroll - CAUTION: include JS */
-@desing-scroll-class: ~'flezz-scroll';
-@desing-contentClass: ~'scroll-content';
-@desing-paneClass: ~'scroll-bar';
-@desing-sliderClass: ~'scroll-slider';
-@desing-scroll-margin: true;
+@scroll-margin: true;
+@scroll-bar-zoom: true;
+//
+@scroll-class: ~'flezz-scroll';
+@scroll-contentClass: ~'scroll-content';
+@scroll-paneClass: ~'scroll-bar';
+@scroll-sliderClass: ~'scroll-slider';
 //
 @scroll-content-padding: 20px;
-@scroll-bar-width: 8px;
+@scroll-bar-width: 7px;
+@scroll-bar-min-width: 4px;
 //
 ///* local variables */
 @dfl-size10: @desing-font-size-init*62.5;
@@ -174,13 +177,13 @@
 
 
 .dsn-scroll(@opc-align: 'right') when (@desing-scroll-style = flezz) {
-    .@{desing-scroll-class} {
+    .@{scroll-class} {
         position: relative;
         width: 100%;
         height: 100%;
         overflow: hidden;
 
-        > .@{desing-contentClass} {
+        > .@{scroll-contentClass} {
             position: absolute;
             overflow: scroll;
             overflow-x: hidden;
@@ -201,14 +204,14 @@
             }
         }
 
-        > .@{desing-paneClass} {
+        > .@{scroll-paneClass} {
             background: rgba(2,2,2,.2);
             position: absolute;
             width: @scroll-bar-width;
             right: 1px;
             top: 1px;
             bottom: 1px;
-            /* Target only IE7 and IE8 with this hack */
+            ///* Target only IE7 and IE8 with this hack */
             visibility: hidden\9;
             opacity: .01;
             -webkit-transition: .2s;
@@ -219,8 +222,9 @@
             -webkit-border-radius: 5px;
             border-radius: 5px;
             .dsn-scroll-bar-margin(@opc-align);
+            .dsn-scroll-bar-zoom();
 
-            > .@{desing-sliderClass} {
+            > .@{scroll-sliderClass} {
                 background: #333;
                 background: rgba(4,4,4,.4);
                 position: relative;
@@ -232,16 +236,23 @@
         }
     }
 
-    .@{desing-scroll-class}:hover > .@{desing-paneClass},
-    .@{desing-paneClass}.active,
-    .@{desing-paneClass}.flashed {
-        /* Target only IE7 and IE8 with this hack */
+    .@{scroll-class}:hover > .@{scroll-paneClass},
+    .@{scroll-paneClass}.active,
+    .@{scroll-paneClass}.flashed {
+        ///* Target only IE7 and IE8 with this hack */
         visibility: visible\9;
         opacity: 0.99;
     }
 
-    .has-scrollbar > .@{desing-contentClass}::-webkit-scrollbar {
+    .has-scrollbar > .@{scroll-contentClass}::-webkit-scrollbar {
         display: block;
+    }
+    ///* scroll bar min
+    .bar-min {
+        &>.@{scroll-contentClass}{padding:0}
+        &>.@{scroll-paneClass},
+        &>.@{scroll-paneClass}:hover,
+        &>.@{scroll-paneClass}:active {width: @scroll-bar-min-width;}
     }
 }
 
@@ -251,6 +262,10 @@
 
 .dsn-scroll-bar-margin(@opc-align) when (@opc-align = 'nornal'){
     margin: 10px @scroll-bar-margin-right 10px @scroll-bar-margin-right;
+}
+
+.dsn-scroll-bar-zoom() when (@scroll-bar-zoom = true) {
+    &:hover, &:active{width: @scroll-bar-width*1.5;}
 }
 //
 ///* 5 *//* PRECONFIGURED PATTERNS */
