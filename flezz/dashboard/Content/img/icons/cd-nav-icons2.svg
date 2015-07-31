@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="200px" height="40px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 200 40"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#E6E6E6;stroke-width:1.99921}
+    .fil0 {fill:none}
+    .fil1 {fill:#00CCFF}
+    .fil2 {fill:#E6E6E6}
+   ]]>
+  </style>
+ </defs>
+ <g id="icon">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="dos">
+   <ellipse class="fil0 str0" cx="60" cy="20" rx="13" ry="12"/>
+   <polygon class="fil1" points="58,18 55,25 63,22 66,15 "/>
+  </g>
+  <g id="cinco">
+   <rect class="fil2" x="174" y="21" width="1.90387" height="5.71126"/>
+   <rect class="fil2" x="179" y="18" width="1.90387" height="8.56707"/>
+   <rect class="fil1" x="185" y="15" width="1.90387" height="11.4225"/>
+   <g>
+    <path class="fil2" d="M192 10l0 20 -23 0 0 -20 23 0 0 0zm2 -2l-27 0 0 24 27 0 0 -24 0 0z"/>
+   </g>
+  </g>
+  <g id="cuatro">
+   <path class="fil2" d="M152 10l0 20 -23 0 0 -20 23 0zm2 -2l-27 0 0 24 27 0 0 -24 0 0z"/>
+   <rect class="fil2" x="132" y="5" width="2.85581" height="5.33286"/>
+   <rect class="fil2" x="146" y="5" width="2.85581" height="5.33286"/>
+   <polygon class="fil1" points="147,16 146,14 138,22 135,18 133,19 138,24 138,24 138,24 "/>
+  </g>
+  <g id="uno">
+   <rect class="fil1" x="11" y="14" width="19.3326" height="1.90387"/>
+   <g>
+    <path class="fil2" d="M32 10l0 20 -23 0 0 -20 23 0 0 0zm2 -2l-27 0 0 24 27 0 0 -24 0 0z"/>
+   </g>
+   <rect class="fil2" x="11" y="21" width="19.3326" height="1.90387"/>
+  </g>
+  <g id="tres">
+   <g>
+    <path class="fil2" d="M112 10l0 20 -21 0 -2 1 0 -21 23 0 0 0zm2 -2l-27 0 0 27 4 -3 23 0 0 -24 0 0z"/>
+   </g>
+   <rect class="fil1" x="94" y="14" width="12.3745" height="2.13542"/>
+   <rect class="fil2" x="100" y="19" width="6.18684" height="2.13542"/>
+  </g>
+ </g>
+</svg>
