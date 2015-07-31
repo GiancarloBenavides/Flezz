@@ -19,4 +19,18 @@ jQuery(document).ready(function ($) {
             $(this).children('ul').toggleClass('is-visible');
         }
 	});
+    
+    //scroll
+    $(function () {
+        $('.flezz-scroll').scrollable({
+            preventPageScrolling: true
+        });
+        //
+        $("#main").find('.description').load("readme.html", function () {
+            $(".flezz-scroll").scrollable();
+            $("#main").find("img").load(function () {
+                $(".nano").scrollable();
+            });
+        });
+    });
 });

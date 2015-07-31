@@ -1,0 +1,129 @@
+// scroll
+.flezz-scroll {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.flezz-scroll > .scroll-content {
+    position: absolute;
+    overflow: scroll;
+    overflow-x: hidden;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.flezz-scroll > .scroll-content:focus {
+    outline: thin dotted;
+}
+.flezz-scroll > .scroll-content::-webkit-scrollbar {
+    display: none;
+}
+.flezz-scroll > .scroll-bar {
+    background: rgba(2, 2, 2, 0.2);
+    position: absolute;
+    width: 7px;
+    right: 1px;
+    top: 1px;
+    bottom: 1px;
+    visibility: hidden\9;
+    opacity: .01;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin: 10px 0 10px 13px;
+}
+.flezz-scroll > .scroll-bar:hover,
+.flezz-scroll > .scroll-bar:active {
+    width: 10.5px;
+}
+.flezz-scroll > .scroll-bar > .scroll-slider {
+    background: #333;
+    background: rgba(4, 4, 4, 0.4);
+    position: relative;
+    margin: 0 1px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+.flezz-scroll:hover > .scroll-bar,
+.scroll-bar.active,
+.scroll-bar.flashed {
+    visibility: visible\9;
+    opacity: 0.99;
+}
+.has-scrollbar > .scroll-content::-webkit-scrollbar {
+    display: block;
+}
+.bar-min > .scroll-content {
+    padding: 0;
+}
+.bar-min > .scroll-bar,
+.bar-min > .scroll-bar:hover,
+.bar-min > .scroll-bar:active {
+    width: 4px;
+}
+
+///* Intro *///
+#cd-intro-layout{
+    display: none;
+}
+
+#cd-menu-layout{
+    height: @primary-nav-height !important;
+}
+
+.cd-fixed-content {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    width: ~'calc(100% - 20px)';
+    height: ~'calc(100% - 120px)';
+    text-align: center;
+
+    .flezz-scroll {
+        height: 100%;
+        width: 94%;
+        margin: 0 auto;
+    }
+}
+
+footer.cd-fotter-min {
+    background-color: @theme-color;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+}
+
+.cd-scroll-conteiner{
+    margin: 10px 10px 0 0;
+
+    .cd-section-layout {
+        margin: 0 10px 10px 0;
+        border: 1px solid red;
+        text-align: left;
+        //float: left;
+        //max-width: 300px;
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+    .cd-fixed-content {
+        top: 70px;
+    }
+
+    footer.cd-fotter-min {
+        background-color: black;
+    }
+}
