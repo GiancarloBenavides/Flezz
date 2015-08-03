@@ -2,7 +2,7 @@
 ///*          flezz framework 1.0           */
 ///******************************************/
 ///*  Name: inputs
-///*  Version: 0.1.1
+///*  Version: 0.2.0
 ///*  Description: description inputs
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org
@@ -22,27 +22,34 @@
 ///* PATH */
 //
 ///* Dependencies */
-
+@import 'desing/_config.desing.less';
 //
 ///* 1 *//* CONFIG MODULES VARIABLES *///
 //
 ///* global variables */
-///* general option */
 //
+///* input general option */
 @input-margin-left: true;
 @input-text-inline: true;
-//
+@input-focus-depth: true;
+@input-focus-scale: true;
+@input-focus-shadow: false;
+///* input size */
 @input-margin-left-width: 15px;
-@input-border-radius: 5px;//.28571429rem;
+@input-border-radius: 13px;
 @input-size: 6;
-//
-@input-label-color: #205081;
-@input-background-color: #fafafa;
-@input-font-color: #757575;
-@input-border-color: #e5e5e5; //darken(@form-background, 4%);
+///* input label */
+@input-label-font-family: @font-bold;
+@input-label-font-color: #205081;
+///* input color */
+@input-background-color: @gray05;
+@input-border-color: @gray15;
+@input-font-color: darken(@input-label-font-color, 10%);
+@input-afix-color: darken(@input-border-color, 10%);
+///* event color */
+@input-shadow-color: lighten(@input-label-font-color, 10%);
 @input-focus-border-color: darken(@input-border-color,7%);
 @input-focus-shadow-color: fade(@input-border-color,30%);
-@input-afix-color: darken(@input-border-color, 10%);
 //
 ///* local variables */
 //@textarea-margin: @input-margin-left + 5px;
@@ -54,6 +61,7 @@
 @radius-em: unit(@input-border-radius)/(16*4);
 
 @padding: @padSup @padLat;
+
 
 @nav-link-hover-bg: red;
 @link-color: blue;
@@ -73,10 +81,11 @@
     position: relative;
     clear: both;
     margin: 0 0 1em;
-    
+    .inp-margin-left();
+
     label {
-        color: @input-label-color;
-        font-family: 'OpenSansBold';    
+        color: @input-label-font-color;
+        font-family: @input-label-font-family;    
         font-size: .7em;
         text-transform: capitalize;
     }
@@ -84,12 +93,12 @@
     button {
         font-size: @font-base;
         font-family: 'OpenSansBold';
-        background-color: @input-label-color;
+        background-color: @input-label-font-color;
         color: @input-background-color;
         line-height: 1.2142em;
         padding: @padding;
-        border: 1px solid @input-label-color;
-        outline: 1px solid @input-label-color;
+        border: 1px solid @input-label-font-color;
+        outline: 1px solid @input-label-font-color;
         white-space: nowrap;
         display: table-cell;
         width: auto;
@@ -98,17 +107,17 @@
         //height: ~'calc(1.9142rem + 2px)';
         ///height: ~'calc(@{btn-height} + 2px)';
         &:hover{
-            background-color: darken(@input-label-color,5%);
-            border: 1px solid darken(@input-label-color,5%);
-            outline: 1px solid darken(@input-label-color,5%);
+            background-color: darken(@input-label-font-color,5%);
+            border: 1px solid darken(@input-label-font-color,5%);
+            outline: 1px solid darken(@input-label-font-color,5%);
         }
-        
+
     }
-    
+
     &>span>i{
         position: absolute;
         float: right;
-        color: lighten(@input-font-color,30%);
+        color: saturate(@input-font-color, 90%);
         right: @padLat;
         font-size: @font-base;
         top: 1.6rem + @padSup;
@@ -122,7 +131,7 @@
         border-radius: 4px;
         right: 2px;
         bottom: -2em;
-        
+
         &>.arrow {
             border-bottom: 5px solid red;
             border-left: 5px solid transparent;
@@ -134,38 +143,30 @@
             width: 0;
         }
     }
-    .inp-margin-left();
 }
 
 .inp-input(@opc-type) when (@opc-type = 'text'){
     &>input[type="text"] {border-radius: @input-border-radius;}
+    .focus{border-radius: @input-border-radius + 1px;}
+    
+    &>input[type="text"]:focus,
+    .focus {
+        .inp-focus-scale();
+        .inp-focus-shadow();
+    }
+
     input[type="text"] {
         box-sizing: border-box;
         -webkit-box-sizing:border-box;
         -moz-box-sizing: border-box;
-        //    tap-highlight-color: rgba(255,255,255,0);
+        //-webkit-tap-highlight-color: rgba(255,255,255,0);
+        //tap-highlight-color: rgba(255,255,255,0);
         line-height: 1.2142em;
-        padding: @padSup (@padLat*3) @padSup @padLat;
         font-size: @font-base;
-        background: @input-background-color;
-        border: 1px solid @input-border-color;
-        color: @input-font-color;
         box-shadow: 0 0 0 0 transparent inset;
         -webkit-appearance: none;
         -webkit-transition: color .1s ease,border-color .1s ease;
         transition: color .1s ease,border-color .1s ease;
-
-        &:focus {
-            //        color: rgba(0,0,0,.95);
-            //        border-color: @input-focus-border-color;
-            background: darken(@input-background-color,-10%);
-            //-webkit-box-shadow: inset 1px 1px 7px 0 darken(@input-background-color,10%),0 0 8px @input-focus-shadow-color;
-            //box-shadow: inset 1px 1px 7px 0 darken(@input-background-color,10%),0 0 8px @input-focus-shadow-color;
-            border-top: 1px solid darken(@input-border-color, 10%);
-            border-bottom: 1px solid darken(@input-border-color, -5%);
-            border-left: 1px solid darken(@input-border-color, 10%);
-            border-right: 1px solid darken(@input-border-color, -5%);
-        }    
     }
 }
 
@@ -179,7 +180,7 @@
         }
     }
 }
-    
+
 .inp-input(@opc-type) when (@opc-type = 'radio'){
     input[type='radio']{
         vertical-align: middle;
@@ -195,11 +196,31 @@
 //
 ///* 4 *//* CONFIG MIXIN */
 .inp-margin-left() when (@input-margin-left = true) {
-    &>input[type="text"],.afix,.prefix,.postfix {
+    &>input,.afix,.prefix,.postfix,.set {
         margin-left: @input-margin-left-width;
+    }
+    &>input[type="text"],.afix,.prefix,.postfix {
         width: ~'calc(100% - @{input-margin-left-width})';
     }
-    & input{margin-left: @input-margin-left-width;}
+}
+
+.inp-focus-depth() when (@input-focus-depth = true) and (@input-focus-shadow = false) {
+    border: 1px solid darken(@input-border-color, 3%);
+    border-bottom-color: lighten(@input-border-color, 3%);
+    border-right-color: lighten(@input-border-color, 3%);
+    //border-left-color: darken(@input-border-color, 3%);
+    //border-bottom-width: 0;
+    //border-right-width: 0;
+}
+
+.inp-focus-scale() when (@input-focus-scale = true) {
+    -webkit-transform: scale(1.015);
+    -moz-transform: scale(1.015);
+}
+
+.inp-focus-shadow() when (@input-focus-shadow = true) {
+    box-shadow: 0 0 5px fade(@input-shadow-color, 30%);
+    border: 1px solid fade(@input-shadow-color, 30%);
 }
 
 .inp-reset(){
@@ -239,6 +260,9 @@
 
         &>.button{
             padding: 0;
+            overflow: hidden;
+            background-color: @input-label-font-color;
+            border-color: @input-label-font-color;
         }
     }
 
@@ -270,6 +294,11 @@
         -webkit-border-bottom-right-radius: @input-border-radius;
         border-left: none;
     }
+    
+    .afix>input[type="text"]{
+        border-right: none;
+        border-left: none;
+    }
 }
 //
 ///* 5 *//* PRECONFIGURED PATTERNS */
@@ -283,10 +312,25 @@
         .inp-afix();
     }
 }
+
+.input-general(){
+    input[type="text"] {
+        padding: @padSup (@padLat*3) @padSup @padLat;
+        background: @input-background-color;
+        border: 1px solid @input-border-color;
+        color: @input-font-color;
+        
+        &:focus {
+            background: lighten(@input-background-color, 10%);
+            .inp-focus-depth();
+        }
+    }
+}
 //
 ///* 6 *//* INITIALIZED PATTERNS */
 .input-init(){
     .inputs-field();
+    .input-general();
 }
 //
 /* cmp input -------- [ OK ] */@state: OK;

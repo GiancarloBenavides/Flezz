@@ -2084,3 +2084,1683 @@ section {
 li {
   display: inline-block;
 }
+/* button default init */
+.button-round-primary {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.button-round-primary > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #286090;
+  color: white;
+  border: 1px solid transparent;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 2.5em;
+  text-transform: capitalize;
+}
+.button-round-primary > a:hover {
+  background-color: #1e5380;
+  border-color: rgba(0, 0, 0, 0);
+}
+.button-round-primary > a:active {
+  border-width: 0;
+  margin: 1px;
+}
+.button-round-secondary {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.button-round-secondary > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #b9b9b9;
+  color: white;
+  border: 1px solid transparent;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 2.5em;
+  text-transform: capitalize;
+}
+.button-round-secondary > a:hover {
+  background-color: #b0a8a8;
+  border-color: rgba(0, 0, 0, 0);
+}
+.button-round-secondary > a:active {
+  border-width: 0;
+  margin: 1px;
+}
+.button-round-success {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.button-round-success > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #449d44;
+  color: white;
+  border: 1px solid transparent;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 2.5em;
+  text-transform: capitalize;
+}
+.button-round-success > a:hover {
+  background-color: #379037;
+  border-color: rgba(0, 0, 0, 0);
+}
+.button-round-success > a:active {
+  border-width: 0;
+  margin: 1px;
+}
+.button-round-danger {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.button-round-danger > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #d9534f;
+  color: white;
+  border: 1px solid transparent;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 2.5em;
+  text-transform: capitalize;
+}
+.button-round-danger > a:hover {
+  background-color: #da3934;
+  border-color: rgba(0, 0, 0, 0);
+}
+.button-round-danger > a:active {
+  border-width: 0;
+  margin: 1px;
+}
+.button-primary {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.button-primary > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #286090;
+  color: white;
+  border: 1px solid transparent;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0;
+  text-transform: capitalize;
+}
+.button-primary > a:hover {
+  background-color: #1e5380;
+  border-color: rgba(0, 0, 0, 0);
+}
+.button-primary > a:active {
+  border-width: 0;
+  margin: 1px;
+}
+.button-secondary {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.button-secondary > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #b9b9b9;
+  color: white;
+  border: 1px solid transparent;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0;
+  text-transform: capitalize;
+}
+.button-secondary > a:hover {
+  background-color: #b0a8a8;
+  border-color: rgba(0, 0, 0, 0);
+}
+.button-secondary > a:active {
+  border-width: 0;
+  margin: 1px;
+}
+.button-success {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.button-success > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #449d44;
+  color: white;
+  border: 1px solid transparent;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0;
+  text-transform: capitalize;
+}
+.button-success > a:hover {
+  background-color: #379037;
+  border-color: rgba(0, 0, 0, 0);
+}
+.button-success > a:active {
+  border-width: 0;
+  margin: 1px;
+}
+.button-danger {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.button-danger > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #d9534f;
+  color: white;
+  border: 1px solid transparent;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0;
+  text-transform: capitalize;
+}
+.button-danger > a:hover {
+  background-color: #da3934;
+  border-color: rgba(0, 0, 0, 0);
+}
+.button-danger > a:active {
+  border-width: 0;
+  margin: 1px;
+}
+.button-expanded-primary {
+  display: block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.button-expanded-primary > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #286090;
+  color: white;
+  border: 1px solid transparent;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0;
+  text-transform: capitalize;
+}
+.button-expanded-primary > a:hover {
+  background-color: #1e5380;
+  border-color: rgba(0, 0, 0, 0);
+}
+.button-expanded-primary > a:active {
+  border-width: 0;
+  margin: 1px;
+}
+.button-expanded-secondary {
+  display: block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.button-expanded-secondary > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #b9b9b9;
+  color: white;
+  border: 1px solid transparent;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0;
+  text-transform: capitalize;
+}
+.button-expanded-secondary > a:hover {
+  background-color: #b0a8a8;
+  border-color: rgba(0, 0, 0, 0);
+}
+.button-expanded-secondary > a:active {
+  border-width: 0;
+  margin: 1px;
+}
+.button-expanded-success {
+  display: block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.button-expanded-success > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #449d44;
+  color: white;
+  border: 1px solid transparent;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0;
+  text-transform: capitalize;
+}
+.button-expanded-success > a:hover {
+  background-color: #379037;
+  border-color: rgba(0, 0, 0, 0);
+}
+.button-expanded-success > a:active {
+  border-width: 0;
+  margin: 1px;
+}
+.button-expanded-danger {
+  display: block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.button-expanded-danger > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #d9534f;
+  color: white;
+  border: 1px solid transparent;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0;
+  text-transform: capitalize;
+}
+.button-expanded-danger > a:hover {
+  background-color: #da3934;
+  border-color: rgba(0, 0, 0, 0);
+}
+.button-expanded-danger > a:active {
+  border-width: 0;
+  margin: 1px;
+}
+[data-state*="disabled"] > a,
+[data-state*="disabled"] > a:hover,
+[data-state*="disabled"] > a:active {
+  background-color: #eeeeee !important;
+  color: #919191 !important;
+  cursor: not-allowed !important;
+  border-color: #eeeeee !important;
+  text-shadow: none !important;
+  background-image: none !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 1px 1px rgba(0, 0, 0, 0.2) !important;
+  border-width: 1px !important;
+  margin: 0 !important;
+}
+/* button check */
+.mostrar {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.mostrar > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #e0e0e0;
+  color: black;
+  border: 1px solid #c7c7c7;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0.35rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 #dddddd;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(224, 224, 224, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.mostrar > a:hover {
+  background-color: #d5d1d1;
+  border-color: #b3b3b3;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(0, 0, 0, 0.07) 100%);
+}
+.mostrar > a:active {
+  border-color: #c0c0c0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.07) 0, rgba(224, 224, 224, 0.25) 22%, rgba(224, 224, 224, 0.25) 78%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.mostrar > a {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+.mostrar > a:active {
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.aceptar {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.aceptar > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #286090;
+  color: white;
+  border: 1px solid #204d74;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0.35rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.aceptar > a:hover {
+  background-color: #1e5380;
+  border-color: #183956;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(0, 0, 0, 0.07) 100%);
+}
+.aceptar > a:active {
+  border-color: #1d476a;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.07) 0, rgba(40, 96, 144, 0.25) 22%, rgba(40, 96, 144, 0.25) 78%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.enviar {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.enviar > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #449d44;
+  color: white;
+  border: 1px solid #398439;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0.35rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(68, 157, 68, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.enviar > a:hover {
+  background-color: #379037;
+  border-color: #2e692e;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(0, 0, 0, 0.07) 100%);
+}
+.enviar > a:active {
+  border-color: #357b35;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.07) 0, rgba(68, 157, 68, 0.25) 22%, rgba(68, 157, 68, 0.25) 78%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.consultar {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.consultar > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #31b0d5;
+  color: white;
+  border: 1px solid #269abc;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0.35rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(49, 176, 213, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.consultar > a:hover {
+  background-color: #22a4ca;
+  border-color: #20809c;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(0, 0, 0, 0.07) 100%);
+}
+.consultar > a:active {
+  border-color: #2492b1;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.07) 0, rgba(49, 176, 213, 0.25) 22%, rgba(49, 176, 213, 0.25) 78%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.calcular {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.calcular > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #ec971f;
+  color: white;
+  border: 1px solid #d58412;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0.35rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(236, 151, 31, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.calcular > a:hover {
+  background-color: #e58b0d;
+  border-color: #b26e0f;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(0, 0, 0, 0.07) 100%);
+}
+.calcular > a:active {
+  border-color: #c97d11;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.07) 0, rgba(236, 151, 31, 0.25) 22%, rgba(236, 151, 31, 0.25) 78%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.borrar {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.borrar > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #d9534f;
+  color: white;
+  border: 1px solid #d33632;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0.35rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(217, 83, 79, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.borrar > a:hover {
+  background-color: #da3934;
+  border-color: #b72c27;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(0, 0, 0, 0.07) 100%);
+}
+.borrar > a:active {
+  border-color: #cc312c;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.07) 0, rgba(217, 83, 79, 0.25) 22%, rgba(217, 83, 79, 0.25) 78%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.mostrar-semi {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.mostrar-semi > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #e0e0e0;
+  color: black;
+  border: 1px solid #c7c7c7;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0.35rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 #dddddd;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(224, 224, 224, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.mostrar-semi > a:hover {
+  background-color: #d5d1d1;
+  border-color: #b3b3b3;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(0, 0, 0, 0.07) 100%);
+}
+.mostrar-semi > a:active {
+  border-color: #c0c0c0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.07) 0, rgba(224, 224, 224, 0.25) 22%, rgba(224, 224, 224, 0.25) 78%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.mostrar-semi > a {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+.mostrar-semi > a:active {
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.aceptar-semi {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.aceptar-semi > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #286090;
+  color: white;
+  border: 1px solid #204d74;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0.35rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.aceptar-semi > a:hover {
+  background-color: #1e5380;
+  border-color: #183956;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(0, 0, 0, 0.07) 100%);
+}
+.aceptar-semi > a:active {
+  border-color: #1d476a;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.07) 0, rgba(40, 96, 144, 0.25) 22%, rgba(40, 96, 144, 0.25) 78%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.enviar-semi {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.enviar-semi > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #449d44;
+  color: white;
+  border: 1px solid #398439;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0.35rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(68, 157, 68, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.enviar-semi > a:hover {
+  background-color: #379037;
+  border-color: #2e692e;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(0, 0, 0, 0.07) 100%);
+}
+.enviar-semi > a:active {
+  border-color: #357b35;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.07) 0, rgba(68, 157, 68, 0.25) 22%, rgba(68, 157, 68, 0.25) 78%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.consultar-semi {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.consultar-semi > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #31b0d5;
+  color: white;
+  border: 1px solid #269abc;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0.35rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(49, 176, 213, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.consultar-semi > a:hover {
+  background-color: #22a4ca;
+  border-color: #20809c;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(0, 0, 0, 0.07) 100%);
+}
+.consultar-semi > a:active {
+  border-color: #2492b1;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.07) 0, rgba(49, 176, 213, 0.25) 22%, rgba(49, 176, 213, 0.25) 78%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.calcular-semi {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.calcular-semi > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #ec971f;
+  color: white;
+  border: 1px solid #d58412;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0.35rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(236, 151, 31, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.calcular-semi > a:hover {
+  background-color: #e58b0d;
+  border-color: #b26e0f;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(0, 0, 0, 0.07) 100%);
+}
+.calcular-semi > a:active {
+  border-color: #c97d11;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.07) 0, rgba(236, 151, 31, 0.25) 22%, rgba(236, 151, 31, 0.25) 78%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.borrar-semi {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.borrar-semi > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #d9534f;
+  color: white;
+  border: 1px solid #d33632;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0.35rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(217, 83, 79, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.borrar-semi > a:hover {
+  background-color: #da3934;
+  border-color: #b72c27;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(0, 0, 0, 0.07) 100%);
+}
+.borrar-semi > a:active {
+  border-color: #cc312c;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.07) 0, rgba(217, 83, 79, 0.25) 22%, rgba(217, 83, 79, 0.25) 78%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+div[class*=semi] a {
+  background-image: none !important;
+}
+.mostrar-plain {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.mostrar-plain > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #b9b9b9;
+  color: black;
+  border: 1px solid transparent;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0;
+  text-transform: capitalize;
+}
+.mostrar-plain > a:hover {
+  background-color: #b0a8a8;
+  border-color: rgba(0, 0, 0, 0);
+}
+.mostrar-plain > a:active {
+  border-width: 0;
+  margin: 1px;
+}
+.aceptar-plain {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.aceptar-plain > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #286090;
+  color: white;
+  border: 1px solid transparent;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0;
+  text-transform: capitalize;
+}
+.aceptar-plain > a:hover {
+  background-color: #1e5380;
+  border-color: rgba(0, 0, 0, 0);
+}
+.aceptar-plain > a:active {
+  border-width: 0;
+  margin: 1px;
+}
+.enviar-plain {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.enviar-plain > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #449d44;
+  color: white;
+  border: 1px solid transparent;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0;
+  text-transform: capitalize;
+}
+.enviar-plain > a:hover {
+  background-color: #379037;
+  border-color: rgba(0, 0, 0, 0);
+}
+.enviar-plain > a:active {
+  border-width: 0;
+  margin: 1px;
+}
+.consultar-plain {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.consultar-plain > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #31b0d5;
+  color: white;
+  border: 1px solid transparent;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0;
+  text-transform: capitalize;
+}
+.consultar-plain > a:hover {
+  background-color: #22a4ca;
+  border-color: rgba(0, 0, 0, 0);
+}
+.consultar-plain > a:active {
+  border-width: 0;
+  margin: 1px;
+}
+.calcular-plain {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.calcular-plain > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #f6b401;
+  color: white;
+  border: 1px solid transparent;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0;
+  text-transform: capitalize;
+}
+.calcular-plain > a:hover {
+  background-color: #dea200;
+  border-color: rgba(0, 0, 0, 0);
+}
+.calcular-plain > a:active {
+  border-width: 0;
+  margin: 1px;
+}
+.borrar-plain {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.borrar-plain > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #cf2a0e;
+  color: white;
+  border: 1px solid transparent;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0;
+  text-transform: capitalize;
+}
+.borrar-plain > a:hover {
+  background-color: #bc2207;
+  border-color: rgba(0, 0, 0, 0);
+}
+.borrar-plain > a:active {
+  border-width: 0;
+  margin: 1px;
+}
+.nueve {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.nueve > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1.5rem;
+  padding: 0.9rem 1.5rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #286090;
+  color: white;
+  border: 1px solid #204d74;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0.6rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.nueve > a:hover {
+  background-color: #1e5380;
+  border-color: #183956;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(0, 0, 0, 0.07) 100%);
+}
+.nueve > a:active {
+  border-color: #1d476a;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.07) 0, rgba(40, 96, 144, 0.25) 22%, rgba(40, 96, 144, 0.25) 78%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.ocho {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.ocho > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1.4rem;
+  padding: 0.77rem 1.35rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #286090;
+  color: white;
+  border: 1px solid #204d74;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0.55rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.ocho > a:hover {
+  background-color: #1e5380;
+  border-color: #183956;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(0, 0, 0, 0.07) 100%);
+}
+.ocho > a:active {
+  border-color: #1d476a;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.07) 0, rgba(40, 96, 144, 0.25) 22%, rgba(40, 96, 144, 0.25) 78%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.siete {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.siete > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #286090;
+  color: white;
+  border: 1px solid #204d74;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0.5rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.siete > a:hover {
+  background-color: #1e5380;
+  border-color: #183956;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(0, 0, 0, 0.07) 100%);
+}
+.siete > a:active {
+  border-color: #1d476a;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.07) 0, rgba(40, 96, 144, 0.25) 22%, rgba(40, 96, 144, 0.25) 78%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.seis {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.seis > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1.2rem;
+  padding: 0.54rem 1.05rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #286090;
+  color: white;
+  border: 1px solid #204d74;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0.45rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.seis > a:hover {
+  background-color: #1e5380;
+  border-color: #183956;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(0, 0, 0, 0.07) 100%);
+}
+.seis > a:active {
+  border-color: #1d476a;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.07) 0, rgba(40, 96, 144, 0.25) 22%, rgba(40, 96, 144, 0.25) 78%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.cinco {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.cinco > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1.1rem;
+  padding: 0.44rem 0.9rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #286090;
+  color: white;
+  border: 1px solid #204d74;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0.4rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.cinco > a:hover {
+  background-color: #1e5380;
+  border-color: #183956;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(0, 0, 0, 0.07) 100%);
+}
+.cinco > a:active {
+  border-color: #1d476a;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.07) 0, rgba(40, 96, 144, 0.25) 22%, rgba(40, 96, 144, 0.25) 78%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.cuatro {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.cuatro > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #286090;
+  color: white;
+  border: 1px solid #204d74;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0.35rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.cuatro > a:hover {
+  background-color: #1e5380;
+  border-color: #183956;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(0, 0, 0, 0.07) 100%);
+}
+.cuatro > a:active {
+  border-color: #1d476a;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.07) 0, rgba(40, 96, 144, 0.25) 22%, rgba(40, 96, 144, 0.25) 78%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.tres {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.tres > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 0.9rem;
+  padding: 0.27rem 0.6rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #286090;
+  color: white;
+  border: 1px solid #204d74;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0.3rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.tres > a:hover {
+  background-color: #1e5380;
+  border-color: #183956;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(0, 0, 0, 0.07) 100%);
+}
+.tres > a:active {
+  border-color: #1d476a;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.07) 0, rgba(40, 96, 144, 0.25) 22%, rgba(40, 96, 144, 0.25) 78%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.dos {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.dos > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 0.8rem;
+  padding: 0.2rem 0.45rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #286090;
+  color: white;
+  border: 1px solid #204d74;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0.25rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.dos > a:hover {
+  background-color: #1e5380;
+  border-color: #183956;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(0, 0, 0, 0.07) 100%);
+}
+.dos > a:active {
+  border-color: #1d476a;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.07) 0, rgba(40, 96, 144, 0.25) 22%, rgba(40, 96, 144, 0.25) 78%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.uno {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.uno > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 0.7rem;
+  padding: 0.14rem 0.3rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #286090;
+  color: white;
+  border: 1px solid #204d74;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0.2rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.uno > a:hover {
+  background-color: #1e5380;
+  border-color: #183956;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(0, 0, 0, 0.07) 100%);
+}
+.uno > a:active {
+  border-color: #1d476a;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.07) 0, rgba(40, 96, 144, 0.25) 22%, rgba(40, 96, 144, 0.25) 78%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.cero {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.cero > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 0.6rem;
+  padding: 0.09rem 0.15rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #286090;
+  color: white;
+  border: 1px solid #204d74;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0.15rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.cero > a:hover {
+  background-color: #1e5380;
+  border-color: #183956;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(0, 0, 0, 0.07) 100%);
+}
+.cero > a:active {
+  border-color: #1d476a;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.07) 0, rgba(40, 96, 144, 0.25) 22%, rgba(40, 96, 144, 0.25) 78%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.radius {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.radius > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #286090;
+  color: white;
+  border: 1px solid transparent;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0.35rem;
+  text-transform: capitalize;
+}
+.radius > a:hover {
+  background-color: #1e5380;
+  border-color: rgba(0, 0, 0, 0);
+}
+.radius > a:active {
+  border-width: 0;
+  margin: 1px;
+}
+.round {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.round > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #286090;
+  color: white;
+  border: 1px solid transparent;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 2.2em;
+  text-transform: capitalize;
+}
+.round > a:hover {
+  background-color: #1e5380;
+  border-color: rgba(0, 0, 0, 0);
+}
+.round > a:active {
+  border-width: 0;
+  margin: 1px;
+}
+.square {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.square > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #286090;
+  color: white;
+  border: 1px solid transparent;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0;
+  text-transform: capitalize;
+}
+.square > a:hover {
+  background-color: #1e5380;
+  border-color: rgba(0, 0, 0, 0);
+}
+.square > a:active {
+  border-width: 0;
+  margin: 1px;
+}
+.expanded {
+  margin-top: 10px;
+  display: block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+.expanded > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1.1rem;
+  padding: 0.44rem 0.9rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #286090;
+  color: white;
+  border: 1px solid transparent;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0;
+  text-transform: capitalize;
+}
+.expanded > a:hover {
+  background-color: #1e5380;
+  border-color: rgba(0, 0, 0, 0);
+}
+.expanded > a:active {
+  border-width: 0;
+  margin: 1px;
+}
+div[class^=btn] {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1px;
+}
+div[class^=btn] > a {
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 1rem;
+  padding: 0.35rem 0.75rem;
+  display: block;
+  line-height: 1.42857143;
+  background-color: #ec971f;
+  color: white;
+  border: 1px solid #d58412;
+  text-decoration: none;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0.35rem;
+  text-transform: capitalize;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(236, 151, 31, 0.3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+div[class^=btn] > a:hover {
+  background-color: #e58b0d;
+  border-color: #b26e0f;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(0, 0, 0, 0.07) 100%);
+}
+div[class^=btn] > a:active {
+  border-color: #c97d11;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.07) 0, rgba(236, 151, 31, 0.25) 22%, rgba(236, 151, 31, 0.25) 78%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+div[class^=btn] a {
+  background-image: none !important;
+}
+/* color check   ---- [ OK ] */

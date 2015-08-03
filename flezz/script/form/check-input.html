@@ -6,7 +6,7 @@
     <meta name="description" content="Demo Flezz">
     <meta name="author" content="Giancarlo Ortiz">
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="ChekInput.css">
+    <link rel="stylesheet" href="check-input.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <![CDATA[
         /*
@@ -87,6 +87,9 @@
                         <span class="button"><button>name_button</button></span>
                     </div>
                 </div>
+                
+                <!-- INPUT NO FIELD -->
+                <input class='noField' type="text" placeholder="input without field" data-tooltip="tip_one">
 
                 <!-- CHECKBOX -->
                 <div class="field">
@@ -96,8 +99,8 @@
 
                 <!-- CHECKBOX GROUP-->
                 <div class="field">
+                    <p>Name group</p>   
                     <div class="set">
-                        <div>Name group</div>
                         <input id="checkbox-one" type="checkbox" >
                         <label for="checkbox-one" data-tooltip="tip_one">name_field_one</label><br>
                         <input id="checkbox-one" type="checkbox" >
@@ -107,7 +110,7 @@
 
                 <!-- RADIO -->
                 <div class="field">
-                    <div>Choose Your Option</div>
+                    <p>Choose Your Option</p>
                     <div class="set">
                         <label for="one"><input type="radio" name="option" value="one" id="one">name_opcion_one</label>
                         <label for="two"><input type="radio" name="option" value="two" id="two">name_opcion_two</label>
@@ -115,5 +118,7 @@
                 </div>
             </form>
         </section>
+        <script src="../vendor/jquery-2.1.0.js"></script>
+        <script src="flezz.input.js"></script>
     </body>
 </html>

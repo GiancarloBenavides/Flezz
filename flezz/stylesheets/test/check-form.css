@@ -7,96 +7,16 @@
 /* eql other -------- [ OK ] */
 /* include Eql ------ [ OK ] */
 /* dsn others ------- [ OK ] */
-/* dsn others ------- [ OK ] */
+/* dsn function ----- [ OK ] */
 /* dsn normalize301 - [ OK ] */
-/* dsn others ------- [ OK ] */
+/* dsn start -------- [ OK ] */
 /* include dsn ------ [ OK ] */
-/* cmp btn ---------- [ OK ] */
-/* dropdown cmp -------- [ OK ] */
-/* tabs cmp ------- [ OK ] */
-/* input cmp ------ [ OK ] */
-div[class|="tile"] {
-  float: left;
-  margin-right: 8px;
-  margin-bottom: 8px;
-  text-align: center;
-  padding: 0;
-  overflow: hidden;
-  perspective: 0;
-  -webkit-perspective: 0;
-  transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
-  transition: transform 0.2s;
-  -webkit-transition: -webkit-transform 0.2s;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  outline: 0;
-  box-shadow: 1px 1px 2px #ABAAAD;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-div[class|="tile"] a {
-  display: block;
-  padding: 1px 10px;
-  margin: 0;
-  float: none;
-  height: 100%;
-  text-decoration: none;
-  border: 2px solid transparent;
-  box-sizing: border-box;
-  color: white;
-  -moz-transition: background-color 200ms ease-out;
-  -o-transition: background-color 200ms ease-out;
-  -webkit-transition: background-color 200ms ease-out;
-  transition: background-color 200ms ease-out;
-}
-div[class|="tile"] a:hover,
-div[class|="tile"] a:active {
-  background-color: #1a1d50;
-}
-div[class|="tile"] a:focus {
-  border: 2px solid white;
-  outline: 0;
-}
-div[class|="tile"] a:active {
-  border: 4px solid rgba(1, 1, 1, 0.1);
-  border-bottom: 2px solid rgba(2, 2, 2, 0.2);
-}
-div[class|="tile"] a > i {
-  margin-top: 15px;
-  font-size: 2.5em;
-  color: #ffffff;
-  text-shadow: 2px 1px 0px rgba(255, 255, 255, 0.3), 4px 3px 0px rgba(0, 0, 0, 0.2);
-}
-div[class|="tile"] a > p {
-  font-family: 'OpenSansRegular';
-  text-transform: lowercase;
-  font-size: 1.4em;
-  margin: 5px 0;
-}
-div[class|="tile"] a > small {
-  text-transform: capitalize;
-}
-div[class$="mid-s"] {
-  width: 60px;
-  height: 60px;
-}
-div[class$="one-s"] {
-  width: 128px;
-  height: 128px;
-}
-div[class$="two-h"] {
-  width: 264px;
-  height: 128px;
-}
-div[class$="two-v"] {
-  width: 128px;
-  height: 264px;
-}
-/* name_module cmp -------- [ OK ] */
+/* cmp button ------- [ OK ] */
+/* cmp dropdown ----- [ OK ] */
+/* cmp gallery ------ [ OK ] */
+/* cmp tab ---------- [ OK ] */
+/* cmp input -------- [ OK ] */
+/* cmp tile --------- [ OK ] */
 /* include cmp ------ [ OK ] */
 /* include mixin ---- [ OK ] */
 /* include picture -- [ OK ] */
@@ -1765,6 +1685,7 @@ div[class$="two-v"] {
   font-weight: normal;
   font-variant: normal;
   text-decoration: none;
+  line-height: 1;
   width: 1em;
   text-align: center;
   text-rendering: auto;
@@ -1783,6 +1704,7 @@ div[class$="two-v"] {
   font-weight: normal;
   font-variant: normal;
   text-decoration: none;
+  line-height: 1;
   width: 1em;
   text-align: center;
   text-rendering: auto;
@@ -1802,6 +1724,7 @@ div[class$="two-v"] {
   font-weight: normal;
   font-variant: normal;
   text-decoration: none;
+  line-height: 1;
   width: 1em;
   text-align: center;
   text-rendering: auto;
@@ -2075,11 +1998,10 @@ body {
 .flezz-scroll > .scroll-bar {
   background: rgba(2, 2, 2, 0.2);
   position: absolute;
-  width: 8px;
+  width: 7px;
   right: 1px;
   top: 1px;
   bottom: 1px;
-  /* Target only IE7 and IE8 with this hack */
   visibility: hidden\9;
   opacity: .01;
   -webkit-transition: .2s;
@@ -2089,7 +2011,11 @@ body {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  margin: 10px 0 10px 12px;
+  margin: 10px 0 10px 13px;
+}
+.flezz-scroll > .scroll-bar:hover,
+.flezz-scroll > .scroll-bar:active {
+  width: 10.5px;
 }
 .flezz-scroll > .scroll-bar > .scroll-slider {
   background: #333;
@@ -2103,12 +2029,19 @@ body {
 .flezz-scroll:hover > .scroll-bar,
 .scroll-bar.active,
 .scroll-bar.flashed {
-  /* Target only IE7 and IE8 with this hack */
   visibility: visible\9;
   opacity: 0.99;
 }
 .has-scrollbar > .scroll-content::-webkit-scrollbar {
   display: block;
+}
+.bar-min > .scroll-content {
+  padding: 0;
+}
+.bar-min > .scroll-bar,
+.bar-min > .scroll-bar:hover,
+.bar-min > .scroll-bar:active {
+  width: 4px;
 }
 ul {
   margin: 0;
@@ -2151,167 +2084,325 @@ section {
 li {
   display: inline-block;
 }
-div[class|="tile"] {
-  float: left;
-  margin-right: 8px;
-  margin-bottom: 8px;
+form {
+  padding: 40px;
+  background-color: #efefef;
+  border-radius: 10px;
+  border: 1px solid #285079;
+}
+.user {
+  line-height: 0.75em;
+  vertical-align: -15%;
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-decoration: none;
+  line-height: 1;
+  width: 1em;
   text-align: center;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+  font-size: 1.33333333em;
+  color: white;
+  display: inline-block;
+}
+.user:before {
+  content: "\f007";
+}
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+.group {
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #fafafa;
+}
+.group input {
+  margin-bottom: 5px;
+}
+.afix,
+.prefix,
+.postfix {
+  display: table;
+  position: relative;
+  border-collapse: separate;
+  box-sizing: border-box;
+}
+.afix > span,
+.prefix > span,
+.postfix > span {
+  white-space: nowrap;
+  background-color: #cbcbcb;
+  padding: 0 10px;
+  margin: 0;
+  color: white;
+  display: table-cell;
+  border: 1px solid #cbcbcb;
+  width: 1%;
+  vertical-align: middle;
+}
+.afix > input,
+.prefix > input,
+.postfix > input {
+  display: table-cell;
+  margin: 0;
+  float: left;
+  width: 100% !important;
+}
+.afix > .button,
+.prefix > .button,
+.postfix > .button {
   padding: 0;
-  overflow: hidden;
-  perspective: 0;
-  -webkit-perspective: 0;
-  transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
-  transition: transform 0.2s;
-  -webkit-transition: -webkit-transform 0.2s;
+}
+.afix > input[type="text"],
+.prefix > input[type="text"],
+.afix > input[type="text"]:focus,
+.prefix > input[type="text"]:focus {
+  border-left-color: #cbcbcb !important;
+}
+.afix > input[type="text"],
+.postfix > input[type="text"],
+.afix > input[type="text"]:focus,
+.postfix > input[type="text"]:focus {
+  border-right-color: #cbcbcb !important;
+}
+.afix > span:first-child,
+.postfix > input[type="text"],
+.prefix > span {
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  border-right: none;
+}
+.afix > span:last-child,
+.prefix > input[type="text"],
+.postfix > span {
+  -webkit-border-top-right-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  border-left: none;
+}
+textarea {
+  width: calc(100% - 20px);
+  margin: 0 0 0 15px !important;
+  resize: vertical;
+  outline: 0;
+  border-color: #e5e5e5;
+}
+fieldset {
+  margin-bottom: 1em;
+  padding: 1em 2em;
+}
+.field {
+  position: relative;
+  clear: both;
+  margin: 0 0 1em;
+}
+.field input {
+  outline: 0;
+}
+.field input {
+  outline: 0;
+}
+.field label {
+  color: #205081;
+  font-family: "OpenSansBold", "RobotoBold", "Segoe WP", "Helvetica", sans-serif;
+  font-size: .7em;
+  text-transform: capitalize;
+}
+.field button {
+  font-size: 1rem;
+  font-family: 'OpenSansBold';
+  background-color: #205081;
+  color: #fafafa;
+  line-height: 1.2142em;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid #205081;
+  outline: 1px solid #205081;
+  white-space: nowrap;
+  display: table-cell;
+  width: auto;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+}
+.field button:hover {
+  background-color: #1b436d;
+  border: 1px solid #1b436d;
+  outline: 1px solid #1b436d;
+}
+.field > span > i {
+  position: absolute;
+  float: right;
+  color: #629cd8;
+  right: 0.75rem;
+  font-size: 1rem;
+  top: 1.95rem;
+}
+.field > .error {
+  position: absolute;
+  background-color: red;
+  color: white;
+  padding: 0 20px;
+  border-radius: 4px;
+  right: 2px;
+  bottom: -2em;
+}
+.field > .error > .arrow {
+  border-bottom: 5px solid red;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  height: 0;
+  position: absolute;
+  top: -5px;
+  right: 25px;
+  width: 0;
+}
+.field > input[type="text"],
+.field .afix,
+.field .prefix,
+.field .postfix {
+  margin-left: 15px;
+  width: calc(100% - 15px);
+}
+.field input {
+  margin-left: 15px;
+}
+.field > input,
+.field .afix,
+.field .prefix,
+.field .postfix {
+  margin-left: 15px;
+  width: calc(100% - 15px);
+}
+.field label {
+  color: #205081;
+  font-family: 'OpenSansBold';
+  font-size: .7em;
+  text-transform: capitalize;
+}
+.field button {
+  font-size: 0.5em;
+  font-family: 'OpenSansBold';
+  background-color: #205081;
+  color: #fafafa;
+  line-height: 1.2142em;
+  padding: .67861429em 1em;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  white-space: nowrap;
+  display: table-cell;
+  width: auto;
+  height: calc(1.9142rem + 2px);
+}
+.field > .error {
+  position: absolute;
+  background-color: red;
+  color: white;
+  padding: 0 10px;
+  border-radius: 2px;
+  right: 2px;
+  bottom: -2em;
+}
+.field > .error > .arrow {
+  border-bottom: 5px solid red;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  height: 0;
+  position: absolute;
+  top: -5px;
+  right: 5px;
+  width: 0;
+}
+.field > input[type="text"] {
+  border-radius: 10px;
+}
+.field .focus {
+  border-radius: 11px;
+}
+.field > input[type="text"]:focus,
+.field .focus {
+  -webkit-transform: scale(1.015);
+  -moz-transform: scale(1.015);
+}
+.field input[type="text"] {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  outline: 0;
-  box-shadow: 1px 1px 2px #ABAAAD;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  line-height: 1.2142em;
+  padding: 0.35rem 2.25rem 0.35rem 0.75rem;
+  font-size: 1rem;
+  background: #fafafa;
+  border: 1px solid #e5e5e5;
+  color: #205081;
+  box-shadow: 0 0 0 0 transparent inset;
+  -webkit-appearance: none;
+  -webkit-transition: color 0.1s ease, border-color 0.1s ease;
+  transition: color 0.1s ease, border-color 0.1s ease;
 }
-div[class|="tile"] a {
-  display: block;
-  padding: 1px 10px;
-  margin: 0;
-  float: none;
-  height: 100%;
-  text-decoration: none;
-  border: 2px solid transparent;
+.field input[type="text"]:focus {
+  background: #ffffff;
+  border: 2px solid #dddddd;
+  border-bottom-width: 0;
+  border-right-width: 0;
+}
+.field > input[type="text"] {
+  border-radius: 10px;
+}
+.field input[type="text"] {
   box-sizing: border-box;
-  color: white;
-  -moz-transition: background-color 200ms ease-out;
-  -o-transition: background-color 200ms ease-out;
-  -webkit-transition: background-color 200ms ease-out;
-  transition: background-color 200ms ease-out;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  line-height: 1.2142em;
+  padding: 0.35rem 0.75rem;
+  font-size: 1rem;
+  background: #fafafa;
+  border: 1px solid #e5e5e5;
+  color: rgba(0, 0, 0, 0.87);
+  box-shadow: 0 0 0 0 transparent inset;
+  -webkit-appearance: none;
+  -webkit-transition: color 0.1s ease, border-color 0.1s ease;
+  transition: color 0.1s ease, border-color 0.1s ease;
 }
-div[class|="tile"] a:hover,
-div[class|="tile"] a:active {
-  background-color: #1a1d50;
+.field input[type="text"]:focus {
+  background: #ffffff;
+  border-top: 1px solid #cbcbcb;
+  border-bottom: 1px solid #f2f2f2;
+  border-left: 1px solid #cbcbcb;
+  border-right: 1px solid #f2f2f2;
 }
-div[class|="tile"] a:focus {
-  border: 2px solid white;
-  outline: 0;
+.field input[type='checkbox'] {
+  vertical-align: middle;
 }
-div[class|="tile"] a:active {
-  border: 4px solid rgba(1, 1, 1, 0.1);
-  border-bottom: 2px solid rgba(2, 2, 2, 0.2);
-}
-div[class|="tile"] a > i {
-  margin-top: 15px;
-  font-size: 2.5em;
-  color: #ffffff;
-  text-shadow: 2px 1px 0px rgba(255, 255, 255, 0.3), 4px 3px 0px rgba(0, 0, 0, 0.2);
-}
-div[class|="tile"] a > p {
-  font-family: 'OpenSansRegular';
-  text-transform: lowercase;
-  font-size: 1.4em;
-  margin: 5px 0;
-}
-div[class|="tile"] a > small {
-  text-transform: capitalize;
-}
-div[class$="mid-s"] {
-  width: 60px;
-  height: 60px;
-}
-div[class$="one-s"] {
-  width: 128px;
-  height: 128px;
-}
-div[class$="two-h"] {
-  width: 264px;
-  height: 128px;
-}
-div[class$="two-v"] {
-  width: 128px;
-  height: 264px;
-}
-.flezz {
-  background-color: #1a1d50;
-}
-.flezz:hover {
-  background-color: white !important;
-}
-.flezz:hover p,
-.flezz:hover i {
-  color: #1a1d50;
-}
-.tiles {
+.field input[type='checkbox']::before {
   clear: both;
+  content: "\000a";
 }
-.tilerow {
-  float: left;
-  perspective: 0;
-  -webkit-perspective: 0;
-  transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
+.field input[type='checkbox'] {
+  vertical-align: middle;
+  margin: 0 0 0 15px;
 }
-.tile img {
-  border: 0;
-  background-size: cover;
+.field input[type='checkbox']::before {
+  clear: both;
+  content: "\000a";
 }
-.tileback {
-  padding: 0 !important;
-  border: 0 !important;
+.field input[type='radio'] {
+  vertical-align: middle;
 }
-.gianca {
-  width: 80px;
-  height: 80px;
-  background: url(shot/gianca.jpg) 0px -15px;
+.field input[type='radio']::before {
+  clear: both;
+  content: "\000a";
 }
-.carlos {
-  width: 75px;
-  height: 75px;
-  background: url(shot/carlos.jpg) -10px -10px;
+.field input[type='radio'] {
+  vertical-align: middle;
+  margin: 0 0 0 15px;
 }
-.firstcol,
-.secondcol,
-.thirdcol,
-.fourthcol,
-.fifthcol {
-  position: absolute;
+.field input[type='radio']::before {
+  clear: both;
+  content: "\000a";
 }
-.secondcol {
-  margin-left: 138px;
-}
-.thirdcol {
-  margin-left: 276px;
-}
-.fourthcol {
-  margin-left: 414px;
-}
-.fifthcol {
-  margin-left: 552px;
-}
-.tile h1,
-.tile h2,
-.tile h3,
-.tile h4,
-.tile h5,
-.tile h6 {
-  color: white;
-}
-.tile h1 {
-  font-size: 2.5em;
-  font-weight: 200;
-}
-.tile h2 {
-  font-size: 1.5em;
-  font-weight: 150;
-}
-div.mid > .tile-name {
-  font-size: 1.2em;
-  font-weight: 100;
-}
-.plus {
-  color: green;
-}
-.minus {
-  color: red;
-}
+/* color check   ---- [ OK ] */

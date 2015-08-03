@@ -2,7 +2,7 @@
 ///*          flezz framework 1.0           */
 ///******************************************/
 ///*  Name: dropdown
-///*  Version: 0.1.0
+///*  Version: 0.2.0
 ///*  Description: description dropdown
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org
@@ -22,35 +22,40 @@
 ///* PATH */
 //
 ///* Dependencies */
-@import 'equalize/_config.equalize.less';
+@import 'desing/_config.desing.less';
 //
 ///* 1 *//* CONFIG MODULES VARIABLES *///
 //
 ///* global variables */
 ///* general option */
-@Dropdown-width-auto: false;
-@Dropdown-depth: true;
-@Dropdown-select: false;
-///* size tabs */
-@Dropdown-width: 140px;
-@Dropdown-radius-width: 4px;
-@Dropdown-content-radius-width: 4px;
-@Dropdown-content-padding: 28px;
-@Dropdown-border-width: 1px;
-@Dropdown-gap: @Dropdown-border-width*2;
-@Dropdown-link-padding-topbottom: 10px;
-@Dropdown-link-padding-leftright: 15px;
-///* list dropdown */
-@Dropdown-bck-color-list: rgb(255, 255, 255);
-@Dropdown-font-color-list: rgb(32, 80, 129);
-@Dropdown-border-color-list: rgb(204, 204, 204);
-///* button dropdown */
-@Dropdown-bck-color: darken(@Dropdown-bck-color-list,10%);
-@Dropdown-font-color: lighten(@Dropdown-font-color-list,10%);
-@Dropdown-border-color: transparent;
+@dropdown-shadow: true;
+@dropdown-select: false;
+@dropdown-width-auto: false;
+///* dropdown size */
+@dropdown-width: 140px;
+@dropdown-radius-width: 4px;
+@dropdown-content-radius-width: 4px;
+@dropdown-content-padding: 28px;
+@dropdown-border-width: 1px;
+@dropdown-gap: @dropdown-border-width*2;
+@dropdown-link-padding-topbottom: 10px;
+@dropdown-link-padding-leftright: 15px;
+///* dropdown list */
+@dropdown-list-background-color: @white;
+@dropdown-list-font-color: @primary;
+@dropdown-list-border-color: darken(@dropdown-list-background-color, 20%);
+///* dropdown list hover */
+@dropdown-list-background-hover-color: darken(@dropdown-list-background-color,4%);
+@dropdown-list-font-hover-color: darken(@dropdown-list-font-color,7%);
+///* dropdown button */
+@dropdown-button-default-background-color: @dropdown-list-background-hover-color;
+@dropdown-button-default-font-color: @dropdown-list-font-hover-color;
+@dropdown-button-default-border-color: transparent;
 //
 ///* local variables */
-
+@dfl-btn-bck: @dropdown-button-default-background-color;
+@dfl-btn-color: @dropdown-button-default-font-color;
+@dfl-btn-border: @dropdown-button-default-border-color;
 //
 ///* 2 *//* ROAD MAP */
 // --------------------------------------------------
@@ -70,10 +75,11 @@
         display: none;
         margin: 0;
         padding: 0;
-        border: 1px solid @Dropdown-border-color-list;
-        background-color: @Dropdown-bck-color-list;
+        border: 1px solid @dropdown-list-border-color;
+        background-color: @dropdown-list-background-color;
         min-width: 160px;
         z-index: 900;
+        .drp-shadow();
         
         li {
             display: block;
@@ -88,11 +94,11 @@
             a {
                 padding: 7px 15px;
                 text-decoration: none;
-                color: @Dropdown-font-color-list;
+                color: @dropdown-list-font-color;
                 
                 &:hover {
-                    background-color: @Dropdown-bck-color;
-                    color: @Dropdown-font-color;
+                    background-color: @dropdown-list-background-hover-color;
+                    color: @dropdown-list-font-hover-color;
                 }
             }
         }
@@ -106,19 +112,23 @@
 }
 //
 ///* 4 *//* CONFIG MIXIN */
-.drp-select() when (@Dropdown-select = false) {
+.drp-select() when (@dropdown-select = false) {
     .user-select();
 }
 
 .drp-button(@drp-button) when (@drp-button = true) {
-    .btn-pattern-box (@Dropdown-font-color; @Dropdown-bck-color; @Dropdown-border-color; @size: 4);
+    .btn-pattern-box (@dfl-btn-color; @dfl-btn-bck; @dfl-btn-border; @size: 4);
 }
 
 .drp-button-disabled(@drp-button) when (@drp-button = true) {
     div.dropdown[data-state="disabled"] {
         cursor: not-allowed;      
-        .btn-pattern-box (@Dropdown-font-color; @Dropdown-bck-color; @Dropdown-border-color; @size: 4);
+        .btn-pattern-box (@dfl-btn-color; @dfl-btn-bck; @dfl-btn-border; @size: 4);
     }
+}
+
+.drp-shadow() when (@dropdown-shadow = true) {
+    box-shadow: 1px 2px 3px 0 rgba(34,36,38,.15);
 }
 //
 ///* 5 *//* PRECONFIGURED PATTERNS */
@@ -127,7 +137,7 @@
         .drp-dropdown(@drp-button); 
     }
     div.dropdown[data-state="open"] {
-        .arrow-selected(@arrow-down: 11px);
+        .arrow-selected(@bck-color: @dropdown-list-background-color; @border-color: @dropdown-list-border-color; @arrow-down: 11px);
         .caret {transform: rotate(180deg);}
     }
     .drp-button-disabled(@drp-button);

@@ -116,22 +116,22 @@ var gallery = (function () {
     
     getArrowPosition = function (typeRow, place, shotGap) {
         var left, ir1, ir2, ir3;
-        function padd(num) { return 4 + (shotGap * num); }
+        function padd(num) { return (shotGap * num); }
         switch (typeRow) {
         case 'big-left':
-            ir1 = 'calc(50% - ' + padd(3) + 'px)';
-            ir2 = 'calc(75% - ' + padd(2) + 'px)';
-            ir3 = 'calc(75% - ' + 4 + 'px)';
+            ir1 = 'calc(50% - ' + padd(4) + 'px)';
+            ir2 = 'calc(75% - ' + padd(3) + 'px)';
+            ir3 = 'calc(75% - ' + padd(1) + 'px)';
             break;
         case 'big-center':
-            ir1 = 'calc(25% - ' + padd(2) + 'px)';
-            ir2 = 'calc(75% - ' + padd(2) + 'px)';
-            ir3 = 'calc(75% - ' + 4 + 'px)';
+            ir1 = 'calc(25% - ' + padd(3) + 'px)';
+            ir2 = 'calc(75% - ' + padd(3) + 'px)';
+            ir3 = 'calc(75% - ' + padd(1) + 'px)';
             break;
         case 'big-right':
-            ir1 = 'calc(25% - ' + padd(2) + 'px)';
-            ir2 = 'calc(50% - ' + padd(1) + 'px)';
-            ir3 = 'calc(50% - ' + padd(-1) + 'px)';
+            ir1 = 'calc(25% - ' + padd(3) + 'px)';
+            ir2 = 'calc(50% - ' + padd(2) + 'px)';
+            ir3 = 'calc(50% - ' + padd(0) + 'px)';
             break;
         default:
             return '50%';
