@@ -27,7 +27,7 @@
 ///* 1 *//* CONFIG MODULES VARIABLES *///
 //
 ///* global variables */
-///* general option */
+///* tiles general option */
 @tiles-opacity: false;
 @tiles-background-change: true;
 @tiles-border-radius: false;
@@ -38,7 +38,9 @@
 @tiles-transition-time: 200ms;
 //
 ///* local variables */
+.tiles-local-var(){
 
+}
 //
 ///* 2 *//* ROAD MAP */
 // --------------------------------------------------
@@ -180,6 +182,7 @@
 //
 ///* 6 *//* INITIALIZED PATTERNS */
 .tiles-init() {
+    .tiles-local-var();
     .tiles-plain();
     .tls-tiles-width();
 }

@@ -1779,6 +1779,8 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 body {
   margin: 0;
@@ -1864,6 +1866,7 @@ figure {
 }
 hr {
   -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -1902,7 +1905,8 @@ button[disabled],
 html input[disabled] {
   cursor: default;
 }
-button input::-moz-focus-inner {
+button::-moz-focus-inner,
+input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
@@ -1916,6 +1920,8 @@ input[type="submit"] {
 }
 input[type="checkbox"],
 input[type="radio"] {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0;
 }
@@ -1972,6 +1978,26 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ul li {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #3b5998;
+  text-decoration: none;
+}
+a:hover {
+  outline: 0;
+  color: #0084b4;
+}
+input {
+  outline: 0;
 }
 .flezz-scroll {
   position: relative;
@@ -2043,27 +2069,6 @@ body {
 .bar-min > .scroll-bar:active {
   width: 4px;
 }
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-ul li {
-  margin: 0;
-  padding: 0;
-}
-a {
-  background-color: transparent;
-  color: #3b5998;
-  text-decoration: none;
-}
-a:hover {
-  outline: 0;
-  color: #0084b4;
-}
-input {
-  outline: 0;
-}
 body {
   background-color: #eeeeee;
   color: gray;
@@ -2073,13 +2078,10 @@ body section:last-child {
   margin-bottom: 400px;
 }
 section {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px 20% 10px 10%;
   background-color: #fafaee;
   border: 2px dashed #c7c7c7;
   padding: 30px;
-  margin-left: 20%;
-  margin-right: 10%;
 }
 li {
   display: inline-block;
@@ -2210,6 +2212,26 @@ fieldset {
 .field input {
   outline: 0;
 }
+.field > input,
+.field .afix,
+.field .prefix,
+.field .postfix,
+.field .set {
+  margin-left: 15px;
+}
+.field > input[type="text"],
+.field .afix,
+.field .prefix,
+.field .postfix {
+  width: calc(100% - 15px);
+}
+.field > input,
+.field .afix,
+.field .prefix,
+.field .postfix {
+  margin-left: 15px;
+  width: calc(100% - 15px);
+}
 .field label {
   color: #205081;
   font-family: "OpenSansBold", "RobotoBold", "Segoe WP", "Helvetica", sans-serif;
@@ -2239,7 +2261,7 @@ fieldset {
 .field > span > i {
   position: absolute;
   float: right;
-  color: #629cd8;
+  color: #0050a1;
   right: 0.75rem;
   font-size: 1rem;
   top: 1.95rem;
@@ -2259,26 +2281,9 @@ fieldset {
   border-right: 5px solid transparent;
   height: 0;
   position: absolute;
-  top: -5px;
+  top: -4px;
   right: 25px;
   width: 0;
-}
-.field > input[type="text"],
-.field .afix,
-.field .prefix,
-.field .postfix {
-  margin-left: 15px;
-  width: calc(100% - 15px);
-}
-.field input {
-  margin-left: 15px;
-}
-.field > input,
-.field .afix,
-.field .prefix,
-.field .postfix {
-  margin-left: 15px;
-  width: calc(100% - 15px);
 }
 .field label {
   color: #205081;
@@ -2334,21 +2339,11 @@ fieldset {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   line-height: 1.2142em;
-  padding: 0.35rem 2.25rem 0.35rem 0.75rem;
   font-size: 1rem;
-  background: #fafafa;
-  border: 1px solid #e5e5e5;
-  color: #205081;
   box-shadow: 0 0 0 0 transparent inset;
   -webkit-appearance: none;
   -webkit-transition: color 0.1s ease, border-color 0.1s ease;
   transition: color 0.1s ease, border-color 0.1s ease;
-}
-.field input[type="text"]:focus {
-  background: #ffffff;
-  border: 2px solid #dddddd;
-  border-bottom-width: 0;
-  border-right-width: 0;
 }
 .field > input[type="text"] {
   border-radius: 10px;

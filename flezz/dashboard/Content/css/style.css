@@ -1783,6 +1783,8 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 body {
   margin: 0;
@@ -1868,6 +1870,7 @@ figure {
 }
 hr {
   -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -1906,7 +1909,8 @@ button[disabled],
 html input[disabled] {
   cursor: default;
 }
-button input::-moz-focus-inner {
+button::-moz-focus-inner,
+input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
@@ -1920,6 +1924,8 @@ input[type="submit"] {
 }
 input[type="checkbox"],
 input[type="radio"] {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0;
 }
@@ -1976,6 +1982,26 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ul li {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #3b5998;
+  text-decoration: none;
+}
+a:hover {
+  outline: 0;
+  color: #0084b4;
+}
+input {
+  outline: 0;
 }
 .flezz-scroll {
   position: relative;
@@ -2047,52 +2073,32 @@ body {
 .bar-min > .scroll-bar:active {
   width: 4px;
 }
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-ul li {
-  margin: 0;
-  padding: 0;
-}
-a {
-  background-color: transparent;
-  color: #3b5998;
-  text-decoration: none;
-}
-a:hover {
-  outline: 0;
-  color: #0084b4;
-}
-input {
-  outline: 0;
-}
 .button-round-primary {
   display: inline-block;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  touch-action: manipulation;
   padding: 1px;
 }
 .button-round-primary > a {
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
-  font-size: 1.3rem;
-  padding: 0.65rem 1.2rem;
-  display: block;
-  line-height: 1.42857143;
-  background-color: #286090;
-  color: white;
-  border: 1px solid transparent;
   text-decoration: none;
+  display: block;
   -moz-transition: background-color 300ms ease-out;
   -o-transition: background-color 300ms ease-out;
   -webkit-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
   border-radius: 2.5em;
   text-transform: capitalize;
+  background-color: #286090;
+  color: white;
+  border: 1px solid transparent;
+  line-height: 1.42857143;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
 }
 .button-round-primary > a:hover {
   background-color: #1e5380;
@@ -2108,25 +2114,26 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  touch-action: manipulation;
   padding: 1px;
 }
 .button-round-secondary > a {
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
-  font-size: 1.3rem;
-  padding: 0.65rem 1.2rem;
-  display: block;
-  line-height: 1.42857143;
-  background-color: #b9b9b9;
-  color: white;
-  border: 1px solid transparent;
   text-decoration: none;
+  display: block;
   -moz-transition: background-color 300ms ease-out;
   -o-transition: background-color 300ms ease-out;
   -webkit-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
   border-radius: 2.5em;
   text-transform: capitalize;
+  background-color: #b9b9b9;
+  color: white;
+  border: 1px solid transparent;
+  line-height: 1.42857143;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
 }
 .button-round-secondary > a:hover {
   background-color: #b0a8a8;
@@ -2142,25 +2149,26 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  touch-action: manipulation;
   padding: 1px;
 }
 .button-round-success > a {
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
-  font-size: 1.3rem;
-  padding: 0.65rem 1.2rem;
-  display: block;
-  line-height: 1.42857143;
-  background-color: #449d44;
-  color: white;
-  border: 1px solid transparent;
   text-decoration: none;
+  display: block;
   -moz-transition: background-color 300ms ease-out;
   -o-transition: background-color 300ms ease-out;
   -webkit-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
   border-radius: 2.5em;
   text-transform: capitalize;
+  background-color: #449d44;
+  color: white;
+  border: 1px solid transparent;
+  line-height: 1.42857143;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
 }
 .button-round-success > a:hover {
   background-color: #379037;
@@ -2176,25 +2184,26 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  touch-action: manipulation;
   padding: 1px;
 }
 .button-round-danger > a {
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
-  font-size: 1.3rem;
-  padding: 0.65rem 1.2rem;
-  display: block;
-  line-height: 1.42857143;
-  background-color: #d9534f;
-  color: white;
-  border: 1px solid transparent;
   text-decoration: none;
+  display: block;
   -moz-transition: background-color 300ms ease-out;
   -o-transition: background-color 300ms ease-out;
   -webkit-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
   border-radius: 2.5em;
   text-transform: capitalize;
+  background-color: #d9534f;
+  color: white;
+  border: 1px solid transparent;
+  line-height: 1.42857143;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
 }
 .button-round-danger > a:hover {
   background-color: #da3934;
@@ -2210,25 +2219,26 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  touch-action: manipulation;
   padding: 1px;
 }
 .button-primary > a {
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
-  font-size: 1.3rem;
-  padding: 0.65rem 1.2rem;
-  display: block;
-  line-height: 1.42857143;
-  background-color: #286090;
-  color: white;
-  border: 1px solid transparent;
   text-decoration: none;
+  display: block;
   -moz-transition: background-color 300ms ease-out;
   -o-transition: background-color 300ms ease-out;
   -webkit-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
+  background-color: #286090;
+  color: white;
+  border: 1px solid transparent;
+  line-height: 1.42857143;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
 }
 .button-primary > a:hover {
   background-color: #1e5380;
@@ -2244,25 +2254,26 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  touch-action: manipulation;
   padding: 1px;
 }
 .button-secondary > a {
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
-  font-size: 1.3rem;
-  padding: 0.65rem 1.2rem;
-  display: block;
-  line-height: 1.42857143;
-  background-color: #b9b9b9;
-  color: white;
-  border: 1px solid transparent;
   text-decoration: none;
+  display: block;
   -moz-transition: background-color 300ms ease-out;
   -o-transition: background-color 300ms ease-out;
   -webkit-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
+  background-color: #b9b9b9;
+  color: white;
+  border: 1px solid transparent;
+  line-height: 1.42857143;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
 }
 .button-secondary > a:hover {
   background-color: #b0a8a8;
@@ -2278,25 +2289,26 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  touch-action: manipulation;
   padding: 1px;
 }
 .button-success > a {
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
-  font-size: 1.3rem;
-  padding: 0.65rem 1.2rem;
-  display: block;
-  line-height: 1.42857143;
-  background-color: #449d44;
-  color: white;
-  border: 1px solid transparent;
   text-decoration: none;
+  display: block;
   -moz-transition: background-color 300ms ease-out;
   -o-transition: background-color 300ms ease-out;
   -webkit-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
+  background-color: #449d44;
+  color: white;
+  border: 1px solid transparent;
+  line-height: 1.42857143;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
 }
 .button-success > a:hover {
   background-color: #379037;
@@ -2312,25 +2324,26 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  touch-action: manipulation;
   padding: 1px;
 }
 .button-danger > a {
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
-  font-size: 1.3rem;
-  padding: 0.65rem 1.2rem;
-  display: block;
-  line-height: 1.42857143;
-  background-color: #d9534f;
-  color: white;
-  border: 1px solid transparent;
   text-decoration: none;
+  display: block;
   -moz-transition: background-color 300ms ease-out;
   -o-transition: background-color 300ms ease-out;
   -webkit-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
+  background-color: #d9534f;
+  color: white;
+  border: 1px solid transparent;
+  line-height: 1.42857143;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
 }
 .button-danger > a:hover {
   background-color: #da3934;
@@ -2346,25 +2359,26 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  touch-action: manipulation;
   padding: 1px;
 }
 .button-expanded-primary > a {
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
-  font-size: 1.3rem;
-  padding: 0.65rem 1.2rem;
-  display: block;
-  line-height: 1.42857143;
-  background-color: #286090;
-  color: white;
-  border: 1px solid transparent;
   text-decoration: none;
+  display: block;
   -moz-transition: background-color 300ms ease-out;
   -o-transition: background-color 300ms ease-out;
   -webkit-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
+  background-color: #286090;
+  color: white;
+  border: 1px solid transparent;
+  line-height: 1.42857143;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
 }
 .button-expanded-primary > a:hover {
   background-color: #1e5380;
@@ -2380,25 +2394,26 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  touch-action: manipulation;
   padding: 1px;
 }
 .button-expanded-secondary > a {
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
-  font-size: 1.3rem;
-  padding: 0.65rem 1.2rem;
-  display: block;
-  line-height: 1.42857143;
-  background-color: #b9b9b9;
-  color: white;
-  border: 1px solid transparent;
   text-decoration: none;
+  display: block;
   -moz-transition: background-color 300ms ease-out;
   -o-transition: background-color 300ms ease-out;
   -webkit-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
+  background-color: #b9b9b9;
+  color: white;
+  border: 1px solid transparent;
+  line-height: 1.42857143;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
 }
 .button-expanded-secondary > a:hover {
   background-color: #b0a8a8;
@@ -2414,25 +2429,26 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  touch-action: manipulation;
   padding: 1px;
 }
 .button-expanded-success > a {
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
-  font-size: 1.3rem;
-  padding: 0.65rem 1.2rem;
-  display: block;
-  line-height: 1.42857143;
-  background-color: #449d44;
-  color: white;
-  border: 1px solid transparent;
   text-decoration: none;
+  display: block;
   -moz-transition: background-color 300ms ease-out;
   -o-transition: background-color 300ms ease-out;
   -webkit-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
+  background-color: #449d44;
+  color: white;
+  border: 1px solid transparent;
+  line-height: 1.42857143;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
 }
 .button-expanded-success > a:hover {
   background-color: #379037;
@@ -2448,25 +2464,26 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  touch-action: manipulation;
   padding: 1px;
 }
 .button-expanded-danger > a {
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
-  font-size: 1.3rem;
-  padding: 0.65rem 1.2rem;
-  display: block;
-  line-height: 1.42857143;
-  background-color: #d9534f;
-  color: white;
-  border: 1px solid transparent;
   text-decoration: none;
+  display: block;
   -moz-transition: background-color 300ms ease-out;
   -o-transition: background-color 300ms ease-out;
   -webkit-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
+  background-color: #d9534f;
+  color: white;
+  border: 1px solid transparent;
+  line-height: 1.42857143;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
 }
 .button-expanded-danger > a:hover {
   background-color: #da3934;
@@ -2482,10 +2499,10 @@ input {
   background-color: #eeeeee !important;
   color: #919191 !important;
   cursor: not-allowed !important;
-  border-color: #eeeeee !important;
+  border-color: transparent !important;
   text-shadow: none !important;
   background-image: none !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 1px 1px rgba(0, 0, 0, 0.2) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
   border-width: 1px !important;
   margin: 0 !important;
 }
@@ -2771,6 +2788,18 @@ div.dropdown[data-state="open"] > a:after {
 div.dropdown[data-state="open"] .caret {
   transform: rotate(180deg);
 }
+input[type="text"] {
+  padding: 0.09rem 0.45rem 0.09rem 0.15rem;
+  background: #f4f4f4;
+  border: 1px solid #d9d9d9;
+  color: #163758;
+}
+input[type="text"]:focus {
+  background: #ffffff;
+  border: 1px solid #d1d1d1;
+  border-bottom-color: #e1e1e1;
+  border-right-color: #e1e1e1;
+}
 .field {
   position: relative;
   clear: both;
@@ -2779,6 +2808,19 @@ div.dropdown[data-state="open"] .caret {
 .field input {
   outline: 0;
 }
+.field > input,
+.field .afix,
+.field .prefix,
+.field .postfix,
+.field .set {
+  margin-left: 15px;
+}
+.field > input[type="text"],
+.field .afix,
+.field .prefix,
+.field .postfix {
+  width: calc(100% - 15px);
+}
 .field label {
   color: #205081;
   font-family: "OpenSansBold", "RobotoBold", "Segoe WP", "Helvetica", sans-serif;
@@ -2786,12 +2828,12 @@ div.dropdown[data-state="open"] .caret {
   text-transform: capitalize;
 }
 .field button {
-  font-size: 1.2rem;
+  font-size: 0.6rem;
   font-family: 'OpenSansBold';
   background-color: #205081;
   color: #f4f4f4;
   line-height: 1.2142em;
-  padding: 0.54rem 1.05rem;
+  padding: 0.09rem 0.15rem;
   border: 1px solid #205081;
   outline: 1px solid #205081;
   white-space: nowrap;
@@ -2808,10 +2850,10 @@ div.dropdown[data-state="open"] .caret {
 .field > span > i {
   position: absolute;
   float: right;
-  color: #c2c2c2;
-  right: 1.05rem;
-  font-size: 1.2rem;
-  top: 2.14rem;
+  color: #00366e;
+  right: 0.15rem;
+  font-size: 0.6rem;
+  top: 1.69rem;
 }
 .field > .error {
   position: absolute;
@@ -2828,19 +2870,9 @@ div.dropdown[data-state="open"] .caret {
   border-right: 5px solid transparent;
   height: 0;
   position: absolute;
-  top: -5px;
+  top: -4px;
   right: 25px;
   width: 0;
-}
-.field > input[type="text"],
-.field .afix,
-.field .prefix,
-.field .postfix {
-  margin-left: 15px;
-  width: calc(100% - 15px);
-}
-.field input {
-  margin-left: 15px;
 }
 .field > input[type="text"] {
   border-radius: 13px;
@@ -2858,8 +2890,7 @@ div.dropdown[data-state="open"] .caret {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   line-height: 1.2142em;
-  font-size: 1.2rem;
-  color: #757575;
+  font-size: 0.6rem;
   box-shadow: 0 0 0 0 transparent inset;
   -webkit-appearance: none;
   -webkit-transition: color 0.1s ease, border-color 0.1s ease;
@@ -2886,14 +2917,14 @@ div.dropdown[data-state="open"] .caret {
   position: relative;
   border-collapse: separate;
   box-sizing: border-box;
-  font-size: 1.2rem;
+  font-size: 0.6rem;
 }
 .field .afix > span,
 .field .prefix > span,
 .field .postfix > span {
   white-space: nowrap;
   background-color: #c0c0c0;
-  padding: 0.54rem 1.253125rem;
+  padding: 0.09rem 0.353125rem;
   margin: 0;
   color: white;
   display: table-cell;
@@ -2904,7 +2935,7 @@ div.dropdown[data-state="open"] .caret {
 .field .afix > span > i,
 .field .prefix > span > i,
 .field .postfix > span > i {
-  width: 1.2em !important;
+  width: 0.6em !important;
 }
 .field .afix > input,
 .field .prefix > input,
@@ -2921,6 +2952,15 @@ div.dropdown[data-state="open"] .caret {
   overflow: hidden;
   background-color: #205081;
   border-color: #205081;
+}
+.field .afix > button,
+.field .prefix > button,
+.field .postfix > button {
+  position: absolute;
+  right: 0.35rem;
+  top: 0.35rem;
+  padding: 0.29rem 1.05rem;
+  outline: 0;
 }
 .field .afix > input[type="text"],
 .field .prefix > input[type="text"],
@@ -2951,17 +2991,6 @@ div.dropdown[data-state="open"] .caret {
 .field .afix > input[type="text"] {
   border-right: none;
   border-left: none;
-}
-input[type="text"] {
-  padding: 0.54rem 3.15rem 0.54rem 1.05rem;
-  background: #f4f4f4;
-  border: 1px solid #d9d9d9;
-}
-input[type="text"]:focus {
-  background: #ffffff;
-  border: 1px solid #d1d1d1;
-  border-bottom-color: #e1e1e1;
-  border-right-color: #e1e1e1;
 }
 div[class|="tile"] {
   float: left;
@@ -3053,17 +3082,6 @@ div[class$="two-v"] {
 .flezz:hover p,
 .flezz:hover i {
   color: #1a1d50;
-}
-.totalScrollOffsetInfo {
-  border: 2px solid #fc0;
-  font-size: 12px;
-  padding: 20px;
-  text-align: center;
-  margin-bottom: 60px;
-}
-.totalScrollOffset {
-  height: 50px;
-  background: #fc0;
 }
 /* include theme UDN - [ OK ] */
 .totalScrollOffsetInfo {

@@ -2,7 +2,7 @@
 ///*          flezz framework 1.0           */
 ///******************************************/
 ///*  Name: Button
-///*  Version: 0.2.0
+///*  Version: 0.2.5
 ///*  Description: description name_component
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org
@@ -30,6 +30,7 @@
 ///* button general option */
 @button-text-transform: true;
 @button-border-radius: true;
+@button-border-outset: true;
 @button-hover-event: true;
 @button-font-family: @font-regular;
 ///* button shape option */
@@ -45,7 +46,7 @@
 @button-transition-time: 300ms;
 @button-dark-step: 5;
 //
-///* button color */
+///* button color option */
 ///* button default color */
 @button-default-font-color: @gray80;
 @button-default-background-color: @default;
@@ -54,7 +55,7 @@
 @button-disabled-font-color: @gray60;
 @button-disabled-background-color: @gray10;
 @button-disabled-border-color: darken(@button-disabled-background-color,20%);
-///* button Other color */
+///* button other color */
 @button-font-color: @white;
 @button-primary-background-color: @primary;
 @button-success-background-color: @success;
@@ -66,62 +67,83 @@
 @button-alert-background-color: @alert;
 //
 ///* local variables */
-@dfl-color: @button-default-background-color;
-@dfl-pri-color: @button-primary-background-color;
-@dfl-suc-color: @button-success-background-color;
-@dfl-inf-color: @button-info-background-color;
-@dfl-war-color: @button-warning-background-color;
-@dfl-dan-color: @button-danger-background-color;
-@dfl-sec-color: @button-secundary-background-color;
-@dfl-cau-color: @button-caution-background-color;
-@dfl-ale-color: @button-alert-background-color;
-@dfl-dark-step: @button-dark-step;
+.button-local-var(){
+    @dfl-color: @button-default-font-color;
+    @dfl-bck-color: @button-default-background-color;
+    @dfl-border-color: @button-default-border-color;
+    @dfl-pri-color: @button-primary-background-color;
+    @dfl-suc-color: @button-success-background-color;
+    @dfl-inf-color: @button-info-background-color;
+    @dfl-war-color: @button-warning-background-color;
+    @dfl-dan-color: @button-danger-background-color;
+    @dfl-sec-color: @button-secundary-background-color;
+    @dfl-cau-color: @button-caution-background-color;
+    @dfl-ale-color: @button-alert-background-color;
+    @dfl-dark-step: @button-dark-step;
+}
 //
 ///* 2 *//* ROAD MAP */
 // --------------------------------------------------
-
+//button-outset=true;
 
 //
 // --------------------------------------------------
 //
 ///* 3 *//* BASE CLASS */
-.btn-box (@color: @button-default-font-color; @back-color: @button-default-background-color; @border-color: @button-default-border-color; @border-width: @button-border-width; @size: @button-size; @border-shape: square; @Skeuomorphs: false; @expanded: false) {
+.btn-box (@color: @dfl-color; @back-color: @dfl-bck-color; @border-color: @dfl-border-color; @border-width: @button-border-width; @size: @button-size; @border-shape: square; @Skeuomorphs: false; @expanded: false) {
     .btn-expanded(@expanded);
     .user-select();
+    touch-action: manipulation;
     padding: 1px;
 
     & > a {
         cursor: pointer;
-        .btn-link(@color; @back-color; @border-color; @border-width; @size; @border-shape; @Skeuomorphs);
+        .btn-button-link(@size; @border-shape; @Skeuomorphs);
+        .btn-button-color(@color; @back-color; @border-color; @border-width; @Skeuomorphs);
+        .btn-button-size(@size);
     }
 }
 
-.btn-link (@color: @button-default-font-color; @back-color: @button-default-background-color; @border-color: @button-default-border-color; @border-width: @button-border-width; @size: @button-size; @border-shape: square; @Skeuomorphs: false) {
-    @font-base: 1rem * (@size + 6) * 1/10;
-    @padSup: @font-base * (@size + 3) * 1/20;
-    @padLat: 1rem * (@size + 1) * 15/100;
-    @padding: @padSup @padLat;
+.btn-button-link(@size: @button-size; @border-shape: square; @Skeuomorphs: false){
     font-family:@button-font-family;
-    font-size: @font-base;
-    padding: @padding;
-    display: block;
-    line-height: @button-line-height;
-    background-color: @back-color;
-    color: @color;
-    border: @border-width solid @border-color;
     text-decoration: none;
+    display: block;
+    
     .btn-background-transition();
     .btn-border-shape(@size, @border-shape);
-    .btn-text-transform();
-    .btn-Skeuomorphs(@color, @back-color, @Skeuomorphs);
+    .btn-text-transform();  
+    .btn-box-shadow();
+
+    &:active {
+        .btn-box-shadow-active();
+    }
+}
+
+.btn-button-color (@color: @dfl-color; @back-color: @dfl-bck-color; @border-color: @dfl-border-color; @border-width: @button-border-width; @Skeuomorphs: false) {
+    background-color: @back-color;
+    color: @color;
+    .btn-text-shadow(@color);
+    .btn-degraded(@back-color);
+    .btn-border-outset(@border-color; @border-width);
 
     &:hover {
         .btn-hover-event();
     }
 
     &:active {
-        .btn-Skeuomorphs-active(@color, @back-color, @Skeuomorphs);
+        .btn-degraded-active(@back-color);
+        .btn-border-active(@color, @back-color, @Skeuomorphs);
     }
+}
+
+.btn-button-size(@size: @button-size) {
+    @font-base: 1rem * (@size + 6) * 1/10;
+    @padSup: @font-base * (@size + 3) * 1/20;
+    @padLat: 1rem * (@size + 1) * 15/100;
+    @padding: @padSup @padLat;
+    line-height: @button-line-height;
+    font-size: @font-base;
+    padding: @padding;
 }
 //
 ///* 4 *//* CONFIG MIXIN */
@@ -164,37 +186,49 @@
     text-transform: capitalize;
 }
 
-.btn-Skeuomorphs(@color, @back-color, @Skeuomorphs) when (@Skeuomorphs = true) {
-    .btn-text-shadow(@color);
-    .btn-degraded(@back-color);
-    .btn-depth();
+.btn-border-outset(@border-color: @dfl-border-color; @border-width: @button-border-width) when (@button-border-outset = true) and (@Skeuomorphs = true) {
+    @light-color: @border-color;
+    @dark-color: darken(@border-color, @dfl-dark-step * 1.5%);
+    border-width: @border-width;
+    border-style: solid;
+    border-color: @light-color @dark-color @dark-color @light-color;
 }
 
-.btn-Skeuomorphs-active(@color, @back-color, @Skeuomorphs) when (@Skeuomorphs = true) {
-    border-color: darken(@border-color,@dfl-dark-step * 0.5%);
-    .btn-degraded-active(@back-color);
-    .btn-depth-active();
+.btn-border-outset(@border-color: @dfl-border-color; @border-width: @button-border-width) when (@button-border-outset = false), (@Skeuomorphs = false) {
+    border: @border-width solid @border-color;
 }
 
-.btn-Skeuomorphs-active(@color, @back-color, @Skeuomorphs) when (@Skeuomorphs = false) {
+.btn-border-active(@color, @back-color, @Skeuomorphs) when (@Skeuomorphs = true) {
+    @light-color: darken(@border-color, @dfl-dark-step * 0.5%);
+    @dark-color: darken(@border-color, @dfl-dark-step * 2%);
+    border-color: @dark-color @light-color @light-color @dark-color;  
+}
+
+.btn-border-active(@color, @back-color, @Skeuomorphs) when (@Skeuomorphs = false) {
     border-width: 0;
     margin: 1px;
 }
 
-.btn-text-shadow(@text-color) when (@button-text-shadow = true) {
+.btn-hover-event() when (@button-hover-event = true) {
+    background-color: saturate(darken(@back-color, @dfl-dark-step *1%), @dfl-dark-step *1%);
+    border-color: darken(@border-color, @dfl-dark-step * 1.5%);
+    .btn-degraded-hover(@back-color);
+}
+
+.btn-text-shadow(@text-color) when (@button-text-shadow = true) and (@Skeuomorphs = true) {
     @shadow-color: contrast(@text-color, fade(black,20%), #ddd);
     text-shadow: 0 -1px 0 @shadow-color;
 }
 
-.btn-depth() when (@button-depth = true) {
+.btn-box-shadow() when (@button-depth = true) and (@Skeuomorphs = true) {
     box-shadow: inset 0 1px 0 rgba(255,255,255,.15),1px 2px 2px rgba(0,0,0,.2);
 }
 
-.btn-depth-active() when (@button-depth = true) {
+.btn-box-shadow-active() when (@button-depth = true) and (@Skeuomorphs = true) {
     box-shadow: inset 0 2px 4px rgba(0,0,0,.125);
 }
 
-.btn-degraded(@opc-bck-color) when (@button-degraded = true) {
+.btn-degraded(@opc-bck-color) when (@button-degraded = true) and (@Skeuomorphs = true) {
     background-image: linear-gradient(rgba(255,255,255,.3) 0, fade(@opc-bck-color, 30%) 100%);
 }
 
@@ -202,14 +236,8 @@
     background-image: linear-gradient(rgba(255,255,255,.3) 0, rgba(0,0,0,.07) 100%);
 }
 
-.btn-degraded-active(@opc-bck-color) when (@button-degraded = true) {
+.btn-degraded-active(@opc-bck-color) when (@button-degraded = true) and (@Skeuomorphs = true) {
     background-image: linear-gradient(rgba(0,0,0,.07) 0, fade(@opc-bck-color, 25%) 22%, fade(@opc-bck-color, 25%) 78%, rgba(255,255,255,.1) 100%);
-}
-
-.btn-hover-event() when (@button-hover-event = true) {
-    background-color: saturate(darken(@back-color, @dfl-dark-step *1%), @dfl-dark-step *1%);
-    border-color: darken(@border-color,@dfl-dark-step * 1.5%);
-    .btn-degraded-hover(@back-color);
 }
 
 .btn-expanded(@expanded) when (@expanded = false) {
@@ -224,7 +252,7 @@
 //
 ///* boostrap patterns *///
 .btn-default(@btn-size) {
-    .btn-box(@color: black; @back-color: @dfl-color; @border-color: darken(@dfl-color,10%); @border-width: 1px; @size: @btn-size; @border-shape: radius; @Skeuomorphs: true);
+    .btn-box(@color: black; @back-color: @dfl-bck-color; @border-color: darken(@dfl-bck-color,10%); @border-width: 1px; @size: @btn-size; @border-shape: radius; @Skeuomorphs: true);
     &>a{box-shadow: inset 0 1px 0 rgba(255,255,255,.15),1px 1px 2px rgba(0,0,0,.2)};
     &>a:active{box-shadow: inset 0 2px 4px rgba(0,0,0,.125);};
 }
@@ -299,10 +327,10 @@
         background-color: #eeeeee !important;
         color: #919191 !important;
         cursor: not-allowed !important;
-        border-color: #eeeeee !important;
+        border-color: transparent !important;
         text-shadow: none !important;
         background-image: none !important;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,.15),1px 1px 1px rgba(0,0,0,.2) !important;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.15) !important;
         border-width: 1px !important;
         margin: 0 !important;
     }
@@ -317,6 +345,7 @@
 }
 ///* 6 *//* INITIALIZE PATTERNS */
 .button-init(){
+    .button-local-var();
     ///* flezz round buttons*///
     .button-round-primary{.button-round(@button-size; @dfl-pri-color)}
     .button-round-secondary{.button-round(@button-size; @dfl-sec-color)}

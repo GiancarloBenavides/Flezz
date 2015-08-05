@@ -27,11 +27,11 @@
 ///* 1 *//* CONFIG MODULES VARIABLES *///
 //
 ///* global variables */
-///* general option */
+///* dropdown general option */
 @dropdown-shadow: true;
 @dropdown-select: false;
 @dropdown-width-auto: false;
-///* dropdown size */
+///* dropdown size option */
 @dropdown-width: 140px;
 @dropdown-radius-width: 4px;
 @dropdown-content-radius-width: 4px;
@@ -40,22 +40,24 @@
 @dropdown-gap: @dropdown-border-width*2;
 @dropdown-link-padding-topbottom: 10px;
 @dropdown-link-padding-leftright: 15px;
-///* dropdown list */
+///* dropdown list option */
 @dropdown-list-background-color: @white;
 @dropdown-list-font-color: @primary;
 @dropdown-list-border-color: darken(@dropdown-list-background-color, 20%);
-///* dropdown list hover */
+///* dropdown list hover option */
 @dropdown-list-background-hover-color: darken(@dropdown-list-background-color,4%);
 @dropdown-list-font-hover-color: darken(@dropdown-list-font-color,7%);
-///* dropdown button */
+///* dropdown button option */
 @dropdown-button-default-background-color: @dropdown-list-background-hover-color;
 @dropdown-button-default-font-color: @dropdown-list-font-hover-color;
 @dropdown-button-default-border-color: transparent;
 //
 ///* local variables */
-@dfl-btn-bck: @dropdown-button-default-background-color;
-@dfl-btn-color: @dropdown-button-default-font-color;
-@dfl-btn-border: @dropdown-button-default-border-color;
+.dropdown-local-var(){
+    @dfl-btn-bck: @dropdown-button-default-background-color;
+    @dfl-btn-color: @dropdown-button-default-font-color;
+    @dfl-btn-border: @dropdown-button-default-border-color;
+}
 //
 ///* 2 *//* ROAD MAP */
 // --------------------------------------------------
@@ -145,6 +147,7 @@
 //
 ///* 6 *//* INITIALIZED PATTERNS */
 .dropdown-init() {
+    .dropdown-local-var();
     .dropdown();
 }
 //

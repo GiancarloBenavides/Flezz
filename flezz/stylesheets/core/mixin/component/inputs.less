@@ -27,48 +27,49 @@
 ///* 1 *//* CONFIG MODULES VARIABLES *///
 //
 ///* global variables */
-//
 ///* input general option */
 @input-margin-left: true;
 @input-text-inline: true;
 @input-focus-depth: true;
 @input-focus-scale: true;
 @input-focus-shadow: false;
-///* input size */
+///* input size option */
 @input-margin-left-width: 15px;
 @input-border-radius: 13px;
-@input-size: 6;
-///* input label */
+@input-size: 9;
+///* input label option */
 @input-label-font-family: @font-bold;
 @input-label-font-color: #205081;
-///* input color */
+///* input color option */
 @input-background-color: @gray05;
 @input-border-color: @gray15;
 @input-font-color: darken(@input-label-font-color, 10%);
 @input-afix-color: darken(@input-border-color, 10%);
-///* event color */
+///* input event color option */
 @input-shadow-color: lighten(@input-label-font-color, 10%);
 @input-focus-border-color: darken(@input-border-color,7%);
 @input-focus-shadow-color: fade(@input-border-color,30%);
 //
 ///* local variables */
+.input-local-var(){
 //@textarea-margin: @input-margin-left + 5px;
-@size: @input-size;
-@font-base: 1rem * (@size + 6) * 1/10;
-@padSup: @font-base * (@size + 3) * 1/20;
-@padLat: 1rem * (@size + 1) * 15/100;
-@btn-height: @font-base + 2*@padSup;
-@radius-em: unit(@input-border-radius)/(16*4);
+    @size: @input-size;
+    @font-base: 1rem * (@size + 6) * 1/10;
+    @padSup: @font-base * (@size + 3) * 1/20;
+    @padLat: 1rem * (@size + 1) * 15/100;
+    @btn-height: @font-base + 2*@padSup;
+    @radius-em: unit(@input-border-radius)/(16*4);
 
-@padding: @padSup @padLat;
+    @padding: @padSup @padLat;
 
 
-@nav-link-hover-bg: red;
-@link-color: blue;
-@line-height-base: 1.428571429; //20/14
-@tbs-padd-top: 10px;
-@tbs-padd-left: 15px;
-@dfl-size: @input-size;
+    @nav-link-hover-bg: red;
+    @link-color: blue;
+    @line-height-base: 1.428571429; //20/14
+    @tbs-padd-top: 10px;
+    @tbs-padd-left: 15px;
+    @dfl-size: @input-size;
+}
 //
 ///* 2 *//* ROAD MAP */
 // --------------------------------------------------
@@ -118,9 +119,10 @@
         position: absolute;
         float: right;
         color: saturate(@input-font-color, 90%);
-        right: @padLat;
+        right: 0.7em;
         font-size: @font-base;
-        top: 1.6rem + @padSup;
+        //top: 1.6rem + @padSup;
+        bottom: 1rem*(11*@size + 15)/100;
     }
 
     &>.error {
@@ -138,7 +140,7 @@
             border-right: 5px solid transparent;
             height: 0;
             position: absolute;
-            top: -5px;
+            top: -4px;
             right: 25px;
             width: 0;
         }
@@ -148,7 +150,7 @@
 .inp-input(@opc-type) when (@opc-type = 'text'){
     &>input[type="text"] {border-radius: @input-border-radius;}
     .focus{border-radius: @input-border-radius + 1px;}
-    
+
     &>input[type="text"]:focus,
     .focus {
         .inp-focus-scale();
@@ -264,6 +266,16 @@
             background-color: @input-label-font-color;
             border-color: @input-label-font-color;
         }
+        
+        &>button {
+            //@padding: @padSup @padLat;
+            position: absolute;
+            right: 0.35rem;
+            top: 0.35rem;       
+            //padding: 0.29rem 1.05rem;
+            padding: (@padSup1 - 0.7rem) @padLat;
+            outline: 0;
+        }
     }
 
     .afix>input[type="text"],
@@ -294,7 +306,7 @@
         -webkit-border-bottom-right-radius: @input-border-radius;
         border-left: none;
     }
-    
+
     .afix>input[type="text"]{
         border-right: none;
         border-left: none;
@@ -319,7 +331,7 @@
         background: @input-background-color;
         border: 1px solid @input-border-color;
         color: @input-font-color;
-        
+
         &:focus {
             background: lighten(@input-background-color, 10%);
             .inp-focus-depth();
@@ -329,8 +341,9 @@
 //
 ///* 6 *//* INITIALIZED PATTERNS */
 .input-init(){
-    .inputs-field();
+    .input-local-var();
     .input-general();
+    .inputs-field();
 }
 //
 /* cmp input -------- [ OK ] */@state: OK;

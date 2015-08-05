@@ -27,13 +27,13 @@
 ///* 1 *//* CONFIG MODULES VARIABLES *///
 //
 ///* global variables */
-///* general option */
+///* tabs general option */
 @tabs-header: false;
 @tabs-shadow: true;
 @tabs-width-auto: false;
 @tabs-depth: true;
 @tabs-alignment-right: false;    //default left
-///* size tabs */
+///* tabs size option */
 @tabs-size: 4;
 @tabs-width: 140px;
 @tabs-radius-width: 4px;
@@ -41,31 +41,33 @@
 @tabs-content-padding: 28px;
 @tabs-border-width: 1px;
 @tabs-gap: @tabs-border-width*2;
-///* title tabs */
+///* tabs title option */
 @tabs-font-color-title: rgb(32, 80, 129);
-///* selected tabs */
+///* tabs selected option */
 @tabs-bck-color-selected: white;
 @tabs-font-color-selected: @tabs-font-color-title;
 @tabs-border-color-selected: darken(@tabs-bck-color-selected,20%);
-///* unselected tabs */
+///* tabs unselected option */
 @tabs-bck-color-unselected: darken(@tabs-bck-color-selected,10%);
 @tabs-font-color-unselected: lighten(@tabs-font-color-selected,10%);
 @tabs-border-color-unselected: transparent;
-///* unselected tabs - hover */
+///* tabs unselected - hover */
 @tabs-bck-color-hover: lighten(@tabs-bck-color-unselected,4%);
 @tabs-border-color-hover: lighten(@tabs-bck-color-unselected,3%);
-///* disable tabs */
+///* tabs disable option */
 @tabs-font-color-disable: darken(@tabs-bck-color-selected,20%);
-//** Disabled cursor for form controls and buttons.
-@cursor-disabled: not-allowed;
 //
 ///* local variables */
-@nav-link-hover-bg: red;
-@link-color: blue;
-@line-height-base: 1.428571429; //20/14
-@tbs-padd-top: 10px;
-@tbs-padd-left: 15px;
-@dfl-size: @tabs-size;
+.tabs-local-var(){
+    //** Disabled cursor for form controls and buttons.
+    @cursor-disabled: not-allowed;
+    @nav-link-hover-bg: red;
+    @link-color: blue;
+    @line-height-base: 1.428571429; //20/14
+    @tbs-padd-top: 10px;
+    @tbs-padd-left: 15px;
+    @dfl-size: @tabs-size;
+}
 //
 ///* 2 *//* ROAD MAP */
 // --------------------------------------------------
@@ -361,7 +363,8 @@
 //
 ///* 6 *//* INITIALIZED PATTERNS */
 .tabs-init() {
-    .tabs()
+    .tabs-local-var();
+    .tabs();
 }
 //
 /* cmp tab ---------- [ OK ] */@state: OK;

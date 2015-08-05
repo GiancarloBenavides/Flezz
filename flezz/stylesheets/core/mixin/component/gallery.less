@@ -29,29 +29,31 @@
 ///* global variables */
 ///* gallery general option */
 @shot-border-collapsed: false;
-//
+///* gallery size option */
 @shot-show-close-width: 30px;
 @shot-image-quantity: 4;
 @shot-gap-size: 2; // RANGE [0-9]
-//
+///* gallery color option */
 @shot-border-color: transparent;
 @shot-current-border-color: @gray80;
 @shot-show-background: @gray80;
 //
 ///* local variables */
-@shot-gap: @shot-gap-size*1px;
-@gap-mid: (@shot-gap / 2);
-@arrow-border: @shot-gap * 2;
-@show-padding-base: @shot-show-close-width*2;
-@show-padding: (@shot-gap + @shot-show-close-width)*2;
-@img-current-shadow-spread: @shot-show-close-width/10;
-@img-current-shadow-blur: @shot-show-close-width/2;
-@img-width-base: percentage(1 / @shot-image-quantity);
-@img-width: ~"calc(@{img-width-base} + @{gap-mid})";
-@img-width-double-base: @img-width-base * 2;
-@img-width-double: ~"calc(@{img-width-double-base} - @{shot-gap})";
-@img-width-show-base: 100%;
-@img-width-show: ~"calc(100% - @{show-padding})";
+.gallery-local-var(){
+    @shot-gap: @shot-gap-size*1px;
+    @gap-mid: (@shot-gap / 2);
+    @arrow-border: @shot-gap * 2;
+    @show-padding-base: @shot-show-close-width*2;
+    @show-padding: (@shot-gap + @shot-show-close-width)*2;
+    @img-current-shadow-spread: @shot-show-close-width/10;
+    @img-current-shadow-blur: @shot-show-close-width/2;
+    @img-width-base: percentage(1 / @shot-image-quantity);
+    @img-width: ~"calc(@{img-width-base} + @{gap-mid})";
+    @img-width-double-base: @img-width-base * 2;
+    @img-width-double: ~"calc(@{img-width-double-base} - @{shot-gap})";
+    @img-width-show-base: 100%;
+    @img-width-show: ~"calc(100% - @{show-padding})";
+}
 //
 ///* 2 *//* ROAD MAP */
 // --------------------------------------------------
@@ -215,6 +217,7 @@
 //
 ///* 6 *//* INITIALIZED PATTERNS */
 .gallery-init(){
+    .gallery-local-var();
     .gallery(); 
 }
 //
