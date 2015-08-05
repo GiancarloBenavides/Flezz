@@ -1,0 +1,32 @@
+.control-label{   
+    color: #205081;
+    text-transform: uppercase;
+    font-size: .7em;
+    font-family: 'OpenSansBold';
+ }
+
+.form-control {
+    font-size: 1.5rem;
+    background-color: #f4f4f4;
+    padding: 0.9rem 4.5rem 0.9rem 1.5rem;
+    border-radius: 13px;
+    height: 62px;
+    
+    &:focus {
+        background-color: #ffffff;
+        -webkit-transform: scale(1.015);
+        -moz-transform: scale(1.015);
+        transform: scale(1.01);
+        box-shadow: none;
+        border: 1px solid #d1d1d1;
+        border-bottom-color: #e1e1e1;
+        border-right-color: #e1e1e1;
+    }
+}
+
+input.form-control[readonly="readonly"]:focus{
+    background-color: #f4f4f4;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    transform: scale(1);
+}
