@@ -1,13 +1,34 @@
 @import '../../stylesheets/themes/theme.docs.style.less';
 //
+@input-size: 9;
 .input-init();
 .button-init();
+
+.button {
+    background-color: transparent;
+    .btn-button-box(@size: @input-size; @color: white);
+    >a{
+        line-height: 1;
+        padding: 1em*(51*@size+287)/1000 1em;
+    }
+}
+
 //
 form {
     background-color: @gray10;
     padding: 20px;
 }
 
-input.noField{
-    margin-bottom: 20px;
+label {
+    color: @input-label-font-color;
+    font-family: @input-label-font-family;    
+    font-size: .7*@font-base;
+    text-transform: capitalize;
 }
+
+input.noField{
+    margin-bottom: 10px;
+}
+
+field>input[type="email"]:invalid {background-color: red}
+field>input[type="email"]:invalid + span {color: @zerez-red;}

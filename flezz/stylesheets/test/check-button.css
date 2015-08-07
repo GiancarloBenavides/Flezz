@@ -1738,42 +1738,51 @@
   font-size: 3em;
   display: inline-block;
 }
-a[class~="white-back"] {
+a[class~="tl-white"] {
   background-color: #fafafa;
 }
-a[class~="black-back"] {
+a[class~="tl-black"] {
   background-color: #0a0a0f;
 }
-a[class~="blue-back"],
+a[class~="tl-blue"],
 a[class~="accent"] {
   background-color: #1ba1e2;
 }
-a[class~="brown-back"] {
+a[class~="tl-brown"] {
   background-color: #a05000;
 }
-a[class~="green-back"] {
+a[class~="tl-green"] {
   background-color: #339933;
 }
-a[class~="lime-back"] {
+a[class~="tl-lime"] {
   background-color: #8cbf26;
 }
-a[class~="magenta-back"] {
+a[class~="tl-magenta"] {
   background-color: #ff0097;
 }
-a[class~="orange-back"] {
+a[class~="tl-orange"] {
   background-color: #f09609;
 }
-a[class~="pink-back"] {
+a[class~="tl-pink"] {
   background-color: #e671b8;
 }
-a[class~="purple-back"] {
+a[class~="tl-purple"] {
   background-color: #a200ff;
 }
-a[class~="red-back"] {
+a[class~="tl-red"] {
   background-color: #e51400;
 }
-a[class~="teal-back"] {
+a[class~="tl-teal"] {
   background-color: #00aba9;
+}
+a[class*="tl-"]:hover {
+  background-color: #1a1d50;
+}
+a[class~="bt-primary"] {
+  background-color: #286090;
+}
+[class~="bt-primary"]:hover {
+  background-color: #204d74;
 }
 html {
   font-family: sans-serif;
@@ -2097,6 +2106,7 @@ li {
   padding: 1px;
 }
 .button-round-primary > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2107,12 +2117,13 @@ li {
   transition: background-color 300ms ease-out;
   border-radius: 2.5em;
   text-transform: capitalize;
-  background-color: #286090;
-  color: white;
-  border: 1px solid transparent;
   line-height: 1.42857143;
   font-size: 1.3rem;
   padding: 0.65rem 1.2rem;
+}
+.button-round-primary > a {
+  background-color: #286090;
+  border: 1px solid transparent;
 }
 .button-round-primary > a:hover {
   background-color: #1e5380;
@@ -2132,6 +2143,7 @@ li {
   padding: 1px;
 }
 .button-round-secondary > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2142,12 +2154,13 @@ li {
   transition: background-color 300ms ease-out;
   border-radius: 2.5em;
   text-transform: capitalize;
-  background-color: #b9b9b9;
-  color: white;
-  border: 1px solid transparent;
   line-height: 1.42857143;
   font-size: 1.3rem;
   padding: 0.65rem 1.2rem;
+}
+.button-round-secondary > a {
+  background-color: #b9b9b9;
+  border: 1px solid transparent;
 }
 .button-round-secondary > a:hover {
   background-color: #b0a8a8;
@@ -2167,6 +2180,7 @@ li {
   padding: 1px;
 }
 .button-round-success > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2177,12 +2191,13 @@ li {
   transition: background-color 300ms ease-out;
   border-radius: 2.5em;
   text-transform: capitalize;
-  background-color: #449d44;
-  color: white;
-  border: 1px solid transparent;
   line-height: 1.42857143;
   font-size: 1.3rem;
   padding: 0.65rem 1.2rem;
+}
+.button-round-success > a {
+  background-color: #449d44;
+  border: 1px solid transparent;
 }
 .button-round-success > a:hover {
   background-color: #379037;
@@ -2202,6 +2217,7 @@ li {
   padding: 1px;
 }
 .button-round-danger > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2212,12 +2228,13 @@ li {
   transition: background-color 300ms ease-out;
   border-radius: 2.5em;
   text-transform: capitalize;
-  background-color: #d9534f;
-  color: white;
-  border: 1px solid transparent;
   line-height: 1.42857143;
   font-size: 1.3rem;
   padding: 0.65rem 1.2rem;
+}
+.button-round-danger > a {
+  background-color: #d9534f;
+  border: 1px solid transparent;
 }
 .button-round-danger > a:hover {
   background-color: #da3934;
@@ -2237,6 +2254,7 @@ li {
   padding: 1px;
 }
 .button-primary > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2247,12 +2265,13 @@ li {
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
-  background-color: #286090;
-  color: white;
-  border: 1px solid transparent;
   line-height: 1.42857143;
   font-size: 1.3rem;
   padding: 0.65rem 1.2rem;
+}
+.button-primary > a {
+  background-color: #286090;
+  border: 1px solid transparent;
 }
 .button-primary > a:hover {
   background-color: #1e5380;
@@ -2272,6 +2291,7 @@ li {
   padding: 1px;
 }
 .button-secondary > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2282,12 +2302,13 @@ li {
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
-  background-color: #b9b9b9;
-  color: white;
-  border: 1px solid transparent;
   line-height: 1.42857143;
   font-size: 1.3rem;
   padding: 0.65rem 1.2rem;
+}
+.button-secondary > a {
+  background-color: #b9b9b9;
+  border: 1px solid transparent;
 }
 .button-secondary > a:hover {
   background-color: #b0a8a8;
@@ -2307,6 +2328,7 @@ li {
   padding: 1px;
 }
 .button-success > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2317,12 +2339,13 @@ li {
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
-  background-color: #449d44;
-  color: white;
-  border: 1px solid transparent;
   line-height: 1.42857143;
   font-size: 1.3rem;
   padding: 0.65rem 1.2rem;
+}
+.button-success > a {
+  background-color: #449d44;
+  border: 1px solid transparent;
 }
 .button-success > a:hover {
   background-color: #379037;
@@ -2342,6 +2365,7 @@ li {
   padding: 1px;
 }
 .button-danger > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2352,12 +2376,13 @@ li {
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
-  background-color: #d9534f;
-  color: white;
-  border: 1px solid transparent;
   line-height: 1.42857143;
   font-size: 1.3rem;
   padding: 0.65rem 1.2rem;
+}
+.button-danger > a {
+  background-color: #d9534f;
+  border: 1px solid transparent;
 }
 .button-danger > a:hover {
   background-color: #da3934;
@@ -2377,6 +2402,7 @@ li {
   padding: 1px;
 }
 .button-expanded-primary > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2387,12 +2413,13 @@ li {
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
-  background-color: #286090;
-  color: white;
-  border: 1px solid transparent;
   line-height: 1.42857143;
   font-size: 1.3rem;
   padding: 0.65rem 1.2rem;
+}
+.button-expanded-primary > a {
+  background-color: #286090;
+  border: 1px solid transparent;
 }
 .button-expanded-primary > a:hover {
   background-color: #1e5380;
@@ -2412,6 +2439,7 @@ li {
   padding: 1px;
 }
 .button-expanded-secondary > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2422,12 +2450,13 @@ li {
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
-  background-color: #b9b9b9;
-  color: white;
-  border: 1px solid transparent;
   line-height: 1.42857143;
   font-size: 1.3rem;
   padding: 0.65rem 1.2rem;
+}
+.button-expanded-secondary > a {
+  background-color: #b9b9b9;
+  border: 1px solid transparent;
 }
 .button-expanded-secondary > a:hover {
   background-color: #b0a8a8;
@@ -2447,6 +2476,7 @@ li {
   padding: 1px;
 }
 .button-expanded-success > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2457,12 +2487,13 @@ li {
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
-  background-color: #449d44;
-  color: white;
-  border: 1px solid transparent;
   line-height: 1.42857143;
   font-size: 1.3rem;
   padding: 0.65rem 1.2rem;
+}
+.button-expanded-success > a {
+  background-color: #449d44;
+  border: 1px solid transparent;
 }
 .button-expanded-success > a:hover {
   background-color: #379037;
@@ -2482,6 +2513,7 @@ li {
   padding: 1px;
 }
 .button-expanded-danger > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2492,12 +2524,13 @@ li {
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
-  background-color: #d9534f;
-  color: white;
-  border: 1px solid transparent;
   line-height: 1.42857143;
   font-size: 1.3rem;
   padding: 0.65rem 1.2rem;
+}
+.button-expanded-danger > a {
+  background-color: #d9534f;
+  border: 1px solid transparent;
 }
 .button-expanded-danger > a:hover {
   background-color: #da3934;
@@ -2531,6 +2564,7 @@ li {
   padding: 1px;
 }
 .mostrar > a {
+  color: black;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2542,19 +2576,20 @@ li {
   border-radius: 0.35rem;
   text-transform: capitalize;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
-  background-color: #e0e0e0;
-  color: black;
-  text-shadow: 0 -1px 0 #dddddd;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(224, 224, 224, 0.3) 100%);
-  border-width: 1px;
-  border-style: solid;
-  border-color: #c7c7c7 #b3b3b3 #b3b3b3 #c7c7c7;
   line-height: 1.42857143;
   font-size: 1rem;
   padding: 0.35rem 0.75rem;
 }
 .mostrar > a:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.mostrar > a {
+  background-color: #e0e0e0;
+  text-shadow: 0 -1px 0 #dddddd;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(224, 224, 224, 0.3) 100%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #c7c7c7 #b3b3b3 #b3b3b3 #c7c7c7;
 }
 .mostrar > a:hover {
   background-color: #d5d1d1;
@@ -2581,6 +2616,7 @@ li {
   padding: 1px;
 }
 .aceptar > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2592,19 +2628,20 @@ li {
   border-radius: 0.35rem;
   text-transform: capitalize;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
-  background-color: #286090;
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
-  border-width: 1px;
-  border-style: solid;
-  border-color: #204d74 #183956 #183956 #204d74;
   line-height: 1.42857143;
   font-size: 1rem;
   padding: 0.35rem 0.75rem;
 }
 .aceptar > a:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.aceptar > a {
+  background-color: #286090;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #204d74 #183956 #183956 #204d74;
 }
 .aceptar > a:hover {
   background-color: #1e5380;
@@ -2625,6 +2662,7 @@ li {
   padding: 1px;
 }
 .enviar > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2636,19 +2674,20 @@ li {
   border-radius: 0.35rem;
   text-transform: capitalize;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
-  background-color: #449d44;
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(68, 157, 68, 0.3) 100%);
-  border-width: 1px;
-  border-style: solid;
-  border-color: #398439 #2e692e #2e692e #398439;
   line-height: 1.42857143;
   font-size: 1rem;
   padding: 0.35rem 0.75rem;
 }
 .enviar > a:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.enviar > a {
+  background-color: #449d44;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(68, 157, 68, 0.3) 100%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #398439 #2e692e #2e692e #398439;
 }
 .enviar > a:hover {
   background-color: #379037;
@@ -2669,6 +2708,7 @@ li {
   padding: 1px;
 }
 .consultar > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2680,19 +2720,20 @@ li {
   border-radius: 0.35rem;
   text-transform: capitalize;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
-  background-color: #31b0d5;
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(49, 176, 213, 0.3) 100%);
-  border-width: 1px;
-  border-style: solid;
-  border-color: #269abc #20809c #20809c #269abc;
   line-height: 1.42857143;
   font-size: 1rem;
   padding: 0.35rem 0.75rem;
 }
 .consultar > a:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.consultar > a {
+  background-color: #31b0d5;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(49, 176, 213, 0.3) 100%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #269abc #20809c #20809c #269abc;
 }
 .consultar > a:hover {
   background-color: #22a4ca;
@@ -2713,6 +2754,7 @@ li {
   padding: 1px;
 }
 .calcular > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2724,19 +2766,20 @@ li {
   border-radius: 0.35rem;
   text-transform: capitalize;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
-  background-color: #ec971f;
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(236, 151, 31, 0.3) 100%);
-  border-width: 1px;
-  border-style: solid;
-  border-color: #d58412 #b26e0f #b26e0f #d58412;
   line-height: 1.42857143;
   font-size: 1rem;
   padding: 0.35rem 0.75rem;
 }
 .calcular > a:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.calcular > a {
+  background-color: #ec971f;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(236, 151, 31, 0.3) 100%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #d58412 #b26e0f #b26e0f #d58412;
 }
 .calcular > a:hover {
   background-color: #e58b0d;
@@ -2757,6 +2800,7 @@ li {
   padding: 1px;
 }
 .borrar > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2768,19 +2812,20 @@ li {
   border-radius: 0.35rem;
   text-transform: capitalize;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
-  background-color: #d9534f;
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(217, 83, 79, 0.3) 100%);
-  border-width: 1px;
-  border-style: solid;
-  border-color: #d33632 #b72c27 #b72c27 #d33632;
   line-height: 1.42857143;
   font-size: 1rem;
   padding: 0.35rem 0.75rem;
 }
 .borrar > a:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.borrar > a {
+  background-color: #d9534f;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(217, 83, 79, 0.3) 100%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #d33632 #b72c27 #b72c27 #d33632;
 }
 .borrar > a:hover {
   background-color: #da3934;
@@ -2801,6 +2846,7 @@ li {
   padding: 1px;
 }
 .mostrar-semi > a {
+  color: black;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2812,19 +2858,20 @@ li {
   border-radius: 0.35rem;
   text-transform: capitalize;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
-  background-color: #e0e0e0;
-  color: black;
-  text-shadow: 0 -1px 0 #dddddd;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(224, 224, 224, 0.3) 100%);
-  border-width: 1px;
-  border-style: solid;
-  border-color: #c7c7c7 #b3b3b3 #b3b3b3 #c7c7c7;
   line-height: 1.42857143;
   font-size: 1rem;
   padding: 0.35rem 0.75rem;
 }
 .mostrar-semi > a:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.mostrar-semi > a {
+  background-color: #e0e0e0;
+  text-shadow: 0 -1px 0 #dddddd;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(224, 224, 224, 0.3) 100%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #c7c7c7 #b3b3b3 #b3b3b3 #c7c7c7;
 }
 .mostrar-semi > a:hover {
   background-color: #d5d1d1;
@@ -2851,6 +2898,7 @@ li {
   padding: 1px;
 }
 .aceptar-semi > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2862,19 +2910,20 @@ li {
   border-radius: 0.35rem;
   text-transform: capitalize;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
-  background-color: #286090;
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
-  border-width: 1px;
-  border-style: solid;
-  border-color: #204d74 #183956 #183956 #204d74;
   line-height: 1.42857143;
   font-size: 1rem;
   padding: 0.35rem 0.75rem;
 }
 .aceptar-semi > a:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.aceptar-semi > a {
+  background-color: #286090;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #204d74 #183956 #183956 #204d74;
 }
 .aceptar-semi > a:hover {
   background-color: #1e5380;
@@ -2895,6 +2944,7 @@ li {
   padding: 1px;
 }
 .enviar-semi > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2906,19 +2956,20 @@ li {
   border-radius: 0.35rem;
   text-transform: capitalize;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
-  background-color: #449d44;
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(68, 157, 68, 0.3) 100%);
-  border-width: 1px;
-  border-style: solid;
-  border-color: #398439 #2e692e #2e692e #398439;
   line-height: 1.42857143;
   font-size: 1rem;
   padding: 0.35rem 0.75rem;
 }
 .enviar-semi > a:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.enviar-semi > a {
+  background-color: #449d44;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(68, 157, 68, 0.3) 100%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #398439 #2e692e #2e692e #398439;
 }
 .enviar-semi > a:hover {
   background-color: #379037;
@@ -2939,6 +2990,7 @@ li {
   padding: 1px;
 }
 .consultar-semi > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2950,19 +3002,20 @@ li {
   border-radius: 0.35rem;
   text-transform: capitalize;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
-  background-color: #31b0d5;
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(49, 176, 213, 0.3) 100%);
-  border-width: 1px;
-  border-style: solid;
-  border-color: #269abc #20809c #20809c #269abc;
   line-height: 1.42857143;
   font-size: 1rem;
   padding: 0.35rem 0.75rem;
 }
 .consultar-semi > a:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.consultar-semi > a {
+  background-color: #31b0d5;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(49, 176, 213, 0.3) 100%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #269abc #20809c #20809c #269abc;
 }
 .consultar-semi > a:hover {
   background-color: #22a4ca;
@@ -2983,6 +3036,7 @@ li {
   padding: 1px;
 }
 .calcular-semi > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2994,19 +3048,20 @@ li {
   border-radius: 0.35rem;
   text-transform: capitalize;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
-  background-color: #ec971f;
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(236, 151, 31, 0.3) 100%);
-  border-width: 1px;
-  border-style: solid;
-  border-color: #d58412 #b26e0f #b26e0f #d58412;
   line-height: 1.42857143;
   font-size: 1rem;
   padding: 0.35rem 0.75rem;
 }
 .calcular-semi > a:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.calcular-semi > a {
+  background-color: #ec971f;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(236, 151, 31, 0.3) 100%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #d58412 #b26e0f #b26e0f #d58412;
 }
 .calcular-semi > a:hover {
   background-color: #e58b0d;
@@ -3027,6 +3082,7 @@ li {
   padding: 1px;
 }
 .borrar-semi > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -3038,19 +3094,20 @@ li {
   border-radius: 0.35rem;
   text-transform: capitalize;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
-  background-color: #d9534f;
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(217, 83, 79, 0.3) 100%);
-  border-width: 1px;
-  border-style: solid;
-  border-color: #d33632 #b72c27 #b72c27 #d33632;
   line-height: 1.42857143;
   font-size: 1rem;
   padding: 0.35rem 0.75rem;
 }
 .borrar-semi > a:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.borrar-semi > a {
+  background-color: #d9534f;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(217, 83, 79, 0.3) 100%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #d33632 #b72c27 #b72c27 #d33632;
 }
 .borrar-semi > a:hover {
   background-color: #da3934;
@@ -3074,6 +3131,7 @@ div[class*=semi] a {
   padding: 1px;
 }
 .mostrar-plain > a {
+  color: black;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -3084,12 +3142,13 @@ div[class*=semi] a {
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
-  background-color: #b9b9b9;
-  color: black;
-  border: 1px solid transparent;
   line-height: 1.42857143;
   font-size: 1rem;
   padding: 0.35rem 0.75rem;
+}
+.mostrar-plain > a {
+  background-color: #b9b9b9;
+  border: 1px solid transparent;
 }
 .mostrar-plain > a:hover {
   background-color: #b0a8a8;
@@ -3109,6 +3168,7 @@ div[class*=semi] a {
   padding: 1px;
 }
 .aceptar-plain > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -3119,12 +3179,13 @@ div[class*=semi] a {
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
-  background-color: #286090;
-  color: white;
-  border: 1px solid transparent;
   line-height: 1.42857143;
   font-size: 1rem;
   padding: 0.35rem 0.75rem;
+}
+.aceptar-plain > a {
+  background-color: #286090;
+  border: 1px solid transparent;
 }
 .aceptar-plain > a:hover {
   background-color: #1e5380;
@@ -3144,6 +3205,7 @@ div[class*=semi] a {
   padding: 1px;
 }
 .enviar-plain > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -3154,12 +3216,13 @@ div[class*=semi] a {
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
-  background-color: #449d44;
-  color: white;
-  border: 1px solid transparent;
   line-height: 1.42857143;
   font-size: 1rem;
   padding: 0.35rem 0.75rem;
+}
+.enviar-plain > a {
+  background-color: #449d44;
+  border: 1px solid transparent;
 }
 .enviar-plain > a:hover {
   background-color: #379037;
@@ -3179,6 +3242,7 @@ div[class*=semi] a {
   padding: 1px;
 }
 .consultar-plain > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -3189,12 +3253,13 @@ div[class*=semi] a {
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
-  background-color: #31b0d5;
-  color: white;
-  border: 1px solid transparent;
   line-height: 1.42857143;
   font-size: 1rem;
   padding: 0.35rem 0.75rem;
+}
+.consultar-plain > a {
+  background-color: #31b0d5;
+  border: 1px solid transparent;
 }
 .consultar-plain > a:hover {
   background-color: #22a4ca;
@@ -3214,6 +3279,7 @@ div[class*=semi] a {
   padding: 1px;
 }
 .calcular-plain > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -3224,12 +3290,13 @@ div[class*=semi] a {
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
-  background-color: #f6b401;
-  color: white;
-  border: 1px solid transparent;
   line-height: 1.42857143;
   font-size: 1rem;
   padding: 0.35rem 0.75rem;
+}
+.calcular-plain > a {
+  background-color: #f6b401;
+  border: 1px solid transparent;
 }
 .calcular-plain > a:hover {
   background-color: #dea200;
@@ -3249,6 +3316,7 @@ div[class*=semi] a {
   padding: 1px;
 }
 .borrar-plain > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -3259,12 +3327,13 @@ div[class*=semi] a {
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
-  background-color: #cf2a0e;
-  color: white;
-  border: 1px solid transparent;
   line-height: 1.42857143;
   font-size: 1rem;
   padding: 0.35rem 0.75rem;
+}
+.borrar-plain > a {
+  background-color: #cf2a0e;
+  border: 1px solid transparent;
 }
 .borrar-plain > a:hover {
   background-color: #bc2207;
@@ -3284,6 +3353,7 @@ div[class*=semi] a {
   padding: 1px;
 }
 .nueve > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -3295,19 +3365,20 @@ div[class*=semi] a {
   border-radius: 0.6rem;
   text-transform: capitalize;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
-  background-color: #286090;
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
-  border-width: 1px;
-  border-style: solid;
-  border-color: #204d74 #183956 #183956 #204d74;
   line-height: 1.42857143;
   font-size: 1.5rem;
   padding: 0.9rem 1.5rem;
 }
 .nueve > a:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.nueve > a {
+  background-color: #286090;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #204d74 #183956 #183956 #204d74;
 }
 .nueve > a:hover {
   background-color: #1e5380;
@@ -3328,6 +3399,7 @@ div[class*=semi] a {
   padding: 1px;
 }
 .ocho > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -3339,19 +3411,20 @@ div[class*=semi] a {
   border-radius: 0.55rem;
   text-transform: capitalize;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
-  background-color: #286090;
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
-  border-width: 1px;
-  border-style: solid;
-  border-color: #204d74 #183956 #183956 #204d74;
   line-height: 1.42857143;
   font-size: 1.4rem;
   padding: 0.77rem 1.35rem;
 }
 .ocho > a:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.ocho > a {
+  background-color: #286090;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #204d74 #183956 #183956 #204d74;
 }
 .ocho > a:hover {
   background-color: #1e5380;
@@ -3372,6 +3445,7 @@ div[class*=semi] a {
   padding: 1px;
 }
 .siete > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -3383,19 +3457,20 @@ div[class*=semi] a {
   border-radius: 0.5rem;
   text-transform: capitalize;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
-  background-color: #286090;
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
-  border-width: 1px;
-  border-style: solid;
-  border-color: #204d74 #183956 #183956 #204d74;
   line-height: 1.42857143;
   font-size: 1.3rem;
   padding: 0.65rem 1.2rem;
 }
 .siete > a:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.siete > a {
+  background-color: #286090;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #204d74 #183956 #183956 #204d74;
 }
 .siete > a:hover {
   background-color: #1e5380;
@@ -3416,6 +3491,7 @@ div[class*=semi] a {
   padding: 1px;
 }
 .seis > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -3427,19 +3503,20 @@ div[class*=semi] a {
   border-radius: 0.45rem;
   text-transform: capitalize;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
-  background-color: #286090;
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
-  border-width: 1px;
-  border-style: solid;
-  border-color: #204d74 #183956 #183956 #204d74;
   line-height: 1.42857143;
   font-size: 1.2rem;
   padding: 0.54rem 1.05rem;
 }
 .seis > a:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.seis > a {
+  background-color: #286090;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #204d74 #183956 #183956 #204d74;
 }
 .seis > a:hover {
   background-color: #1e5380;
@@ -3460,6 +3537,7 @@ div[class*=semi] a {
   padding: 1px;
 }
 .cinco > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -3471,19 +3549,20 @@ div[class*=semi] a {
   border-radius: 0.4rem;
   text-transform: capitalize;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
-  background-color: #286090;
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
-  border-width: 1px;
-  border-style: solid;
-  border-color: #204d74 #183956 #183956 #204d74;
   line-height: 1.42857143;
   font-size: 1.1rem;
   padding: 0.44rem 0.9rem;
 }
 .cinco > a:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.cinco > a {
+  background-color: #286090;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #204d74 #183956 #183956 #204d74;
 }
 .cinco > a:hover {
   background-color: #1e5380;
@@ -3504,6 +3583,7 @@ div[class*=semi] a {
   padding: 1px;
 }
 .cuatro > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -3515,19 +3595,20 @@ div[class*=semi] a {
   border-radius: 0.35rem;
   text-transform: capitalize;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
-  background-color: #286090;
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
-  border-width: 1px;
-  border-style: solid;
-  border-color: #204d74 #183956 #183956 #204d74;
   line-height: 1.42857143;
   font-size: 1rem;
   padding: 0.35rem 0.75rem;
 }
 .cuatro > a:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.cuatro > a {
+  background-color: #286090;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #204d74 #183956 #183956 #204d74;
 }
 .cuatro > a:hover {
   background-color: #1e5380;
@@ -3548,6 +3629,7 @@ div[class*=semi] a {
   padding: 1px;
 }
 .tres > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -3559,19 +3641,20 @@ div[class*=semi] a {
   border-radius: 0.3rem;
   text-transform: capitalize;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
-  background-color: #286090;
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
-  border-width: 1px;
-  border-style: solid;
-  border-color: #204d74 #183956 #183956 #204d74;
   line-height: 1.42857143;
   font-size: 0.9rem;
   padding: 0.27rem 0.6rem;
 }
 .tres > a:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.tres > a {
+  background-color: #286090;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #204d74 #183956 #183956 #204d74;
 }
 .tres > a:hover {
   background-color: #1e5380;
@@ -3592,6 +3675,7 @@ div[class*=semi] a {
   padding: 1px;
 }
 .dos > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -3603,19 +3687,20 @@ div[class*=semi] a {
   border-radius: 0.25rem;
   text-transform: capitalize;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
-  background-color: #286090;
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
-  border-width: 1px;
-  border-style: solid;
-  border-color: #204d74 #183956 #183956 #204d74;
   line-height: 1.42857143;
   font-size: 0.8rem;
   padding: 0.2rem 0.45rem;
 }
 .dos > a:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.dos > a {
+  background-color: #286090;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #204d74 #183956 #183956 #204d74;
 }
 .dos > a:hover {
   background-color: #1e5380;
@@ -3636,6 +3721,7 @@ div[class*=semi] a {
   padding: 1px;
 }
 .uno > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -3647,19 +3733,20 @@ div[class*=semi] a {
   border-radius: 0.2rem;
   text-transform: capitalize;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
-  background-color: #286090;
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
-  border-width: 1px;
-  border-style: solid;
-  border-color: #204d74 #183956 #183956 #204d74;
   line-height: 1.42857143;
   font-size: 0.7rem;
   padding: 0.14rem 0.3rem;
 }
 .uno > a:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.uno > a {
+  background-color: #286090;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #204d74 #183956 #183956 #204d74;
 }
 .uno > a:hover {
   background-color: #1e5380;
@@ -3680,6 +3767,7 @@ div[class*=semi] a {
   padding: 1px;
 }
 .cero > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -3691,19 +3779,20 @@ div[class*=semi] a {
   border-radius: 0.15rem;
   text-transform: capitalize;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
-  background-color: #286090;
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
-  border-width: 1px;
-  border-style: solid;
-  border-color: #204d74 #183956 #183956 #204d74;
   line-height: 1.42857143;
   font-size: 0.6rem;
   padding: 0.09rem 0.15rem;
 }
 .cero > a:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+.cero > a {
+  background-color: #286090;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(40, 96, 144, 0.3) 100%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #204d74 #183956 #183956 #204d74;
 }
 .cero > a:hover {
   background-color: #1e5380;
@@ -3724,6 +3813,7 @@ div[class*=semi] a {
   padding: 1px;
 }
 .radius > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -3734,12 +3824,13 @@ div[class*=semi] a {
   transition: background-color 300ms ease-out;
   border-radius: 0.35rem;
   text-transform: capitalize;
-  background-color: #286090;
-  color: white;
-  border: 1px solid transparent;
   line-height: 1.42857143;
   font-size: 1rem;
   padding: 0.35rem 0.75rem;
+}
+.radius > a {
+  background-color: #286090;
+  border: 1px solid transparent;
 }
 .radius > a:hover {
   background-color: #1e5380;
@@ -3759,6 +3850,7 @@ div[class*=semi] a {
   padding: 1px;
 }
 .round > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -3769,12 +3861,13 @@ div[class*=semi] a {
   transition: background-color 300ms ease-out;
   border-radius: 2.2em;
   text-transform: capitalize;
-  background-color: #286090;
-  color: white;
-  border: 1px solid transparent;
   line-height: 1.42857143;
   font-size: 1rem;
   padding: 0.35rem 0.75rem;
+}
+.round > a {
+  background-color: #286090;
+  border: 1px solid transparent;
 }
 .round > a:hover {
   background-color: #1e5380;
@@ -3794,6 +3887,7 @@ div[class*=semi] a {
   padding: 1px;
 }
 .square > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -3804,12 +3898,13 @@ div[class*=semi] a {
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
-  background-color: #286090;
-  color: white;
-  border: 1px solid transparent;
   line-height: 1.42857143;
   font-size: 1rem;
   padding: 0.35rem 0.75rem;
+}
+.square > a {
+  background-color: #286090;
+  border: 1px solid transparent;
 }
 .square > a:hover {
   background-color: #1e5380;
@@ -3830,6 +3925,7 @@ div[class*=semi] a {
   padding: 1px;
 }
 .expanded > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -3840,12 +3936,13 @@ div[class*=semi] a {
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
-  background-color: #286090;
-  color: white;
-  border: 1px solid transparent;
   line-height: 1.42857143;
   font-size: 1.1rem;
   padding: 0.44rem 0.9rem;
+}
+.expanded > a {
+  background-color: #286090;
+  border: 1px solid transparent;
 }
 .expanded > a:hover {
   background-color: #1e5380;
@@ -3865,6 +3962,7 @@ div[class^=btn] {
   padding: 1px;
 }
 div[class^=btn] > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -3876,19 +3974,20 @@ div[class^=btn] > a {
   border-radius: 0.35rem;
   text-transform: capitalize;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 1px 2px 2px rgba(0, 0, 0, 0.2);
-  background-color: #ec971f;
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(236, 151, 31, 0.3) 100%);
-  border-width: 1px;
-  border-style: solid;
-  border-color: #d58412 #b26e0f #b26e0f #d58412;
   line-height: 1.42857143;
   font-size: 1rem;
   padding: 0.35rem 0.75rem;
 }
 div[class^=btn] > a:active {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.125);
+}
+div[class^=btn] > a {
+  background-color: #ec971f;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0, rgba(236, 151, 31, 0.3) 100%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #d58412 #b26e0f #b26e0f #d58412;
 }
 div[class^=btn] > a:hover {
   background-color: #e58b0d;
@@ -3908,5 +4007,30 @@ button a:hover {
   color: #cccccc;
   font-family: 'OpenSansRegular';
   padding: 0.35rem 0.75rem;
+}
+.button {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+  padding: 1px;
+}
+.button > a {
+  color: white;
+  cursor: pointer;
+  font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
+  text-decoration: none;
+  display: block;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  border-radius: 0;
+  text-transform: capitalize;
+  line-height: 1.42857143;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.2rem;
 }
 /* color check   ---- [ OK ] */

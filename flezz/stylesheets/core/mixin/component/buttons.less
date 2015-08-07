@@ -91,15 +91,22 @@
 //
 ///* 3 *//* BASE CLASS */
 .btn-box (@color: @dfl-color; @back-color: @dfl-bck-color; @border-color: @dfl-border-color; @border-width: @button-border-width; @size: @button-size; @border-shape: square; @Skeuomorphs: false; @expanded: false) {
+    .btn-button-box (@color; @size; @border-shape; @Skeuomorphs; @expanded);
+
+    & > a {
+        .btn-button-color(@back-color; @border-color; @border-width; @Skeuomorphs);
+    }
+}
+
+.btn-button-box (@color: @dfl-color; @size: @button-size; @border-shape: square; @Skeuomorphs: false; @expanded: false) {
     .btn-expanded(@expanded);
     .user-select();
     touch-action: manipulation;
     padding: 1px;
-
     & > a {
+        color: @color;
         cursor: pointer;
         .btn-button-link(@size; @border-shape; @Skeuomorphs);
-        .btn-button-color(@color; @back-color; @border-color; @border-width; @Skeuomorphs);
         .btn-button-size(@size);
     }
 }
@@ -119,9 +126,8 @@
     }
 }
 
-.btn-button-color (@color: @dfl-color; @back-color: @dfl-bck-color; @border-color: @dfl-border-color; @border-width: @button-border-width; @Skeuomorphs: false) {
+.btn-button-color (@back-color: @dfl-bck-color; @border-color: @dfl-border-color; @border-width: @button-border-width; @Skeuomorphs: false) {
     background-color: @back-color;
-    color: @color;
     .btn-text-shadow(@color);
     .btn-degraded(@back-color);
     .btn-border-outset(@border-color; @border-width);

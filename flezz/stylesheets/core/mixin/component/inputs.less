@@ -34,25 +34,26 @@
 @input-focus-scale: true;
 @input-focus-shadow: false;
 ///* input size option */
-@input-margin-left-width: 15px;
-@input-border-radius: 13px;
-@input-size: 9;
+@input-margin-left-width: 14px;
+@input-border-radius: 7px;
+@input-size: 7;
 ///* input label option */
 @input-label-font-family: @font-bold;
 @input-label-font-color: #205081;
 ///* input color option */
 @input-background-color: @gray05;
-@input-border-color: @gray15;
-@input-font-color: darken(@input-label-font-color, 10%);
+@input-border-color: @gray20;
+@input-font-color: lighten(@input-label-font-color, 10%);
+@input-icon-color: saturate(@input-label-font-color, 90%);
 @input-afix-color: darken(@input-border-color, 10%);
 ///* input event color option */
-@input-shadow-color: lighten(@input-label-font-color, 10%);
+@input-shadow-color: @zerez-blue;
 @input-focus-border-color: darken(@input-border-color,7%);
 @input-focus-shadow-color: fade(@input-border-color,30%);
 //
 ///* local variables */
 .input-local-var(){
-//@textarea-margin: @input-margin-left + 5px;
+    //@textarea-margin: @input-margin-left + 5px;
     @size: @input-size;
     @font-base: 1rem * (@size + 6) * 1/10;
     @padSup: @font-base * (@size + 3) * 1/20;
@@ -61,8 +62,10 @@
     @radius-em: unit(@input-border-radius)/(16*4);
 
     @padding: @padSup @padLat;
-
-
+    @input-field-margin: 1rem*(34*@size + 88)/200;
+    @input-error-botom-position: 1rem*(23*@size + 200)/200 ;
+    @input-margin-Top-width: 0.3em;
+    
     @nav-link-hover-bg: red;
     @link-color: blue;
     @line-height-base: 1.428571429; //20/14
@@ -79,9 +82,10 @@
 //
 ///* 3 *//* BASE MODULES */
 .inp-field() {
+    font-size: @font-base;
     position: relative;
     clear: both;
-    margin: 0 0 1em;
+    margin: 0 0 @input-field-margin;
     .inp-margin-left();
 
     label {
@@ -90,14 +94,13 @@
         font-size: .7em;
         text-transform: capitalize;
     }
-
+    
+    ///* general button */
     button {
-        font-size: @font-base;
         font-family: 'OpenSansBold';
-        background-color: @input-label-font-color;
         color: @input-background-color;
-        line-height: 1.2142em;
-        padding: @padding;
+        line-height: 1;
+        background-color: @input-label-font-color;
         border: 1px solid @input-label-font-color;
         outline: 1px solid @input-label-font-color;
         white-space: nowrap;
@@ -105,35 +108,50 @@
         width: auto;
         -webkit-transition: background-color 300ms ease-out;
         transition: background-color 300ms ease-out;
-        //height: ~'calc(1.9142rem + 2px)';
-        ///height: ~'calc(@{btn-height} + 2px)';
-        &:hover{
+        &:hover {
             background-color: darken(@input-label-font-color,5%);
             border: 1px solid darken(@input-label-font-color,5%);
             outline: 1px solid darken(@input-label-font-color,5%);
         }
 
     }
-
-    &>span>i{
+    
+    ///* button */
+    &>button {
+        padding: 1em*(6*@size + 19)*1/100 0.7em;    
+    }
+    
+    ///* icon-right and shadow */
+    &>span {
         position: absolute;
-        float: right;
-        color: saturate(@input-font-color, 90%);
-        right: 0.7em;
-        font-size: @font-base;
-        //top: 1.6rem + @padSup;
-        bottom: 1rem*(11*@size + 15)/100;
+        right: 0;
+        bottom: 1px;
+        //font-size: @font-base;
+        padding: @padSup/2 0.7em @padSup 2em;
+        color: @input-icon-color;
+        background-image: -webkit-linear-gradient(left, fade(@input-background-color, 0%) 0%, fade(@input-background-color, 100%) 50%, fade(@input-background-color, 0%) 90%);
+        background-image: -o-linear-gradient(left, fade(@input-background-color, 0%) 0%, fade(@input-background-color, 100%) 50%, fade(@input-background-color, 0%) 90%);
+        background-image: linear-gradient(to right, fade(@input-background-color, 0%) 0%, fade(@input-background-color, 100%) 50%, fade(@input-background-color, 0%) 90%);
+        z-index: 10;     
+    }
+    
+    ///* focus icon-right and shadow */ 
+    &>input[type="text"]:focus + span {
+        @input-background-focus: lighten(@input-background-color, 10%);
+        background-image: -webkit-linear-gradient(left, fade(@input-background-focus, 0%) 0%, fade(@input-background-focus, 100%) 50%, fade(@input-background-focus, 0%) 90%);
+        background-image: -o-linear-gradient(left, fade(@input-background-focus, 0%) 0%, fade(@input-background-focus, 100%) 50%, fade(@input-background-focus, 0%) 90%);
+        background-image: linear-gradient(to right, fade(@input-background-focus, 0%) 0%, fade(@input-background-focus, 100%) 50%, fade(@input-background-focus, 0%) 90%);
     }
 
     &>.error {
         position: absolute;
         background-color: red;
         color: white;
-        padding: 0 20px;
+        padding: 0 0.7em;
         border-radius: 4px;
         right: 2px;
-        bottom: -2em;
-
+        bottom: -1*@input-error-botom-position;
+        
         &>.arrow {
             border-bottom: 5px solid red;
             border-left: 5px solid transparent;
@@ -148,14 +166,7 @@
 }
 
 .inp-input(@opc-type) when (@opc-type = 'text'){
-    &>input[type="text"] {border-radius: @input-border-radius;}
-    .focus{border-radius: @input-border-radius + 1px;}
-
-    &>input[type="text"]:focus,
-    .focus {
-        .inp-focus-scale();
-        .inp-focus-shadow();
-    }
+    &>input[type="text"] {padding-right: 2em; border-radius: @input-border-radius; margin-top: @input-margin-Top-width;}
 
     input[type="text"] {
         box-sizing: border-box;
@@ -163,13 +174,27 @@
         -moz-box-sizing: border-box;
         //-webkit-tap-highlight-color: rgba(255,255,255,0);
         //tap-highlight-color: rgba(255,255,255,0);
-        line-height: 1.2142em;
-        font-size: @font-base;
+        line-height: 1.2142;
+        //font-size: @font-base;
         box-shadow: 0 0 0 0 transparent inset;
         -webkit-appearance: none;
         -webkit-transition: color .1s ease,border-color .1s ease;
         transition: color .1s ease,border-color .1s ease;
     }
+    
+    ///* input-text-focus */
+    &>input[type="text"]:focus,
+    &>.focus {
+        .inp-focus-scale();
+        .inp-focus-shadow();
+    }
+    
+    &>input[type="text"]:focus,
+    .focus>input[type="text"] {
+        .inp-focus-scale-fix();
+    }
+    
+    &>.focus{.inp-focus-depth-fix();}
 }
 
 .inp-input(@opc-type) when (@opc-type = 'checkbox'){
@@ -194,7 +219,6 @@
     }
 }
 
-
 //
 ///* 4 *//* CONFIG MIXIN */
 .inp-margin-left() when (@input-margin-left = true) {
@@ -207,22 +231,32 @@
 }
 
 .inp-focus-depth() when (@input-focus-depth = true) and (@input-focus-shadow = false) {
-    border: 1px solid darken(@input-border-color, 3%);
-    border-bottom-color: lighten(@input-border-color, 3%);
-    border-right-color: lighten(@input-border-color, 3%);
-    //border-left-color: darken(@input-border-color, 3%);
-    //border-bottom-width: 0;
-    //border-right-width: 0;
+    border-color: darken(@input-border-color, 7%) lighten(@input-border-color, 7%) lighten(@input-border-color, 7%) darken(@input-border-color, 3%);
+    //& ~ span{border-bottom-color: lighten(@input-border-color, 7%);}
+}
+
+.inp-focus-depth-fix() when (@input-focus-depth = true) and (@input-focus-shadow = false) {
+    &>span{border-bottom-color: lighten(@input-border-color, 7%) !important;}
 }
 
 .inp-focus-scale() when (@input-focus-scale = true) {
-    -webkit-transform: scale(1.015);
-    -moz-transform: scale(1.015);
+    -webkit-transform: scale(1.02,1);
+    -moz-transform: scale(1.02,1);
+    transform: scale(1.02,1);
+}
+
+.inp-focus-scale-fix() when (@input-focus-scale = true) {
+    border-left-width: 2px;
+    border-right-width: 0;
 }
 
 .inp-focus-shadow() when (@input-focus-shadow = true) {
-    box-shadow: 0 0 5px fade(@input-shadow-color, 30%);
-    border: 1px solid fade(@input-shadow-color, 30%);
+    @color-inset: lighten(@input-background-color, 10%);
+    box-shadow: inset 0 0 0 1px @color-inset, 0 0 0 2px lighten(@input-shadow-color, 35%), 0 0 15px 3px fade(@input-shadow-color, 30%);
+    border-color: @color-inset;
+    border-radius: @input-border-radius + 1px;
+    
+    &>input{border-color: @color-inset;}
 }
 
 .inp-reset(){
@@ -230,6 +264,11 @@
 }
 
 .inp-afix() {
+    .fixed {width: 100%;
+        &>input[type="text"]{padding-right: 3em;}
+    }
+    
+    .fixed,
     .afix,
     .prefix,
     .postfix { 
@@ -237,44 +276,50 @@
         position: relative;
         border-collapse: separate;
         box-sizing: border-box;
-        font-size: @font-base;
+        //font-size: @font-base;
+        overflow: hidden;
+        margin-top: @input-margin-Top-width;
 
         &>span {
             white-space: nowrap;
             background-color: @input-afix-color;    
-            padding: @padSup (@padLat + @radius-em);
+            //padding: @padSup (@padLat + @radius-em);
+            padding: @padSup 1em;
             margin: 0;
             color: white;
             display: table-cell;
             border: 1px solid @input-afix-color;
             width: 1%;
             vertical-align: middle;
-            //line-height: @btn-height;
             &>i{width: unit(@font-base)*1em !important}
+            
+            //button-without-padding
+            &>button{padding: 1em*(6*@size + 19)*1/100 1em;}
         }
 
-        &>input{
+        &>input {
             display: table-cell;
             margin: 0;
             float: left;
             width: 100% !important;
         }
-
-        &>.button{
+        
+        //button-link
+        &>.button {
             padding: 0;
             overflow: hidden;
-            background-color: @input-label-font-color;
-            border-color: @input-label-font-color;
+            border-width: 0 !important;
+            &>a{padding-left: 1em; padding-right: 1em}
         }
         
+        //button-padding
         &>button {
-            //@padding: @padSup @padLat;
+            @button-pad: 0.3;
             position: absolute;
-            right: 0.35rem;
-            top: 0.35rem;       
-            //padding: 0.29rem 1.05rem;
-            padding: (@padSup - 0.7rem) @padLat;
-            outline: 0;
+            right: 1em*@button-pad;
+            top: 1em*@button-pad;       
+            padding: 1em*(5*@size)*1/100 1em*(@size)*1/10;
+            &>i{font-size: 0.9em}
         }
     }
 
@@ -327,15 +372,37 @@
 
 .input-general(){
     input[type="text"] {
-        padding: @padSup (@padLat*3) @padSup @padLat;
+        font-size: @font-base;
+        padding: @padSup 0.7em @padSup 0.7em;
         background: @input-background-color;
         border: 1px solid @input-border-color;
         color: @input-font-color;
+        z-index: 1;
 
         &:focus {
             background: lighten(@input-background-color, 10%);
+            & + span>i {color: @zerez-blue}
             .inp-focus-depth();
         }
+    }
+}
+
+.input-autofill(){
+    @autofill-color: rgb(250, 250, 240); 
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        //transition: background-color 5000s ease-in-out 0s !important;
+        -webkit-box-shadow: 0 0 0px 1000px @autofill-color inset !important;
+    }
+
+    .field>input[type="text"]:-webkit-autofill:focus + span,
+    .field>input[type="text"]:-webkit-autofill + span {
+        color: gold;
+        background-image: -webkit-linear-gradient(left, fade(@autofill-color, 0%) 0%, fade(@autofill-color, 100%) 50%, fade(@autofill-color, 0%) 90%) !important;
+        background-image: -o-linear-gradient(left, fade(@autofill-color, 0%) 0%, fade(@autofill-color, 100%) 50%, fade(@autofill-color, 0%) 90%) !important;
+        background-image: linear-gradient(to right, fade(@autofill-color, 0%) 0%, fade(@autofill-color, 100%) 50%, fade(@autofill-color, 0%) 90%) !important;    
     }
 }
 //
@@ -344,6 +411,7 @@
     .input-local-var();
     .input-general();
     .inputs-field();
+    .input-autofill();
 }
 //
 /* cmp input -------- [ OK ] */@state: OK;
