@@ -2108,6 +2108,7 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2145,6 +2146,7 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2182,6 +2184,7 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2219,6 +2222,7 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2256,6 +2260,7 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2293,6 +2298,7 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2330,6 +2336,7 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2367,6 +2374,7 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2404,6 +2412,7 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2441,6 +2450,7 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2478,6 +2488,7 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2515,6 +2526,7 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2857,6 +2869,12 @@ input[type="text"]:focus {
 input[type="text"]:focus + span > i {
   color: #00afef;
 }
+label {
+  color: #205081;
+  font-family: "OpenSansBold", "RobotoBold", "Segoe WP", "Helvetica", sans-serif;
+  font-size: 0.91rem;
+  text-transform: capitalize;
+}
 .field {
   font-size: 1.3rem;
   position: relative;
@@ -2878,12 +2896,6 @@ input[type="text"]:focus + span > i {
 .field .prefix,
 .field .postfix {
   width: calc(100% - 14px);
-}
-.field label {
-  color: #205081;
-  font-family: "OpenSansBold", "RobotoBold", "Segoe WP", "Helvetica", sans-serif;
-  font-size: .7em;
-  text-transform: capitalize;
 }
 .field button {
   font-family: 'OpenSansBold';
@@ -3061,8 +3073,7 @@ input[type="text"]:focus + span > i {
 .field .afix > .button > a,
 .field .prefix > .button > a,
 .field .postfix > .button > a {
-  padding-left: 1em;
-  padding-right: 1em;
+  padding: 0.556em 0.815em;
 }
 .field .fixed > button,
 .field .afix > button,

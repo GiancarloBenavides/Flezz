@@ -2135,6 +2135,12 @@ input[type="text"]:focus {
 input[type="text"]:focus + span > i {
   color: #00afef;
 }
+label {
+  color: #205081;
+  font-family: "OpenSansBold", "RobotoBold", "Segoe WP", "Helvetica", sans-serif;
+  font-size: 0.91rem;
+  text-transform: capitalize;
+}
 .field {
   font-size: 1.3rem;
   position: relative;
@@ -2156,12 +2162,6 @@ input[type="text"]:focus + span > i {
 .field .prefix,
 .field .postfix {
   width: calc(100% - 14px);
-}
-.field label {
-  color: #205081;
-  font-family: "OpenSansBold", "RobotoBold", "Segoe WP", "Helvetica", sans-serif;
-  font-size: .7em;
-  text-transform: capitalize;
 }
 .field button {
   font-family: 'OpenSansBold';
@@ -2188,9 +2188,9 @@ input[type="text"]:focus + span > i {
 }
 .field > span {
   position: absolute;
-  right: 0;
-  bottom: 1px;
-  padding: 0.36em 0.7em 0.72em 2em;
+  right: 0.5em;
+  bottom: 0.36em;
+  padding: 0.36em 0.2em 0.36em 2.1em;
   color: #0050a1;
   background-image: -webkit-linear-gradient(left, rgba(244, 244, 244, 0) 0%, #f4f4f4 50%, rgba(244, 244, 244, 0) 90%);
   background-image: -o-linear-gradient(left, rgba(244, 244, 244, 0) 0%, #f4f4f4 50%, rgba(244, 244, 244, 0) 90%);
@@ -2339,8 +2339,7 @@ input[type="text"]:focus + span > i {
 .field .afix > .button > a,
 .field .prefix > .button > a,
 .field .postfix > .button > a {
-  padding-left: 1em;
-  padding-right: 1em;
+  padding: 0.556em 0.815em;
 }
 .field .fixed > button,
 .field .afix > button,
@@ -2411,6 +2410,7 @@ input:-webkit-autofill:active {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2448,6 +2448,7 @@ input:-webkit-autofill:active {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2485,6 +2486,7 @@ input:-webkit-autofill:active {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2522,6 +2524,7 @@ input:-webkit-autofill:active {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2559,6 +2562,7 @@ input:-webkit-autofill:active {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2596,6 +2600,7 @@ input:-webkit-autofill:active {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2633,6 +2638,7 @@ input:-webkit-autofill:active {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2670,6 +2676,7 @@ input:-webkit-autofill:active {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2707,6 +2714,7 @@ input:-webkit-autofill:active {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2744,6 +2752,7 @@ input:-webkit-autofill:active {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2781,6 +2790,7 @@ input:-webkit-autofill:active {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2818,6 +2828,7 @@ input:-webkit-autofill:active {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2863,12 +2874,12 @@ input:-webkit-autofill:active {
   margin: 0 !important;
 }
 .button {
-  background-color: transparent;
   display: inline-block;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   padding: 1px;
 }
@@ -2888,18 +2899,9 @@ input:-webkit-autofill:active {
   font-size: 1.3rem;
   padding: 0.72em 0.88em;
 }
-.button > a {
-  padding: 0.556em 0.815em;
-}
 form {
   background-color: #e6e6e8;
   padding: 20px;
-}
-label {
-  color: #205081;
-  font-family: "OpenSansBold", "RobotoBold", "Segoe WP", "Helvetica", sans-serif;
-  font-size: 0.91rem;
-  text-transform: capitalize;
 }
 input.noField {
   margin-bottom: 10px;

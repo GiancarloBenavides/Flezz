@@ -100,12 +100,6 @@
     margin: 0 0 @input-field-margin;
     .inp-margin-left();
 
-    label {
-        color: @input-label-font-color;
-        font-family: @input-label-font-family;
-        font-size: .7em;
-        text-transform: capitalize;
-    }
     ///* general button */
     button {
         font-family: 'OpenSansBold';
@@ -135,9 +129,9 @@
     ///* icon-right and shadow */
     & > span {
         position: absolute;
-        right: 0;
-        bottom: 1px;
-        padding: @padSup/2 0.7em @padSup 2em;
+        right: 0.5em;
+        bottom: @padSup/2;
+        padding: @padSup/2 0.2em @padSup/2 2.1em;
         color: @input-icon-color;
         background-image: -webkit-linear-gradient(left, fade(@input-background-color, 0%) 0%, fade(@input-background-color, 100%) 50%, fade(@input-background-color, 0%) 90%);
         background-image: -o-linear-gradient(left, fade(@input-background-color, 0%) 0%, fade(@input-background-color, 100%) 50%, fade(@input-background-color, 0%) 90%);
@@ -344,8 +338,7 @@
             border-width: 0 !important;
 
             & > a {
-                padding-left: 1em;
-                padding-right: 1em;
+                padding: @button-link-padding;
             }
         }
         //button-fixed-padding
@@ -432,6 +425,13 @@
 
             .inp-focus-depth();
         }
+    }
+    
+    label {
+        color: @input-label-font-color;
+        font-family: @input-label-font-family;    
+        font-size: .7*@font-base;
+        text-transform: capitalize;
     }
 }
 
