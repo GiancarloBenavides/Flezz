@@ -52,26 +52,38 @@
 @input-focus-shadow-color: fade(@input-border-color,30%);
 //
 ///* local variables */
-.input-local-var(){
+.input-local-var() {
     //@textarea-margin: @input-margin-left + 5px;
+    @input-line-height: @button-line-height;
     @size: @input-size;
-    @font-base: 1rem * (@size + 6) * 1/10;
-    @padSup: @font-base * (@size + 3) * 1/20;
-    @padLat: 1rem * (@size + 1) * 15/100;
-    @btn-height: @font-base + 2*@padSup;
-    @radius-em: unit(@input-border-radius)/(16*4);
-
+    @font-base: 1rem * (@size + 6) * 10/100;
+    //@padSup: @font-base * (@size + 3) * 1/20;
+    //@padLat: 1rem * (@size + 1) * 15/100;
+    @padSup: 1em * (@size + 5) * 6/100;
+    @padLat: 1em * (@size + 4) * 8/100;
     @padding: @padSup @padLat;
+    ///* padding type buttons */
+    @gap-fixed: 0.39;
+    @padSup-fixed: 1em * (61 * @size + 440 - 1000 * @gap-fixed) * 1/1000;
+    @padLat-fixed: 1em * (9 * @size + 100) * 5/1000;
+    @button-fixed-padding: @padSup-fixed @padLat-fixed;
+    //
+    @padSup-no-padding: 1em * (66 * @size + 355) * 1/1000;
+    @padLat-no-padding: 1em * (9 * @size + 100) * 5/1000;
+    @button-no-padding: @padSup-no-padding @padLat-no-padding;
+    //
+    @gap-link: 0.39;
+    //            1em * (51 * @size + 287) * 1/1000;
+    //            1em * (61 * @size + 140) * 1/1000;
+    @padSup-link: 1em * (46 * @size + 624 - 1000 * @gap-link) * 1/1000;
+    @padLat-link: 1em * (9 * @size + 100) * 5/1000;
+    @button-link-padding: @padSup-link @padLat-link;
+    //@btn-height: @font-base + 2 * @padSup;
+    //@radius-em: unit(@input-border-radius)/(16*4);
+
     @input-field-margin: 1rem*(34*@size + 88)/200;
-    @input-error-botom-position: 1rem*(23*@size + 200)/200 ;
-    @input-margin-Top-width: 0.3em;
-    
-    @nav-link-hover-bg: red;
-    @link-color: blue;
-    @line-height-base: 1.428571429; //20/14
-    @tbs-padd-top: 10px;
-    @tbs-padd-left: 15px;
-    @dfl-size: @input-size;
+    @input-error-botom-position: 1rem*(23*@size + 200)/200;
+    @input-margin-Top-width: 0.23em;
 }
 //
 ///* 2 *//* ROAD MAP */
@@ -90,11 +102,10 @@
 
     label {
         color: @input-label-font-color;
-        font-family: @input-label-font-family;    
+        font-family: @input-label-font-family;
         font-size: .7em;
         text-transform: capitalize;
     }
-    
     ///* general button */
     button {
         font-family: 'OpenSansBold';
@@ -107,43 +118,41 @@
         display: table-cell;
         width: auto;
         -webkit-transition: background-color 300ms ease-out;
+        -moz-transition: background-color 300ms ease-out;
+        -o-transition: background-color 300ms ease-out;
         transition: background-color 300ms ease-out;
+
         &:hover {
             background-color: darken(@input-label-font-color,5%);
             border: 1px solid darken(@input-label-font-color,5%);
             outline: 1px solid darken(@input-label-font-color,5%);
         }
-
     }
-    
     ///* button */
-    &>button {
-        padding: 1em*(6*@size + 19)*1/100 0.7em;    
+    & > button {
+        padding: 1em*(6*@size + 19)*1/100 0.7em;
     }
-    
     ///* icon-right and shadow */
-    &>span {
+    & > span {
         position: absolute;
         right: 0;
         bottom: 1px;
-        //font-size: @font-base;
         padding: @padSup/2 0.7em @padSup 2em;
         color: @input-icon-color;
         background-image: -webkit-linear-gradient(left, fade(@input-background-color, 0%) 0%, fade(@input-background-color, 100%) 50%, fade(@input-background-color, 0%) 90%);
         background-image: -o-linear-gradient(left, fade(@input-background-color, 0%) 0%, fade(@input-background-color, 100%) 50%, fade(@input-background-color, 0%) 90%);
         background-image: linear-gradient(to right, fade(@input-background-color, 0%) 0%, fade(@input-background-color, 100%) 50%, fade(@input-background-color, 0%) 90%);
-        z-index: 10;     
+        z-index: 10;
     }
-    
-    ///* focus icon-right and shadow */ 
-    &>input[type="text"]:focus + span {
+    ///* focus icon-right and shadow */
+    & > input[type="text"]:focus + span {
         @input-background-focus: lighten(@input-background-color, 10%);
         background-image: -webkit-linear-gradient(left, fade(@input-background-focus, 0%) 0%, fade(@input-background-focus, 100%) 50%, fade(@input-background-focus, 0%) 90%);
         background-image: -o-linear-gradient(left, fade(@input-background-focus, 0%) 0%, fade(@input-background-focus, 100%) 50%, fade(@input-background-focus, 0%) 90%);
         background-image: linear-gradient(to right, fade(@input-background-focus, 0%) 0%, fade(@input-background-focus, 100%) 50%, fade(@input-background-focus, 0%) 90%);
     }
 
-    &>.error {
+    & > .error {
         position: absolute;
         background-color: red;
         color: white;
@@ -151,8 +160,8 @@
         border-radius: 4px;
         right: 2px;
         bottom: -1*@input-error-botom-position;
-        
-        &>.arrow {
+
+        & > .arrow {
             border-bottom: 5px solid red;
             border-left: 5px solid transparent;
             border-right: 5px solid transparent;
@@ -165,55 +174,60 @@
     }
 }
 
-.inp-input(@opc-type) when (@opc-type = 'text'){
-    &>input[type="text"] {padding-right: 2em; border-radius: @input-border-radius; margin-top: @input-margin-Top-width;}
+.inp-input(@opc-type) when (@opc-type = 'text') {
+    & > input[type="text"] {
+        padding-right: 2em;
+        border-radius: @input-border-radius;
+        margin-top: @input-margin-Top-width;
+    }
 
     input[type="text"] {
         box-sizing: border-box;
-        -webkit-box-sizing:border-box;
+        -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         //-webkit-tap-highlight-color: rgba(255,255,255,0);
         //tap-highlight-color: rgba(255,255,255,0);
-        line-height: 1.2142;
-        //font-size: @font-base;
         box-shadow: 0 0 0 0 transparent inset;
         -webkit-appearance: none;
         -webkit-transition: color .1s ease,border-color .1s ease;
+        -moz-transition: color .1s ease,border-color .1s ease;
+        -o-transition: color .1s ease,border-color .1s ease;
         transition: color .1s ease,border-color .1s ease;
     }
-    
     ///* input-text-focus */
-    &>input[type="text"]:focus,
-    &>.focus {
+    & > input[type="text"]:focus,
+    & > .focus {
         .inp-focus-scale();
         .inp-focus-shadow();
     }
-    
-    &>input[type="text"]:focus,
-    .focus>input[type="text"] {
+
+    & > input[type="text"]:focus,
+    .focus > input[type="text"] {
         .inp-focus-scale-fix();
     }
-    
-    &>.focus{.inp-focus-depth-fix();}
+
+    & > .focus {
+        .inp-focus-depth-fix();
+    }
 }
 
-.inp-input(@opc-type) when (@opc-type = 'checkbox'){
-    input[type='checkbox']{
+.inp-input(@opc-type) when (@opc-type = 'checkbox') {
+    input[type='checkbox'] {
         vertical-align: middle;
 
         &::before {
-            clear:both;
+            clear: both;
             content: "\000a";
         }
     }
 }
 
-.inp-input(@opc-type) when (@opc-type = 'radio'){
-    input[type='radio']{
+.inp-input(@opc-type) when (@opc-type = 'radio') {
+    input[type='radio'] {
         vertical-align: middle;
 
         &::before {
-            clear:both;
+            clear: both;
             content: "\000a";
         }
     }
@@ -222,26 +236,30 @@
 //
 ///* 4 *//* CONFIG MIXIN */
 .inp-margin-left() when (@input-margin-left = true) {
-    &>input,.afix,.prefix,.postfix,.set {
+    & > input, .afix, .prefix, .postfix, .set {
         margin-left: @input-margin-left-width;
     }
-    &>input[type="text"],.afix,.prefix,.postfix {
+
+    & > input[type="text"], .afix, .prefix, .postfix {
         width: ~'calc(100% - @{input-margin-left-width})';
     }
 }
 
 .inp-focus-depth() when (@input-focus-depth = true) and (@input-focus-shadow = false) {
     border-color: darken(@input-border-color, 7%) lighten(@input-border-color, 7%) lighten(@input-border-color, 7%) darken(@input-border-color, 3%);
-    //& ~ span{border-bottom-color: lighten(@input-border-color, 7%);}
 }
 
 .inp-focus-depth-fix() when (@input-focus-depth = true) and (@input-focus-shadow = false) {
-    &>span{border-bottom-color: lighten(@input-border-color, 7%) !important;}
+    & > span {
+        border-bottom-color: lighten(@input-border-color, 7%) !important;
+    }
 }
 
 .inp-focus-scale() when (@input-focus-scale = true) {
     -webkit-transform: scale(1.02,1);
     -moz-transform: scale(1.02,1);
+    -ms-transform: scale(1.02,1);
+    -o-transform: scale(1.02,1);
     transform: scale(1.02,1);
 }
 
@@ -255,35 +273,43 @@
     box-shadow: inset 0 0 0 1px @color-inset, 0 0 0 2px lighten(@input-shadow-color, 35%), 0 0 15px 3px fade(@input-shadow-color, 30%);
     border-color: @color-inset;
     border-radius: @input-border-radius + 1px;
-    
-    &>input{border-color: @color-inset;}
+
+    & > input {
+        border-color: @color-inset;
+    }
 }
 
-.inp-reset(){
-    input{outline: 0;}
+.inp-reset() {
+    input {
+        outline: 0;
+    }
 }
 
 .inp-afix() {
-    .fixed {width: 100%;
-        &>input[type="text"]{padding-right: 3em;}
+    .fixed {
+        width: 100%;
+
+        & > input[type="text"] {
+            padding-right: 3em;
+        }
     }
-    
+
     .fixed,
     .afix,
     .prefix,
-    .postfix { 
-        display: table;   
+    .postfix {
+        display: table;
         position: relative;
         border-collapse: separate;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
         box-sizing: border-box;
-        //font-size: @font-base;
         overflow: hidden;
         margin-top: @input-margin-Top-width;
 
-        &>span {
+        & > span {
             white-space: nowrap;
-            background-color: @input-afix-color;    
-            //padding: @padSup (@padLat + @radius-em);
+            background-color: @input-afix-color;
             padding: @padSup 1em;
             margin: 0;
             color: white;
@@ -291,75 +317,92 @@
             border: 1px solid @input-afix-color;
             width: 1%;
             vertical-align: middle;
-            &>i{width: unit(@font-base)*1em !important}
-            
+
+            & > i {
+                width: unit(@font-base)*1em !important;
+            }
             //button-without-padding
-            &>button{padding: 1em*(6*@size + 19)*1/100 1em;}
+            & > button {
+                padding: @button-no-padding;
+
+                & > i {
+                    font-size: 0.9em;
+                }
+            }
         }
 
-        &>input {
+        & > input {
             display: table-cell;
             margin: 0;
             float: left;
             width: 100% !important;
         }
-        
         //button-link
-        &>.button {
+        & > .button {
             padding: 0;
             overflow: hidden;
             border-width: 0 !important;
-            &>a{padding-left: 1em; padding-right: 1em}
+
+            & > a {
+                padding-left: 1em;
+                padding-right: 1em;
+            }
         }
-        
-        //button-padding
-        &>button {
-            @button-pad: 0.3;
+        //button-fixed-padding
+        & > button {
             position: absolute;
-            right: 1em*@button-pad;
-            top: 1em*@button-pad;       
-            padding: 1em*(5*@size)*1/100 1em*(@size)*1/10;
-            &>i{font-size: 0.9em}
+            right: 1em*@gap-fixed;
+            top: 1em*@gap-fixed;
+            padding: @button-fixed-padding;
+
+            & > i {
+                font-size: 0.9em;
+            }
         }
     }
 
-    .afix>input[type="text"],
-    .prefix>input[type="text"],
-    .afix>input[type="text"]:focus,
-    .prefix>input[type="text"]:focus{
+    .afix > input[type="text"],
+    .prefix > input[type="text"],
+    .afix > input[type="text"]:focus,
+    .prefix > input[type="text"]:focus {
         border-left-color: @input-afix-color !important;
     }
 
-    .afix>input[type="text"],
-    .postfix>input[type="text"],
-    .afix>input[type="text"]:focus,
-    .postfix>input[type="text"]:focus{
+    .afix > input[type="text"],
+    .postfix > input[type="text"],
+    .afix > input[type="text"]:focus,
+    .postfix > input[type="text"]:focus {
         border-right-color: @input-afix-color !important;
     }
 
-    .afix>span:first-child,
-    .postfix>input[type="text"],
-    .prefix>span {
+    .afix > span:first-child,
+    .postfix > input[type="text"],
+    .prefix > span {
         -webkit-border-top-left-radius: @input-border-radius;
+        border-top-left-radius: @input-border-radius;
         -webkit-border-bottom-left-radius: @input-border-radius;
+        border-bottom-left-radius: @input-border-radius;
         border-right: none;
     }
-    .afix>span:last-child,
-    .prefix>input[type="text"],
-    .postfix>span {
+
+    .afix > span:last-child,
+    .prefix > input[type="text"],
+    .postfix > span {
         -webkit-border-top-right-radius: @input-border-radius;
+        border-top-right-radius: @input-border-radius;
         -webkit-border-bottom-right-radius: @input-border-radius;
+        border-bottom-right-radius: @input-border-radius;
         border-left: none;
     }
 
-    .afix>input[type="text"]{
+    .afix > input[type="text"] {
         border-right: none;
         border-left: none;
     }
 }
 //
 ///* 5 *//* PRECONFIGURED PATTERNS */
-.inputs-field(){
+.inputs-field() {
     .field {
         .inp-reset();
         .inp-field();
@@ -370,9 +413,10 @@
     }
 }
 
-.input-general(){
+.input-general() {
     input[type="text"] {
         font-size: @font-base;
+        line-height: @input-line-height;
         padding: @padSup 0.7em @padSup 0.7em;
         background: @input-background-color;
         border: 1px solid @input-border-color;
@@ -381,33 +425,39 @@
 
         &:focus {
             background: lighten(@input-background-color, 10%);
-            & + span>i {color: @zerez-blue}
+
+            & + span > i {
+                color: @zerez-blue;
+            }
+
             .inp-focus-depth();
         }
     }
 }
 
-.input-autofill(){
-    @autofill-color: rgb(250, 250, 240); 
+.input-autofill() {
+    @autofill-color: rgb(250, 250, 240);
+
     input:-webkit-autofill,
     input:-webkit-autofill:hover,
     input:-webkit-autofill:focus,
     input:-webkit-autofill:active {
         //transition: background-color 5000s ease-in-out 0s !important;
         -webkit-box-shadow: 0 0 0px 1000px @autofill-color inset !important;
+        box-shadow: 0 0 0px 1000px @autofill-color inset !important;
     }
 
-    .field>input[type="text"]:-webkit-autofill:focus + span,
-    .field>input[type="text"]:-webkit-autofill + span {
+    .field > input[type="text"]:-webkit-autofill:focus + span,
+    .field > input[type="text"]:-webkit-autofill + span {
         color: gold;
         background-image: -webkit-linear-gradient(left, fade(@autofill-color, 0%) 0%, fade(@autofill-color, 100%) 50%, fade(@autofill-color, 0%) 90%) !important;
         background-image: -o-linear-gradient(left, fade(@autofill-color, 0%) 0%, fade(@autofill-color, 100%) 50%, fade(@autofill-color, 0%) 90%) !important;
-        background-image: linear-gradient(to right, fade(@autofill-color, 0%) 0%, fade(@autofill-color, 100%) 50%, fade(@autofill-color, 0%) 90%) !important;    
+        background-image: linear-gradient(to right, fade(@autofill-color, 0%) 0%, fade(@autofill-color, 100%) 50%, fade(@autofill-color, 0%) 90%) !important;
     }
 }
 //
 ///* 6 *//* INITIALIZED PATTERNS */
-.input-init(){
+.input-init() {
     .input-local-var();
     .input-general();
     .inputs-field();

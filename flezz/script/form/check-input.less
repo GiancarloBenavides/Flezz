@@ -1,6 +1,6 @@
 @import '../../stylesheets/themes/theme.docs.style.less';
 //
-@input-size: 9;
+@input-size: 7;
 .input-init();
 .button-init();
 
@@ -8,8 +8,7 @@
     background-color: transparent;
     .btn-button-box(@size: @input-size; @color: white);
     >a{
-        line-height: 1;
-        padding: 1em*(51*@size+287)/1000 1em;
+        padding: @button-link-padding;
     }
 }
 

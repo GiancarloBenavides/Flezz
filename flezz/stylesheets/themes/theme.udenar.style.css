@@ -1738,42 +1738,75 @@
   font-size: 3em;
   display: inline-block;
 }
-a[class~="white-back"] {
+a[class~="tl-white"] {
   background-color: #fafafa;
 }
-a[class~="black-back"] {
+a[class~="tl-black"] {
   background-color: #0a0a0f;
 }
-a[class~="blue-back"],
+a[class~="tl-blue"],
 a[class~="accent"] {
   background-color: #1ba1e2;
 }
-a[class~="brown-back"] {
+a[class~="tl-brown"] {
   background-color: #a05000;
 }
-a[class~="green-back"] {
+a[class~="tl-green"] {
   background-color: #339933;
 }
-a[class~="lime-back"] {
+a[class~="tl-lime"] {
   background-color: #8cbf26;
 }
-a[class~="magenta-back"] {
+a[class~="tl-magenta"] {
   background-color: #ff0097;
 }
-a[class~="orange-back"] {
+a[class~="tl-orange"] {
   background-color: #f09609;
 }
-a[class~="pink-back"] {
+a[class~="tl-pink"] {
   background-color: #e671b8;
 }
-a[class~="purple-back"] {
+a[class~="tl-purple"] {
   background-color: #a200ff;
 }
-a[class~="red-back"] {
+a[class~="tl-red"] {
   background-color: #e51400;
 }
-a[class~="teal-back"] {
+a[class~="tl-teal"] {
   background-color: #00aba9;
+}
+a[class*="tl-"]:hover {
+  background-color: #1a1d50;
+}
+a[class~="bt-primary"] {
+  background-color: #286090;
+}
+a[class~="bt-primary"]:hover {
+  background-color: #204d74;
+}
+a[class~="bt-success"] {
+  background-color: #449d44;
+}
+a[class~="bt-success"]:hover {
+  background-color: #398439;
+}
+a[class~="bt-info"] {
+  background-color: #31b0d5;
+}
+a[class~="bt-info"]:hover {
+  background-color: #269abc;
+}
+a[class~="bt-warning"] {
+  background-color: #ec971f;
+}
+a[class~="bt-warning"]:hover {
+  background-color: #d58412;
+}
+a[class~="bt-danger"] {
+  background-color: #d9534f;
+}
+a[class~="bt-danger"]:hover {
+  background-color: #d33632;
 }
 html {
   font-family: sans-serif;
@@ -2079,6 +2112,7 @@ input {
   padding: 1px;
 }
 .button-round-primary > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2087,14 +2121,15 @@ input {
   -o-transition: background-color 300ms ease-out;
   -webkit-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
-  border-radius: 2.5em;
+  border-radius: 3.4em;
   text-transform: capitalize;
-  background-color: #286090;
-  color: white;
-  border: 1px solid transparent;
-  line-height: 1.42857143;
+  line-height: 1;
   font-size: 1.3rem;
-  padding: 0.65rem 1.2rem;
+  padding: 0.72em 0.88em;
+}
+.button-round-primary > a {
+  background-color: #286090;
+  border: 1px solid transparent;
 }
 .button-round-primary > a:hover {
   background-color: #1e5380;
@@ -2114,6 +2149,7 @@ input {
   padding: 1px;
 }
 .button-round-secondary > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2122,14 +2158,15 @@ input {
   -o-transition: background-color 300ms ease-out;
   -webkit-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
-  border-radius: 2.5em;
+  border-radius: 3.4em;
   text-transform: capitalize;
-  background-color: #b9b9b9;
-  color: white;
-  border: 1px solid transparent;
-  line-height: 1.42857143;
+  line-height: 1;
   font-size: 1.3rem;
-  padding: 0.65rem 1.2rem;
+  padding: 0.72em 0.88em;
+}
+.button-round-secondary > a {
+  background-color: #b9b9b9;
+  border: 1px solid transparent;
 }
 .button-round-secondary > a:hover {
   background-color: #b0a8a8;
@@ -2149,6 +2186,7 @@ input {
   padding: 1px;
 }
 .button-round-success > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2157,14 +2195,15 @@ input {
   -o-transition: background-color 300ms ease-out;
   -webkit-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
-  border-radius: 2.5em;
+  border-radius: 3.4em;
   text-transform: capitalize;
-  background-color: #449d44;
-  color: white;
-  border: 1px solid transparent;
-  line-height: 1.42857143;
+  line-height: 1;
   font-size: 1.3rem;
-  padding: 0.65rem 1.2rem;
+  padding: 0.72em 0.88em;
+}
+.button-round-success > a {
+  background-color: #449d44;
+  border: 1px solid transparent;
 }
 .button-round-success > a:hover {
   background-color: #379037;
@@ -2184,6 +2223,7 @@ input {
   padding: 1px;
 }
 .button-round-danger > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2192,14 +2232,15 @@ input {
   -o-transition: background-color 300ms ease-out;
   -webkit-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
-  border-radius: 2.5em;
+  border-radius: 3.4em;
   text-transform: capitalize;
-  background-color: #d9534f;
-  color: white;
-  border: 1px solid transparent;
-  line-height: 1.42857143;
+  line-height: 1;
   font-size: 1.3rem;
-  padding: 0.65rem 1.2rem;
+  padding: 0.72em 0.88em;
+}
+.button-round-danger > a {
+  background-color: #d9534f;
+  border: 1px solid transparent;
 }
 .button-round-danger > a:hover {
   background-color: #da3934;
@@ -2219,6 +2260,7 @@ input {
   padding: 1px;
 }
 .button-primary > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2229,12 +2271,13 @@ input {
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
-  background-color: #286090;
-  color: white;
-  border: 1px solid transparent;
-  line-height: 1.42857143;
+  line-height: 1;
   font-size: 1.3rem;
-  padding: 0.65rem 1.2rem;
+  padding: 0.72em 0.88em;
+}
+.button-primary > a {
+  background-color: #286090;
+  border: 1px solid transparent;
 }
 .button-primary > a:hover {
   background-color: #1e5380;
@@ -2254,6 +2297,7 @@ input {
   padding: 1px;
 }
 .button-secondary > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2264,12 +2308,13 @@ input {
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
-  background-color: #b9b9b9;
-  color: white;
-  border: 1px solid transparent;
-  line-height: 1.42857143;
+  line-height: 1;
   font-size: 1.3rem;
-  padding: 0.65rem 1.2rem;
+  padding: 0.72em 0.88em;
+}
+.button-secondary > a {
+  background-color: #b9b9b9;
+  border: 1px solid transparent;
 }
 .button-secondary > a:hover {
   background-color: #b0a8a8;
@@ -2289,6 +2334,7 @@ input {
   padding: 1px;
 }
 .button-success > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2299,12 +2345,13 @@ input {
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
-  background-color: #449d44;
-  color: white;
-  border: 1px solid transparent;
-  line-height: 1.42857143;
+  line-height: 1;
   font-size: 1.3rem;
-  padding: 0.65rem 1.2rem;
+  padding: 0.72em 0.88em;
+}
+.button-success > a {
+  background-color: #449d44;
+  border: 1px solid transparent;
 }
 .button-success > a:hover {
   background-color: #379037;
@@ -2324,6 +2371,7 @@ input {
   padding: 1px;
 }
 .button-danger > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2334,12 +2382,13 @@ input {
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
-  background-color: #d9534f;
-  color: white;
-  border: 1px solid transparent;
-  line-height: 1.42857143;
+  line-height: 1;
   font-size: 1.3rem;
-  padding: 0.65rem 1.2rem;
+  padding: 0.72em 0.88em;
+}
+.button-danger > a {
+  background-color: #d9534f;
+  border: 1px solid transparent;
 }
 .button-danger > a:hover {
   background-color: #da3934;
@@ -2359,6 +2408,7 @@ input {
   padding: 1px;
 }
 .button-expanded-primary > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2369,12 +2419,13 @@ input {
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
-  background-color: #286090;
-  color: white;
-  border: 1px solid transparent;
-  line-height: 1.42857143;
+  line-height: 1;
   font-size: 1.3rem;
-  padding: 0.65rem 1.2rem;
+  padding: 0.72em 0.88em;
+}
+.button-expanded-primary > a {
+  background-color: #286090;
+  border: 1px solid transparent;
 }
 .button-expanded-primary > a:hover {
   background-color: #1e5380;
@@ -2394,6 +2445,7 @@ input {
   padding: 1px;
 }
 .button-expanded-secondary > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2404,12 +2456,13 @@ input {
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
-  background-color: #b9b9b9;
-  color: white;
-  border: 1px solid transparent;
-  line-height: 1.42857143;
+  line-height: 1;
   font-size: 1.3rem;
-  padding: 0.65rem 1.2rem;
+  padding: 0.72em 0.88em;
+}
+.button-expanded-secondary > a {
+  background-color: #b9b9b9;
+  border: 1px solid transparent;
 }
 .button-expanded-secondary > a:hover {
   background-color: #b0a8a8;
@@ -2429,6 +2482,7 @@ input {
   padding: 1px;
 }
 .button-expanded-success > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2439,12 +2493,13 @@ input {
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
-  background-color: #449d44;
-  color: white;
-  border: 1px solid transparent;
-  line-height: 1.42857143;
+  line-height: 1;
   font-size: 1.3rem;
-  padding: 0.65rem 1.2rem;
+  padding: 0.72em 0.88em;
+}
+.button-expanded-success > a {
+  background-color: #449d44;
+  border: 1px solid transparent;
 }
 .button-expanded-success > a:hover {
   background-color: #379037;
@@ -2464,6 +2519,7 @@ input {
   padding: 1px;
 }
 .button-expanded-danger > a {
+  color: white;
   cursor: pointer;
   font-family: "OpenSansRegular", "RobotoRegular", "Segoe UI", "Helvetica", sans-serif;
   text-decoration: none;
@@ -2474,12 +2530,13 @@ input {
   transition: background-color 300ms ease-out;
   border-radius: 0;
   text-transform: capitalize;
-  background-color: #d9534f;
-  color: white;
-  border: 1px solid transparent;
-  line-height: 1.42857143;
+  line-height: 1;
   font-size: 1.3rem;
-  padding: 0.65rem 1.2rem;
+  padding: 0.72em 0.88em;
+}
+.button-expanded-danger > a {
+  background-color: #d9534f;
+  border: 1px solid transparent;
 }
 .button-expanded-danger > a:hover {
   background-color: #da3934;
@@ -2785,21 +2842,26 @@ div.dropdown[data-state="open"] .caret {
   transform: rotate(180deg);
 }
 input[type="text"] {
-  padding: 0.9rem 4.5rem 0.9rem 1.5rem;
+  font-size: 1.3rem;
+  line-height: 1;
+  padding: 0.72em 0.7em 0.72em 0.7em;
   background: #f4f4f4;
-  border: 1px solid #d9d9d9;
-  color: #163758;
+  border: 1px solid #ccccd0;
+  color: #2a69aa;
+  z-index: 1;
 }
 input[type="text"]:focus {
   background: #ffffff;
-  border: 1px solid #d1d1d1;
-  border-bottom-color: #e1e1e1;
-  border-right-color: #e1e1e1;
+  border-color: #b9b9bf #dfdfe1 #dfdfe1 #c4c4c9;
+}
+input[type="text"]:focus + span > i {
+  color: #00afef;
 }
 .field {
+  font-size: 1.3rem;
   position: relative;
   clear: both;
-  margin: 0 0 1em;
+  margin: 0 0 1.63rem;
 }
 .field input {
   outline: 0;
@@ -2809,13 +2871,13 @@ input[type="text"]:focus {
 .field .prefix,
 .field .postfix,
 .field .set {
-  margin-left: 15px;
+  margin-left: 14px;
 }
 .field > input[type="text"],
 .field .afix,
 .field .prefix,
 .field .postfix {
-  width: calc(100% - 15px);
+  width: calc(100% - 14px);
 }
 .field label {
   color: #205081;
@@ -2824,18 +2886,18 @@ input[type="text"]:focus {
   text-transform: capitalize;
 }
 .field button {
-  font-size: 1.5rem;
   font-family: 'OpenSansBold';
-  background-color: #205081;
   color: #f4f4f4;
-  line-height: 1.2142em;
-  padding: 0.9rem 1.5rem;
+  line-height: 1;
+  background-color: #205081;
   border: 1px solid #205081;
   outline: 1px solid #205081;
   white-space: nowrap;
   display: table-cell;
   width: auto;
   -webkit-transition: background-color 300ms ease-out;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
 }
 .field button:hover {
@@ -2843,22 +2905,33 @@ input[type="text"]:focus {
   border: 1px solid #1b436d;
   outline: 1px solid #1b436d;
 }
-.field > span > i {
+.field > button {
+  padding: 0.61em 0.7em;
+}
+.field > span {
   position: absolute;
-  float: right;
-  color: #00366e;
-  right: 0.7em;
-  font-size: 1.5rem;
-  bottom: 1.14rem;
+  right: 0;
+  bottom: 1px;
+  padding: 0.36em 0.7em 0.72em 2em;
+  color: #0050a1;
+  background-image: -webkit-linear-gradient(left, rgba(244, 244, 244, 0) 0%, #f4f4f4 50%, rgba(244, 244, 244, 0) 90%);
+  background-image: -o-linear-gradient(left, rgba(244, 244, 244, 0) 0%, #f4f4f4 50%, rgba(244, 244, 244, 0) 90%);
+  background-image: linear-gradient(to right, rgba(244, 244, 244, 0) 0%, #f4f4f4 50%, rgba(244, 244, 244, 0) 90%);
+  z-index: 10;
+}
+.field > input[type="text"]:focus + span {
+  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 50%, rgba(255, 255, 255, 0) 90%);
+  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 50%, rgba(255, 255, 255, 0) 90%);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 50%, rgba(255, 255, 255, 0) 90%);
 }
 .field > .error {
   position: absolute;
   background-color: red;
   color: white;
-  padding: 0 20px;
+  padding: 0 0.7em;
   border-radius: 4px;
   right: 2px;
-  bottom: -2em;
+  bottom: -1.805rem;
 }
 .field > .error > .arrow {
   border-bottom: 5px solid red;
@@ -2871,26 +2944,36 @@ input[type="text"]:focus {
   width: 0;
 }
 .field > input[type="text"] {
-  border-radius: 13px;
-}
-.field .focus {
-  border-radius: 14px;
-}
-.field > input[type="text"]:focus,
-.field .focus {
-  -webkit-transform: scale(1.015);
-  -moz-transform: scale(1.015);
+  padding-right: 2em;
+  border-radius: 7px;
+  margin-top: 0.23em;
 }
 .field input[type="text"] {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  line-height: 1.2142em;
-  font-size: 1.5rem;
   box-shadow: 0 0 0 0 transparent inset;
   -webkit-appearance: none;
   -webkit-transition: color 0.1s ease, border-color 0.1s ease;
+  -moz-transition: color 0.1s ease, border-color 0.1s ease;
+  -o-transition: color 0.1s ease, border-color 0.1s ease;
   transition: color 0.1s ease, border-color 0.1s ease;
+}
+.field > input[type="text"]:focus,
+.field > .focus {
+  -webkit-transform: scale(1.02, 1);
+  -moz-transform: scale(1.02, 1);
+  -ms-transform: scale(1.02, 1);
+  -o-transform: scale(1.02, 1);
+  transform: scale(1.02, 1);
+}
+.field > input[type="text"]:focus,
+.field .focus > input[type="text"] {
+  border-left-width: 2px;
+  border-right-width: 0;
+}
+.field > .focus > span {
+  border-bottom-color: #dfdfe1 !important;
 }
 .field input[type='checkbox'] {
   vertical-align: middle;
@@ -2906,33 +2989,58 @@ input[type="text"]:focus {
   clear: both;
   content: "\000a";
 }
+.field .fixed {
+  width: 100%;
+}
+.field .fixed > input[type="text"] {
+  padding-right: 3em;
+}
+.field .fixed,
 .field .afix,
 .field .prefix,
 .field .postfix {
   display: table;
   position: relative;
   border-collapse: separate;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-size: 1.5rem;
+  overflow: hidden;
+  margin-top: 0.23em;
 }
+.field .fixed > span,
 .field .afix > span,
 .field .prefix > span,
 .field .postfix > span {
   white-space: nowrap;
-  background-color: #c0c0c0;
-  padding: 0.9rem 1.703125rem;
+  background-color: #b1b1b8;
+  padding: 0.72em 1em;
   margin: 0;
   color: white;
   display: table-cell;
-  border: 1px solid #c0c0c0;
+  border: 1px solid #b1b1b8;
   width: 1%;
   vertical-align: middle;
 }
+.field .fixed > span > i,
 .field .afix > span > i,
 .field .prefix > span > i,
 .field .postfix > span > i {
-  width: 1.5em !important;
+  width: 1.3em !important;
 }
+.field .fixed > span > button,
+.field .afix > span > button,
+.field .prefix > span > button,
+.field .postfix > span > button {
+  padding: 0.817em 0.815em;
+}
+.field .fixed > span > button > i,
+.field .afix > span > button > i,
+.field .prefix > span > button > i,
+.field .postfix > span > button > i {
+  font-size: 0.9em;
+}
+.field .fixed > input,
 .field .afix > input,
 .field .prefix > input,
 .field .postfix > input {
@@ -2941,52 +3049,83 @@ input[type="text"]:focus {
   float: left;
   width: 100% !important;
 }
+.field .fixed > .button,
 .field .afix > .button,
 .field .prefix > .button,
 .field .postfix > .button {
   padding: 0;
   overflow: hidden;
-  background-color: #205081;
-  border-color: #205081;
+  border-width: 0 !important;
 }
+.field .fixed > .button > a,
+.field .afix > .button > a,
+.field .prefix > .button > a,
+.field .postfix > .button > a {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.field .fixed > button,
 .field .afix > button,
 .field .prefix > button,
 .field .postfix > button {
   position: absolute;
-  right: 0.35rem;
-  top: 0.35rem;
-  padding: 0.2rem 1.5rem;
-  outline: 0;
+  right: 0.39em;
+  top: 0.39em;
+  padding: 0.477em 0.815em;
+}
+.field .fixed > button > i,
+.field .afix > button > i,
+.field .prefix > button > i,
+.field .postfix > button > i {
+  font-size: 0.9em;
 }
 .field .afix > input[type="text"],
 .field .prefix > input[type="text"],
 .field .afix > input[type="text"]:focus,
 .field .prefix > input[type="text"]:focus {
-  border-left-color: #c0c0c0 !important;
+  border-left-color: #b1b1b8 !important;
 }
 .field .afix > input[type="text"],
 .field .postfix > input[type="text"],
 .field .afix > input[type="text"]:focus,
 .field .postfix > input[type="text"]:focus {
-  border-right-color: #c0c0c0 !important;
+  border-right-color: #b1b1b8 !important;
 }
 .field .afix > span:first-child,
 .field .postfix > input[type="text"],
 .field .prefix > span {
-  -webkit-border-top-left-radius: 13px;
-  -webkit-border-bottom-left-radius: 13px;
+  -webkit-border-top-left-radius: 7px;
+  border-top-left-radius: 7px;
+  -webkit-border-bottom-left-radius: 7px;
+  border-bottom-left-radius: 7px;
   border-right: none;
 }
 .field .afix > span:last-child,
 .field .prefix > input[type="text"],
 .field .postfix > span {
-  -webkit-border-top-right-radius: 13px;
-  -webkit-border-bottom-right-radius: 13px;
+  -webkit-border-top-right-radius: 7px;
+  border-top-right-radius: 7px;
+  -webkit-border-bottom-right-radius: 7px;
+  border-bottom-right-radius: 7px;
   border-left: none;
 }
 .field .afix > input[type="text"] {
   border-right: none;
   border-left: none;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #fafaf0 inset !important;
+  box-shadow: 0 0 0px 1000px #fafaf0 inset !important;
+}
+.field > input[type="text"]:-webkit-autofill:focus + span,
+.field > input[type="text"]:-webkit-autofill + span {
+  color: gold;
+  background-image: -webkit-linear-gradient(left, rgba(250, 250, 240, 0) 0%, #fafaf0 50%, rgba(250, 250, 240, 0) 90%) !important;
+  background-image: -o-linear-gradient(left, rgba(250, 250, 240, 0) 0%, #fafaf0 50%, rgba(250, 250, 240, 0) 90%) !important;
+  background-image: linear-gradient(to right, rgba(250, 250, 240, 0) 0%, #fafaf0 50%, rgba(250, 250, 240, 0) 90%) !important;
 }
 div[class|="tile"] {
   float: left;
