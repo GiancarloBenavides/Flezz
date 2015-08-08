@@ -1781,8 +1781,32 @@ a[class*="tl-"]:hover {
 a[class~="bt-primary"] {
   background-color: #286090;
 }
-[class~="bt-primary"]:hover {
+a[class~="bt-primary"]:hover {
   background-color: #204d74;
+}
+a[class~="bt-success"] {
+  background-color: #449d44;
+}
+a[class~="bt-success"]:hover {
+  background-color: #398439;
+}
+a[class~="bt-info"] {
+  background-color: #31b0d5;
+}
+a[class~="bt-info"]:hover {
+  background-color: #269abc;
+}
+a[class~="bt-warning"] {
+  background-color: #ec971f;
+}
+a[class~="bt-warning"]:hover {
+  background-color: #d58412;
+}
+a[class~="bt-danger"] {
+  background-color: #d9534f;
+}
+a[class~="bt-danger"]:hover {
+  background-color: #d33632;
 }
 html {
   font-family: sans-serif;
@@ -1981,7 +2005,7 @@ body {
   z-index: 1;
   background-color: #356c8d;
   color: #f5f5f7;
-  font-size: 1rem;
+  font-size: 1em;
   overflow: hidden;
   -webkit-user-select: none;
   -moz-user-select: none;

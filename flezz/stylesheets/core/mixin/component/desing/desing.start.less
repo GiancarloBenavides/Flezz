@@ -56,9 +56,11 @@
 @scroll-bar-min-width: 4px;
 //
 ///* local variables */
-@dfl-size10: @desing-font-size-init*62.5;
-@scroll-bar-margin-right: (@scroll-content-padding - @scroll-bar-width)/2;
-//
+.desing-start-local-var(){
+    @dfl-size10: @desing-font-size-init*62.5;
+    @scroll-bar-margin-right: (@scroll-content-padding - @scroll-bar-width)/2;
+}
+ //
 ///* 2 *//* ROAD MAP */
 // --------------------------------------------------
 
@@ -104,7 +106,7 @@
 }
 
 .dsn-body-font() when (@desing-font-size-inerit = true) {
-    font-size: 1rem;
+    font-size: 1em;
 }
 
 .dsn-overflow() when (@desing-overflow-vertical = true) {
@@ -285,6 +287,7 @@
 //
 ///* 6 *//* INITIALIZED PATTERNS */
 .desing-start-init() {
+    .desing-start-local-var();
     .desing-html();
     .desing-body();
     .dsn-list();

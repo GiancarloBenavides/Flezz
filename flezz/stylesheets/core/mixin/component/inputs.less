@@ -55,17 +55,18 @@
 .input-local-var() {
     //@textarea-margin: @input-margin-left + 5px;
     @input-line-height: @button-line-height;
+    @input-border-width: 1px;
     @size: @input-size;
     @font-base: 1rem * (@size + 6) * 10/100;
     //@padSup: @font-base * (@size + 3) * 1/20;
     //@padLat: 1rem * (@size + 1) * 15/100;
-    @padSup: 1em * (@size + 5) * 6/100;
+    @padSup: 1em * (@size + 10) * 5/100;
     @padLat: 1em * (@size + 4) * 8/100;
     @padding: @padSup @padLat;
     ///* padding type buttons */
     @gap-fixed: 0.39;
-    @padSup-fixed: 1em * (61 * @size + 440 - 1000 * @gap-fixed) * 1/1000;
-    @padLat-fixed: 1em * (9 * @size + 100) * 5/1000;
+    @padSup-fixed: 1em * (56 * @size + 440 - 1000 * @gap-fixed) * 1/1000;
+    @padLat-fixed: 1em * (39 * @size + 500) * 1/1000;
     @button-fixed-padding: @padSup-fixed @padLat-fixed;
     //
     @padSup-no-padding: 1em * (66 * @size + 355) * 1/1000;
@@ -78,7 +79,9 @@
     @padSup-link: 1em * (46 * @size + 624 - 1000 * @gap-link) * 1/1000;
     @padLat-link: 1em * (9 * @size + 100) * 5/1000;
     @button-link-padding: @padSup-link @padLat-link;
-    //@btn-height: @font-base + 2 * @padSup;
+    @inp-box-content: (2*@padSup + 1);
+    @inp-border: 2*@input-border-width;
+    @input-box-height: ~'calc(@{inp-box-content} + @{inp-border})';
     //@radius-em: unit(@input-border-radius)/(16*4);
 
     @input-field-margin: 1rem*(34*@size + 88)/200;
@@ -410,6 +413,7 @@
     input[type="text"] {
         font-size: @font-base;
         line-height: @input-line-height;
+        height: @input-box-height;
         padding: @padSup 0.7em @padSup 0.7em;
         background: @input-background-color;
         border: 1px solid @input-border-color;
