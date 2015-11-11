@@ -283,7 +283,6 @@ img {
   left: 10px;
   width: calc(100% - 20px);
   height: calc(100% - 120px);
-  text-align: center;
 }
 .cd-fixed-content .flezz-scroll {
   height: 100%;
@@ -291,14 +290,14 @@ img {
   margin: 0 auto;
 }
 footer.cd-fotter-min {
-  background-color: #205081;
+  background-color: #007d64;
   color: white;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 70px;
-  line-height: 70px;
+  height: 32px;
+  line-height: 32px;
 }
 .cd-scroll-conteiner {
   margin: 10px 10px 0 0;
@@ -316,6 +315,55 @@ footer.cd-fotter-min {
     background-color: black;
   }
 }
+.button-primary a {
+  background-color: #007d64;
+}
+.button-primary a:hover {
+  background-color: #006350;
+}
+#max,
+#min,
+#med {
+  width: calc(100% - 8px);
+}
+.tiles {
+  padding-top: 2rem;
+}
+.cd-main-content h1 {
+  font-size: 2rem;
+  color: #007d64;
+  font-weight: bold;
+}
+body {
+  overflow-y: scroll;
+}
+#cd-convocatorias::after {
+  clear: both;
+}
+#cd-news {
+  height: 32px;
+  line-height: 32px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  background-color: #000000;
+  color: white;
+  font-size: 0.7em;
+  overflow-x: hidden;
+}
+#cd-convocatorias:before,
+#cd-convocatorias:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+#cd-convocatorias:after {
+  clear: both;
+}
+#cd-intro-tagline {
+  display: none;
+}
 #cd-logo a {
   display: block;
   line-height: 70px;
@@ -323,10 +371,14 @@ footer.cd-fotter-min {
 article {
   margin-top: 3em;
 }
+.funciones {
+  list-style: square inside url('../img/icons/cd-bar-quality.svg') !important;
+}
 .funciones > li {
   display: block;
   margin-top: 20px;
   line-height: 1.4em;
+  padding-left: 20px;
 }
 .funciones .item {
   display: inline-block;
@@ -405,7 +457,7 @@ div.group ul a:hover {
   width: 100%;
   height: 50px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  background-color: #205081;
+  background-color: #007d64;
   z-index: 3;
   color: #ffffff;
 }
@@ -423,7 +475,6 @@ div.group ul a:hover {
   margin-right: 5%;
   width: 44px;
   height: 100%;
-  background: url(../img/icons/cd-icon-menu.svg) no-repeat center center;
   background-size: 44px 44px;
 }
 .cd-primary-nav > ul {
@@ -455,7 +506,7 @@ div.group ul a:hover {
   color: #ffffff;
 }
 .cd-primary-nav > ul a:hover {
-  background-color: #205081;
+  background-color: #007d64;
 }
 #cd-intro {
   position: relative;
@@ -488,6 +539,15 @@ div.group ul a:hover {
   font-weight: 300;
   color: #ffffff;
   text-shadow: 3px 3px 7px #000000;
+}
+#cd-intro > span {
+  background-image: url(../img/logos/logo_sig.png);
+  background-size: cover;
+  height: 70px;
+  width: 140px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
 .cd-btn {
   display: inline-block;
@@ -546,8 +606,12 @@ div.group ul a:hover {
   -o-transition: transform 0.3s, visibility 0s 0.3s;
   transition: transform 0.3s, visibility 0s 0.3s;
 }
+.cd-secondary-nav ul li {
+  border-top: 4px solid #00735c;
+}
 .cd-secondary-nav ul li:hover {
-  background-color: #205081;
+  background-color: #007d64;
+  border-top-color: #f9b101;
 }
 .cd-secondary-nav ul.is-visible {
   visibility: visible;
@@ -566,6 +630,9 @@ div.group ul a:hover {
   padding: 1.6em;
   border-bottom: 1px solid #092645;
   color: #f0eee1;
+}
+.cd-secondary-nav li a img {
+  display: none;
 }
 .cd-secondary-nav li:last-child a {
   border-bottom: none;
@@ -685,6 +752,13 @@ div.group ul a:hover {
   div.slide img {
     width: 55%;
   }
+  #min,
+  #med {
+    width: calc(50% - 8px);
+  }
+  #max {
+    width: calc(100% - 8px);
+  }
 }
 @media only screen and (min-width: 768px) {
   #text-two,
@@ -692,6 +766,11 @@ div.group ul a:hover {
   div.group {
     width: 25%;
     text-align: left !important;
+  }
+  #min,
+  #med,
+  #max {
+    width: calc(33% - 8px);
   }
 }
 @media only screen and (min-width: 1150px) {
@@ -806,7 +885,7 @@ div.group ul a:hover {
     opacity: 1;
   }
   #cd-intro {
-    height: 400px;
+    height: calc(100% - 160px);
   }
   #cd-intro #cd-intro-tagline {
     padding-top: 150px;
@@ -829,9 +908,9 @@ div.group ul a:hover {
   }
   .cd-secondary-nav {
     z-index: 1;
-    height: 100px;
-    border-top: 1px solid #1c4671;
-    background-color: #1e4b79;
+    height: 128px;
+    border-top: 1px solid #006954;
+    background-color: #00735c;
     -webkit-transition: height 0.3s;
     -moz-transition: height 0.3s;
     -o-transition: height 0.3s;
@@ -862,17 +941,21 @@ div.group ul a:hover {
   .cd-secondary-nav li {
     display: inline-block;
     margin-left: -4px;
+    width: 16%;
   }
   .cd-secondary-nav li > a {
     position: relative;
     text-align: center;
     display: block;
-    padding: 58px 40px 0 40px;
+    padding: 80px 40px 0 40px;
     border-bottom: none;
     -webkit-transition: padding 0.2s;
     -moz-transition: padding 0.2s;
     -o-transition: padding 0.2s;
     transition: padding 0.2s;
+  }
+  .cd-secondary-nav li > a img {
+    display: block;
   }
   .cd-secondary-nav li > a b {
     text-transform: uppercase;
@@ -884,8 +967,8 @@ div.group ul a:hover {
   .cd-secondary-nav li a span {
     position: absolute;
     display: inline-block;
-    width: 40px;
-    height: 40px;
+    width: 57px;
+    height: 57px;
     top: 18px;
     left: 50%;
     right: auto;
@@ -895,15 +978,17 @@ div.group ul a:hover {
     -o-transform: translateX(-50%);
     transform: translateX(-50%);
     background-repeat: no-repeat;
-    background-image: url(../img/icons/cd-nav-icons4.svg);
     -webkit-transition: opacity 0.2s;
     -moz-transition: opacity 0.2s;
     -o-transition: opacity 0.2s;
     transition: opacity 0.2s;
   }
+  .cd-secondary-nav li a span img {
+    height: 57px;
+  }
   .cd-secondary-nav li a:hover b,
   .cd-secondary-nav li a.active b {
-    color: #f0eee1;
+    color: #f9b101;
   }
   .cd-secondary-nav li:nth-child(1) a span {
     background-position: 0 0;
@@ -930,18 +1015,24 @@ div.group ul a:hover {
   .cd-secondary-nav.animate-children {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   }
-  .cd-secondary-nav.animate-children li a {
-    padding: 26px 30px 0 30px;
+  .cd-secondary-nav.animate-children ul {
+    text-align: right;
+    padding-right: 100px;
+  }
+  .cd-secondary-nav.animate-children ul li {
+    width: auto;
+  }
+  .cd-secondary-nav.animate-children ul li a {
+    padding: 26px 26px 0px 26px;
   }
   .cd-secondary-nav.animate-children li a span {
     opacity: 0;
   }
   .cd-section {
     margin: 0 auto;
-    padding: 7rem 0;
+    padding: 5rem 0;
   }
   .cd-section h2 {
-    font-size: 30px;
     font-size: 1.875rem;
   }
   .cd-section p {

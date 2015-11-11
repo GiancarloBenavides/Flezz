@@ -33,19 +33,25 @@
 @input-focus-depth: true;
 @input-focus-scale: true;
 @input-focus-shadow: false;
+@input-font-size-rem: true;
 ///* input size option */
-@input-margin-left-width: 14px;
+@input-margin-left-width: 0px;
 @input-border-radius: 7px;
 @input-size: 7;
+///* input placeholder option */
+@input-placeholder-font-color: @gray15;
 ///* input label option */
 @input-label-font-family: @font-bold;
 @input-label-font-color: #205081;
 ///* input color option */
 @input-background-color: @gray05;
-@input-border-color: @gray20;
+@input-border-color: mix(@input-label-font-color, @input-background-color, 14%);
 @input-font-color: lighten(@input-label-font-color, 10%);
 @input-icon-color: saturate(@input-label-font-color, 90%);
-@input-afix-color: darken(@input-border-color, 10%);
+@input-icon-focus-color: lighten(@input-label-font-color, 14%);
+@input-icon-autofill-color: #f9b101; 
+@input-autofill-background-color: #fafaf0;
+@input-afix-color: mix(@input-label-font-color, @input-background-color, 70%);
 ///* input event color option */
 @input-shadow-color: @zerez-blue;
 @input-focus-border-color: darken(@input-border-color,7%);
@@ -54,17 +60,24 @@
 ///* local variables */
 .input-local-var() {
     //@textarea-margin: @input-margin-left + 5px;
-    @input-line-height: @button-line-height;
+    @input-line-height: unit(@inp-box-content);
     @input-border-width: 1px;
     @size: @input-size;
-    @font-base: 1rem * (@size + 6) * 10/100;
-    //@padSup: @font-base * (@size + 3) * 1/20;
-    //@padLat: 1rem * (@size + 1) * 15/100;
-    @padSup: 1em * (@size + 10) * 5/100;
-    @padLat: 1em * (@size + 4) * 8/100;
+    @font-root: 16;
+    @font-base: (@size + 6) * 10/100;
+    @font-size-rem: 1rem * round(@font-base * @font-root) / @font-root;
+    @font-size-px:   1px * unit(@font-size-rem) * @font-root;
+    //
+    @padSup: 1em * (@size + 1) * 1/10;
+    @padLat: 1em * (@size + 1) * 1/10;
+    //
+    @inp-box-content: (2*@padSup + 1);
+    @inp-border: 2*@input-border-width;
+    @input-box-height: ~'calc(@{inp-box-content} + @{inp-border})';
+    //
     @padding: @padSup @padLat;
     ///* padding type buttons */
-    @gap-fixed: 0.39;
+    @gap-fixed: (2 * @size + 10)/100;//0.39;
     @padSup-fixed: 1em * (56 * @size + 440 - 1000 * @gap-fixed) * 1/1000;
     @padLat-fixed: 1em * (39 * @size + 500) * 1/1000;
     @button-fixed-padding: @padSup-fixed @padLat-fixed;
@@ -79,11 +92,8 @@
     @padSup-link: 1em * (46 * @size + 624 - 1000 * @gap-link) * 1/1000;
     @padLat-link: 1em * (9 * @size + 100) * 5/1000;
     @button-link-padding: @padSup-link @padLat-link;
-    @inp-box-content: (2*@padSup + 1);
-    @inp-border: 2*@input-border-width;
-    @input-box-height: ~'calc(@{inp-box-content} + @{inp-border})';
+    //
     //@radius-em: unit(@input-border-radius)/(16*4);
-
     @input-field-margin: 1rem*(34*@size + 88)/200;
     @input-error-botom-position: 1rem*(23*@size + 200)/200;
     @input-margin-Top-width: 0.23em;
@@ -96,60 +106,18 @@
 // --------------------------------------------------
 //
 ///* 3 *//* BASE MODULES */
-.inp-field() {
-    font-size: @font-base;
+
+///* base module by field *///
+.inp-input-field() {
+    
+    .inp-font-size(1);
     position: relative;
     clear: both;
     margin: 0 0 @input-field-margin;
     .inp-margin-left();
-
-    ///* general button */
-    button {
-        font-family: 'OpenSansBold';
-        color: @input-background-color;
-        line-height: 1;
-        background-color: @input-label-font-color;
-        border: 1px solid @input-label-font-color;
-        outline: 1px solid @input-label-font-color;
-        white-space: nowrap;
-        display: table-cell;
-        width: auto;
-        -webkit-transition: background-color 300ms ease-out;
-        -moz-transition: background-color 300ms ease-out;
-        -o-transition: background-color 300ms ease-out;
-        transition: background-color 300ms ease-out;
-
-        &:hover {
-            background-color: darken(@input-label-font-color,5%);
-            border: 1px solid darken(@input-label-font-color,5%);
-            outline: 1px solid darken(@input-label-font-color,5%);
-        }
-    }
-    ///* button */
-    & > button {
-        padding: 1em*(6*@size + 19)*1/100 0.7em;
-    }
-    ///* icon-right and shadow */
-    & > span {
-        position: absolute;
-        right: 0.5em;
-        bottom: @padSup/2;
-        padding: @padSup/2 0.2em @padSup/2 2.1em;
-        color: @input-icon-color;
-        background-image: -webkit-linear-gradient(left, fade(@input-background-color, 0%) 0%, fade(@input-background-color, 100%) 50%, fade(@input-background-color, 0%) 90%);
-        background-image: -o-linear-gradient(left, fade(@input-background-color, 0%) 0%, fade(@input-background-color, 100%) 50%, fade(@input-background-color, 0%) 90%);
-        background-image: linear-gradient(to right, fade(@input-background-color, 0%) 0%, fade(@input-background-color, 100%) 50%, fade(@input-background-color, 0%) 90%);
-        z-index: 10;
-    }
-    ///* focus icon-right and shadow */
-    & > input[type="text"]:focus + span {
-        @input-background-focus: lighten(@input-background-color, 10%);
-        background-image: -webkit-linear-gradient(left, fade(@input-background-focus, 0%) 0%, fade(@input-background-focus, 100%) 50%, fade(@input-background-focus, 0%) 90%);
-        background-image: -o-linear-gradient(left, fade(@input-background-focus, 0%) 0%, fade(@input-background-focus, 100%) 50%, fade(@input-background-focus, 0%) 90%);
-        background-image: linear-gradient(to right, fade(@input-background-focus, 0%) 0%, fade(@input-background-focus, 100%) 50%, fade(@input-background-focus, 0%) 90%);
-    }
-
-    & > .error {
+    
+    ///* Validate input error */
+    & > small {
         position: absolute;
         background-color: red;
         color: white;
@@ -157,6 +125,10 @@
         border-radius: 4px;
         right: 2px;
         bottom: -1*@input-error-botom-position;
+        
+        & > i {
+            .inp-font-size(0.7);
+        }
 
         & > .arrow {
             border-bottom: 5px solid red;
@@ -169,21 +141,45 @@
             width: 0;
         }
     }
+    
+    ///* icon-right and shadow */
+    & > span {
+        position: absolute;
+        padding-left: 2.1em;
+        right: 0.5em;
+        @gap-icon: (2 * @size + 10)/100;
+        
+            bottom: 1em * (@gap-icon + 1/10);
+            height: 1em * (@inp-box-content - 2 * @gap-icon);
+            line-height: (@inp-box-content - 2 * @gap-icon) ;
+            box-sizing: border-box;
+                
+        background-image: -webkit-linear-gradient(left, fade(@input-background-color, 0%) 0%, fade(@input-background-color, 100%) 50%, fade(@input-background-color, 0%) 90%);
+        background-image: -o-linear-gradient(left, fade(@input-background-color, 0%) 0%, fade(@input-background-color, 100%) 50%, fade(@input-background-color, 0%) 90%);
+        background-image: linear-gradient(to right, fade(@input-background-color, 0%) 0%, fade(@input-background-color, 100%) 50%, fade(@input-background-color, 0%) 90%);
+        color: @input-icon-color;
+        z-index: 10;
+        
+        i{line-height: unit(@inp-box-content)}
+    }
+    
+    ///* focus icon-right and shadow */
+    & > input[type="text"]:focus + span,
+    & > input[type="password"]:focus + span {
+        @input-background-focus: lighten(@input-background-color, 10%);
+        background-image: -webkit-linear-gradient(left, fade(@input-background-focus, 0%) 0%, fade(@input-background-focus, 100%) 50%, fade(@input-background-focus, 0%) 90%);
+        background-image: -o-linear-gradient(left, fade(@input-background-focus, 0%) 0%, fade(@input-background-focus, 100%) 50%, fade(@input-background-focus, 0%) 90%);
+        background-image: linear-gradient(to right, fade(@input-background-focus, 0%) 0%, fade(@input-background-focus, 100%) 50%, fade(@input-background-focus, 0%) 90%);
+    }
 }
 
+///* base module by input text password and select *///
 .inp-input(@opc-type) when (@opc-type = 'text') {
-    & > input[type="text"] {
-        padding-right: 2em;
-        border-radius: @input-border-radius;
-        margin-top: @input-margin-Top-width;
-    }
-
-    input[type="text"] {
-        box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        //-webkit-tap-highlight-color: rgba(255,255,255,0);
-        //tap-highlight-color: rgba(255,255,255,0);
+    
+    ///* transition general input *///
+    input[type="text"],
+    input[type="password"],
+    select {
         box-shadow: 0 0 0 0 transparent inset;
         -webkit-appearance: none;
         -webkit-transition: color .1s ease,border-color .1s ease;
@@ -191,23 +187,174 @@
         -o-transition: color .1s ease,border-color .1s ease;
         transition: color .1s ease,border-color .1s ease;
     }
-    ///* input-text-focus */
+    
+    ///* shape general input *///
+    & > input[type="text"], 
+    & > input[type="password"],
+    & > select {
+        padding-right: 2em;
+        border-radius: @input-border-radius;
+        margin-top: @input-margin-Top-width;
+    }
+    
+    ///* input-text-focus */// 
     & > input[type="text"]:focus,
+    & > input[type="password"]:focus,
+    & > select:focus,
     & > .focus {
         .inp-focus-scale();
         .inp-focus-shadow();
     }
 
+    ///* input-text-focus fix border */// 
     & > input[type="text"]:focus,
-    .focus > input[type="text"] {
+    & > input[type="password"]:focus,
+    & > select:focus,
+    .focus > input[type="text"],
+    .focus > input[type="password"] {
         .inp-focus-scale-fix();
     }
-
+    
+    ///* input-text-focus fix border */// 
     & > .focus {
         .inp-focus-depth-fix();
     }
 }
 
+///* base module by text and password in afix component  *///
+.inp-input-text-afix() {
+    .fixed {
+        width: 100%;
+
+        & > input[type="text"],
+        & > input[type="password"] {
+            padding-right: 3.5em;
+        }
+    }
+
+    .fixed,
+    .afix,
+    .prefix,
+    .postfix {
+        .inp-font-size(1);
+        display: table;
+        position: relative;
+        border-collapse: separate;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        overflow: hidden;
+        margin-top: @input-margin-Top-width;
+
+        & > span {
+            line-height: 1;
+            white-space: nowrap;
+            background-color: @input-afix-color;
+            padding: @padSup 1em;
+            margin: 0;
+            color: white;
+            display: table-cell;
+            border: 1px solid @input-afix-color;
+            width: 1%;
+            vertical-align: middle;
+
+            & > i {
+                .inp-font-size(0.9);
+            }
+            //button-without-padding
+            & > button {
+                box-sizing: border-box;
+                border-style: solid;
+                padding: 0 1em;
+                margin: 0;
+
+                & > i {
+                    .inp-font-size(0.9);
+                }
+            }
+        }
+
+        & > input {
+            display: table-cell;
+            margin: 0;
+            float: left;
+            width: 100% !important;
+        }
+        //button-link
+        & > .button {
+            padding: 0;
+            overflow: hidden;
+            border-width: 0 !important;
+            a {box-sizing: border-box};
+        }
+        //button-fixed-padding
+        & > button {
+            position: absolute;
+            right: 1em * @gap-fixed;
+            top: 1em * @gap-fixed;
+            height: 1em * (@inp-box-content - 2 * @gap-fixed);
+            line-height: (@inp-box-content - 2 * @gap-fixed - 0.1) ;
+            box-sizing: border-box;
+            border-style: solid;
+
+            & > i {
+                .inp-font-size(0.9);
+            }
+        }
+    }
+
+    .afix > input[type="text"],
+    .afix > input[type="password"],
+    .prefix > input[type="text"],
+    .prefix > input[type="password"],
+    .afix > input[type="text"]:focus,
+    .afix > input[type="pasword"]:focus,
+    .prefix > input[type="text"]:focus,
+    .prefix > input[type="password"]:focus {
+        border-left-color: @input-afix-color !important;
+    }
+
+    .afix > input[type="text"],
+    .afix > input[type="password"],
+    .postfix > input[type="text"],
+    .postfix > input[type="password"],
+    .afix > input[type="text"]:focus,
+    .afix > input[type="password"]:focus,
+    .postfix > input[type="text"]:focus,
+    .postfix > input[type="password"]:focus{
+        border-right-color: @input-afix-color !important;
+    }
+
+    .afix > span:first-child,
+    .postfix > input[type="text"],
+    .postfix > input[type="password"],
+    .prefix > span {
+        -webkit-border-top-left-radius: @input-border-radius;
+        border-top-left-radius: @input-border-radius;
+        -webkit-border-bottom-left-radius: @input-border-radius;
+        border-bottom-left-radius: @input-border-radius;
+        border-right: none;
+    }
+
+    .afix > span:last-child,
+    .prefix > input[type="text"],
+    .prefix > input[type="password"],
+    .postfix > span {
+        -webkit-border-top-right-radius: @input-border-radius;
+        border-top-right-radius: @input-border-radius;
+        -webkit-border-bottom-right-radius: @input-border-radius;
+        border-bottom-right-radius: @input-border-radius;
+        border-left: none;
+    }
+
+    .afix > input[type="text"],
+    .afix > input[type="password"] {
+        border-right: none;
+        border-left: none;
+    }
+}
+
+///* base module by input checkbox *///
 .inp-input(@opc-type) when (@opc-type = 'checkbox') {
     input[type='checkbox'] {
         vertical-align: middle;
@@ -219,6 +366,7 @@
     }
 }
 
+///* base module by input radio *///
 .inp-input(@opc-type) when (@opc-type = 'radio') {
     input[type='radio'] {
         vertical-align: middle;
@@ -229,15 +377,22 @@
         }
     }
 }
-
 //
 ///* 4 *//* CONFIG MIXIN */
+.inp-font-size(@opc-factor) when (@input-font-size-rem = true) {
+    font-size: @opc-factor * @font-size-rem;
+}
+
+.inp-font-size(@opc-factor) when (@input-font-size-rem = false) {
+    font-size: round(@opc-factor * @font-size-px, 0);
+}
+
 .inp-margin-left() when (@input-margin-left = true) {
-    & > input, .afix, .prefix, .postfix, .set {
+    & > select, & > input, .afix, .prefix, .postfix, .set {
         margin-left: @input-margin-left-width;
     }
 
-    & > input[type="text"], .afix, .prefix, .postfix {
+    & > select, & > input[type="text"], & > input[type="password"], .afix, .prefix, .postfix {
         width: ~'calc(100% - @{input-margin-left-width})';
     }
 }
@@ -276,196 +431,121 @@
     }
 }
 
-.inp-reset() {
+.inp-input-reset() {
+    select,
     input {
         outline: 0;
     }
 }
-
-.inp-afix() {
-    .fixed {
-        width: 100%;
-
-        & > input[type="text"] {
-            padding-right: 3em;
-        }
-    }
-
-    .fixed,
-    .afix,
-    .prefix,
-    .postfix {
-        display: table;
-        position: relative;
-        border-collapse: separate;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        overflow: hidden;
-        margin-top: @input-margin-Top-width;
-
-        & > span {
-            white-space: nowrap;
-            background-color: @input-afix-color;
-            padding: @padSup 1em;
-            margin: 0;
-            color: white;
-            display: table-cell;
-            border: 1px solid @input-afix-color;
-            width: 1%;
-            vertical-align: middle;
-
-            & > i {
-                width: unit(@font-base)*1em !important;
-            }
-            //button-without-padding
-            & > button {
-                padding: @button-no-padding;
-
-                & > i {
-                    font-size: 0.9em;
-                }
-            }
-        }
-
-        & > input {
-            display: table-cell;
-            margin: 0;
-            float: left;
-            width: 100% !important;
-        }
-        //button-link
-        & > .button {
-            padding: 0;
-            overflow: hidden;
-            border-width: 0 !important;
-
-            & > a {
-                padding: @button-link-padding;
-            }
-        }
-        //button-fixed-padding
-        & > button {
-            position: absolute;
-            right: 1em*@gap-fixed;
-            top: 1em*@gap-fixed;
-            padding: @button-fixed-padding;
-
-            & > i {
-                font-size: 0.9em;
-            }
-        }
-    }
-
-    .afix > input[type="text"],
-    .prefix > input[type="text"],
-    .afix > input[type="text"]:focus,
-    .prefix > input[type="text"]:focus {
-        border-left-color: @input-afix-color !important;
-    }
-
-    .afix > input[type="text"],
-    .postfix > input[type="text"],
-    .afix > input[type="text"]:focus,
-    .postfix > input[type="text"]:focus {
-        border-right-color: @input-afix-color !important;
-    }
-
-    .afix > span:first-child,
-    .postfix > input[type="text"],
-    .prefix > span {
-        -webkit-border-top-left-radius: @input-border-radius;
-        border-top-left-radius: @input-border-radius;
-        -webkit-border-bottom-left-radius: @input-border-radius;
-        border-bottom-left-radius: @input-border-radius;
-        border-right: none;
-    }
-
-    .afix > span:last-child,
-    .prefix > input[type="text"],
-    .postfix > span {
-        -webkit-border-top-right-radius: @input-border-radius;
-        border-top-right-radius: @input-border-radius;
-        -webkit-border-bottom-right-radius: @input-border-radius;
-        border-bottom-right-radius: @input-border-radius;
-        border-left: none;
-    }
-
-    .afix > input[type="text"] {
-        border-right: none;
-        border-left: none;
-    }
-}
 //
 ///* 5 *//* PRECONFIGURED PATTERNS */
-.inputs-field() {
-    .field {
-        .inp-reset();
-        .inp-field();
-        .inp-input('text');
-        .inp-input('checkbox');
-        .inp-input('radio');
-        .inp-afix();
-    }
-}
-
 .input-general() {
-    input[type="text"] {
-        font-size: @font-base;
-        line-height: @input-line-height;
-        height: @input-box-height;
-        padding: @padSup 0.7em @padSup 0.7em;
-        background: @input-background-color;
-        border: 1px solid @input-border-color;
-        color: @input-font-color;
-        z-index: 1;
+    select,
+    input {     
+        &[type="text"],
+        &[type="password"] {
+            .inp-font-size(1);
+            line-height: @input-line-height;
+            height: @input-box-height;
+            padding: 0 0.7em;
+            background: @input-background-color;
+            border: 1px solid @input-border-color;
+            color: @input-font-color;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            z-index: 1;
 
-        &:focus {
-            background: lighten(@input-background-color, 10%);
+            &:focus {
+                background: lighten(@input-background-color, 10%);
 
-            & + span > i {
-                color: @zerez-blue;
+                & + span > i {
+                    color: @input-icon-focus-color;
+                }
+
+                .inp-focus-depth();
             }
-
-            .inp-focus-depth();
         }
+        
+        &::-webkit-input-placeholder {color: @input-placeholder-font-color;}
+        &:-moz-placeholder {color: @input-placeholder-font-color;}
+        &::-moz-placeholder {color: @input-placeholder-font-color;}
+        &:-ms-input-placeholder {color: @input-placeholder-font-color;}
+    }
+    
+    select {
+         .inp-font-size(1);
+            line-height: @input-line-height;
+            height: @input-box-height;
+            padding: 0 0.7em;
+            background: @input-background-color;
+            border: 1px solid @input-border-color;
+            color: @input-font-color;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            z-index: 1;
+
+            &:focus {
+                background: lighten(@input-background-color, 10%);
+
+                & + span > i {
+                    color: @input-icon-focus-color;
+                }
+
+                .inp-focus-depth();
+            }
+        
+        &::-webkit-input-placeholder {color: @input-placeholder-font-color;}
+        &:-moz-placeholder {color: @input-placeholder-font-color;}
+        &::-moz-placeholder {color: @input-placeholder-font-color;}
+        &:-ms-input-placeholder {color: @input-placeholder-font-color;}
+        
     }
     
     label {
+        .inp-font-size(0.7);
         color: @input-label-font-color;
         font-family: @input-label-font-family;    
-        font-size: .7*@font-base;
         text-transform: capitalize;
     }
 }
 
 .input-autofill() {
-    @autofill-color: rgb(250, 250, 240);
-
     input:-webkit-autofill,
     input:-webkit-autofill:hover,
     input:-webkit-autofill:focus,
     input:-webkit-autofill:active {
-        //transition: background-color 5000s ease-in-out 0s !important;
-        -webkit-box-shadow: 0 0 0px 1000px @autofill-color inset !important;
-        box-shadow: 0 0 0px 1000px @autofill-color inset !important;
+        -webkit-box-shadow: 0 0 0px 1000px @input-autofill-background-color inset !important;
+        box-shadow: 0 0 0px 1000px @input-autofill-background-color inset !important;
     }
 
     .field > input[type="text"]:-webkit-autofill:focus + span,
     .field > input[type="text"]:-webkit-autofill + span {
-        color: gold;
-        background-image: -webkit-linear-gradient(left, fade(@autofill-color, 0%) 0%, fade(@autofill-color, 100%) 50%, fade(@autofill-color, 0%) 90%) !important;
-        background-image: -o-linear-gradient(left, fade(@autofill-color, 0%) 0%, fade(@autofill-color, 100%) 50%, fade(@autofill-color, 0%) 90%) !important;
-        background-image: linear-gradient(to right, fade(@autofill-color, 0%) 0%, fade(@autofill-color, 100%) 50%, fade(@autofill-color, 0%) 90%) !important;
+        color: @input-icon-autofill-color;
+        background-image: -webkit-linear-gradient(left, fade(@input-autofill-background-color, 0%) 0%, fade(@input-autofill-background-color, 100%) 50%, fade(@input-autofill-background-color, 0%) 90%) !important;
+        background-image: -o-linear-gradient(left, fade(@input-autofill-background-color, 0%) 0%, fade(@input-autofill-background-color, 100%) 50%, fade(@input-autofill-background-color, 0%) 90%) !important;
+        background-image: linear-gradient(to right, fade(@input-autofill-background-color, 0%) 0%, fade(@input-autofill-background-color, 100%) 50%, fade(@input-autofill-background-color, 0%) 90%) !important;
+    }
+}
+
+.input-field() {
+    .field {
+        .inp-input-reset();
+        .inp-input-field();
+        .inp-input('text'); //or password
+        .inp-input('checkbox');
+        .inp-input('radio');
+        .inp-input-text-afix();
     }
 }
 //
 ///* 6 *//* INITIALIZED PATTERNS */
 .input-init() {
     .input-local-var();
-    .input-general();
-    .inputs-field();
+    .input-general();  
     .input-autofill();
+    .input-field();
 }
 //
 /* cmp input -------- [ OK ] */@state: OK;

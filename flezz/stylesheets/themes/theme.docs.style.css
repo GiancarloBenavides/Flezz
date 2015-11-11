@@ -1778,34 +1778,49 @@ a[class~="tl-teal"] {
 a[class*="tl-"]:hover {
   background-color: #1a1d50;
 }
-a[class~="bt-primary"] {
+a[class~="bt-primary"],
+button[class*="primary"] {
   background-color: #286090;
+  border-color: #286090;
 }
-a[class~="bt-primary"]:hover {
+a[class~="bt-primary"]:hover,
+button[class*="primary"]:hover {
   background-color: #204d74;
 }
-a[class~="bt-success"] {
+a[class~="bt-success"],
+button[class*="success"] {
   background-color: #449d44;
+  border-color: #449d44;
 }
-a[class~="bt-success"]:hover {
+a[class~="bt-success"]:hover,
+button[class*="success"]:hover {
   background-color: #398439;
 }
-a[class~="bt-info"] {
+a[class~="bt-info"],
+button[class*="info"] {
   background-color: #31b0d5;
+  border-color: #31b0d5;
 }
-a[class~="bt-info"]:hover {
+a[class~="bt-info"]:hover,
+button[class*="info"]:hover {
   background-color: #269abc;
 }
-a[class~="bt-warning"] {
+a[class~="bt-warning"],
+button[class*="warning"] {
   background-color: #ec971f;
+  border-color: #ec971f;
 }
-a[class~="bt-warning"]:hover {
+a[class~="bt-warning"]:hover,
+button[class*="warning"]:hover {
   background-color: #d58412;
 }
-a[class~="bt-danger"] {
+a[class~="bt-danger"],
+button[class*="danger"] {
   background-color: #d9534f;
+  border-color: #d9534f;
 }
-a[class~="bt-danger"]:hover {
+a[class~="bt-danger"]:hover,
+button[class*="danger"]:hover {
   background-color: #d33632;
 }
 html {
@@ -2003,10 +2018,11 @@ body {
   height: 100%;
   width: 100%;
   z-index: 1;
-  background-color: #356c8d;
-  color: #f5f5f7;
+  background-color: #eeeeee;
+  color: #426471;
   font-size: 1em;
-  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2102,19 +2118,17 @@ input {
 .bar-min > .scroll-bar:active {
   width: 4px;
 }
-body {
-  background-color: #eeeeee;
-  color: gray;
-  overflow-y: scroll;
-}
-body section:last-child {
-  margin-bottom: 400px;
-}
-section {
+section.test {
   margin: 10px 20% 10px 10%;
   background-color: #fafaee;
   border: 2px dashed #c7c7c7;
   padding: 30px;
+}
+.test:last-of-type {
+  margin-bottom: 50%;
+}
+.test:first-of-type {
+  margin-top: 50px;
 }
 li {
   display: inline-block;

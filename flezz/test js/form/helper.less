@@ -1,0 +1,118 @@
+///* Unconfig Core *///
+
+@import '../../stylesheets/core/mixin/_by_default.core.less';
+
+///* Docs config Core *///
+.flezz-font-init();
+.flezz-icon-init();
+.flezz-color-init();
+.design-init();
+//
+///* Docs Style *///
+body {
+    background-color: #a8a3a3;
+    color: gray;
+    overflow-y: scroll;
+    
+    section:last-of-type {
+        margin-bottom: 50%;
+    }
+}
+
+section {
+    margin: 10px 20% 10px 10%;
+    background-color: #fafaee;
+    border: 2px dashed #c7c7c7;
+    padding: 30px;
+}
+
+li {display: inline-block;}
+
+//
+//
+@component-size: 5;
+@input-size: @component-size;
+@button-size: @component-size;
+.input-init();
+.button-init();
+//
+@tooltip-help-color: #29c1dd;
+@tooltip-warn-color: #eb9800;
+@tooltip-background-color: #434b45;
+@tooltip-border-color: darken(@tooltip-background-color, 10%);
+
+form {
+    background-color: @gray10;
+    padding: 20px 35px 20px 20px;
+    overflow: hidden;
+}
+
+
+
+
+.field {
+    &>.help,
+    &>.warn {
+        font-size: .7rem;
+        margin-left: .5em;
+        padding: 0 .5em;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    
+    &>.help{
+        background-color: @tooltip-help-color;
+        color: darken(@tooltip-help-color, -50%);
+        &:hover {
+            background-color: darken(@tooltip-help-color, 7%);
+            color: white;
+        }
+    }
+        
+    &>.warn{
+        background-color: @tooltip-warn-color;
+        color: darken(@tooltip-warn-color, -50%);
+        &:hover {
+            background-color: darken(@tooltip-warn-color, 7%);
+            color: white;
+        }
+    }
+    &>.tooltip {
+        background-color: @tooltip-background-color;
+        color: #fff;       
+        border: 1px solid @tooltip-border-color;
+        line-height: 1.4285em;
+        border-radius: 2px;
+        padding: 1em 1.5em;
+        box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);
+        font-size: .7rem;
+        z-index: 1900;
+        
+        width: 70%;
+        bottom: 100%;
+        position: absolute;
+        right: calc(30% - 20px);
+        
+        min-width: -webkit-min-content;
+        min-width: -moz-min-content;
+        min-width: min-content;
+        
+        max-width: 250px;
+        
+        font-weight: 400;
+        &>h2{color: @tooltip-help-color; margin: 0px; text-transform: capitalize;}
+        &>P{font-style: italic;}
+    }
+}
+
+
+
+
+//
+input.noField {
+    margin-bottom: 10px;
+}
+//
+field>input[type="email"]:invalid {background-color: red}
+field>input[type="email"]:invalid + span {color: @zerez-red;}

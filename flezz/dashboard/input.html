@@ -111,69 +111,181 @@
                             <form action="">  
                                 <!-- INPUT TEXT -->
                                 <div class="field">
-                                    <label for="">name_field_one</label>
-                                    <input type="text" placeholder="name_field_one" data-tooltip="tip_one">     
+                                    <label for="">name_field 1</label>
+                                    <input type="text" placeholder="name_input" required>     
                                 </div>
 
-                                <!-- INPUT TEXT ICON-->
+                                <!-- INPUT TEXT ICON -->
                                 <div class="field">
-                                    <label for="">name_field_one</label>
-                                    <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                                    <label for="">name_field 2</label>
+                                    <input type="text" placeholder="name_input" valid>
+                                    <span><i class="fa fa-rocket"></i></span>
+                                </div>
+                                
+                                <!-- INPUT TEXT HELP -->
+                                <div class="field">
+                                    <label for="">name_field 3</label><b class="help">?</b><b class="warn">?</b>
+                                    <input type="text" placeholder="name_input" data-tooltip="tip_one" valid>
                                     <span><i class="fa fa-rocket"></i></span>
                                 </div>
 
-                                <!-- INPUT TEXT WIDTH ERROR-->
+                                <!-- INPUT TEXT WIDTH ERROR -->
                                 <div class="field">
-                                    <label for="">name_field_one</label>
-                                    <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
-                                    <small class="error">name_error <span class="arrow"></span></small>
+                                    <label for="">name_field</label>
+                                    <input type="text" placeholder="name_input" data-tooltip="tip_one" invalid>
+                                    <span><i class="fa fa-phone"></i></span>
+                                    <small class="error"><i class="fa fa-exclamation-triangle"></i> Name_error <span class="arrow"></span></small>
                                 </div>
 
+                                <!-- INPUT NO LABEL -->
+                                <label for="">name_field</label>
+                                <div class="field">
+                                    <input type="text" placeholder="name_input" data-tooltip="tip_one">
+                                    <span><i class="fa fa-user"></i></span>
+                                </div>
+                                <div class="field">
+                                    <input type="password" placeholder="name_input" data-tooltip="tip_one">
+                                    <span><i class="fa fa-lock"></i></span>
+                                </div>
+                                <button type="submit" class="success">enviar</button>
+                                </br></br>  
+                                
                                 <!-- INPUT TEXT WIDTH PREFIX [ICON AND TEXT] -->
                                 <div class="field">
-                                    <label for="">name_field_one</label>
+                                    <label for="">field_icon_prefix</label>
                                     <div class="prefix">
                                         <span><i class="fa fa-rocket"></i></span>
-                                        <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                                        <input type="text" placeholder="name_input_prefix" data-tooltip="tip_one">
                                     </div>
                                 </div>
 
                                 <!-- INPUT TEXT WIDTH POSTFIX [ICON AND TEXT] -->
                                 <div class="field">
-                                    <label for="">name_field_one</label>
+                                    <label for="">field_text_postfix</label>
                                     <div class="postfix">
-                                        <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
-                                        <span>.COM</span>
+                                        <input type="text" placeholder="name_input_postfix" data-tooltip="tip_one">
+                                        <span>.com</span>
                                     </div>
                                 </div>
 
                                 <!-- INPUT TEXT WIDTH PREFIX AND POSTFIX [ICON AND TEXT] -->
                                 <div class="field">
-                                    <label for="">name_field_one</label>
+                                    <label for="">field_text_prefix_and_postfix</label>
                                     <div class="afix">
                                         <span>http://</span>   
-                                        <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                                        <input type="text" placeholder="name_input_afix" data-tooltip="tip_one">
                                         <span>.org</span>
                                     </div>
                                 </div>
-
-                                <!-- INPUT TEXT WIDTH PREFIX [BUTTON] -->
+                                
+                                <!-- INPUT TEXT WIDTH PREFIX [BUTTON] primary -->
                                 <div class="field">
-                                    <label for="">name_field_one</label>
+                                    <label for="">field_button_link</label>
                                     <div class="prefix">
-                                        <span class="button"><button>name_button</button></span>
-                                        <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
+                                        <span class="button"><a class="bt-primary">primary</a></span>
+                                        <input type="text" placeholder="name_input_button_link" data-tooltip="tip_one">
                                     </div>                
                                 </div>
 
-                                <!-- INPUT TEXT WIDTH POSTFIX [BUTTON] -->
+                                <!-- INPUT TEXT WIDTH PREFIX [BUTTON] success -->
+                                <div class="field">
+                                    <label for="">field_button_link</label>
+                                    <div class="prefix">
+                                        <span class="button"><a class="bt-success">success</a></span>
+                                        <input type="text" placeholder="name_input_button_link" data-tooltip="tip_one">
+                                    </div>                
+                                </div>
+
+                                <!-- INPUT TEXT WIDTH POSTFIX [BUTTON] warning -->
+                                <div class="field">
+                                    <label for="">field_button_link</label>
+                                    <div class="postfix">
+                                        <input type="text" placeholder="name_input_button_link" data-tooltip="tip_one">
+                                        <span class="button"><a class="bt-warning"><i class="fa fa-warning"></i> warning</a></span>
+                                    </div>                
+                                </div>
+
+                                <!-- INPUT TEXT WIDTH POSTFIX [BUTTON] danger -->
+                                <div class="field">
+                                    <label for="">field_button_link</label>
+                                    <div class="postfix">
+                                        <input type="text" placeholder="name_input_button_link" data-tooltip="tip_one">
+                                        <span class="button"><a class="bt-danger"><i class="fa fa-ban"></i> danger</a></span>
+                                    </div>                
+                                </div>
+                                
+                                <!-- INPUT TEXT WIDTH PREFIX [BUTTON] primary -->
+                                <div class="field">
+                                    <label for="">field_button_link</label>
+                                    <div class="prefix">                                    
+                                        <span role="listbox" class="dropdown button-primary" aria-expanded="true" data-state="open">
+                                            <a>List<i class="caret"></i></a>
+                                            <ul class="open" aria-hidden="false">
+                                                <li><a>list item one</a></li>
+                                                <li><a>list item two</a></li>
+                                            </ul>
+                                        </span>
+                                        <input type="text" placeholder="name_input_button_link" data-tooltip="tip_one">
+                                    </div>                
+                                </div>
+
+                                <!-- INPUT TEXT WIDTH PREFIX [BUTTON] V2 -->
+                                <div class="field">
+                                    <label for="">field_button</label>
+                                    <div class="prefix">
+                                        <span class="button"><button class="primary"><i class="fa fa-star"></i> button v2</button></span>
+                                        <input type="text" placeholder="name_input" data-tooltip="tip_one">
+                                    </div>                
+                                </div>
+
+                                <!-- INPUT TEXT WIDTH PREFIX [BUTTON] V2 -->
+                                <div class="field">
+                                    <label for="">field_button</label>
+                                    <div class="prefix">
+                                        <span class="button"><button class="primary"><i class="fa fa-calendar"></i></button></span>
+                                        <input type="text" placeholder="name_input" data-tooltip="tip_one">
+                                    </div>                
+                                </div>
+
+                                <!-- INPUT TEXT WIDTH POSTFIX [BUTTON] V2 -->
+                                <div class="field">
+                                    <label for="">field_button</label>
+                                    <div class="postfix">
+                                        <input type="text" placeholder="name_input" data-tooltip="tip_one">
+                                        <span class="button"><button class="primary">button v2 <i class="fa fa-cloud-upload"></i></button></span>
+                                    </div>
+                                </div>
+
+                                <!-- INPUT TEXT WIDTH POSTFIX [BUTTON] V2 -->
                                 <div class="field">
                                     <label for="">name_field_one</label>
                                     <div class="postfix">
-                                        <input type="text" placeholder="name_field_one" data-tooltip="tip_one">
-                                        <span class="button"><button>name_button</button></span>
+                                        <input type="text" placeholder="name_input" data-tooltip="tip_one">
+                                        <span class="button"><button class="primary"><i class="fa fa-arrow-right"></i></button></span>
                                     </div>
                                 </div>
+
+                                <!-- INPUT TEXT WIDTH POSTFIX [BUTTON] V3-->
+                                <div class="field">
+                                    <label for="">name_field_one</label>
+                                    <div class="fixed">
+                                        <input type="text" placeholder="name_input_one" data-tooltip="tip_one">
+                                        <button class="primary">button v3</button>
+                                    </div>
+                                </div>
+
+                                <!-- INPUT TEXT WIDTH POSTFIX [BUTTON] V3-->
+                                <div class="field">
+                                    <label for="">name_field_one</label>
+                                    <div class="fixed">
+                                        <input type="text" placeholder="name_input_one" data-tooltip="tip_one">
+                                        <button class="primary"><i class="fa fa-search"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- INPUT NO FIELD -->
+                                <input class='noField' type="text" placeholder="input without field" data-tooltip="tip_one">
+                                <input class='noField' type="text" placeholder="input without field" data-tooltip="tip_one">
 
                                 <!-- CHECKBOX -->
                                 <div class="field">
@@ -183,33 +295,32 @@
 
                                 <!-- CHECKBOX GROUP-->
                                 <div class="field">
+                                    <p>Name group</p>   
                                     <div class="set">
-                                        <div>Name group</div>
                                         <input id="checkbox-one" type="checkbox" >
                                         <label for="checkbox-one" data-tooltip="tip_one">name_field_one</label><br>
-                                        <input id="checkbox-one" type="checkbox" >
-                                        <label for="checkbox-one" data-tooltip="tip_one">name_field_one</label><br>
+                                        <input id="checkbox-two" type="checkbox" >
+                                        <label for="checkbox-two" data-tooltip="tip_two">name_field_two</label><br>
                                     </div>
                                 </div>
 
                                 <!-- RADIO -->
                                 <div class="field">
-                                    <div>Choose Your Option</div>
+                                    <p>Choose Your Option</p>
                                     <div class="set">
                                         <label for="one"><input type="radio" name="option" value="one" id="one">name_opcion_one</label>
                                         <label for="two"><input type="radio" name="option" value="two" id="two">name_opcion_two</label>
                                     </div>
                                 </div>
-                                
+
                                 <!-- LEGACY -->
                                 <div class="form-group">
                                     <label class="control-label col-md-2" for="QAug">QAug</label>
                                     <div class="col-md-10">
-                                        <input class="form-control qmonthp text-box single-line" data-val="true" data-val-number="El campo QAug debe ser un número." data-val-range="The field QAug must be between 0 and 1.79769313486232E+308." data-val-range-max="1.79769313486232E+308" data-val-range-min="0" data-val-required="The QAug field is required." id="QAug" name="QAug" type="text" value="">
+                                        <input class="form-control qmonthp text-box single-line" data-val="true" data-val-number="El campo QAug debe ser un n├║mero." data-val-range="The field QAug must be between 0 and 1.79769313486232E+308." data-val-range-max="1.79769313486232E+308" data-val-range-min="0" data-val-required="The QAug field is required." id="QAug" name="QAug" type="text" value="">
                                         <span class="field-validation-valid text-danger" data-valmsg-for="QAug" data-valmsg-replace="true"></span>
                                     </div>
                                 </div>
-                                
                             </form>
                         </div>
                     </div>

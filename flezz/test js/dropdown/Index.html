@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Flezz</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="description" content="Demo Dropdown Flezz">
+        <meta name="author" content="Giancarlo Ortiz">
+        <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+        <link rel="stylesheet" type="text/css" href="dropdown.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <![CDATA[
+            /*
+            Name: Flezz Docs
+            Version: 0.1.3
+            Developer : Giancarlo Ortiz Benavides
+            License: GNU General Public License v2 or later
+            License URI: http://www.gnu.org/licenses/gpl-2.0.html
+            Url: www.zerez.org
+            Date: 25 junio 2015
+        */]]>
+        <style>section:nth-child(2) div{ margin-left: 40%;}</style>
+    </head>
+    <body>
+        <!-- close -->
+        <section>
+            <div role="listbox" class="dropdown button-success" aria-expanded="false" data-state="close">
+                <a>List dropdown<i class="caret"></i></a>
+                <ul aria-hidden="true">
+                    <li><a>item one</a></li>
+                    <li><a>item two</a></li>
+                    <li class="disabled"><a>item disabled</a></li>
+                </ul>
+            </div>
+        </section>
+        <!-- open -->
+        <section>
+            <div role="listbox" class="dropdown button-primary" aria-expanded="true" data-state="open">
+                <a>List Open<i class="caret"></i></a>
+                <ul class="open" aria-hidden="false">
+                    <li><a>list item one</a></li>
+                    <li><a>list item two</a></li>
+                </ul>
+            </div>
+        </section>
+        <!-- disabled -->
+        <section>
+            <div role="listbox" class="dropdown button-danger " aria-expanded="false" data-state="disabled">
+                <a>List disabled<i class="caret"></i></a>
+                <ul class="close" aria-hidden="true">
+                    <li><a>item one</a></li>
+                    <li><a>item two</a></li>
+                </ul>
+            </div>
+        </section>
+        <script src="../vendor/jquery-2.1.0.js"></script>
+        <script src="dropdown.js"></script>
+    </body>
+</html>

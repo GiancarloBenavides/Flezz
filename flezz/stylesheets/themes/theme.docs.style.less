@@ -1,26 +1,31 @@
 ///* Unconfig Core *///
 @import '../core/mixin/_by_default.core.less';
+//
 ///* Docs config Core *///
 .flezz-font-init();
 .flezz-icon-init();
 .flezz-color-init();
 .design-init();
 //
-///* Docs Style *///
-body {
-    background-color: #eeeeee;
-    color: gray;
-    overflow-y: scroll;
-    section:last-child {
-        margin-bottom: 400px;
-    }
-}
-
-section {
+///* Docs Style variables  *///
+@desing-color-inverted: false;
+@primary-body-font-color: #808080;
+@primary-body-background: #eeeeee;
+@desing-overflow-vertical: true;
+//
+///* Docs Style aditional class *///
+section.test {
     margin: 10px 20% 10px 10%;
     background-color: #fafaee;
     border: 2px dashed #c7c7c7;
     padding: 30px;
 }
 
+.test:last-of-type {
+    margin-bottom: 50%;
+}
+.test:first-of-type {
+    margin-top: 50px;
+}
 li {display: inline-block;}
+//

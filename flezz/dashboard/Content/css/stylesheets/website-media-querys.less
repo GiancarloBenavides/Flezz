@@ -10,6 +10,12 @@
     div.slide img {
         width: 55%;
     }
+    #min, #med{
+        width: ~"calc(50% - 8px)";
+    }
+    #max {
+        width: ~"calc(100% - 8px)";
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -18,6 +24,9 @@
     div.group {
         width: 25%;
         text-align: left !important;
+    }
+    #min, #med, #max {
+        width: ~"calc(33% - 8px)";
     }
 }
 
@@ -153,7 +162,8 @@
     }
 
     #cd-intro {
-        height: 400px;
+        //height: 400px;
+        height: ~'calc(100% - @{slider-remainder-height})';
     }
 
     #cd-intro #cd-intro-tagline {
@@ -219,17 +229,19 @@
     .cd-secondary-nav li {
         display: inline-block;
         margin-left: -4px;
+        width: 16%;
 
         & > a {
             position: relative;
             text-align: center;
             display: block;
-            padding: 58px 40px 0 40px;
+            padding: 80px 40px 0 40px;
             border-bottom: none;
             -webkit-transition: padding 0.2s;
             -moz-transition: padding 0.2s;
             -o-transition: padding 0.2s;
             transition: padding 0.2s;
+            img {display: block;}
 
             b {
                 text-transform: uppercase;
@@ -241,13 +253,11 @@
         }
     }
 
-
-
     .cd-secondary-nav li a span {
         position: absolute;
         display: inline-block;
-        width: 40px;
-        height: 40px;
+        width: 57px;
+        height: 57px;
         top: 18px;
         left: 50%;
         right: auto;
@@ -257,15 +267,18 @@
         -o-transform: translateX(-50%);
         transform: translateX(-50%);
         background-repeat: no-repeat;
-        background-image: @image-menu-path;
+        //background-image: @image-menu-path;
         -webkit-transition: opacity 0.2s;
         -moz-transition: opacity 0.2s;
         -o-transition: opacity 0.2s;
         transition: opacity 0.2s;
+        img{
+            height: 57px;
+        }
     }
 
     .cd-secondary-nav li a:hover b, .cd-secondary-nav li a.active b {
-        color: #f0eee1;
+        color: rgb(249, 177, 1);
     }
 
     .cd-secondary-nav li:nth-child(1) a span {
@@ -304,8 +317,17 @@
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     }
 
-    .cd-secondary-nav.animate-children li a {
-        padding: 26px 30px 0 30px;
+    .cd-secondary-nav.animate-children ul {
+        text-align: right;
+        padding-right: 100px;
+        
+        li {
+            width: auto;
+            
+            a {
+                padding: 26px 26px 0px 26px;
+            }
+        }
     }
 
     .cd-secondary-nav.animate-children li a span {
@@ -313,11 +335,11 @@
     }
     .cd-section {
         margin: 0 auto;
-        padding: 7rem 0;
+        padding: 5rem 0;
     }
 
     .cd-section h2 {
-        font-size: 30px;
+        //font-size: 3//0px;
         font-size: 1.875rem;
     }
 

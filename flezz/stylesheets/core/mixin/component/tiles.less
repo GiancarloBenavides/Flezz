@@ -2,7 +2,7 @@
 ///*          flezz framework 1.0           */
 ///******************************************/
 ///*  Name: name_module
-///*  Version: 0.1.0
+///*  Version: 0.2.0
 ///*  Description: description name_module
 ///*  Author: Giancarlo Ortiz.
 ///*  URI: http://www.zerez.org
@@ -28,13 +28,21 @@
 //
 ///* global variables */
 ///* tiles general option */
-@tiles-opacity: false;
 @tiles-background-change: true;
+@tiles-width-autoscale: true;
 @tiles-border-radius: false;
-@tls-icon-shadow: true;
-@tiles-background-change-color: #1a1d50;
+@tiles-icon-shadow: true;
+@tiles-opacity: false;
+@tiles-shadow: true;
+///* tiles color option */
+@tiles-background-change-color: rgb(26, 29, 80);
+@tiles-wrap-color: rgb(0,125,100);
+///* tiles width option */
+@tiles-wrap-padding: 8px;
 @tiles-size-min: 60px;
 @tiles-padding: 8px;
+@tiles-by-row: 2; 
+///* tiles other option */
 @tiles-transition-time: 200ms;
 //
 ///* local variables */
@@ -65,7 +73,7 @@
     -webkit-box-sizing:border-box;
     -moz-box-sizing:border-box;
     outline: 0;
-    box-shadow: 1px 1px 2px #ABAAAD;
+    .tls-shadow();
     .tls-border-radius();
     .user-select();
     
@@ -75,6 +83,7 @@
         margin: 0;
         float: none;
         height: 100%;
+        line-height: 1;
         text-decoration: none;
         border: 2px solid transparent;
         box-sizing: border-box;
@@ -117,7 +126,7 @@
     }
 }
 
-.tls-tiles-width() {
+.tls-tiles-width() when (@tiles-width-autoscale = false) {
     div[class$="mid-s"] {
         width: @tiles-size-min;
         height: @tiles-size-min;
@@ -135,8 +144,57 @@
         height: @tiles-size-min*4 + @tiles-padding*3;
     }
 }
+
+.tls-tiles-width() when (@tiles-width-autoscale = true) {
+    @tilesHalf: percentage(0.5 / @tiles-by-row);
+    @tilesOne: percentage(1 / @tiles-by-row);
+    @tilesDouble: percentage(2 / @tiles-by-row);
+    div[class$="mid-s"] {
+        width: ~"calc(@{tilesHalf} - @{tiles-padding})";
+        height: @tiles-size-min;
+    }
+    div[class$="one-s"] {
+        width: ~"calc(@{tilesOne} - @{tiles-padding})";
+        height: @tiles-size-min*2 + @tiles-padding;
+    }
+    div[class$="two-h"] {
+        width:  ~"calc(@{tilesDouble} - @{tiles-padding})";
+        height: @tiles-size-min*2 + @tiles-padding;
+    }
+    div[class$="two-v"] {
+        width: ~"calc(@{tilesOne} - @{tiles-padding})";
+        height: @tiles-size-min*4 + @tiles-padding*3;
+    }
+}
+
+.tls-tiles-wrap(){
+ ///* For modern browsers
+ ///* 1. The space content is one way to avoid an Opera bug when the
+ ///*    contenteditable attribute is included anywhere else in the document.
+ ///*    Otherwise it causes space to appear at the top and bottom of elements
+ ///*    that are clearfixed.
+ ///* 2. The use of `table` rather than `block` is only necessary if using
+ ///*    `:before` to contain the top-margins of child elements.
+    .tiles{
+        background-color: @tiles-wrap-color;
+        padding: (@tiles-wrap-padding + @tiles-padding) @tiles-wrap-padding @tiles-wrap-padding (@tiles-wrap-padding + @tiles-padding);
+        border: 1px solid darken(@tiles-wrap-color, 10%);
+    }
+    .tiles:before,
+    .tiles:after {
+        content: " "; ///* 1 */
+        display: table; ///* 2 */
+    }
+    .tiles:after {
+        clear:both;
+    }
+}
 //
 ///* 4 *//* CONFIG MIXIN */
+.tls-shadow() when (@tiles-shadow = true){
+    box-shadow: 1px 1px 2px darken(@tiles-wrap-color, 10%);
+}
+
 .tls-border-radius() when (@tiles-border-radius = true){
     border-radius: 4px;
 }
@@ -168,7 +226,7 @@
     transition: background-color @time ease-out;
 }
 
-.tls-icon-shadow() when (@tls-icon-shadow = true) {
+.tls-icon-shadow() when (@tiles-icon-shadow = true) {
     text-shadow: 2px 1px 0px rgba(255,255,255,0.3), 4px 3px 0px rgba(0,0,0,0.2);
 }
 
@@ -179,12 +237,23 @@
         .tls-tile();
     }
 }
+.tiles-flezz() {
+    .flezz {
+        background-color: #1a1d50;
+        &:hover {
+            background-color: white !important;
+            p,i {color: #1a1d50;}
+        }
+    }
+}
 //
 ///* 6 *//* INITIALIZED PATTERNS */
 .tiles-init() {
     .tiles-local-var();
     .tiles-plain();
+    .tiles-flezz();
     .tls-tiles-width();
+    .tls-tiles-wrap();
 }
 //
 /* cmp tile --------- [ OK ] */@state: OK;

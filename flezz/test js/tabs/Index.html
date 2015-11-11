@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <title>Flezz Tabs</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="description" content="Flezz - Demo Tabs">
+        <meta name="author" content="Giancarlo Ortiz">
+        <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+        <link rel="stylesheet" type="text/css" href="tabs.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <![CDATA[
+            /*
+            Name: TABS
+            Version: 1.2.0
+            Developer : Giancarlo Ortiz Benavides
+            Url: www.zerez.org
+            License: GNU General Public License v2 or later
+            License URI: http://www.gnu.org/licenses/gpl-2.0.html
+            Date: 2015 july 7
+        */]]>
+    </head>
+    <body>
+        <section>
+            <!-- tabs horizontal -->
+            <div class="tabs">
+                <ul role="tablist" class="horizontal" data-tab>
+                    <li class="title"><div id="tab_group_one" tabindex="-1">Title Group</div id="tab_group_one"></li>                   
+                    <li role="presentation" class="selected" aria-selected="true"><a tabindex="0" data-tab="panel-horizontal-one">tab 1</a></li>
+                    <li role="presentation" aria-selected="false"><a tabindex="0" data-tab="panel-horizontal-two">tab 2</a></li>
+                    <li role="presentation" aria-selected="false"><a tabindex="0" data-tab="panel-horizontal-three">tab 3</a></li>
+                    <li role="presentation" class="disabled" aria-selected="false"><a tabindex="0" data-tab="panel-horizontal-four">tab 4</a></li>
+                    <li role="listbox" class="dropdown" aria-expanded="false" data-state="close">
+                        <a>Dropdown<i class="caret"></i></a>
+                        <ul aria-hidden="true">
+                            <li aria-selected="false"><a data-tab="panel-horizontal-five">tab 5</a></li>
+                            <li aria-selected="false"><a data-tab="panel-horizontal-six">tab 6</a></li>
+                        </ul>
+                    </li>
+                    <li role="listbox" class="dropdown more" aria-expanded="false" data-state="close">
+                        <a>+<i class="caret"></i></a>
+                        <ul aria-hidden="true"></ul>
+                    </li>
+                </ul>
+                <div class="tabs-content">
+                    <div id="panel-horizontal-one" class="tabs-horizontal" role="tabpanel" aria-hidden="false" data-state="active">
+                        <h1>Lorem ipsum</h1>
+                        <p>Eveniet optio incidunt modi quas atque eaque accusantium reprehenderit itaque.</p>
+                        <p>Magnam maxime amet quam, libero officiis! Excepturi consectetur natus rerum.</p>
+                        <p>Sunt ducimus modi minus magni soluta, voluptatum perferendis molestias in.</p>
+                        <p>Quae rerum, at rem voluptate quo, nisi cum minima eius.</p>
+                    </div>
+                    <div id="panel-horizontal-two" class="tabs-horizontal" role="tabpanel" aria-hidden="true" data-state="inactive">
+                        Magnam maxime
+                        <p>Sunt ducimus modi minus magni soluta, voluptatum perferendis molestias in.</p>
+                        <p>Quae rerum, at rem voluptate quo, nisi cum minima eius.</p>
+                        <p>Architecto necessitatibus dicta odit tempora exercitationem iure aspernatur ex quis.</p>
+                        <p>Omnis tenetur voluptatum dolore, nihil placeat minima pariatur est at!</p>
+                    </div>
+                    <div id="panel-horizontal-three" class="tabs-horizontal" role="tabpanel" aria-hidden="true" data-state="inactive">
+                        <img src="52-tmb.jpg" width="100%" alt="">
+                    </div>
+                    <div id="panel-horizontal-four" class="tabs-horizontal" role="tabpanel" aria-hidden="true" data-state="inactive">
+                        <p>Quae ipsum dolor sit amet, consectetur adipisicing elit. A, rem.</p>
+                    </div>
+                    <div id="panel-horizontal-five" class="tabs-horizontal" role="tabpanel" aria-hidden="true" data-state="inactive">
+                        <p>Quae ipsum dolor sit amet, consectetur adipisicing elit. A, rem.</p>
+                        <p>Omnis tenetur voluptatum dolore, nihil placeat minima pariatur est at!</p>
+                    </div>
+                    <div id="panel-horizontal-six" class="tabs-horizontal" role="tabpanel" aria-hidden="true" data-state="inactive">
+                        <p>Quae rerum, at rem voluptate quo, nisi cum minima eius.</p>
+                        <p>Architecto necessitatibus dicta odit tempora exercitationem iure aspernatur ex quis.</p>
+                        <p>Omnis tenetur voluptatum dolore, nihil placeat minima pariatur est at!</p>
+                    </div>        
+                </div>
+            </div>
+        </section>
+        <section>
+           <!-- tabs vertical -->
+            <div class="tabs">
+                <ul role="tablist" class="vertical" data-tab>
+                    <li class="title"><div id="tab_group_one" tabindex="-1">Title Group</div id="tab_group_two"></li>   
+                    <li role="presentation" class="selected" aria-selected="true"><a tabindex="0" data-tab="panel-vertical-one">tab 1</a></li>
+                    <li role="presentation" aria-selected="false"><a tabindex="0" data-tab="panel-vertical-two">tab 2</a></li>
+                    <li role="presentation" aria-selected="false"><a tabindex="0" data-tab="panel-vertical-three">tab 3</a></li>
+                    <li role="presentation" class="disabled" aria-selected="false"><a tabindex="0" data-tab="panel-vertical-four">tab 4</a></li>
+                    <li role="listbox" class="dropdown" aria-expanded="false" data-state="close">
+                        <a>Dropdown<i class="caret"></i></a>
+                        <ul aria-hidden="true">
+                            <li><a data-tab="panel-vertical-five">tab 5</a></li>
+                            <li><a data-tab="panel-vertical-six">tab 6</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="tabs-content">
+                    <div id="panel-vertical-one" class="tabs-vertical" role="tabpanel" aria-hidden="false" data-state="active">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, rem.</p>
+                        <p>Eveniet optio incidunt modi quas atque eaque accusantium reprehenderit itaque.</p>
+                        <p>Magnam maxime amet quam, libero officiis! Excepturi consectetur natus rerum.</p>
+                        <p>Sunt ducimus modi minus magni soluta, voluptatum perferendis molestias in.</p>
+                        <p>Quae rerum, at rem voluptate quo, nisi cum minima eius.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, rem.</p>
+                        <p>Eveniet optio incidunt modi quas atque eaque accusantium reprehenderit itaque.</p>
+                        <p>Magnam maxime amet quam, libero officiis! Excepturi consectetur natus rerum.</p>
+                        <p>Sunt ducimus modi minus magni soluta, voluptatum perferendis molestias in.</p>
+                        <p>Quae rerum, at rem voluptate quo, nisi cum minima eius.</p>
+                    </div>
+                    <div id="panel-vertical-two" class="tabs-vertical" role="tabpanel" aria-hidden="true" data-state="inactive">
+                        <p>Magnam maxime amet quam, libero officiis! Excepturi consectetur natus rerum.</p>
+                        <p>Sunt ducimus modi minus magni soluta, voluptatum perferendis molestias in.</p>
+                        <p>Quae rerum, at rem voluptate quo, nisi cum minima eius.</p>
+                        <p>Architecto necessitatibus dicta odit tempora exercitationem iure aspernatur ex quis.</p>
+                        <p>Omnis tenetur voluptatum dolore, nihil placeat minima pariatur est at!</p>
+                    </div>
+                    <div id="panel-vertical-three" class="tabs-vertical" role="tabpanel" aria-hidden="true" data-state="inactive">
+                        <img src="52-tmb.jpg" width="100%" alt="">
+                    </div>
+                    <div id="panel-vertical-four" class="tabs-vertical" role="tabpanel" aria-hidden="true" data-state="inactive">
+                        <p>Quae ipsum dolor sit amet, consectetur adipisicing elit. A, rem.</p>
+                    </div>
+                    <div id="panel-vertical-five" class="tabs-vertical" role="tabpanel" aria-hidden="true" data-state="inactive">
+                        <p>Quae ipsum dolor sit amet, consectetur adipisicing elit. A, rem.</p>
+                        <p>Omnis tenetur voluptatum dolore, nihil placeat minima pariatur est at!</p>
+                    </div>
+                    <div id="panel-vertical-six" class="tabs-vertical" role="tabpanel" aria-hidden="true" data-state="inactive">
+                        <p>Quae rerum, at rem voluptate quo, nisi cum minima eius.</p>
+                        <p>Architecto necessitatibus dicta odit tempora exercitationem iure aspernatur ex quis.</p>
+                        <p>Omnis tenetur voluptatum dolore, nihil placeat minima pariatur est at!</p>
+                    </div>     
+                </div>                
+            </div>
+        </section>
+        <script src="../vendor/jquery-2.1.0.js"></script>
+        <script src="tabs.js"></script>
+        <script src="dropdown.js"></script>
+        <script src="test.js"></script>
+    </body>
+</html>

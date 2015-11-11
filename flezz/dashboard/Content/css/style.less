@@ -8,9 +8,10 @@
 @font-family: 'OpenSansLight';
 @font-family-bold: 'OpenSansRegular';
 ///* theme dark CSS *///
-@theme-dark-background-color: #205081;
-@theme-dark-hover-color: #327bba;
-@theme-dark-active-color: #428bca;
+@tiles-width-autoscale: false;
+@theme-dark-background-color: rgb(0,125,100); //#205081;
+@theme-dark-hover-color: rgb(0, 178, 143); //#327bba;
+@theme-dark-active-color: rgb(6, 227, 183); //#428bca;
 @theme-dark-font-color: #dddddd;
 @theme-dark-selected-background-color: @theme-light-background-color;
 @theme-dark-selected-color: @theme-light-font-color;
@@ -18,7 +19,7 @@
 ///* theme light CSS *///
 @theme-light-background-color: #f1f1f1;
 @theme-light-hover-color: #f8f8f8;
-@theme-light-active-color: #fafafa; //#f7f7f7
+@theme-light-active-color: #fafafa;
 @theme-light-font-color: #8d8d8d;
 @theme-light-selected-background-color: @theme-dark-background-color;
 @theme-light-selected-color: @theme-dark-font-color;
@@ -55,8 +56,13 @@
 @dsh-margin: @dashboard-header-height + @dashboard-margin;
 
 section{margin: 5px 0 15px 0;}
-.scroll-content{color: @theme-light-font-color}
-
+.scroll-content{
+    color: @theme-light-font-color;
+    
+    &>form{
+        padding-right: 32px;
+    }
+}
 
 .flezz-scroll {
     height: ~'calc(100% - 100px)';
@@ -236,6 +242,12 @@ div.title {
         &:focus{width:150px; border:1px solid @dark-color}
     }
     
+    input[type="text"] {
+        font-size: 1rem;
+        line-height: 2;
+        height: ~'calc(2em + 2px)';
+    }
+    
     ul {
         position: relative;
         margin:0px; padding:0px;
@@ -278,11 +290,10 @@ div.title {
     .brand {position:fixed}
  }
 
-
 .left_nav {
-    background-color:@light-bck; color:@light-color; margin:0px 25px 0px 0px; border: 1px solid @light-border; min-height: @dashboard-min-height; width:225px; clear:both; float:left;
-    a{color:lighten(@light-color,14)}
-    i{color:lighten(@light-color,28)}
+    background-color:@light-bck; color:@light-color; font-size: 2rem; margin:0px 25px 0px 0px; border: 1px solid @light-border; min-height: @dashboard-min-height; width:225px; clear:both; float:left;
+    a{color:lighten(@light-color,-4)}
+    i{color:lighten(@light-color,14)}
     box-shadow: 2px 1px 1px #205081, 5px 4px 2px rgba(0, 0, 0, 0.1);
     
     ul {
@@ -292,19 +303,19 @@ div.title {
         p b {text-transform:uppercase; text-align: center; margin-top: 5px}
         li {
             display: block; margin:0; padding:0; list-style:none;
-            a {display:block; text-decoration:none; padding:11px 5px 11px 30px; text-transform:none; border-bottom: 1px solid @light-border}
-            a i {display: block; float: left;  font-size: 20px; margin-right: 18px; padding-top: 1px; text-align: center; width: 21px}
+            a {display:block; text-decoration:none; padding: 17px 5px 17px 30px; text-transform:none; border-bottom: 1px solid @light-border}
+            a i {display: block; float: left;  font-size: 22px; margin-right: 18px; padding-top: 1px; text-align: center; width: 21px}
             a span {float:right; display:block; margin:0px 0px 2px 2px}
             a span i {display: block; float: right; font-size: 23px; margin-right: 5px}
-            a b {font-size: 16px}
+            a b {font-size: 18px}
             ul {
                 background-color:@white; display:none;margin:0px; padding:2px 0px !important; border-bottom: 1px solid @light-border;
                 li {
                     margin:0; padding:0; list-style:none;
-                    b {margin-left:-7px; font-size:14px}
+                    b {margin-left:-7px; font-size:18px}
                     a {
-                        display:block; text-decoration: none; padding:5px 5px 5px 30px; font-size:16px; text-transform: none; border:none;
-                        i {font-size:10px; margin-left:38px; padding-top:3px}
+                        display:block; text-decoration: none; padding:7px 5px 7px 30px; font-size:18px; text-transform: none; border:none;
+                        i {font-size:15px; margin-left:38px; padding-top:5px}
                     }
                 }
             }
@@ -360,17 +371,13 @@ a.menu_selected:hover b, a.menu_selected:hover i{color: #FFFFFF!important}
     .left_nav ul p {padding: 20px 16px}
 }
 
-
-	
 .right_container {
     background-color:#f1f1f1; border:1px solid #DDDEE0; margin-left:250px; min-height: @dashboard-min-height; padding:20px; overflow:auto;
     box-shadow: 2px 1px 1px #205081, 5px 4px 2px rgba(0, 0, 0, 0.1);
 }
 
-
-
 .breadcromb {padding-bottom:10px; border-bottom:1px solid #DDDEE0; height:46px; margin-bottom:20px; padding-top: 1px}
-.active_title {float:left; font-size:34px; font-weight:normal; margin-top:-10px; margin-right:10px}
+.active_title {float:left; font-size:32px; font-weight:normal; margin-top:-10px; margin-right:10px}
 .slash {float:left; color:#eaeaea; font-size:20px; margin-top:-1px; margin-right:10px}
 .title_subtext	{float:left; color:#bbbbbb; font-size:14px; margin-top:3px}
 .breadcromb2 {float:right; height:40px}

@@ -255,16 +255,16 @@
 
 .button-global-color(){
     @dark-percent: 7%;
-    a[class~="bt-primary"] {background-color: @primary;}
-    a[class~="bt-primary"]:hover {background-color: darken(@primary, @dark-percent);}
-    a[class~="bt-success"] {background-color: @success;}
-    a[class~="bt-success"]:hover {background-color: darken(@success, @dark-percent);}
-    a[class~="bt-info"] {background-color: @info;}
-    a[class~="bt-info"]:hover {background-color: darken(@info, @dark-percent);}
-    a[class~="bt-warning"] {background-color: @warning;}
-    a[class~="bt-warning"]:hover {background-color: darken(@warning, @dark-percent);}
-    a[class~="bt-danger"] {background-color: @danger;}
-    a[class~="bt-danger"]:hover {background-color: darken(@danger, @dark-percent);}
+    a[class~="bt-primary"], button[class*="primary"]  {background-color: @primary; border-color: @primary}
+    a[class~="bt-primary"]:hover, button[class*="primary"]:hover {background-color: darken(@primary, @dark-percent);}
+    a[class~="bt-success"], button[class*="success"] {background-color: @success; border-color: @success}
+    a[class~="bt-success"]:hover, button[class*="success"]:hover {background-color: darken(@success, @dark-percent);}
+    a[class~="bt-info"], button[class*="info"] {background-color: @info; border-color: @info}
+    a[class~="bt-info"]:hover, button[class*="info"]:hover {background-color: darken(@info, @dark-percent);}
+    a[class~="bt-warning"], button[class*="warning"] {background-color: @warning; border-color: @warning}
+    a[class~="bt-warning"]:hover, button[class*="warning"]:hover {background-color: darken(@warning, @dark-percent);}
+    a[class~="bt-danger"], button[class*="danger"] {background-color: @danger; border-color: @danger}
+    a[class~="bt-danger"]:hover, button[class*="danger"]:hover {background-color: darken(@danger, @dark-percent);}
 }
 //
 ///* 6 *//* INITIALIZED PATTERNS */
