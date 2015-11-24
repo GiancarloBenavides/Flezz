@@ -20,10 +20,11 @@
 @theme-light-background-color: #f1f1f1;
 @theme-light-hover-color: #f8f8f8;
 @theme-light-active-color: #fafafa;
-@theme-light-font-color: #8d8d8d;
+@theme-light-font-color: #444444;
 @theme-light-selected-background-color: @theme-dark-background-color;
 @theme-light-selected-color: @theme-dark-font-color;
 //
+@theme-shadow-color: #014638;
 ///* images *///
 @bck-logo-big: url("../img/logos/logo_big.png") no-repeat;
 @bck-logo: url("../img/logos/logo.png") no-repeat;
@@ -58,7 +59,8 @@
 section{margin: 5px 0 15px 0;}
 .scroll-content{
     color: @theme-light-font-color;
-    
+    //font-family: @font-family-bold;
+
     &>form{
         padding-right: 32px;
     }
@@ -67,8 +69,51 @@ section{margin: 5px 0 15px 0;}
 .flezz-scroll {
     height: ~'calc(100% - 100px)';
 }
+
+.left_nav ul.banner{
+    background-image: url(../img/background/banner.jpg);
+    border-color: rgba(125,125,125,0.95);
+    p {
+        border-bottom: 0;
+    }
+}
+.nav-title{
+    font-family: @font-family-bold;
+    font-size: 2em;
+    line-height: 2;
+    text-align: right; 
+}
+
+.cd-primary-nav{
+    text-align: right;
+    &> ul > li{
+        display: inline-block;
+        margin-left: 1em;
+        margin-right: 1em;
+        padding-top: 10px;
+        height: @dashboard-header-height;
+        
+        > a{
+            font-family: 'OpenSansRegular';
+            height: auto;
+            line-height: 3em;
+            background: transparent;
+            margin-top: 1em;
+            padding: .6em 1em;
+            border-top: none;
+            text-decoration: none;
+            vertical-align: bottom;
+
+            &:hover{
+                border-radius: 20em;
+                background-color: rgba(5, 5, 5, 0.5);
+            }
+        }
+    }
+}
+
 ///* CSS Document *///
-.body {color:@dark-color; background-color: @dark-bck}
+.body {color:@dark-color; background-image: url("../img/background/texture.png"); background-color: @dark-bck}
 
 .brand {width:225px; height:60px; float:left}
 .logo {width:225px; height:60px; background: @bck-logo-big;background-size: cover; height:60px; margin-left: 31px; width: auto !important}
@@ -95,7 +140,7 @@ section{margin: 5px 0 15px 0;}
 body,
 .header {
     font-family: "OpenSansLight" !important;
-    background-color: @dark-bck;
+    //background-color: @dark-bck;
     color: @dark-color;
     a {color: @dark-color}
     a:hover{color: white}
@@ -163,10 +208,10 @@ div.title {
 
 .tab_btn {
     float:left; height:@height_nav; padding: 5px 11px; margin: @pad_nav 15px 0px 0px; clear:right;	border:1px solid #e0e0e0;
-    
+
     a {list-style: none outside none}
     i {color:#bababa; font-size:17px}
-	
+
     &:hover {
         background-color: @dark-selected;
         i {color:@dark-selected-font}
@@ -231,23 +276,23 @@ div.title {
     height: @height_nav;
     line-height: 1.42857;
     vertical-align: middle;
-    
+
     input {
         width:100px;
         border-radius: 16px;
         outline: none;
         border:1px solid @dark-bck;
         transition:all 0.3s ease 0s;
-        
+
         &:focus{width:150px; border:1px solid @dark-color}
     }
-    
+
     input[type="text"] {
         font-size: 1rem;
         line-height: 2;
         height: ~'calc(2em + 2px)';
     }
-    
+
     ul {
         position: relative;
         margin:0px; padding:0px;
@@ -269,7 +314,7 @@ div.title {
     color: #adadad;
     display: block;
     font-size: 16px;
-	font-weight: normal;
+    font-weight: normal;
     height: 32px;
     line-height: 1.42857;
     padding: 0px 12px;
@@ -279,7 +324,7 @@ div.title {
 
 
 
-		
+
 
 .fixed_header.mini_nav .left_nav {margin:0px!important}
 .fixed_header.right_nav.mini_nav .left_nav {margin:0px!important}
@@ -288,15 +333,16 @@ div.title {
 .fixed_nav {
     .left_nav {position:fixed}
     .brand {position:fixed}
- }
+}
 
 .left_nav {
-    background-color:@light-bck; color:@light-color; font-size: 2rem; margin:0px 25px 0px 0px; border: 1px solid @light-border; min-height: @dashboard-min-height; width:225px; clear:both; float:left;
+    background-color:@light-bck; color:@light-color; font-size: 2rem; margin:0px 25px 0px 0px; min-height: @dashboard-min-height; width:225px; clear:both; float:left;
     a{color:lighten(@light-color,-4)}
     i{color:lighten(@light-color,14)}
-    box-shadow: 2px 1px 1px #205081, 5px 4px 2px rgba(0, 0, 0, 0.1);
-    
+    box-shadow: 2px 1px 1px @theme-shadow-color, 5px 4px 2px rgba(0, 0, 0, 0.1);
+
     ul {
+        border: 1px solid @light-border;
         margin:0px 0px; padding:0;
         p {font-size:25px; border-bottom:1px solid @light-border; padding:20px 28px; text-transform:uppercase; margin-bottom:0}
         p i {padding:20px 28px; display:none}
@@ -323,7 +369,7 @@ div.title {
             //ul li a:active i {color:@light-color}   
             ul li a:hover {background-color:#FFFFFF}
             ul li a:hover i, ul li a:hover b {color:@light-color}        
-        
+
             a:hover {background-color: @light-hover ; color:@light-color}	
             a:hover i {color:@light-selected} 
             a:active i {color:@light-hover}
@@ -351,7 +397,7 @@ a.menu_selected:hover b, a.menu_selected:hover i{color: #FFFFFF!important}
     .logo{display:block}
 }
 .max_nav.right_nav .left_nav{margin-right:20px}
-    
+
 .mini_nav {
     .brand {display:block; width:60px; margin-right:25px}
     .logo {display:none} 
@@ -373,13 +419,16 @@ a.menu_selected:hover b, a.menu_selected:hover i{color: #FFFFFF!important}
 
 .right_container {
     background-color:#f1f1f1; border:1px solid #DDDEE0; margin-left:250px; min-height: @dashboard-min-height; padding:20px; overflow:auto;
-    box-shadow: 2px 1px 1px #205081, 5px 4px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 1px 1px @theme-shadow-color, 5px 4px 2px rgba(0, 0, 0, 0.1);
+    .scroll-content{
+        font-family: @font-family-bold;
+    }
 }
 
 .breadcromb {padding-bottom:10px; border-bottom:1px solid #DDDEE0; height:46px; margin-bottom:20px; padding-top: 1px}
 .active_title {float:left; font-size:32px; font-weight:normal; margin-top:-10px; margin-right:10px}
-.slash {float:left; color:#eaeaea; font-size:20px; margin-top:-1px; margin-right:10px}
-.title_subtext	{float:left; color:#bbbbbb; font-size:14px; margin-top:3px}
+.slash {float:left; color:#777777; font-size:1.8em; margin-top:-1px; margin-right:10px}
+.title_subtext	{float:left; color:#888888; font-size:1.4em; margin-top:3px}
 .breadcromb2 {float:right; height:40px}
 .breadcromb2 ul {margin:0px; padding:0px}
 .breadcromb2 ul li {margin:0; padding:0; list-style:none}
@@ -429,7 +478,7 @@ h3, .h3 {font-size: 18px!important}
 
 .accordion .panel-heading {
     background: none repeat scroll 0 0 #FFFFFF!important;
- 
+
 }
 
 /* chat box */

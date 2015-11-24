@@ -22,6 +22,63 @@
 /* cmp tab ---------- [ OK ] */
 /* cmp input -------- [ OK ] */
 /* cmp tile --------- [ OK ] */
+.field > b {
+  font-size: .8rem;
+  margin-left: .5em;
+  padding: 0 .5em;
+  color: #eeeeee;
+}
+.field > b:hover {
+  color: white;
+  cursor: pointer;
+}
+.field > .help {
+  background-color: #29c1dd;
+}
+.field > .help:hover {
+  background-color: #1faac3;
+}
+.field > .warn {
+  background-color: #eb9800;
+}
+.field > .warn:hover {
+  background-color: #c78100;
+}
+.field > .tooltip {
+  opacity: 1 !important;
+  background-color: #434b45;
+  color: #fff;
+  border: 1px solid #2b302c;
+  line-height: 1.4285em;
+  border-radius: 2px;
+  padding: 1em 1.5em;
+  box-shadow: 0 2px 4px 0 rgba(34, 36, 38, 0.12), 0 2px 10px 0 rgba(34, 36, 38, 0.08);
+  font-size: .7rem;
+  z-index: 1900;
+  width: 70%;
+  bottom: calc(110%);
+  position: absolute;
+  left: 20px;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+  max-width: 250px;
+  font-weight: 400;
+}
+.field > .tooltip > h2 {
+  margin: 0px;
+  text-transform: capitalize;
+}
+.field > .tooltip > P {
+  font-style: italic;
+}
+.field > .tooltip > .help-title {
+  color: #29c1dd;
+}
+.field > .tooltip > .warn-title {
+  color: #eb9800;
+}
+/* cmp popup -- [ OK ] */
 /* include cmp ------ [ OK ] */
 /* include mixin ---- [ OK ] */
 /* include picture -- [ OK ] */
@@ -2960,8 +3017,10 @@ li.dropdown[data-state="open"] .caret,
 div.dropdown[data-state="open"] .caret {
   transform: rotate(180deg);
 }
+select,
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="search"] {
   font-size: 1.125rem;
   line-height: 2.3;
   height: calc(2.3em + 2px);
@@ -2974,25 +3033,37 @@ input[type="password"] {
   box-sizing: border-box;
   z-index: 1;
 }
+select:focus,
 input[type="text"]:focus,
-input[type="password"]:focus {
+input[type="password"]:focus,
+input[type="search"]:focus {
   background: #ffffff;
   border-color: #bcd6d1 #e8f1ef #e8f1ef #c8ded9;
 }
+select:focus + span > i,
 input[type="text"]:focus + span > i,
-input[type="password"]:focus + span > i {
+input[type="password"]:focus + span > i,
+input[type="search"]:focus + span > i {
   color: #00c49d;
 }
-input::-webkit-input-placeholder {
+input[type="text"]::-webkit-input-placeholder,
+input[type="password"]::-webkit-input-placeholder,
+input[type="search"]::-webkit-input-placeholder {
   color: #d9d9d9;
 }
-input:-moz-placeholder {
+input[type="text"]:-moz-placeholder,
+input[type="password"]:-moz-placeholder,
+input[type="search"]:-moz-placeholder {
   color: #d9d9d9;
 }
-input::-moz-placeholder {
+input[type="text"]::-moz-placeholder,
+input[type="password"]::-moz-placeholder,
+input[type="search"]::-moz-placeholder {
   color: #d9d9d9;
 }
-input:-ms-input-placeholder {
+input[type="text"]:-ms-input-placeholder,
+input[type="password"]:-ms-input-placeholder,
+input[type="search"]:-ms-input-placeholder {
   color: #d9d9d9;
 }
 label {
@@ -3019,24 +3090,28 @@ input:-webkit-autofill:active {
   font-size: 1.125rem;
   position: relative;
   clear: both;
-  margin: 0 0 1.375rem;
+  margin: 0 0 1.375em;
 }
+.field select,
 .field input {
   outline: 0;
 }
+.field > select,
 .field > input,
 .field .afix,
 .field .prefix,
 .field .postfix,
 .field .set {
-  margin-left: 14px;
+  margin-left: 10px;
 }
+.field > select,
 .field > input[type="text"],
 .field > input[type="password"],
+.field > input[type="search"],
 .field .afix,
 .field .prefix,
 .field .postfix {
-  width: calc(100% - 14px);
+  width: calc(100% - 10px);
 }
 .field > small {
   position: absolute;
@@ -3045,7 +3120,7 @@ input:-webkit-autofill:active {
   padding: 0 0.7em;
   border-radius: 4px;
   right: 2px;
-  bottom: -1.6325rem;
+  bottom: -1.935em;
 }
 .field > small > i {
   font-size: 0.7875rem;
@@ -3063,32 +3138,29 @@ input:-webkit-autofill:active {
 .field > span {
   position: absolute;
   padding-left: 2.1em;
-  right: 0.5em;
+  right: 1em;
   bottom: 0.31em;
   height: 1.88em;
   line-height: 1.88em;
   box-sizing: border-box;
-  background-image: -webkit-linear-gradient(left, rgba(244, 244, 244, 0) 0%, #f4f4f4 50%, rgba(244, 244, 244, 0) 90%);
-  background-image: -o-linear-gradient(left, rgba(244, 244, 244, 0) 0%, #f4f4f4 50%, rgba(244, 244, 244, 0) 90%);
-  background-image: linear-gradient(to right, rgba(244, 244, 244, 0) 0%, #f4f4f4 50%, rgba(244, 244, 244, 0) 90%);
+  background-image: -webkit-linear-gradient(left, rgba(244, 244, 244, 0) 0%, #f4f4f4 50%);
+  background-image: -o-linear-gradient(left, rgba(244, 244, 244, 0) 0%, #f4f4f4 50%);
+  background-image: linear-gradient(to right, rgba(244, 244, 244, 0) 0%, #f4f4f4 50%);
   color: #007d64;
   z-index: 10;
 }
 .field > span i {
   line-height: 2.3;
 }
+.field > select:focus + span,
 .field > input[type="text"]:focus + span,
-.field > input[type="password"]:focus + span {
-  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 50%, rgba(255, 255, 255, 0) 90%);
-  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 50%, rgba(255, 255, 255, 0) 90%);
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 50%, rgba(255, 255, 255, 0) 90%);
+.field > input[type="password"]:focus + span,
+.field > input[type="search"]:focus + span {
+  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 50%);
+  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 50%);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 50%);
 }
-.field > input[type="text"],
-.field > input[type="password"] {
-  padding-right: 2em;
-  border-radius: 7px;
-  margin-top: 0.23em;
-}
+.field select,
 .field input[type="text"],
 .field input[type="password"] {
   box-shadow: 0 0 0 0 transparent inset;
@@ -3098,8 +3170,16 @@ input:-webkit-autofill:active {
   -o-transition: color 0.1s ease, border-color 0.1s ease;
   transition: color 0.1s ease, border-color 0.1s ease;
 }
+.field > input[type="text"],
+.field > input[type="password"],
+.field > select {
+  padding-right: 2em;
+  border-radius: 7px;
+  margin-top: 0.23em;
+}
 .field > input[type="text"]:focus,
 .field > input[type="password"]:focus,
+.field > select:focus,
 .field > .focus {
   -webkit-transform: scale(1.02, 1);
   -moz-transform: scale(1.02, 1);
@@ -3109,6 +3189,7 @@ input:-webkit-autofill:active {
 }
 .field > input[type="text"]:focus,
 .field > input[type="password"]:focus,
+.field > select:focus,
 .field .focus > input[type="text"],
 .field .focus > input[type="password"] {
   border-left-width: 2px;
@@ -3116,6 +3197,14 @@ input:-webkit-autofill:active {
 }
 .field > .focus > span {
   border-bottom-color: #e8f1ef !important;
+}
+.field > input[type="search"] {
+  border-radius: 3em;
+  border-width: 3px;
+  border-color: #007d64;
+}
+.field > input[type="search"]:focus {
+  border-color: white;
 }
 .field input[type='checkbox'] {
   vertical-align: middle;
@@ -3130,6 +3219,9 @@ input:-webkit-autofill:active {
 .field input[type='radio']::before {
   clear: both;
   content: "\000a";
+}
+.field > select:focus + span i {
+  transform: rotate(180deg);
 }
 .field .fixed {
   width: 100%;
@@ -3406,7 +3498,7 @@ section {
   margin: 5px 0 15px 0;
 }
 .scroll-content {
-  color: #8d8d8d;
+  color: #444444;
 }
 .scroll-content > form {
   padding-right: 32px;
@@ -3414,8 +3506,47 @@ section {
 .flezz-scroll {
   height: calc(100% - 100px);
 }
+.left_nav ul.banner {
+  background-image: url(../img/background/banner.jpg);
+  border-color: rgba(125, 125, 125, 0.95);
+}
+.left_nav ul.banner p {
+  border-bottom: 0;
+}
+.nav-title {
+  font-family: 'OpenSansRegular';
+  font-size: 2em;
+  line-height: 2;
+  text-align: right;
+}
+.cd-primary-nav {
+  text-align: right;
+}
+.cd-primary-nav > ul > li {
+  display: inline-block;
+  margin-left: 1em;
+  margin-right: 1em;
+  padding-top: 10px;
+  height: 70px;
+}
+.cd-primary-nav > ul > li > a {
+  font-family: 'OpenSansRegular';
+  height: auto;
+  line-height: 3em;
+  background: transparent;
+  margin-top: 1em;
+  padding: .6em 1em;
+  border-top: none;
+  text-decoration: none;
+  vertical-align: bottom;
+}
+.cd-primary-nav > ul > li > a:hover {
+  border-radius: 20em;
+  background-color: rgba(5, 5, 5, 0.5);
+}
 .body {
   color: #dddddd;
+  background-image: url("../img/background/texture.png");
   background-color: #007d64;
 }
 .brand {
@@ -3478,7 +3609,6 @@ section {
 body,
 .header {
   font-family: "OpenSansLight" !important;
-  background-color: #007d64;
   color: #dddddd;
 }
 body a,
@@ -3584,7 +3714,7 @@ div.title {
   background-color: #f1f1f1;
 }
 .tab_btn:hover i {
-  color: #8d8d8d;
+  color: #444444;
 }
 .admin_panel {
   margin-right: -10px;
@@ -3750,23 +3880,23 @@ div.title {
 }
 .left_nav {
   background-color: #f1f1f1;
-  color: #8d8d8d;
+  color: #444444;
   font-size: 2rem;
   margin: 0px 25px 0px 0px;
-  border: 1px solid #dddee0;
   min-height: 250px;
   width: 225px;
   clear: both;
   float: left;
-  box-shadow: 2px 1px 1px #205081, 5px 4px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 1px 1px #014638, 5px 4px 2px rgba(0, 0, 0, 0.1);
 }
 .left_nav a {
-  color: #838383;
+  color: #3a3a3a;
 }
 .left_nav i {
-  color: #b1b1b1;
+  color: #686868;
 }
 .left_nav ul {
+  border: 1px solid #dddee0;
   margin: 0px 0px;
   padding: 0;
 }
@@ -3856,11 +3986,11 @@ div.title {
 }
 .left_nav ul li ul li a:hover i,
 .left_nav ul li ul li a:hover b {
-  color: #8d8d8d;
+  color: #444444;
 }
 .left_nav ul li a:hover {
   background-color: #f8f8f8;
-  color: #8d8d8d;
+  color: #444444;
 }
 .left_nav ul li a:hover i {
   color: #007d64;
@@ -3981,7 +4111,10 @@ a.menu_selected:hover i {
   min-height: 250px;
   padding: 20px;
   overflow: auto;
-  box-shadow: 2px 1px 1px #205081, 5px 4px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 1px 1px #014638, 5px 4px 2px rgba(0, 0, 0, 0.1);
+}
+.right_container .scroll-content {
+  font-family: 'OpenSansRegular';
 }
 .breadcromb {
   padding-bottom: 10px;
@@ -3999,15 +4132,15 @@ a.menu_selected:hover i {
 }
 .slash {
   float: left;
-  color: #eaeaea;
-  font-size: 20px;
+  color: #777777;
+  font-size: 1.8em;
   margin-top: -1px;
   margin-right: 10px;
 }
 .title_subtext {
   float: left;
-  color: #bbbbbb;
-  font-size: 14px;
+  color: #888888;
+  font-size: 1.4em;
   margin-top: 3px;
 }
 .breadcromb2 {

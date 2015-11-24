@@ -17,6 +17,63 @@
 /* cmp tab ---------- [ OK ] */
 /* cmp input -------- [ OK ] */
 /* cmp tile --------- [ OK ] */
+.field > b {
+  font-size: .8rem;
+  margin-left: .5em;
+  padding: 0 .5em;
+  color: #eeeeee;
+}
+.field > b:hover {
+  color: white;
+  cursor: pointer;
+}
+.field > .help {
+  background-color: #29c1dd;
+}
+.field > .help:hover {
+  background-color: #1faac3;
+}
+.field > .warn {
+  background-color: #eb9800;
+}
+.field > .warn:hover {
+  background-color: #c78100;
+}
+.field > .tooltip {
+  opacity: 1 !important;
+  background-color: #434b45;
+  color: #fff;
+  border: 1px solid #2b302c;
+  line-height: 1.4285em;
+  border-radius: 2px;
+  padding: 1em 1.5em;
+  box-shadow: 0 2px 4px 0 rgba(34, 36, 38, 0.12), 0 2px 10px 0 rgba(34, 36, 38, 0.08);
+  font-size: .7rem;
+  z-index: 1900;
+  width: 70%;
+  bottom: calc(110%);
+  position: absolute;
+  left: 20px;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+  max-width: 250px;
+  font-weight: 400;
+}
+.field > .tooltip > h2 {
+  margin: 0px;
+  text-transform: capitalize;
+}
+.field > .tooltip > P {
+  font-style: italic;
+}
+.field > .tooltip > .help-title {
+  color: #29c1dd;
+}
+.field > .tooltip > .warn-title {
+  color: #eb9800;
+}
+/* cmp popup -- [ OK ] */
 /* include cmp ------ [ OK ] */
 /* include mixin ---- [ OK ] */
 /* include picture -- [ OK ] */
@@ -2018,10 +2075,11 @@ body {
   height: 100%;
   width: 100%;
   z-index: 1;
-  background-color: #356c8d;
-  color: #f5f5f7;
+  background-color: #eeeeee;
+  color: #426471;
   font-size: 1em;
-  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2117,27 +2175,25 @@ input {
 .bar-min > .scroll-bar:active {
   width: 4px;
 }
-body {
-  background-color: #eeeeee;
-  color: gray;
-  overflow-y: scroll;
-}
-body section:last-of-type {
-  margin-bottom: 50%;
-}
-section {
+section.test {
   margin: 10px 20% 10px 10%;
   background-color: #fafaee;
   border: 2px dashed #c7c7c7;
   padding: 30px;
 }
+.test:last-of-type {
+  margin-bottom: 50%;
+}
+.test:first-of-type {
+  margin-top: 50px;
+}
 li {
   display: inline-block;
 }
-select[type="text"],
+select,
 input[type="text"],
-select[type="password"],
-input[type="password"] {
+input[type="password"],
+input[type="search"] {
   font-size: 1.125rem;
   line-height: 2.2;
   height: calc(2.2em + 2px);
@@ -2150,65 +2206,37 @@ input[type="password"] {
   box-sizing: border-box;
   z-index: 1;
 }
-select[type="text"]:focus,
+select:focus,
 input[type="text"]:focus,
-select[type="password"]:focus,
-input[type="password"]:focus {
+input[type="password"]:focus,
+input[type="search"]:focus {
   background: #ffffff;
   border-color: #c1cbd6 #eceff2 #eceff2 #cdd5de;
 }
-select[type="text"]:focus + span > i,
+select:focus + span > i,
 input[type="text"]:focus + span > i,
-select[type="password"]:focus + span > i,
-input[type="password"]:focus + span > i {
+input[type="password"]:focus + span > i,
+input[type="search"]:focus + span > i {
   color: #2e73ba;
 }
-select::-webkit-input-placeholder,
-input::-webkit-input-placeholder {
+input[type="text"]::-webkit-input-placeholder,
+input[type="password"]::-webkit-input-placeholder,
+input[type="search"]::-webkit-input-placeholder {
   color: #d9d9d9;
 }
-select:-moz-placeholder,
-input:-moz-placeholder {
+input[type="text"]:-moz-placeholder,
+input[type="password"]:-moz-placeholder,
+input[type="search"]:-moz-placeholder {
   color: #d9d9d9;
 }
-select::-moz-placeholder,
-input::-moz-placeholder {
+input[type="text"]::-moz-placeholder,
+input[type="password"]::-moz-placeholder,
+input[type="search"]::-moz-placeholder {
   color: #d9d9d9;
 }
-select:-ms-input-placeholder,
-input:-ms-input-placeholder {
-  color: #d9d9d9;
-}
-select {
-  font-size: 1.125rem;
-  line-height: 2.2;
-  height: calc(2.2em + 2px);
-  padding: 0 0.7em;
-  background: #f4f4f4;
-  border: 1px solid #d6dde4;
-  color: #2a69aa;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  z-index: 1;
-}
-select:focus {
-  background: #ffffff;
-  border-color: #c1cbd6 #eceff2 #eceff2 #cdd5de;
-}
-select:focus + span > i {
-  color: #2e73ba;
-}
-select::-webkit-input-placeholder {
-  color: #d9d9d9;
-}
-select:-moz-placeholder {
-  color: #d9d9d9;
-}
-select::-moz-placeholder {
-  color: #d9d9d9;
-}
-select:-ms-input-placeholder {
+input[type="text"]:-ms-input-placeholder,
+input[type="password"]:-ms-input-placeholder,
+input[type="search"]:-ms-input-placeholder {
   color: #d9d9d9;
 }
 label {
@@ -2235,7 +2263,7 @@ input:-webkit-autofill:active {
   font-size: 1.125rem;
   position: relative;
   clear: both;
-  margin: 0 0 1.29rem;
+  margin: 0 0 1.29em;
 }
 .field select,
 .field input {
@@ -2247,15 +2275,16 @@ input:-webkit-autofill:active {
 .field .prefix,
 .field .postfix,
 .field .set {
-  margin-left: 0px;
+  margin-left: 10px;
 }
 .field > select,
 .field > input[type="text"],
 .field > input[type="password"],
+.field > input[type="search"],
 .field .afix,
 .field .prefix,
 .field .postfix {
-  width: calc(100% - 0px);
+  width: calc(100% - 10px);
 }
 .field > small {
   position: absolute;
@@ -2264,7 +2293,7 @@ input:-webkit-autofill:active {
   padding: 0 0.7em;
   border-radius: 4px;
   right: 2px;
-  bottom: -1.575rem;
+  bottom: -1.85em;
 }
 .field > small > i {
   font-size: 0.7875rem;
@@ -2282,29 +2311,31 @@ input:-webkit-autofill:active {
 .field > span {
   position: absolute;
   padding-left: 2.1em;
-  right: 0.5em;
+  right: 1em;
   bottom: 0.3em;
   height: 1.8em;
   line-height: 1.8em;
   box-sizing: border-box;
-  background-image: -webkit-linear-gradient(left, rgba(244, 244, 244, 0) 0%, #f4f4f4 50%, rgba(244, 244, 244, 0) 90%);
-  background-image: -o-linear-gradient(left, rgba(244, 244, 244, 0) 0%, #f4f4f4 50%, rgba(244, 244, 244, 0) 90%);
-  background-image: linear-gradient(to right, rgba(244, 244, 244, 0) 0%, #f4f4f4 50%, rgba(244, 244, 244, 0) 90%);
+  background-image: -webkit-linear-gradient(left, rgba(244, 244, 244, 0) 0%, #f4f4f4 50%);
+  background-image: -o-linear-gradient(left, rgba(244, 244, 244, 0) 0%, #f4f4f4 50%);
+  background-image: linear-gradient(to right, rgba(244, 244, 244, 0) 0%, #f4f4f4 50%);
   color: #0050a1;
   z-index: 10;
 }
 .field > span i {
   line-height: 2.2;
 }
+.field > select:focus + span,
 .field > input[type="text"]:focus + span,
-.field > input[type="password"]:focus + span {
-  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 50%, rgba(255, 255, 255, 0) 90%);
-  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 50%, rgba(255, 255, 255, 0) 90%);
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 50%, rgba(255, 255, 255, 0) 90%);
+.field > input[type="password"]:focus + span,
+.field > input[type="search"]:focus + span {
+  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 50%);
+  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 50%);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 50%);
 }
+.field select,
 .field input[type="text"],
-.field input[type="password"],
-.field select {
+.field input[type="password"] {
   box-shadow: 0 0 0 0 transparent inset;
   -webkit-appearance: none;
   -webkit-transition: color 0.1s ease, border-color 0.1s ease;
@@ -2340,6 +2371,14 @@ input:-webkit-autofill:active {
 .field > .focus > span {
   border-bottom-color: #eceff2 !important;
 }
+.field > input[type="search"] {
+  border-radius: 3em;
+  border-width: 3px;
+  border-color: #205081;
+}
+.field > input[type="search"]:focus {
+  border-color: white;
+}
 .field input[type='checkbox'] {
   vertical-align: middle;
 }
@@ -2353,6 +2392,9 @@ input:-webkit-autofill:active {
 .field input[type='radio']::before {
   clear: both;
   content: "\000a";
+}
+.field > select:focus + span i {
+  transform: rotate(180deg);
 }
 .field .fixed {
   width: 100%;
@@ -3067,63 +3109,14 @@ div[data-state*="disabled"] > a:active {
   border-width: 1px !important;
   margin: 0 !important;
 }
-.field > .help,
-.field > .warn {
-  font-size: .7rem;
-  margin-left: .5em;
-  padding: 0 .5em;
-}
-.field > .help:hover,
-.field > .warn:hover {
-  cursor: pointer;
-}
-.field > .help {
-  background-color: green;
-  color: #80ff80;
-}
-.field > .help:hover {
-  background-color: #005c00;
-  color: white;
-}
-.field > .warn {
-  background-color: orange;
-  color: #ffffff;
-}
-.field > .warn:hover {
-  background-color: #db8e00;
-  color: white;
-}
-.field > .tooltip {
-  background-color: #1b1c1d;
-  color: #fff;
-  box-shadow: none;
-  width: 70%;
-  bottom: 100%;
-  font-size: .7rem;
-  display: none;
-  position: absolute;
-  right: calc(10%);
-  min-width: -webkit-min-content;
-  min-width: -moz-min-content;
-  min-width: min-content;
-  z-index: 1900;
-  border: 1px solid #d4d4d5;
-  line-height: 1.4285em;
-  max-width: 250px;
-  padding: .833em 1em;
-  font-weight: 400;
-  font-style: normal;
-  border-radius: .28571429rem;
-  box-shadow: 0 2px 4px 0 rgba(34, 36, 38, 0.12), 0 2px 10px 0 rgba(34, 36, 38, 0.08);
-  margin: 0;
-}
-.field > .tooltip > h2 {
-  color: green;
-  margin: 0px;
+.group {
+  margin: 2.5em 0;
+  padding: 20px;
+  border: 2px solid #f4f4f4;
 }
 form {
   background-color: #e6e6e8;
-  padding: 20px 35px 20px 20px;
+  padding: 20px 20px 35px;
   overflow: hidden;
 }
 input.noField {

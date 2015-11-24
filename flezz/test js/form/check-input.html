@@ -9,28 +9,28 @@
         <link rel="stylesheet" href="check-input.css">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <![CDATA[
-        /*
-        Name: Flezz Docs
-        Version: 1.0
-        Developer : Giancarlo Ortiz Benavides
-        licenced: Carlos Rojas
-        Url: www.zerez.org
-        Date: 25 junio 2015
+            /*
+            Name: Flezz Docs
+            Version: 1.0
+            Developer : Giancarlo Ortiz Benavides
+            licenced: Carlos Rojas
+            Url: www.zerez.org
+            Date: 10 nov 2015
         */]]>
     </head>
     <body>
         <div class="clear">
             <br>
         </div>
-        <section>
+        <section class="test">
             <form action="">
-               
+
                 <!-- INPUT TEXT -->
                 <div class="field">
                     <label for="">input_field</label>
                     <input type="text" placeholder="name_input" data-tooltip="tip_one" required>
                 </div>
-                
+
                 <!-- INPUT TEXT ICON -->
                 <div class="field">
                     <label for="">input_field_icon</label>
@@ -39,34 +39,16 @@
                         <i class="fa fa-rocket"></i>
                     </span>
                 </div>
-                
-                <!-- SELECT TEXT ICON -->
-                <div class="field">
-                    <label for="">select_field</label>
-                    <select name="" id="">
-                        <optgroup disabled label="disabled option group">
-                            <option value="A">primary</option>
-                            <option value="B">secondary</option>
-                        </optgroup>
-                        <optgroup label="second option group">
-                            <option value="1">one</option>
-                            <option value="2">two</option>
-                            <option value="3">tree</option>
-                            <option value="4">four</option>
-                        </optgroup>
-                    </select>
-                </div>
-                
+
                 <!-- INPUT TEXT HELP -->
                 <div class="field">
                     <label for="">name_field 3</label>
-                    <b class="help" data-title="ayuda" data-tooltip="this is a Tooltip">?</b>
+                    <b class="help" data-title="Help" data-tooltip="This is a tooltip, help tip_one" data-state="close" aria-hidden="true">?</b>
+                    <b class="warn" data-title="warn" data-tooltip="This is a tooltip, warn tip_one" data-state="close" aria-hidden="true">!</b>
                     <input type="text" placeholder="name_input" data-tooltip="tip_one" valid>
-                    <span>
-                        <i class="fa fa-rocket"></i>
-                    </span>
+                    <span><i class="fa fa-rocket"></i></span>
                 </div>
-                
+
                 <!-- INPUT TEXT WIDTH ERROR -->
                 <div class="field">
                     <label for="">name_field</label>
@@ -79,23 +61,31 @@
                         <span class="arrow"></span>
                     </small>
                 </div>
-                
+
                 <!-- INPUT NO LABEL -->
-                <label for="">name_field</label>
-                <div class="field">
-                    <input type="text" placeholder="name_input" data-tooltip="tip_one">
-                    <span>
-                        <i class="fa fa-user"></i>
-                    </span>
-                </div>
-                <div class="field">
-                    <input type="password" placeholder="name_input" data-tooltip="tip_one">
-                    <span>
-                        <i class="fa fa-lock"></i>
-                    </span>
+                <div class="group">
+                    <label for="">name_field</label>
+                    <div class="field">
+                        <input type="text" placeholder="name_input" data-tooltip="tip_one">
+                        <span>
+                            <i class="fa fa-user"></i>
+                        </span>
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="name_input" data-tooltip="tip_one">
+                        <span>
+                            <i class="fa fa-lock"></i>
+                        </span>
+                    </div>
+                    <div class="field">
+                        <input type="search" placeholder="Buscar" data-tooltip="tip_one">
+                        <span>
+                            <i class="fa fa-search"></i>
+                        </span>
+                    </div>
                 </div>
                 <button type="submit" class="primary">enviar</button>
-                
+
                 <!-- INPUT TEXT WIDTH PREFIX [ICON AND TEXT] -->
                 <div class="field">
                     <label for="">field_icon_prefix</label>
@@ -106,7 +96,7 @@
                         <input type="text" placeholder="name_input_prefix" data-tooltip="tip_one">
                     </div>
                 </div>
-                
+
                 <!-- INPUT TEXT WIDTH POSTFIX [ICON AND TEXT] -->
                 <div class="field">
                     <label for="">field_text_postfix</label>
@@ -115,7 +105,7 @@
                         <span>.com</span>
                     </div>
                 </div>
-                
+
                 <!-- INPUT TEXT WIDTH PREFIX AND POSTFIX [ICON AND TEXT] -->
                 <div class="field">
                     <label for="">field_text_prefix_and_postfix</label>
@@ -125,7 +115,7 @@
                         <span>.org</span>
                     </div>
                 </div>
-                
+
                 <!-- INPUT TEXT WIDTH PREFIX [BUTTON] primary -->
                 <div class="field">
                     <label for="">field_button_link</label>
@@ -136,7 +126,7 @@
                         <input type="text" placeholder="name_input_button_link" data-tooltip="tip_one">
                     </div>
                 </div>
-                
+
                 <!-- INPUT TEXT WIDTH PREFIX [BUTTON] success -->
                 <div class="field">
                     <label for="">field_button_link</label>
@@ -147,7 +137,7 @@
                         <input type="text" placeholder="name_input_button_link" data-tooltip="tip_one">
                     </div>
                 </div>
-                
+
                 <!-- INPUT TEXT WIDTH POSTFIX [BUTTON] warning -->
                 <div class="field">
                     <label for="">field_button_link</label>
@@ -160,7 +150,7 @@
                         </span>
                     </div>
                 </div>
-                
+
                 <!-- INPUT TEXT WIDTH POSTFIX [BUTTON] danger -->
                 <div class="field">
                     <label for="">field_button_link</label>
@@ -173,7 +163,7 @@
                         </span>
                     </div>
                 </div>
-                
+
                 <!-- INPUT TEXT WIDTH PREFIX [BUTTON] V2 -->
                 <div class="field">
                     <label for="">field_button</label>
@@ -186,7 +176,7 @@
                         <input type="text" placeholder="name_input" data-tooltip="tip_one">
                     </div>
                 </div>
-                
+
                 <!-- INPUT TEXT WIDTH PREFIX [BUTTON] V2 -->
                 <div class="field">
                     <label for="">field_button</label>
@@ -199,7 +189,7 @@
                         <input type="text" placeholder="name_input" data-tooltip="tip_one">
                     </div>
                 </div>
-                
+
                 <!-- INPUT TEXT WIDTH POSTFIX [BUTTON] V2 -->
                 <div class="field">
                     <label for="">field_button</label>
@@ -212,7 +202,7 @@
                         </span>
                     </div>
                 </div>
-                
+
                 <!-- INPUT TEXT WIDTH POSTFIX [BUTTON] V2 -->
                 <div class="field">
                     <label for="">name_field_one</label>
@@ -225,7 +215,7 @@
                         </span>
                     </div>
                 </div>
-                
+
                 <!-- INPUT TEXT WIDTH POSTFIX [BUTTON] V3-->
                 <div class="field">
                     <label for="">name_field_one</label>
@@ -234,7 +224,7 @@
                         <button class="primary">button v3</button>
                     </div>
                 </div>
-                
+
                 <!-- INPUT TEXT WIDTH POSTFIX [BUTTON] V3-->
                 <div class="field">
                     <label for="">name_field_one</label>
@@ -246,16 +236,38 @@
                     </div>
                 </div>
                 
+                <!-- SELECT TEXT ICON -->
+                <div class="field">
+                    <label for="">select_field</label>
+                    <select name="" id="">
+                        <optgroup label="primary option">
+                            <option value="1">one</option>
+                            <option value="2">two</option>
+                        </optgroup>
+                        <optgroup disabled label="disabled option group">
+                            <option value="A">primary</option>
+                            <option value="B">secondary</option>
+                        </optgroup>
+                        <optgroup label="second option group">
+                            <option value="3">tree</option>
+                            <option value="4">four</option>
+                            <option value="4" disabled>five disabled</option>
+                            <option value="4">six</option>
+                        </optgroup>
+                    </select>
+                    <span><i class="fa fa-arrow-down"></i></span>
+                </div>
+
                 <!-- INPUT NO FIELD -->
                 <input class='noField' type="text" placeholder="input without field" data-tooltip="tip_one">
                 <input class='noField' type="text" placeholder="input without field" data-tooltip="tip_one">
-                
+
                 <!-- CHECKBOX -->
                 <div class="field">
                     <input type="checkbox" >
                     <label for="" data-tooltip="tip_one">name_field_one</label>
                 </div>
-                
+
                 <!-- CHECKBOX GROUP-->
                 <div class="field">
                     <p>Name group</p>
@@ -268,7 +280,7 @@
                         <br>
                     </div>
                 </div>
-                
+
                 <!-- RADIO -->
                 <div class="field">
                     <p>Choose Your Option</p>
@@ -281,11 +293,10 @@
                         </label>
                     </div>
                 </div>
-                
-                
             </form>
         </section>
         <script src="../vendor/jquery-2.1.0.js"></script>
         <script src="flezz.input.js"></script>
+        <script src="tooltip.js"></script>
     </body>
 </html>

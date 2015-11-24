@@ -11,18 +11,18 @@
         <link rel="stylesheet" href="Content/css/website.css">
         <script src="Scripts/js/vendor/modernizr.js"></script>    
         <![CDATA[
-            /*
-            Name: Planeacion Udenar website
-            Url: http://www.planeacion.udenar.edu.co/
-            Org: Universidad de Nari├▒o
-            Url: http://www.udenar.edu.co/
-            Theme: FLEZZ Website Template
-            Version: 2.0
-            Developer : Giancarlo Ortiz Benavides
-            Url: http://www.zerez.org/
-            Date: 7 mayo 2015
-            */
-        ]]>
+/*
+Name: Planeacion Udenar website
+Url: http://www.planeacion.udenar.edu.co/
+Org: Universidad de Nari├▒o
+Url: http://www.udenar.edu.co/
+Theme: FLEZZ Website Template
+Version: 2.0
+Developer : Giancarlo Ortiz Benavides
+Url: http://www.zerez.org/
+Date: 7 mayo 2015
+*/
+]]>
     </head>
     <style>
         body{
@@ -32,8 +32,8 @@
         }
         .login-form{
             position: absolute;
-            top: 70px;
-            left: 10%;
+            top: 80px;
+            left: 5%;
             width: 800px;
             display: inline-flex;
         }
@@ -44,14 +44,14 @@
             background-size: cover;
             text-align: center;
         }
-        
+
         .login-logo img{
             top: 40%;
             position: absolute;
             left: 3%;
         }
         .login-content{
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.5);
             width: 500px;
             display: inline-block;
         }
@@ -60,30 +60,61 @@
             height: 70px;
             color: white;
             line-height: 70px;
-            background-color: rgba(0,125,100, 0.5);
+            background-color: rgba(0,125,100, 0.9);
             font-weight: bold;
             font-size: 1.5rem;
         }
-        
+
         form{
             padding: 40px;
         }
-        
-        .login-content>form>.field>label,
+
+        .login-content>form>.field>label{
+            color: rgb(128, 255, 230) !important;    
+        }
+
         .login-content>form>.field>span>i{
             color: rgb(0,125,100) !important;
         }
+        
+        .return{
+            display: none;
+        }
+        
+        @media (max-width:777px) {
+            .login-logo{
+                display: none
+            }
+            .login-form{
+                width: 90%
+            }
+            .login-content{
+                margin: auto;
+            }
+            .return{
+                display: inline;
+                padding-right: 0.7em;
+                color: #e2e2e2;
+            }
+            .return:hover{
+                color:#ffffff;
+            }
+        }
+
     </style>
     <body>
         <div class="login-form">
-            <span class="login-logo">
+            <div class="login-logo">
                 <a href="website.index.html"><img src="Content/img/logos/logo_sig_b.png" alt=""></a>
-                <div><a href="index.html">test</a></div>
-            </span><!-- icon -->
-            <span class="login-content">
-                <header>Ingreso</header>
+            </div><!-- icon -->
+            <div class="login-content">
+                <header>
+                <a class="return" href="website.index.html">
+                    <span ><i class="fa fa-arrow-left"></i></span> 
+                </a>Ingreso
+                </header>
                 <form action="">
-                   <div class="field">
+                    <div class="field">
                         <label for="">Nombre</label>
                         <input type="text" placeholder="Nombre de Usuario" data-tooltip="Cedula" valid>
                         <span><i class="fa fa-user"></i></span>
@@ -97,10 +128,10 @@
                         <input type="checkbox" >
                         <label for="" data-tooltip="tip_one">Recordar Contraseña</label>
                     </div>
-                    <button type="submit" class="primary">Ingresar</button>
+                    <button type="submit" class="primary"><a href="index.html">Ingresar</a></button>
                 </form>
-            </span>
-            </div><!-- icon -->
+            </div>
+        </div><!-- icon -->
         </div>
     </body>
 </html>

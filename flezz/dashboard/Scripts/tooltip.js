@@ -8,7 +8,7 @@ $(document).ready(function () {
         text = item.attr('data-tooltip');
         context = $(this).parent();
         tooltipStruct = $('<div class="tooltip"><h2 class="help-title">' + title + '</h2><p>' + text + '</p></div>');
-        console.log(tooltipStruct);
+        //console.log(tooltipStruct);
         if (state === 'close') {
             context.append(tooltipStruct);
             item.attr('data-state', 'open');
@@ -33,7 +33,7 @@ $(document).ready(function () {
         text = item.attr('data-tooltip');
         context = $(this).parent();
         tooltipStruct = $('<div class="tooltip"><h2 class="warn-title">' + title + '</h2><p>' + text + '</p></div>');
-        console.log(tooltipStruct);
+        //console.log(tooltipStruct);
         if (state === 'close') {
             context.append(tooltipStruct);
             item.attr('data-state', 'open');

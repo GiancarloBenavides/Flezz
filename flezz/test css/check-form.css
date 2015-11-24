@@ -2235,7 +2235,7 @@ input:-webkit-autofill:active {
   font-size: 1.3125rem;
   position: relative;
   clear: both;
-  margin: 0 0 1.63rem;
+  margin: 0 0 1.63em;
 }
 .field select,
 .field input {
@@ -2264,7 +2264,7 @@ input:-webkit-autofill:active {
   padding: 0 0.7em;
   border-radius: 4px;
   right: 2px;
-  bottom: -1.805rem;
+  bottom: -2.19em;
 }
 .field > small > i {
   font-size: 0.91875rem;
@@ -2282,7 +2282,7 @@ input:-webkit-autofill:active {
 .field > span {
   position: absolute;
   padding-left: 2.1em;
-  right: 0.5em;
+  right: 0.7em;
   bottom: 0.34em;
   height: 2.12em;
   line-height: 2.12em;

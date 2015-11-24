@@ -5,69 +5,17 @@
 @button-size: @component-size;
 .input-init();
 .button-init();
+.popup-init();
 //
-
-.field {
-    &>.help,
-    &>.warn {
-        font-size: .7rem;
-        margin-left: .5em;
-        padding: 0 .5em;
-        &:hover {
-            cursor: pointer;
-        }
-    }
-    
-    &>.help{
-        background-color: green;
-        color: darken(green, -50%);
-        &:hover {
-            background-color: darken(green, 7%);
-            color: white;
-        }
-    }
-        
-    &>.warn{
-        background-color: orange;
-        color: darken(orange, -50%);
-        &:hover {
-            background-color: darken(orange, 7%);
-            color: white;
-        }
-    }
-    &>.tooltip {
-        background-color: #1b1c1d;
-        color: #fff;
-        box-shadow: none;
-    width: 70%;
-    bottom: 100%;
-        font-size: .7rem;
-        
-        display: none;
-        position: absolute;
-
-        right: calc(30% - 20px);
-        min-width: -webkit-min-content;
-        min-width: -moz-min-content;
-        min-width: min-content;
-        z-index: 1900;
-        border: 1px solid #d4d4d5;
-        line-height: 1.4285em;
-        max-width: 250px;
-        
-        padding: .833em 1em;
-        font-weight: 400;
-        font-style: normal;
-        border-radius: .28571429rem;
-        box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);
-        margin: 0;
-        &>h2{color:green;margin: 0px;}
-    }
+.group {
+    margin: 2.5em 0;
+    padding: 20px;
+    border: 2px solid @input-background-color;
 }
 
 form {
     background-color: @gray10;
-    padding: 20px 35px 20px 20px;
+    padding: 20px 20px 35px;
     overflow: hidden;
 }
 //

@@ -32,7 +32,7 @@ var tabs = (function ($) {
     //
     ///* 3 *//* CONFIG VARIABLES */
     ///* private variables, and private methods *///
-    var settings, dom, catchDom, suscribeEvents, events, changueTabPanel, initialize;
+    var settings, dom, catchDom, suscribeEvents, events, changueTabPanel, changuePanel, initialize, changueTab;
     ///* config selector *///
     settings = {
         tabs_h: '.horizontal',
@@ -99,17 +99,51 @@ var tabs = (function ($) {
         item.addClass('selected').attr('aria-selected', 'true');
         //console.log('changue panel');
     };
+    
+    changuePanel = function (id, dataTab) {
+        var tab, tabsDeselect, tabsDeselectSize, trigger, brother, pane, item, list;
+        tab = $("#" + id);
+        /*tabsDeselect = tab.find('li.deselect').attr('data-tab', dataTab)*/
+        tabsDeselect = tab.find("li.deselect");
+        tabsDeselectSize = tabsDeselect.size();
+        for (i = 1; i <= tabsDeselectSize; i = i + 1) {
+            tempDeselect = tab.find('>li:nth-child(' + i + ')');
+            if dataTabNow=.
+         }
+        console.log(trigger);
+        ///* changue tab *///
+        item = trigger.parent();
+        list = item.parent();
+        ///* changue tab *///        
+        tab.find('li.selected').toggleClass('selected').attr('aria-selected', 'false');
+        ///* changue panel *///
+        pane = trigger.attr('data-tab');
+        tab.find("#" + pane).attr('data-state', 'active').attr('aria-hidden', 'false');
+        tab.find("#" + pane).siblings().attr('data-state', 'inactive').attr('aria-hidden', 'true');
+        ///* changue tab */// 
+        item.addClass('selected').attr('aria-selected', 'true');
+        //console.log('changue panel');
+    };
+    
     ///* 7 *//* PUBLIC FUNTIONS - METHODS */
     initialize = function () {
         catchDom();
         suscribeEvents();
     };
+    
+    changueTab = function (id, dataTab) {
+        changuePanel(id, dataTab);
+    };
+    
     return {
         ///* 8 *//* REVEALING METHODS */
         ///* public variables, and public methods -- Accessing "Private" Methods *///
-        init: initialize
+        init: initialize,
+        changue: changueTab //example: tabs.changue('[id]', '[data-tab]')
     };
 }(jQuery));
 //
 ///* initialize plugin *///
 tabs.init();
+
+//tabs.changue('group_one', 'panel-horizontal-two')

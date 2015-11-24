@@ -1,0 +1,132 @@
+///******************************************/
+///*          flezz framework 1.0           */
+///******************************************/
+///*  Name: popup
+///*  Version: 0.1.0
+///*  Description: description popup
+///*  Author: Giancarlo Ortiz.
+///*  URI: http://www.zerez.org
+///*  License: GNU General Public License v2 or later
+///*  License URI: http://www.gnu.org/licenses/gpl-2.0.html
+///*  Tags: popup, mixin, plugin, css.
+///******************************************/
+///*  	Content
+///*
+///*  1. Config modules.
+///*  2. Road map.
+///*  3. Base Modules.
+///*  4. Config mixin.
+///*  5. preconfigured patterns.
+///*  6. initialized patterns.
+///******************************************/
+///* PATH */
+//
+///* Dependencies */
+@import 'desing/_config.desing.less';
+//
+///* 1 *//* CONFIG MODULES VARIABLES *///
+//
+///* global variables */
+///* popup general option */
+
+//
+///* local variables */
+.popup-local-var(){
+
+}
+//
+///* 2 *//* ROAD MAP */
+// --------------------------------------------------
+//tooltip
+//ventanas modales
+//error
+//wizard
+
+// --------------------------------------------------
+//
+///* 3 *//* BASE MODULES */
+.popup-tooltip() {
+    & > b {
+        font-size: .8rem;
+        margin-left: .5em;
+        padding: 0 .5em;
+        color: #eeeeee;
+
+        &:hover {
+            color: white;
+            cursor: pointer;
+        }
+    }
+
+    &>.help{
+        background-color: #29c1dd;
+        &:hover {
+            background-color: darken(#29c1dd, 7%);
+        }
+    }
+
+    &>.warn{
+        background-color: #eb9800;
+        &:hover {
+            background-color: darken(#eb9800, 7%);
+        }
+    }
+
+    &>.tooltip {
+        opacity: 1 !important;
+        background-color: #434b45;
+        color: #fff;
+        border: 1px solid #2b302c;
+        line-height: 1.4285em;
+        border-radius: 2px;
+        padding: 1em 1.5em;
+        box-shadow: 0 2px 4px 0 rgba(34, 36, 38, 0.12), 0 2px 10px 0 rgba(34, 36, 38, 0.08);
+        font-size: .7rem;
+        z-index: 1900;
+        width: 70%;
+        bottom: calc(100% + 10px);
+        position: absolute;
+        left: 20px;
+        min-width: -webkit-min-content;
+        min-width: -moz-min-content;
+        min-width: min-content;
+        max-width: 250px;
+        font-weight: 400;
+
+        & > h2 {
+            margin: 0px;
+            text-transform: capitalize;
+        }
+
+        & > P {
+            font-style: italic;
+        }
+
+        & > .help-title{
+            color: #29c1dd;
+        }
+
+        & > .warn-title{
+            color: #eb9800;
+        }
+    }
+}
+//
+///* 4 *//* CONFIG MIXIN */
+
+//
+///* 5 *//* PRECONFIGURED PATTERNS */
+.field {
+    .popup-tooltip();
+}
+//
+///* 6 *//* INITIALIZED PATTERNS */
+.popup-init(){
+    .popup-local-var();
+    
+}
+//
+/* cmp popup -- [ OK ] */@state: OK;
+///******************************************/
+///*  	FIN
+///******************************************/

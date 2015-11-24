@@ -141,6 +141,7 @@ body {
 ol,
 ul {
   list-style: none;
+  margin-bottom: 3em;
 }
 blockquote,
 q {
@@ -171,7 +172,7 @@ body {
   background-color: #f0eee1;
 }
 a {
-  color: #f5484a;
+  color: #007d64;
   text-decoration: none;
 }
 img {
@@ -475,6 +476,7 @@ div.group ul a:hover {
   margin-right: 5%;
   width: 44px;
   height: 100%;
+  background: url(../img/icons/cd-icon-menu.svg) no-repeat center center;
   background-size: 44px 44px;
 }
 .cd-primary-nav > ul {
@@ -606,9 +608,6 @@ div.group ul a:hover {
   -o-transition: transform 0.3s, visibility 0s 0.3s;
   transition: transform 0.3s, visibility 0s 0.3s;
 }
-.cd-secondary-nav ul li {
-  border-top: 4px solid #00735c;
-}
 .cd-secondary-nav ul li:hover {
   background-color: #007d64;
   border-top-color: #f9b101;
@@ -695,9 +694,6 @@ div.group ul a:hover {
   -ms-transform: rotate(0);
   -o-transform: rotate(0);
   transform: rotate(0);
-}
-.cd-secondary-nav-trigger.menu-is-open {
-  background: transparent;
 }
 .cd-secondary-nav-trigger.menu-is-open span {
   background: rgba(240, 238, 225, 0);
@@ -928,6 +924,9 @@ div.group ul a:hover {
     transform: scale(1);
     text-align: center;
     background-color: transparent;
+  }
+  .cd-secondary-nav ul > li {
+    border-top: 4px solid #00735c;
   }
   .cd-secondary-nav nav,
   .cd-secondary-nav ul,

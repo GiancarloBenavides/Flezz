@@ -35,7 +35,7 @@
 @input-focus-shadow: false;
 @input-font-size-rem: true;
 ///* input size option */
-@input-margin-left-width: 0px;
+@input-margin-left-width: 10px;
 @input-border-radius: 7px;
 @input-size: 7;
 ///* input placeholder option */
@@ -87,15 +87,14 @@
     @button-no-padding: @padSup-no-padding @padLat-no-padding;
     //
     @gap-link: 0.39;
-    //            1em * (51 * @size + 287) * 1/1000;
-    //            1em * (61 * @size + 140) * 1/1000;
+    //
     @padSup-link: 1em * (46 * @size + 624 - 1000 * @gap-link) * 1/1000;
     @padLat-link: 1em * (9 * @size + 100) * 5/1000;
     @button-link-padding: @padSup-link @padLat-link;
     //
     //@radius-em: unit(@input-border-radius)/(16*4);
-    @input-field-margin: 1rem*(34*@size + 88)/200;
-    @input-error-botom-position: 1rem*(23*@size + 200)/200;
+    @input-field-margin: 1em * (34 * @size + 88) / 200;
+    @input-error-botom-position: 1em * (34 * @size + 200) / 200;
     @input-margin-Top-width: 0.23em;
 }
 //
@@ -146,7 +145,7 @@
     & > span {
         position: absolute;
         padding-left: 2.1em;
-        right: 0.5em;
+        right: 1em;
         @gap-icon: (2 * @size + 10)/100;
         
             bottom: 1em * (@gap-icon + 1/10);
@@ -154,9 +153,9 @@
             line-height: (@inp-box-content - 2 * @gap-icon) ;
             box-sizing: border-box;
                 
-        background-image: -webkit-linear-gradient(left, fade(@input-background-color, 0%) 0%, fade(@input-background-color, 100%) 50%, fade(@input-background-color, 0%) 90%);
-        background-image: -o-linear-gradient(left, fade(@input-background-color, 0%) 0%, fade(@input-background-color, 100%) 50%, fade(@input-background-color, 0%) 90%);
-        background-image: linear-gradient(to right, fade(@input-background-color, 0%) 0%, fade(@input-background-color, 100%) 50%, fade(@input-background-color, 0%) 90%);
+        background-image: -webkit-linear-gradient(left, fade(@input-background-color, 0%) 0%, fade(@input-background-color, 100%) 50%);
+        background-image: -o-linear-gradient(left, fade(@input-background-color, 0%) 0%, fade(@input-background-color, 100%) 50%);
+        background-image: linear-gradient(to right, fade(@input-background-color, 0%) 0%, fade(@input-background-color, 100%) 50%);
         color: @input-icon-color;
         z-index: 10;
         
@@ -164,12 +163,14 @@
     }
     
     ///* focus icon-right and shadow */
+    & > select:focus + span,
     & > input[type="text"]:focus + span,
-    & > input[type="password"]:focus + span {
+    & > input[type="password"]:focus + span,
+    & > input[type="search"]:focus + span{
         @input-background-focus: lighten(@input-background-color, 10%);
-        background-image: -webkit-linear-gradient(left, fade(@input-background-focus, 0%) 0%, fade(@input-background-focus, 100%) 50%, fade(@input-background-focus, 0%) 90%);
-        background-image: -o-linear-gradient(left, fade(@input-background-focus, 0%) 0%, fade(@input-background-focus, 100%) 50%, fade(@input-background-focus, 0%) 90%);
-        background-image: linear-gradient(to right, fade(@input-background-focus, 0%) 0%, fade(@input-background-focus, 100%) 50%, fade(@input-background-focus, 0%) 90%);
+        background-image: -webkit-linear-gradient(left, fade(@input-background-focus, 0%) 0%, fade(@input-background-focus, 100%) 50%);
+        background-image: -o-linear-gradient(left, fade(@input-background-focus, 0%) 0%, fade(@input-background-focus, 100%) 50%);
+        background-image: linear-gradient(to right, fade(@input-background-focus, 0%) 0%, fade(@input-background-focus, 100%) 50%);
     }
 }
 
@@ -177,9 +178,9 @@
 .inp-input(@opc-type) when (@opc-type = 'text') {
     
     ///* transition general input *///
+    select,
     input[type="text"],
-    input[type="password"],
-    select {
+    input[type="password"]{
         box-shadow: 0 0 0 0 transparent inset;
         -webkit-appearance: none;
         -webkit-transition: color .1s ease,border-color .1s ease;
@@ -218,6 +219,23 @@
     ///* input-text-focus fix border */// 
     & > .focus {
         .inp-focus-depth-fix();
+    }
+}
+
+.inp-input(@opc-type) when (@opc-type = 'search') {
+    & > input[type="search"]{
+        border-radius: 3em;
+        border-width: 3px;
+        border-color: @input-label-font-color;
+    }
+    & > input[type="search"]:focus{
+        border-color: white;
+    }
+}
+
+.inp-input-select(){
+    & > select:focus + span{
+        i{transform: rotate(180deg);}
     }
 }
 
@@ -392,7 +410,7 @@
         margin-left: @input-margin-left-width;
     }
 
-    & > select, & > input[type="text"], & > input[type="password"], .afix, .prefix, .postfix {
+    & > select, & > input[type="text"], & > input[type="password"], & > input[type="search"], .afix, .prefix, .postfix {
         width: ~'calc(100% - @{input-margin-left-width})';
     }
 }
@@ -440,67 +458,45 @@
 //
 ///* 5 *//* PRECONFIGURED PATTERNS */
 .input-general() {
+    
     select,
-    input {     
-        &[type="text"],
-        &[type="password"] {
-            .inp-font-size(1);
-            line-height: @input-line-height;
-            height: @input-box-height;
-            padding: 0 0.7em;
-            background: @input-background-color;
-            border: 1px solid @input-border-color;
-            color: @input-font-color;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-            z-index: 1;
-
-            &:focus {
-                background: lighten(@input-background-color, 10%);
-
-                & + span > i {
-                    color: @input-icon-focus-color;
-                }
-
-                .inp-focus-depth();
-            }
-        }
-        
-        &::-webkit-input-placeholder {color: @input-placeholder-font-color;}
-        &:-moz-placeholder {color: @input-placeholder-font-color;}
-        &::-moz-placeholder {color: @input-placeholder-font-color;}
-        &:-ms-input-placeholder {color: @input-placeholder-font-color;}
+    input[type="text"],
+    input[type="password"],
+    input[type="search"] {     
+        .inp-font-size(1);
+        line-height: @input-line-height;
+        height: @input-box-height;
+        padding: 0 0.7em;
+        background: @input-background-color;
+        border: 1px solid @input-border-color;
+        color: @input-font-color;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 1;
     }
     
-    select {
-         .inp-font-size(1);
-            line-height: @input-line-height;
-            height: @input-box-height;
-            padding: 0 0.7em;
-            background: @input-background-color;
-            border: 1px solid @input-border-color;
-            color: @input-font-color;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-            z-index: 1;
+    select,
+    input[type="text"],
+    input[type="password"],
+    input[type="search"] {    
+        &:focus {
+            background: lighten(@input-background-color, 10%);
+            .inp-focus-depth();
 
-            &:focus {
-                background: lighten(@input-background-color, 10%);
-
-                & + span > i {
-                    color: @input-icon-focus-color;
-                }
-
-                .inp-focus-depth();
+            & + span > i {
+                color: @input-icon-focus-color;
             }
-        
+        }
+    }
+    
+    input[type="text"],
+    input[type="password"],
+    input[type="search"] {
         &::-webkit-input-placeholder {color: @input-placeholder-font-color;}
         &:-moz-placeholder {color: @input-placeholder-font-color;}
         &::-moz-placeholder {color: @input-placeholder-font-color;}
         &:-ms-input-placeholder {color: @input-placeholder-font-color;}
-        
     }
     
     label {
@@ -511,7 +507,9 @@
     }
 }
 
+//styles using auto input
 .input-autofill() {
+    
     input:-webkit-autofill,
     input:-webkit-autofill:hover,
     input:-webkit-autofill:focus,
@@ -519,7 +517,8 @@
         -webkit-box-shadow: 0 0 0px 1000px @input-autofill-background-color inset !important;
         box-shadow: 0 0 0px 1000px @input-autofill-background-color inset !important;
     }
-
+    
+    //icon color change and span shadow 
     .field > input[type="text"]:-webkit-autofill:focus + span,
     .field > input[type="text"]:-webkit-autofill + span {
         color: @input-icon-autofill-color;
@@ -534,8 +533,10 @@
         .inp-input-reset();
         .inp-input-field();
         .inp-input('text'); //or password
+        .inp-input('search');
         .inp-input('checkbox');
         .inp-input('radio');
+        .inp-input-select();
         .inp-input-text-afix();
     }
 }
